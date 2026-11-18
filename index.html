@@ -1,0 +1,4043 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bản đồ chiến lược – Xây dựng kế hoạch thuế phải nộp 2027 · AMITA</title>
+<meta name="description" content="Khóa học cho chủ doanh nghiệp và kế toán của giảng viên Vũ Thạch Sơn. Điền số tiền muốn có sau thuế năm 2027, bảng tính ngược ra doanh thu, chi phí, số sản phẩm phải bán và số thuế phải nộp.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bản đồ chiến lược – Xây dựng kế hoạch thuế phải nộp 2027 · AMITA">
+<meta property="og:description" content="Khóa học cho chủ doanh nghiệp và kế toán của giảng viên Vũ Thạch Sơn. Điền số tiền muốn có sau thuế năm 2027, bảng tính ngược ra doanh thu, chi phí, số sản phẩm phải bán và số thuế phải nộp.">
+<meta property="og:locale" content="vi_VN">
+<meta name="theme-color" content="#1C5A3F">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231C5A3F'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='40' font-weight='700' fill='%23FFFFFF' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap">
+<style>
+html{background:#EEF2EE}html.dk{background:#0D1712}
+body{margin:0}
+.pg{--fd:'Fraunces',Georgia,serif;--fb:'Be Vietnam Pro',system-ui,sans-serif;--fm:'JetBrains Mono',ui-monospace,Menlo,monospace;font-family:var(--fb);color:var(--ink);background:var(--bg);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.pg.light{--bg:#EEF2EE;--paper:#FFFFFF;--cell:#E2E7E2;--cellb:#BFC9C1;--ink:#15221B;--ink2:#4B5A51;--green:#1C5A3F;--gink:#FFFFFF;--gsoft:#DAE7DE;--rule:#C9D2CB;--rule2:#8E9D93;--red:#B0251C;--redsoft:#F8E6E3}
+.pg.dark{--bg:#0D1712;--paper:#14211B;--cell:#213229;--cellb:#3B5045;--ink:#E2E9E3;--ink2:#9DADA3;--green:#7DC59F;--gink:#0D1712;--gsoft:#1A3026;--rule:#2A3C32;--rule2:#557064;--red:#FF7A6C;--redsoft:#3A1D1A}
+.pg *{box-sizing:border-box}
+.pg a{color:var(--green)}
+.pg a:hover{color:var(--ink)}
+.pg p{margin:0}
+.disp{font-family:var(--fd);font-optical-sizing:auto}
+.mono{font-family:var(--fm)}
+.num{font-family:var(--fm);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.red{color:var(--red)}
+.muted{color:var(--ink2)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1440px;margin:0 auto;padding:0 40px}
+.kicker{font:500 12px/1.3 var(--fm);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.h1{font-family:var(--fd);font-weight:600;font-size:104px;line-height:.94;letter-spacing:-.025em;margin:0}
+.h2{font-family:var(--fd);font-weight:600;font-size:46px;line-height:1.06;letter-spacing:-.015em;margin:0}
+.h3{font-family:var(--fd);font-weight:600;font-size:24px;line-height:1.2;margin:0}
+.nl{color:var(--ink) !important;text-decoration:none;font-weight:500;font-size:15px;padding:10px 0}
+.nl:hover{color:var(--green) !important;text-decoration:underline;text-underline-offset:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;font:600 16px/1 var(--fb);text-decoration:none;border:1.5px solid var(--green);border-radius:2px;cursor:pointer;white-space:nowrap}
+.btn.pri{background:var(--green);color:var(--gink) !important}
+.btn.pri:hover{filter:brightness(1.1)}
+.btn.sec{background:transparent;color:var(--green) !important}
+.btn.sec:hover{background:var(--gsoft)}
+.btn.sm{min-height:44px;padding:0 16px;font-size:14px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.ibtn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--rule2);background:transparent;color:var(--ink);border-radius:2px;cursor:pointer}
+.ibtn:hover{background:var(--gsoft)}
+.btn:focus-visible,.ibtn:focus-visible,.seg:focus-visible,.inp:focus,.tin:focus,.nl:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.seg{flex:1 1 0;min-height:44px;padding:6px 10px;border:1px solid var(--cellb);background:var(--cell);color:var(--ink);font:600 15px/1.15 var(--fb);cursor:pointer;margin-left:-1px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.seg small{font:400 11px/1.2 var(--fb);color:var(--ink2)}
+.seg.on{background:var(--green);border-color:var(--green);color:var(--gink);position:relative;z-index:1}
+.seg.on small{color:var(--gink);opacity:.85}
+.inp{font:500 16px/1.2 var(--fb);color:var(--ink);background:var(--cell);border:1px solid var(--cellb);border-radius:2px;padding:10px 12px;min-height:44px;width:100%}
+.inp.num{font-family:var(--fm);font-weight:500}
+.inp[readonly]{background:var(--paper);border-style:dashed}
+.flab{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px;line-height:1.3}
+.fhint{display:block;font-size:12px;color:var(--ink2);margin-top:6px;line-height:1.35}
+fieldset.fs{border:0;margin:0;padding:0;min-width:0}
+fieldset.fs legend{padding:0}
+.box{background:var(--paper);border:1px solid var(--rule2)}
+.lg{width:100%;border-collapse:collapse}
+.lg caption{text-align:left}
+.lg th{font:600 11px/1.3 var(--fb);letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);text-align:left;padding:10px 8px;border-bottom:1px solid var(--ink);vertical-align:bottom;background:var(--paper)}
+.lg th.r{text-align:right}
+.lg td{padding:8px;border-bottom:1px solid var(--rule);vertical-align:middle;font-size:14px;background:var(--paper)}
+.lg td.ci{background:var(--cell);padding:3px}
+.lg tr.b td{font-weight:700}
+.lg tr.mu td{color:var(--ink2)}
+.lg tr.it td{font-style:italic}
+.lg tr.red td.n{color:var(--red)}
+.lg tr.dbl td.n{border-bottom:3px double var(--ink)}
+.lg tr.tot td{font-weight:700;border-top:1px solid var(--ink);border-bottom:3px double var(--ink)}
+.lg th.grp{font:500 11px/1 var(--fm);letter-spacing:.14em;padding:8px;border-bottom:1px solid var(--rule)}
+.lg th.gin{background:var(--cell);color:var(--ink)}
+.code{font:500 12px/1 var(--fm);color:var(--ink2);white-space:nowrap}
+.tin{font:500 14px/1.2 var(--fb);color:var(--ink);background:transparent;border:1px solid transparent;border-radius:2px;padding:7px 8px;min-height:40px;width:100%}
+.tin.num{font-family:var(--fm)}
+.tin:hover{border-color:var(--cellb)}
+.tin[disabled]{color:var(--ink2);cursor:not-allowed;opacity:.85}
+.lk{font:600 12px/1 var(--fb);min-height:32px;width:100%;padding:0 6px;border:1px solid var(--cellb);background:var(--paper);color:var(--ink);border-radius:2px;cursor:pointer;white-space:nowrap}
+.lk:hover{background:var(--gsoft)}
+.lk.on{background:var(--green);border-color:var(--green);color:var(--gink)}
+.lk:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.lg td.lkd,.lg th.lkd{background:var(--gsoft)}
+.lg td.over{color:var(--red);background:var(--redsoft)}
+.guide{border:1px solid var(--rule2);background:var(--paper);padding:16px 18px}
+.gsteps{margin:8px 0 0;padding-left:20px;font-size:14px;line-height:1.55;display:flex;flex-direction:column;gap:6px}
+.gex{list-style:none;margin:0;padding:0;font-size:14px;line-height:1.5}
+.gex li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:6px;padding:7px 0;border-top:1px dashed var(--rule)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.stk{position:sticky;left:0;z-index:2}
+.leader{flex:1 1 auto;border-bottom:1px dotted var(--rule2);margin:0 8px;transform:translateY(-5px);min-width:16px}
+.g-hero{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:end}
+.g-k1{display:grid;grid-template-columns:minmax(0,2.3fr) minmax(0,1.3fr) minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+.g-res{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:start}
+.g-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.g-tier{display:grid;grid-template-columns:240px minmax(0,1fr);gap:32px;align-items:start}
+.g-fin{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.g-zoom{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.g-hall{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.g-reg{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start}
+.g-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px}
+.g-tax{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch}
+.g-split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px;align-items:start}
+.span2{grid-column:1 / -1}
+.g-read{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 40px}
+.rsteps{list-style:none;margin:10px 0 0;padding:0;font-size:15px;line-height:1.5}
+.rsteps li{display:grid;grid-template-columns:92px minmax(0,1fr);gap:12px;padding:10px 0;border-top:1px solid var(--rule)}
+.rsteps li b{font-weight:700}
+.is-phone .g-read{grid-template-columns:minmax(0,1fr)}
+@media (max-width:760px){.g-read{grid-template-columns:minmax(0,1fr)}.rsteps li{grid-template-columns:78px minmax(0,1fr)}}
+.g-split2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g-fwctl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:16px 20px;align-items:start}
+.g-fw{display:grid;grid-template-columns:40px minmax(0,1fr) 190px;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)}
+.g-fw.key .lbl{font-weight:700}
+.g-fw.ok .v{color:var(--green)}
+.g-fw.solved{background:var(--gsoft);margin:0 -18px;padding-left:18px;padding-right:18px}
+.g-fw.tot{border-bottom:3px double var(--ink)}
+.g-fw.last{border-bottom:0}
+.g-dmo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.li{display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:8px;align-items:start;padding:9px 0;border-bottom:1px solid var(--rule)}
+.chk{width:20px;height:20px;margin:2px 0 0;accent-color:var(--green);cursor:pointer}
+.li.unchk label{opacity:.5}
+.po{display:none}
+.is-phone .wrap{padding:0 18px}
+.is-phone .h1{font-size:56px}
+.is-phone .h2{font-size:32px}
+.is-phone .g-hero,.is-phone .g-k1,.is-phone .g-res,.is-phone .g-tier,.is-phone .g-reg,.is-phone .g-form,.is-phone .g-hall,.is-phone .g-split,.is-phone .g-tax{grid-template-columns:minmax(0,1fr);gap:20px}
+.is-phone .g-fwctl,.is-phone .g-dmo{grid-template-columns:minmax(0,1fr);gap:18px}
+.is-phone .g-fw{grid-template-columns:24px minmax(0,1fr) 118px;gap:8px}
+.is-phone .g-fin,.is-phone .g-zoom{grid-template-columns:repeat(2,minmax(0,1fr))}
+.is-phone .g-zoom{grid-template-columns:minmax(0,1fr);gap:12px}
+.is-phone .navrow{order:3;width:100%;margin-left:0 !important;gap:22px !important;overflow-x:auto;padding-bottom:6px}
+.is-phone .ctl{margin-left:auto}
+.is-phone .stampnum{font-size:38px !important}
+.is-phone .sect{padding-top:48px !important;padding-bottom:48px !important}
+@media (max-width:760px){.navrow{order:3;width:100%;margin-left:0 !important;gap:22px !important;overflow-x:auto}.ctl{margin-left:auto}.wrap{padding:0 18px}.h1{font-size:56px}.h2{font-size:32px}.g-hero,.g-k1,.g-res,.g-tier,.g-reg,.g-form,.g-hall,.g-split,.g-zoom,.g-tax{grid-template-columns:minmax(0,1fr);gap:20px}.g-fin{grid-template-columns:repeat(2,minmax(0,1fr))}.g-fwctl,.g-dmo{grid-template-columns:minmax(0,1fr)}.g-fw{grid-template-columns:24px minmax(0,1fr) 118px;gap:8px}}
+.scroll{position:relative}
+.ferr{display:block;font-size:13px;font-weight:600;color:var(--red);margin-top:6px;line-height:1.35}
+.inp[aria-invalid=true]{border-color:var(--red);box-shadow:inset 0 0 0 1px var(--red)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.consent{display:grid;grid-template-columns:26px minmax(0,1fr);gap:8px;align-items:start;font-size:14px;line-height:1.5;cursor:pointer}
+.g-qr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center}
+@media (min-width:761px) and (max-width:1100px){.wrap{padding:0 28px}.h1{font-size:80px}.h2{font-size:40px}.g-hero{grid-template-columns:minmax(0,1fr);gap:36px}.g-k1{grid-template-columns:repeat(2,minmax(0,1fr))}.g-res,.g-split{grid-template-columns:minmax(0,1fr)}.g-tier{grid-template-columns:minmax(0,1fr);gap:20px}.g-fin{grid-template-columns:repeat(2,minmax(0,1fr))}.g-zoom{grid-template-columns:repeat(3,minmax(0,1fr))}.g-reg{grid-template-columns:minmax(0,1fr);gap:36px}.g-dmo{grid-template-columns:repeat(2,minmax(0,1fr))}.navrow{gap:22px !important}}
+@media (max-width:760px){.g-qr{grid-template-columns:minmax(0,1fr);gap:20px}.g-qr figure{align-items:flex-start !important}}
+@media print{
+@page{size:A4 landscape;margin:10mm}
+.pg.light,.pg.dark{--bg:#FFFFFF;--paper:#FFFFFF;--cell:#F1F4F1;--cellb:#C9D1CA;--ink:#111111;--ink2:#444444;--green:#1C5A3F;--gink:#FFFFFF;--gsoft:#EDF3EE;--rule:#D3D9D4;--rule2:#9AA39C;--red:#B0251C;background:#FFFFFF;font-size:12px}
+.np{display:none !important}
+.po{display:block !important}
+.unchk{display:none !important}
+.wrap{max-width:none;padding:0 !important}
+.sect{padding-top:14px !important;padding-bottom:14px !important;border-top:0 !important}
+.pb{break-before:page}
+.h2{font-size:28px !important}
+.scroll{overflow:visible !important}
+.lg{min-width:0 !important}
+.lg td,.lg th{padding:3px 5px !important;font-size:10px !important}
+.tin,.inp{border:0 !important;background:transparent !important;min-height:0 !important;padding:2px 4px !important}
+select.tin,select.inp{appearance:none;-webkit-appearance:none}
+.box,.li,.g-fw,.g-fin{break-inside:avoid}
+.li{grid-template-columns:minmax(0,1fr) auto}
+.stampnum{font-size:34px !important}
+.g-fin p.mono{font-size:22px !important}
+*{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<noscript><p style="padding:24px;font-family:sans-serif">Trang cần bật JavaScript để chạy bảng tính và form đăng ký.</p></noscript>
+<template id="tpl"><div class="pg {{themeCls}} {{phoneCls}}" style="width: 100%">
+
+
+<template data-if="showAll">
+<header class="np" style="border-bottom: 1px solid var(--rule); background: var(--bg)">
+<div class="wrap" style="display: flex; align-items: center; gap: 4px 32px; min-height: 76px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px">
+<a href="#top" aria-label="AMITA · Bài giảng, về đầu trang" style="display: flex; align-items: baseline; gap: 10px; text-decoration: none">
+<span class="disp" style="font-size: 26px; font-weight: 700; letter-spacing: .06em; color: var(--green)">AMITA</span>
+<span class="mono" style="font-size: 12px; letter-spacing: .16em; color: var(--ink2)">· BÀI GIẢNG</span>
+</a>
+<nav aria-label="Điều hướng chính" class="navrow" style="display: flex; align-items: center; gap: 32px; margin-left: auto">
+<a href="#bang-tinh" class="nl">Bảng tính</a>
+<a href="#ban-do" class="nl">Bản đồ chiến lược</a>
+<a href="#lo-trinh" class="nl">Lộ trình</a>
+</nav>
+<div class="ctl" style="display: flex; align-items: center; gap: 10px">
+<template data-if="desk"><button type="button" class="btn sec sm" onClick="{{printReport}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6M6 16H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2"></path><rect x="6" y="14" width="12" height="7"></rect></svg>In báo cáo</button></template>
+<a href="#dang-ky" class="btn pri sm">Vào nhóm Zalo</a>
+<button type="button" class="ibtn" aria-label="{{themeLabel}}" onClick="{{toggleDark}}">
+<template data-if="dark">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+</template>
+<template data-if="light">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg>
+</template>
+</button>
+</div>
+</div>
+</header>
+
+
+<section id="top" class="wrap np" style="padding-top: 56px; padding-bottom: 56px">
+<div class="g-hero">
+<div style="display: flex; flex-direction: column; gap: 22px">
+<p class="kicker">Khóa học cho cặp chủ doanh nghiệp và kế toán</p>
+<h1 class="h1" style="color: var(--green)">Bản đồ chiến lược</h1>
+<p class="disp" style="font-size: 30px; line-height: 1.2; font-style: italic; font-weight: 500; margin-top: -4px">Xây dựng kế hoạch thuế phải nộp 2027</p>
+<p style="font-size: 18px; line-height: 1.65; max-width: 640px; color: var(--ink)">Năm 2027 anh chị muốn có bao nhiêu tiền sau thuế? Điền con số đó vào bảng bên dưới. Bảng sẽ tính ngược ra doanh thu cần đạt, chi phí được phép tiêu, số sản phẩm phải bán mỗi ngày và số thuế phải nộp.</p>
+<div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px">
+<a href="#bang-tinh" class="btn pri">Tính số tiền muốn có
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"></path></svg>
+</a>
+<a href="#dang-ky" class="btn sec">Đăng ký vào nhóm Zalo</a>
+</div>
+<p style="font-size: 14px; color: var(--ink2); border-top: 1px solid var(--rule); padding-top: 14px; margin-top: 8px; max-width: 640px">Giảng viên <strong style="color: var(--ink)">Vũ Thạch Sơn</strong> · Chuyên gia tư vấn kế toán tài chính</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<aside aria-label="Ví dụ: chủ doanh nghiệp hỏi, kế toán trả lời" class="box" style="padding: 0">
+<div style="padding: 20px 24px; border-bottom: 1px solid var(--rule)">
+<p class="kicker" style="margin-bottom: 8px">Chủ doanh nghiệp hỏi</p>
+<p class="disp" style="font-size: 22px; line-height: 1.3; font-weight: 500">“{{per.qLead}} tôi muốn có <span class="mono" style="font-size: 20px; font-weight: 600; color: var(--green)">{{per.lnstS}}</span> sau thuế. Phải làm gì?”</p>
+</div>
+<div style="padding: 20px 24px 22px">
+<p class="kicker" style="margin-bottom: 10px">Kế toán trả lời bằng con số</p>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px">
+<p class="mono" style="font-size: 11px; letter-spacing: .1em; color: var(--ink2)">{{per.labelUp}}</p>
+<div style="display: flex; align-items: baseline"><span>Doanh thu cần đạt</span><span class="leader"></span><span class="num" style="font-weight: 600">{{per.dtS}}</span></div>
+<div style="display: flex; align-items: baseline"><span>Chi phí được phép tiêu</span><span class="leader"></span><span class="num" style="font-weight: 600">{{per.cpS}}</span></div>
+<div style="display: flex; align-items: baseline; padding-top: 10px; border-top: 1px solid var(--rule)"><span><span class="red" style="font-weight: 600">Thuế TNDN</span> <span class="muted" style="font-size: 13px">chi phí thật</span></span><span class="leader"></span><span class="num red" style="font-weight: 700">{{per.thueS}}</span></div>
+<div style="display: flex; align-items: baseline"><span><span class="red" style="font-weight: 600">Thuế GTGT</span> <span class="muted" style="font-size: 13px">thu hộ của khách</span></span><span class="leader"></span><span class="num red" style="font-weight: 700">{{per.vatS}}</span></div>
+<p class="muted" style="font-size: 13px; padding-top: 10px; border-top: 1px solid var(--rule)">Quy ra mỗi ngày bán: <span class="mono" style="color: var(--ink); font-weight: 600">{{k.qdT}}</span> sản phẩm, <span class="mono" style="color: var(--ink); font-weight: 600">{{k.dtDayS}}</span> doanh thu.</p>
+</div>
+</div>
+</aside>
+<div role="group" aria-label="Xem số theo năm hoặc theo tháng" style="display: flex; align-items: center; gap: 12px">
+<span class="muted" style="font-size: 14px; white-space: nowrap">Xem số</span>
+<div style="display: flex; flex: 1 1 auto; padding-left: 1px">
+<button type="button" class="{{per.yCls}}" aria-pressed="{{per.yPressed}}" onClick="{{per.setY}}">Theo năm</button>
+<button type="button" class="{{per.mCls}}" aria-pressed="{{per.mPressed}}" onClick="{{per.setM}}">Theo tháng</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</template>
+
+
+<div class="po wrap" style="padding-top: 4px">
+<div style="border-bottom: 2px solid var(--ink); padding-bottom: 10px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end; gap: 20px">
+<div>
+<p class="mono" style="font-size: 10px; letter-spacing: .16em; color: var(--ink2)">AMITA · BÀI GIẢNG · BẢN ĐỒ CHIẾN LƯỢC</p>
+<p class="disp" style="font-size: 26px; font-weight: 600; line-height: 1.15">Kế hoạch kinh doanh và thuế phải nộp 2027</p>
+</div>
+<div style="font-size: 11px; text-align: right; line-height: 1.6">
+<p>Doanh nghiệp: <strong>{{rep.biz}}</strong></p>
+<p>Người lập: <strong>{{rep.name}}</strong> · Ngày in: {{rep.date}}</p>
+<p>Số liệu hiển thị: {{per.label}}</p>
+</div>
+</div>
+</div>
+
+
+<template data-if="showCalc">
+<section id="bang-tinh" class="sect" style="padding-top: 64px; padding-bottom: 72px; border-top: 1px solid var(--rule2)">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 28px">
+
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 760px">
+<p class="kicker">§ 01 · Bảng tính</p>
+<h2 class="h2">Bảng tính số tiền muốn có</h2>
+<p class="muted" style="font-size: 16px">Chủ doanh nghiệp đặt câu hỏi, kế toán trả lời bằng con số. Sửa bất kỳ ô xám nào, mọi số còn lại chạy theo.</p>
+</div>
+</div>
+
+<div class="np" style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 13px; color: var(--ink2)">
+<span style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 22px; height: 16px; background: var(--cell); border: 1px solid var(--cellb)"></span>Ô anh chị điền</span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 22px; height: 16px; background: var(--paper); border: 1px solid var(--rule2)"></span>Ô bảng tự tính</span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" class="mono red" style="font-weight: 700">000</span>Màu đỏ chỉ dùng cho thuế</span>
+</div>
+
+
+<div class="box" style="padding: 24px 24px 0">
+<div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 20px">
+<span class="mono" style="font-size: 12px; color: var(--ink2)">KHỐI 1</span>
+<h3 class="h3">Thuế suất của doanh nghiệp</h3>
+</div>
+<div class="g-k1" style="padding-bottom: 22px">
+<fieldset class="fs">
+<legend class="flab">Thuế suất thuế TNDN <span class="mono" style="font-size: 10px; letter-spacing: .12em; font-weight: 600; color: var(--green); border: 1px solid var(--green); padding: 2px 6px; margin-left: 6px">TỰ ĐỘNG</span></legend>
+<div style="display: flex; padding-left: 1px" role="status" aria-label="{{rateAria}}">
+<template data-for="tndnOpts" data-as="o">
+<div class="{{o.cls}}" style="min-height: 56px; cursor: default; background: {{o.bg}}">{{o.label}}<small>{{o.sub}}</small></div>
+</template>
+</div>
+<span class="fhint">Bảng tự chọn theo doanh thu, không cần bấm</span>
+</fieldset>
+<div>
+<label class="flab" for="dt2026">Doanh thu cả năm 2026</label>
+<input id="dt2026" class="inp num" inputmode="numeric" placeholder="Chưa có thì bỏ trống" value="{{dt2026}}" onChange="{{setDt2026}}">
+<span class="fhint">Có số này, thuế suất TNDN tính theo năm 2026 (năm liền trước)</span>
+</div>
+<fieldset class="fs">
+<legend class="flab">Thuế suất thuế GTGT</legend>
+<div style="display: flex; padding-left: 1px">
+<template data-for="vatOpts" data-as="o">
+<button type="button" class="{{o.cls}}" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}">{{o.label}}</button>
+</template>
+</div>
+<span class="fhint">Mức 8% chỉ áp dụng đến hết 31/12/2026</span>
+</fieldset>
+<div>
+<label class="flab" for="inpct">% chi phí có hóa đơn GTGT đầu vào</label>
+<input id="inpct" class="inp num" inputmode="numeric" value="{{inPct}}" onChange="{{setInPct}}">
+</div>
+<div>
+<label class="flab" for="days">Số ngày bán hàng mỗi tháng</label>
+<input id="days" class="inp num" inputmode="numeric" value="{{days}}" onChange="{{setDays}}">
+</div>
+</div>
+<div style="margin: 0 -24px; padding: 14px 24px; background: var(--gsoft); border-top: 1px dashed var(--rule2); display: flex; align-items: center; gap: 14px 20px; flex-wrap: wrap">
+<span class="mono" style="font-size: 11px; letter-spacing: .14em; font-weight: 600; color: var(--green); border: 1px solid var(--green); padding: 4px 8px">THUẾ SUẤT {{tndnLabel}}</span>
+<p style="flex: 1 1 360px; font-size: 15px">{{hint.text}}</p>
+</div>
+</div>
+
+
+<div class="box" style="padding: 24px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px; margin-bottom: 18px; flex-wrap: wrap">
+<div style="display: flex; align-items: baseline; gap: 14px">
+<span class="mono" style="font-size: 12px; color: var(--ink2)">KHỐI 2</span>
+<h3 class="h3">Bảng sản phẩm</h3>
+</div>
+<span class="muted" style="font-size: 13px">Mỗi dòng một sản phẩm, tối đa 5 · Đơn vị tính: đồng</span>
+</div>
+
+<template data-if="desk">
+<div class="scroll" style="margin: 0 -24px; padding: 0 24px">
+<table class="lg" style="min-width: 1300px">
+<caption class="sr">Bảng sản phẩm: cột điền và cột tự tính</caption>
+<thead>
+<tr>
+<th colspan="6" class="grp gin">ANH CHỊ ĐIỀN</th>
+<th colspan="8" class="grp">BẢNG TỰ TÍNH</th>
+<th class="grp"></th>
+</tr>
+<tr>
+<th style="width: 34px">#</th>
+<th style="width: 150px">Tên sản phẩm</th>
+<th class="r" style="width: 140px">Lợi nhuận sau thuế muốn có / tháng</th>
+<th style="width: 150px">Ngành (gợi ý % chi phí)</th>
+<th class="r" style="width: 74px">% chi phí / DT</th>
+<th class="r" style="width: 116px">Giá bán 1 sản phẩm</th>
+<th class="r red">Thuế TNDN</th>
+<th class="r">Lợi nhuận trước thuế</th>
+<th class="r">Chi phí</th>
+<th class="r">Doanh thu cần đạt</th>
+<th class="r">Số lượng / tháng</th>
+<th class="r">Số lượng / ngày</th>
+<th class="r">%LNTT /DT</th>
+<th class="r">%LNST /DT</th>
+<th style="width: 48px"><span class="sr">Xóa dòng</span></th>
+</tr>
+</thead>
+<tbody>
+<template data-for="prows" data-as="p">
+<tr>
+<td class="code">{{p.idx}}</td>
+<td class="ci"><input class="tin" aria-label="Tên sản phẩm {{p.idx}}" value="{{p.name}}" onChange="{{p.setName}}"></td>
+<td class="ci"><input class="tin num" inputmode="numeric" aria-label="Lợi nhuận sau thuế muốn có mỗi tháng, sản phẩm {{p.idx}}" value="{{p.lnstF}}" onChange="{{p.setLnst}}" style="text-align: right"></td>
+<td class="ci">
+<select class="tin" aria-label="Ngành, sản phẩm {{p.idx}}" value="{{p.ind}}" onChange="{{p.setInd}}">
+<template data-for="inds" data-as="o"><option value="{{o.id}}">{{o.optLabel}}</option></template>
+</select>
+</td>
+<td class="ci"><input class="tin num" inputmode="numeric" aria-label="Phần trăm chi phí trên doanh thu, sản phẩm {{p.idx}}" value="{{p.pctF}}" onChange="{{p.setPct}}" style="text-align: right"></td>
+<td class="ci"><input class="tin num" inputmode="numeric" aria-label="Giá bán một sản phẩm, sản phẩm {{p.idx}}" value="{{p.priceF}}" onChange="{{p.setPrice}}" style="text-align: right"></td>
+<td class="num red">{{p.thueF}}</td>
+<td class="num">{{p.lnttF}}</td>
+<td class="num">{{p.cpF}}</td>
+<td class="num" style="font-weight: 700">{{p.dtF}}</td>
+<td class="num">{{p.qmF}}</td>
+<td class="num">{{p.qdF}}</td>
+<td class="num">{{p.lnttPct}}</td>
+<td class="num">{{p.lnstPct}}</td>
+<td style="text-align: center">
+<template data-if="p.canRemove">
+<button type="button" class="ibtn" style="width: 36px; height: 36px; border-color: transparent" aria-label="Xóa sản phẩm {{p.idx}}" onClick="{{p.remove}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</template>
+</td>
+</tr>
+</template>
+<tr class="tot">
+<td></td>
+<td>Cộng</td>
+<td class="num" style="padding-right: 17px">{{k.lnstMF}}</td>
+<td></td>
+<td class="num" style="padding-right: 17px">{{k.cpPct}}</td>
+<td></td>
+<td class="num red">{{k.thueMF}}</td>
+<td class="num">{{k.lnttMF}}</td>
+<td class="num">{{k.cpMF}}</td>
+<td class="num">{{k.dtMF}}</td>
+<td class="num">{{k.qmF}}</td>
+<td class="num">{{k.qdT}}</td>
+<td class="num">{{k.lnttPct}}</td>
+<td class="num">{{k.lnstPct}}</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</template>
+
+<template data-if="phone">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<template data-for="prows" data-as="p">
+<article style="border: 1px solid var(--rule2); background: var(--paper)">
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 8px 8px 12px; background: var(--cell); border-bottom: 1px solid var(--cellb)">
+<span class="code">{{p.idx}}</span>
+<input class="tin" style="font-weight: 600; font-size: 16px" aria-label="Tên sản phẩm {{p.idx}}" value="{{p.name}}" onChange="{{p.setName}}">
+<template data-if="p.canRemove">
+<button type="button" class="ibtn" aria-label="Xóa sản phẩm {{p.idx}}" onClick="{{p.remove}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</template>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding: 14px 12px; border-bottom: 1px solid var(--rule)">
+<div class="span2"><label class="flab" for="m-lnst-{{p.idx}}">Lợi nhuận sau thuế muốn có / tháng</label><input id="m-lnst-{{p.idx}}" class="inp num" inputmode="numeric" value="{{p.lnstF}}" onChange="{{p.setLnst}}"></div>
+<div class="span2"><label class="flab" for="m-ind-{{p.idx}}">Ngành (gợi ý % chi phí)</label>
+<select id="m-ind-{{p.idx}}" class="inp" value="{{p.ind}}" onChange="{{p.setInd}}"><template data-for="inds" data-as="o"><option value="{{o.id}}">{{o.optLabel}}</option></template></select></div>
+<div><label class="flab" for="m-pct-{{p.idx}}">% chi phí / DT</label><input id="m-pct-{{p.idx}}" class="inp num" inputmode="numeric" value="{{p.pctF}}" onChange="{{p.setPct}}"></div>
+<div><label class="flab" for="m-pr-{{p.idx}}">Giá bán 1 sản phẩm</label><input id="m-pr-{{p.idx}}" class="inp num" inputmode="numeric" value="{{p.priceF}}" onChange="{{p.setPrice}}"></div>
+</div>
+<dl style="margin: 0; padding: 6px 12px 12px; font-size: 14px">
+<div style="display: flex; align-items: baseline; padding: 6px 0"><dt style="font-weight: 600">Doanh thu cần đạt</dt><span class="leader"></span><dd class="num" style="margin: 0; font-weight: 700">{{p.dtF}}</dd></div>
+<div style="display: flex; align-items: baseline; padding: 6px 0"><dt>Chi phí</dt><span class="leader"></span><dd class="num" style="margin: 0">{{p.cpF}}</dd></div>
+<div style="display: flex; align-items: baseline; padding: 6px 0"><dt>Lợi nhuận trước thuế</dt><span class="leader"></span><dd class="num" style="margin: 0">{{p.lnttF}}</dd></div>
+<div style="display: flex; align-items: baseline; padding: 6px 0"><dt class="red">Thuế TNDN</dt><span class="leader"></span><dd class="num red" style="margin: 0">{{p.thueF}}</dd></div>
+<div style="display: flex; align-items: baseline; padding: 6px 0"><dt>Số lượng / tháng · / ngày</dt><span class="leader"></span><dd class="num" style="margin: 0">{{p.qmF}} · {{p.qdF}}</dd></div>
+<div style="display: flex; align-items: baseline; padding: 6px 0"><dt>%LNTT/DT · %LNST/DT</dt><span class="leader"></span><dd class="num" style="margin: 0">{{p.lnttPct}} · {{p.lnstPct}}</dd></div>
+</dl>
+</article>
+</template>
+</div>
+</template>
+
+<div class="np" style="display: flex; align-items: center; gap: 16px; margin-top: 16px; flex-wrap: wrap">
+<button type="button" class="btn sec sm" onClick="{{addProduct}}" disabled="{{addDisabled}}">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+Thêm sản phẩm</button>
+<span class="muted" style="font-size: 13px">{{prodCount}}</span>
+</div>
+</div>
+
+
+<div role="group" class="np" aria-label="Cách xem kết quả" style="display: flex; align-items: center; gap: 10px 14px; flex-wrap: wrap; margin-top: 8px">
+<span class="muted" style="font-size: 14px; white-space: nowrap">Xem kết quả</span>
+<div style="display: flex; flex: 1 1 340px; max-width: 560px; padding-left: 1px">
+<button type="button" class="{{modeBasicCls}}" aria-pressed="{{modeBasicPressed}}" onClick="{{setBasic}}">Tổng hợp</button>
+<button type="button" class="{{modeProCls}}" aria-pressed="{{modeProPressed}}" onClick="{{setPro}}">Chi tiết theo BCTC</button>
+</div>
+</div>
+
+
+<template data-if="isBasic">
+<div style="display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; padding: 16px 0; border-top: 1.5px solid var(--ink); border-bottom: 1px solid var(--rule)">
+<div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap">
+<span class="mono" style="font-size: 12px; color: var(--ink2)">KẾT QUẢ</span>
+<h3 class="h3">Kế hoạch {{per.label}}</h3>
+</div>
+<div role="group" class="np" aria-label="Xem kết quả theo năm hoặc theo tháng" style="display: flex; align-items: center; gap: 12px">
+<span class="muted" style="font-size: 14px">Xem số</span>
+<div style="display: flex; min-width: 260px; padding-left: 1px">
+<button type="button" class="{{per.yCls}}" aria-pressed="{{per.yPressed}}" onClick="{{per.setY}}">Theo năm</button>
+<button type="button" class="{{per.mCls}}" aria-pressed="{{per.mPressed}}" onClick="{{per.setM}}">Theo tháng</button>
+</div>
+</div>
+</div>
+
+<div class="g-res">
+<div class="box" style="padding: 24px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 14px">
+<h3 class="h3">Kế hoạch kết quả kinh doanh năm 2027</h3>
+<span class="mono muted" style="font-size: 12px">Theo mẫu B02-DN · ĐVT: đồng</span>
+</div>
+<div class="scroll">
+<table class="lg">
+<caption class="sr">Kế hoạch kết quả kinh doanh năm 2027 theo mẫu B02-DN</caption>
+<thead><tr><th style="width: 88px">Mã số</th><th>Chỉ tiêu</th><th class="r">Mỗi tháng</th><th class="r">Cả năm 2027</th></tr></thead>
+<tbody>
+<template data-for="b02" data-as="r">
+<tr class="{{r.cls}}">
+<td class="code">{{r.code}}</td>
+<td style="font-size: 15px">{{r.label}}</td>
+<td class="num n">{{r.m}}</td>
+<td class="num n">{{r.y}}</td>
+</tr>
+</template>
+</tbody>
+</table>
+</div>
+<p class="muted" style="font-size: 13px; margin-top: 14px">Thuế GTGT không có trong báo cáo này vì đó là tiền thu hộ của khách, không phải chi phí của doanh nghiệp. Mỗi tháng là bình quân; muốn chia theo mùa vụ hoặc khóa tháng đã xong, chọn “Chi tiết theo BCTC” ở trên.</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div class="g-tiles box">
+<div style="padding: 16px 18px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule)">
+<p style="font-size: 13px; color: var(--ink2)">Lợi nhuận sau thuế muốn có</p>
+<p class="mono" style="font-size: 28px; font-weight: 600; color: var(--green); line-height: 1.2">{{per.lnstS}}</p>
+<p style="font-size: 12px; color: var(--ink2)">{{per.label}}</p>
+</div>
+<div style="padding: 16px 18px; border-bottom: 1px solid var(--rule)">
+<p style="font-size: 13px; color: var(--ink2)">Doanh thu cần đạt</p>
+<p class="mono" style="font-size: 28px; font-weight: 600; line-height: 1.2">{{per.dtS}}</p>
+<p style="font-size: 12px; color: var(--ink2)">{{per.label}}</p>
+</div>
+<div style="padding: 16px 18px; border-right: 1px solid var(--rule)">
+<p style="font-size: 13px; color: var(--ink2)">Chi phí được phép tiêu</p>
+<p class="mono" style="font-size: 28px; font-weight: 600; line-height: 1.2">{{per.cpS}}</p>
+<p style="font-size: 12px; color: var(--ink2)">{{per.label}} · {{k.cpPct}} doanh thu</p>
+</div>
+<div style="padding: 16px 18px">
+<p style="font-size: 13px; color: var(--ink2)">Lợi nhuận trước thuế</p>
+<p class="mono" style="font-size: 28px; font-weight: 600; line-height: 1.2">{{per.lnttS}}</p>
+<p style="font-size: 12px; color: var(--ink2)">{{per.label}}</p>
+</div>
+</div>
+<div class="box" style="padding: 14px 18px">
+<p class="mono" style="font-size: 11px; letter-spacing: .12em; color: var(--ink2); margin-bottom: 8px">QUY RA MỖI NGÀY BÁN · {{days}} NGÀY/THÁNG</p>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 15px">
+<div style="display: flex; align-items: baseline"><span>Doanh thu cần đạt mỗi ngày</span><span class="leader"></span><span class="num" style="font-weight: 600">{{k.dtDayS}}</span></div>
+<div style="display: flex; align-items: baseline"><span>Sản phẩm phải bán mỗi ngày</span><span class="leader"></span><span class="num" style="font-weight: 600">{{k.qdT}}</span></div>
+</div>
+</div>
+</div>
+</div>
+
+<div>
+<div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 6px">
+<h3 class="h3">Thuế phải nộp {{per.label}}: hai loại, hai bản chất</h3>
+</div>
+<p class="muted" style="font-size: 15px; margin-bottom: 16px; max-width: 860px">Thuế TNDN là chi phí thật, làm giảm lợi nhuận. Thuế GTGT là tiền khách hàng trả thêm khi mua, doanh nghiệp thu hộ rồi nộp lại. Đọc riêng từng loại.</p>
+<div class="g-tax">
+<div style="border: 3px double var(--red); padding: 5px; background: var(--paper); display: flex">
+<div style="border: 1px solid var(--red); padding: 22px 24px; display: flex; flex-direction: column; gap: 14px; flex: 1 1 auto">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px">
+<div>
+<p class="mono red" style="font-size: 13px; font-weight: 700; letter-spacing: .12em">1 · THUẾ TNDN PHẢI NỘP</p>
+<p style="font-size: 14px; font-weight: 600; margin-top: 6px">Chi phí thật của doanh nghiệp, trừ thẳng vào lợi nhuận</p>
+</div>
+<span aria-hidden="true" class="mono red" style="font-size: 10px; font-weight: 700; letter-spacing: .1em; border: 1.5px solid var(--red); border-radius: 50%; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; transform: rotate(-12deg); flex: none; text-align: center; line-height: 1.1">KẾ<br>HOẠCH</span>
+</div>
+<p style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap"><span class="num red stampnum" style="font-size: 46px; font-weight: 700; letter-spacing: -.02em; line-height: 1.05">{{per.thueF}}</span><span class="red" style="font-size: 15px; font-weight: 600">đồng · {{per.label}}</span></p>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; border-top: 1px solid var(--red); padding-top: 14px">
+<div style="display: flex; align-items: baseline"><span>Lợi nhuận trước thuế</span><span class="leader"></span><span class="num">{{per.lnttF}}</span></div>
+<div style="display: flex; align-items: baseline"><span>× Thuế suất TNDN</span><span class="leader"></span><span class="num">{{tndnLabel}}</span></div>
+<div style="display: flex; align-items: baseline"><span class="red" style="font-weight: 600">= Thuế TNDN phải nộp</span><span class="leader"></span><span class="num red" style="font-weight: 700">{{per.thueF}}</span></div>
+<div style="display: flex; align-items: baseline; padding-top: 8px; border-top: 1px solid var(--rule)"><span style="font-weight: 600">Lợi nhuận sau thuế còn lại</span><span class="leader"></span><span class="num" style="font-weight: 700; color: var(--green); border-bottom: 3px double var(--green)">{{per.lnstF}}</span></div>
+</div>
+</div>
+</div>
+
+<div style="border: 1px solid var(--red); background: var(--paper); padding: 28px 30px; display: flex; flex-direction: column; gap: 14px">
+<div>
+<p class="mono red" style="font-size: 13px; font-weight: 700; letter-spacing: .12em">2 · THUẾ GTGT PHẢI NỘP</p>
+<p style="font-size: 14px; font-weight: 600; margin-top: 6px">Tiền thu hộ của khách hàng, không trừ vào lợi nhuận</p>
+</div>
+<p style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-top: 8px"><span class="num red stampnum" style="font-size: 46px; font-weight: 700; letter-spacing: -.02em; line-height: 1.05">{{per.vatF}}</span><span class="red" style="font-size: 15px; font-weight: 600">đồng · {{per.label}}</span></p>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; border-top: 1px solid var(--red); padding-top: 14px">
+<div style="display: flex; align-items: baseline"><span>Khách trả thêm khi mua hàng <span class="muted">(đầu ra, {{vatLabel}} doanh thu)</span></span><span class="leader"></span><span class="num">{{per.vatOutF}}</span></div>
+<div style="display: flex; align-items: baseline"><span>− Đã trả khi mua vào <span class="muted">(đầu vào, {{vatLabel}} × {{inPct}}% chi phí)</span></span><span class="leader"></span><span class="num">{{per.vatInF}}</span></div>
+<div style="display: flex; align-items: baseline"><span class="red" style="font-weight: 600">= Thuế GTGT phải nộp</span><span class="leader"></span><span class="num red" style="font-weight: 700; border-bottom: 3px double var(--red)">{{per.vatF}}</span></div>
+<p class="muted" style="font-size: 13px; padding-top: 8px; border-top: 1px solid var(--rule)">Khoản này nằm ngoài báo cáo kết quả kinh doanh: lợi nhuận sau thuế {{per.lnstS}} không bị trừ đi số này.</p>
+</div>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px 24px; flex-wrap: wrap; padding: 14px 18px; border: 1px dashed var(--rule2); margin-top: 16px">
+<span class="mono" style="font-size: 11px; letter-spacing: .14em; font-weight: 600; color: var(--ink2); border: 1px solid var(--rule2); padding: 4px 8px">DÒNG TIỀN</span>
+<p style="flex: 1 1 520px; font-size: 14px">Tiền mặt cần chuẩn bị để nộp cả hai loại thuế {{per.label}}: <span class="mono red" style="font-weight: 700">{{per.taxF}}</span>. Đừng so số tổng này với lợi nhuận: chỉ thuế TNDN làm giảm lợi nhuận.</p>
+</div>
+</div>
+</div>
+</template>
+
+
+<template data-if="isPro">
+<div class="g-split g-split2">
+<div class="box" style="padding: 24px">
+<div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px">
+<span class="mono" style="font-size: 12px; color: var(--ink2)">KHỐI 3</span>
+<h3 class="h3">Tách % chi phí</h3>
+</div>
+<p class="muted" style="font-size: 13px; margin-bottom: 14px">Tất cả tính theo % doanh thu. Mức chi phí đã đặt ở bảng sản phẩm (ví dụ 65%) được chia thành giá vốn, chi phí bán hàng, phần còn lại là chi phí quản lý; ba khoản cộng lại đúng bằng mức đó. Phần còn lại của doanh thu là lợi nhuận trước thuế. Tổng chi phí vượt mức đã đặt thì tô đỏ.</p>
+<div class="scroll">
+<table class="lg" style="min-width: 540px">
+<caption class="sr">Tách phần trăm chi phí theo sản phẩm, tính trên doanh thu</caption>
+<thead><tr><th rowspan="2">Sản phẩm</th><th colspan="6" class="grp" style="text-align: center">% trên doanh thu</th></tr><tr><th class="r" style="width: 72px">Giá vốn</th><th class="r" style="width: 72px">Bán hàng</th><th class="r" style="width: 66px">Quản lý</th><th class="r" style="width: 78px">Tổng chi phí</th><th class="r" style="width: 86px">Lợi nhuận trước thuế</th><th class="r" style="width: 76px; border-left: 1px solid var(--rule)">Doanh thu</th></tr></thead>
+<tbody>
+<template data-for="prows" data-as="p">
+<tr>
+<td style="font-weight: 600">{{p.name}}</td>
+<td class="ci"><input class="tin num" inputmode="numeric" aria-label="Giá vốn phần trăm, {{p.name}}" value="{{p.gvF}}" onChange="{{p.setGv}}" style="text-align: right"></td>
+<td class="ci"><input class="tin num" inputmode="numeric" aria-label="Chi phí bán hàng phần trăm, {{p.name}}" value="{{p.bhF}}" onChange="{{p.setBh}}" style="text-align: right"></td>
+<td class="num" style="font-weight: 600">{{p.qlF}}</td>
+<td class="{{p.totCls}}" style="font-weight: 700">{{p.totF}}<span class="muted" style="display: block; font-size: 11px; font-weight: 400">{{p.capF}}</span></td>
+<td class="{{p.ltCls}}" style="font-weight: 700">{{p.ltF}}</td>
+<td class="num" style="font-weight: 700; border-left: 1px solid var(--rule)">{{p.dtPctF}}</td>
+</tr>
+</template>
+</tbody>
+</table>
+</div>
+<template data-if="hasCpOver"><p role="status" style="margin-top: 14px; font-size: 13px; font-weight: 600; color: var(--red); padding: 8px 12px; border: 1.5px solid var(--red); background: var(--redsoft)">{{cpOverText}}</p></template>
+</div>
+<div class="box" style="padding: 24px">
+<div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px">
+<span class="mono" style="font-size: 12px; color: var(--ink2)">KHỐI 5</span>
+<h3 class="h3">Thuế phải nộp theo quý</h3>
+</div>
+<p class="muted" style="font-size: 13px; margin-bottom: 14px">Cộng từ bảng B02-DN 12 tháng bên dưới, đã tính % hoàn thành kế hoạch từng tháng và các tháng đã khóa.</p>
+<div class="scroll">
+<table class="lg" style="min-width: 600px">
+<caption class="sr">Thuế phải nộp theo quý năm 2027</caption>
+<thead><tr><th>Loại thuế</th><th class="r">Quý I</th><th class="r">Quý II</th><th class="r">Quý III</th><th class="r">Quý IV</th><th class="r">Cả năm</th></tr></thead>
+<tbody>
+<template data-for="qrows" data-as="r">
+<tr class="{{r.cls}}">
+<td>{{r.label}}</td>
+<template data-for="r.cells" data-as="c"><td class="num n red">{{c.v}}</td></template>
+<td class="num n red" style="font-weight: 700">{{r.y}}</td>
+</tr>
+</template>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div class="box" style="padding: 24px 0 24px 24px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px; margin-bottom: 6px; padding-right: 24px; flex-wrap: wrap">
+<div style="display: flex; align-items: baseline; gap: 14px">
+<span class="mono" style="font-size: 12px; color: var(--ink2)">KHỐI 4</span>
+<h3 class="h3">Kết quả kinh doanh 2027 theo tháng · B02-DN</h3>
+</div>
+<span class="mono muted" style="font-size: 12px">ĐVT: đồng · 100% = đúng mức trung bình tháng</span>
+</div>
+<p class="muted" style="font-size: 13px; margin-bottom: 14px; padding-right: 24px">Hàng đầu là % hoàn thành kế hoạch của từng tháng: 100 là đạt đúng mức trung bình (cả năm chia 12), tháng bán chạy điền lớn hơn 100, tháng thấp điểm điền nhỏ hơn. Tháng nào đã xong thì bấm Khóa để giữ nguyên số liệu. Khi sửa % các tháng còn lại, chỉ tháng chưa khóa đổi số, tổng cả năm vẫn đúng mục tiêu.</p>
+<template data-if="hasLockWarn"><p role="status" style="font-size: 13px; font-weight: 600; padding: 8px 12px; margin: 0 24px 14px 0; border: 1.5px dashed var(--ink)">{{lockWarn}}</p></template>
+<div class="scroll" style="padding-right: 24px">
+<table class="lg" style="min-width: 1640px">
+<caption class="sr">Báo cáo kết quả kinh doanh kế hoạch 12 tháng năm 2027</caption>
+<thead>
+<tr>
+<th class="stk" style="width: 330px; min-width: 330px">Mã số · Chỉ tiêu</th>
+<template data-for="monthHeads" data-as="mh"><th class="r {{mh.cls}}" style="min-width: 104px">{{mh.l}}</th></template>
+<th class="r" style="min-width: 128px; border-left: 1px solid var(--rule)">Cả năm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="stk" style="background: var(--cell); font-weight: 600; box-shadow: inset -1px 0 0 var(--rule)">% hoàn thành kế hoạch</td>
+<template data-for="seasonCells" data-as="s"><td class="ci {{s.cls}}"><input class="tin num" inputmode="numeric" aria-label="% hoàn thành kế hoạch {{s.l}}" disabled="{{s.locked}}" value="{{s.v}}" onChange="{{s.set}}" style="text-align: right"></td></template>
+<td class="num" style="border-left: 1px solid var(--rule); font-weight: 600">{{lockNote}}</td>
+</tr>
+<tr class="np">
+<td class="stk" style="background: var(--paper); font-weight: 600; box-shadow: inset -1px 0 0 var(--rule)">Khóa số liệu <span class="muted" style="font-weight: 400; font-size: 12px">(tháng đã xong)</span></td>
+<template data-for="seasonCells" data-as="s"><td class="{{s.cls}}"><button type="button" class="{{s.lkCls}}" aria-pressed="{{s.lkPressed}}" aria-label="{{s.lkAria}}" onClick="{{s.toggle}}">{{s.lkLabel}}</button></td></template>
+<td></td>
+</tr>
+<template data-for="b02m" data-as="r">
+<tr class="{{r.cls}}">
+<td class="stk" style="box-shadow: inset -1px 0 0 var(--rule)"><span class="code" style="display: inline-block; width: 34px">{{r.code}}</span>{{r.label}}</td>
+<template data-for="r.cells" data-as="c"><td class="num n {{c.cls}}">{{c.v}}</td></template>
+<td class="num n" style="border-left: 1px solid var(--rule)">{{r.y}}</td>
+</tr>
+</template>
+<tr>
+<td class="stk red" style="font-weight: 600; box-shadow: inset -1px 0 0 var(--rule); border-top: 1px solid var(--ink)">Thuế GTGT phải nộp</td>
+<template data-for="vatCells" data-as="c"><td class="num red {{c.cls}}" style="border-top: 1px solid var(--ink)">{{c.v}}</td></template>
+<td class="num red" style="border-left: 1px solid var(--rule); border-top: 1px solid var(--ink); font-weight: 700">{{k.vatYF}}</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</template>
+
+</div>
+</section>
+</template>
+
+
+<template data-if="showAll">
+<section id="ban-do" class="sect pb" style="padding-top: 80px; padding-bottom: 80px; border-top: 1px solid var(--rule2)">
+<div class="wrap">
+<div class="g-hero" style="margin-bottom: 36px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p class="kicker">§ 02 · Bản đồ chiến lược</p>
+<h2 class="h2">Con số này nằm ở đâu trên bản đồ chiến lược?</h2>
+</div>
+<p style="font-size: 17px; line-height: 1.6; max-width: 480px; padding-bottom: 4px">Đọc từ dưới lên: con người vận hành quy trình, quy trình phục vụ khách hàng, khách hàng tạo ra tài chính.</p>
+</div>
+
+<div style="display: flex; flex-direction: column">
+<div class="g-tier" style="padding: 28px; border: 2px solid var(--green); background: var(--paper)">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<p class="mono" style="font-size: 12px; letter-spacing: .1em; color: var(--ink2)">TẦNG 4</p>
+<h3 class="disp" style="margin: 0; font-size: 40px; line-height: 1; font-weight: 600; color: var(--green)">Tài chính</h3>
+<p class="muted" style="font-size: 13px">Số chạy theo bảng tính, {{per.label}} · Buổi Z2, Z4</p>
+</div>
+<div class="g-fin" style="border-top: 1px solid var(--rule); border-left: 1px solid var(--rule)">
+<div style="padding: 14px 16px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule)">
+<p style="font-size: 13px; color: var(--ink2)">Tiền muốn có</p>
+<p class="mono" style="font-size: 30px; font-weight: 700; color: var(--green); line-height: 1.2">{{per.lnstS}}</p>
+<p style="font-size: 12px; color: var(--ink2)">sau thuế, {{per.label}}</p>
+</div>
+<div style="padding: 14px 16px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule)">
+<p style="font-size: 13px; color: var(--ink2)">Doanh thu cần đạt</p>
+<p class="mono" style="font-size: 30px; font-weight: 700; line-height: 1.2">{{per.dtS}}</p>
+<p style="font-size: 12px; color: var(--ink2)">{{per.label}}, bán <span class="mono">{{per.qtyF}}</span> sản phẩm</p>
+</div>
+<div style="padding: 14px 16px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule)">
+<p style="font-size: 13px; color: var(--ink2)">Chi phí giữ ở mức</p>
+<p class="mono" style="font-size: 30px; font-weight: 700; line-height: 1.2">{{k.cpPct}}</p>
+<p style="font-size: 12px; color: var(--ink2)">doanh thu, tức <span class="mono">{{per.cpS}}</span> {{per.label}}</p>
+</div>
+<div style="padding: 14px 16px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule)">
+<p style="font-size: 13px; color: var(--red); font-weight: 600">Thuế TNDN phải nộp</p>
+<p class="mono red" style="font-size: 30px; font-weight: 700; line-height: 1.2">{{per.thueS}}</p>
+<p style="font-size: 12px; color: var(--ink2)">{{per.label}} · thêm GTGT thu hộ <span class="mono red">{{per.vatS}}</span></p>
+</div>
+</div>
+</div>
+
+<div aria-hidden="true" style="display: flex; align-items: center; gap: 12px; height: 60px; padding-left: 40px; color: var(--green)">
+<svg width="20" height="52" viewBox="0 0 20 52" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 50V3M3 10l7-7 7 7"></path></svg>
+<span class="mono" style="font-size: 12px; letter-spacing: .14em; color: var(--ink2)">KHÁCH HÀNG TẠO RA TÀI CHÍNH</span>
+</div>
+
+<div class="g-tier" style="padding: 28px; border: 1px solid var(--rule2)">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<p class="mono" style="font-size: 12px; letter-spacing: .1em; color: var(--ink2)">TẦNG 3</p>
+<h3 class="disp" style="margin: 0; font-size: 32px; line-height: 1; font-weight: 600">Khách hàng</h3>
+<p class="muted" style="font-size: 13px">Các đòn bẩy doanh số · Buổi Z2</p>
+<p class="muted" style="font-size: 13px; margin-top: 10px">Tính ngược từ doanh thu và lợi nhuận ở tầng Tài chính. Số tính cho cả năm 2027.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 18px; min-width: 0">
+<div class="g-fwctl np">
+<div>
+<label class="flab" for="fw-ind">Ngành (gợi ý tỷ lệ chốt và số lần mua lại)</label>
+<select id="fw-ind" class="inp" value="{{fw.ind}}" onChange="{{fw.setInd}}">
+<template data-for="fw.inds" data-as="o"><option value="{{o.id}}">{{o.label}}</option></template>
+</select>
+<span class="fhint">Số gợi ý để bắt đầu, sửa theo thực tế doanh nghiệp</span>
+</div>
+<fieldset class="fs">
+<legend class="flab">Ô cần tính ngược</legend>
+<div style="display: flex; flex-wrap: wrap; padding-left: 1px">
+<template data-for="fw.modes" data-as="m"><button type="button" class="{{m.cls}}" aria-pressed="{{m.pressed}}" onClick="{{m.pick}}" style="flex: 1 1 110px">{{m.label}}</button></template>
+</div>
+<span class="fhint">Các ô còn lại anh chị điền</span>
+</fieldset>
+</div>
+
+<div class="guide np">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap">
+<p class="mono" style="font-size: 11px; letter-spacing: .12em; font-weight: 700; color: var(--green)">BẢNG NÀY CHẠY THẾ NÀO</p>
+<button type="button" class="btn sec sm" style="min-height: 36px; padding: 0 12px; font-size: 13px" aria-expanded="{{guideOpenS}}" aria-controls="fw-guide" onClick="{{toggleGuide}}">{{guideBtn}}</button>
+</div>
+<template data-if="guideOpen"><div id="fw-guide">
+<ol class="gsteps">
+<li><strong>Đọc từ trên xuống như một chuỗi phép nhân.</strong> Khách tiềm năng × tỷ lệ chốt = số khách mua. Số khách × số lần mua = số đơn. Số đơn × số sản phẩm mỗi đơn = số sản phẩm cần bán. Nhân tiếp đơn giá ra doanh thu, nhân biên lợi nhuận ra lợi nhuận sau thuế.</li>
+<li><strong>Ba dòng cuối đã chốt theo mục tiêu.</strong> Số sản phẩm cần bán, doanh thu và lợi nhuận lấy từ bảng tính phía trên nên không đổi ở đây. Đơn giá và biên lợi nhuận cũng lấy từ bảng sản phẩm. Muốn đổi, sửa ở Khối 2.</li>
+<li><strong>Chọn một ô cho bảng tính ngược, ba ô xám còn lại anh chị điền theo thực tế.</strong> Ô tính ngược có nền xanh và chữ TÍNH NGƯỢC. Ví dụ: đã biết mỗi năm tiếp cận được bao nhiêu khách tiềm năng thì chọn “Tỷ lệ chốt” để biết cần chốt bao nhiêu phần trăm.</li>
+</ol>
+<p class="flab" style="margin: 14px 0 6px">Thử đổi một ô, tính theo đúng số đang có trên bảng (ô tính ngược: {{fw.solvedLabel}})</p>
+<ul class="gex">
+<template data-for="fw.examples" data-as="x"><li><span class="mono" aria-hidden="true" style="color: var(--green); font-weight: 700">→</span><span>{{x.t}}</span></li></template>
+</ul>
+<p class="muted" style="font-size: 13px; margin-top: 8px">Mục tiêu đã cố định, nên một đòn bẩy tăng thì ô tính ngược giảm: cùng lợi nhuận nhưng cần ít khách hơn, hoặc chốt ít hơn.</p>
+</div></template>
+</div>
+
+<div class="box" style="padding: 4px 18px">
+<template data-for="fw.rows" data-as="r">
+<div class="g-fw {{r.cls}}">
+<span class="mono" aria-hidden="true" style="font-size: 18px; color: var(--ink2); text-align: center">{{r.op}}</span>
+<div style="min-width: 0"><p class="lbl" style="font-size: 15px; line-height: 1.35">{{r.label}}</p><p class="muted" style="font-size: 12px; line-height: 1.35">{{r.sub}}</p></div>
+<div style="display: flex; flex-direction: column; align-items: flex-end">
+<template data-if="r.isIn"><input class="inp num" inputmode="decimal" aria-label="{{r.label}}" value="{{r.raw}}" onChange="{{r.set}}" style="text-align: right; max-width: 170px; min-height: 40px; padding: 8px 10px"></template>
+<template data-if="r.isOut"><span class="num v" style="font-size: 17px; font-weight: 700">{{r.val}}</span></template>
+<template data-if="r.solved"><span class="mono" style="font-size: 10px; letter-spacing: .12em; font-weight: 700; color: var(--green)">TÍNH NGƯỢC</span></template>
+</div>
+</div>
+</template>
+</div>
+<template data-if="fw.hasWarn"><p role="status" style="font-size: 14px; font-weight: 600; padding: 10px 14px; border: 1.5px dashed var(--ink)">{{fw.warn}}</p></template>
+<p class="muted" style="font-size: 13px">{{fw.note}}</p>
+
+</div>
+</div>
+
+<div aria-hidden="true" style="display: flex; align-items: center; gap: 12px; height: 60px; padding-left: 40px; color: var(--green)">
+<svg width="20" height="52" viewBox="0 0 20 52" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 50V3M3 10l7-7 7 7"></path></svg>
+<span class="mono" style="font-size: 12px; letter-spacing: .14em; color: var(--ink2)">QUY TRÌNH PHỤC VỤ KHÁCH HÀNG</span>
+</div>
+
+<div class="g-tier" style="padding: 28px; border: 1px solid var(--rule2)">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<p class="mono" style="font-size: 12px; letter-spacing: .1em; color: var(--ink2)">TẦNG 2</p>
+<h3 class="disp" style="margin: 0; font-size: 32px; line-height: 1; font-weight: 600">Quy trình</h3>
+<p class="muted" style="font-size: 13px">Buổi Z3</p>
+<p class="muted np" style="font-size: 13px; margin-top: 10px">Tick những quy trình doanh nghiệp áp dụng. Việc đã tick mới in vào báo cáo.</p>
+</div>
+<div class="g-form" style="gap: 28px 32px">
+<template data-for="procGroups" data-as="g">
+<div style="border-top: 1.5px solid var(--ink); padding-top: 12px; min-width: 0">
+<p class="mono" style="font-size: 11px; letter-spacing: .12em; font-weight: 700; color: var(--green)">{{g.title}}</p>
+<p class="muted" style="font-size: 13px; margin: 2px 0 6px">{{g.sub}}</p>
+<template data-for="g.items" data-as="it">
+<div class="li {{it.cls}}">
+<input type="checkbox" class="chk np" id="{{it.uid}}" checked="{{it.on}}" onChange="{{it.toggle}}">
+<label for="{{it.uid}}" style="cursor: pointer; min-width: 0"><span style="display: block; font-weight: 600; font-size: 15px; line-height: 1.35">{{it.title}}</span><span class="muted" style="display: block; font-size: 13px; line-height: 1.4">{{it.metric}}</span></label>
+<button type="button" class="ibtn np" style="width: 32px; height: 32px; border-color: transparent" aria-label="Xóa việc {{it.title}}" onClick="{{it.remove}}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</div>
+</template>
+<div class="np" style="display: flex; gap: 8px; margin-top: 10px">
+<input class="inp" style="min-height: 40px; font-size: 14px; padding: 8px 10px" placeholder="{{g.ph}}" aria-label="Thêm việc vào {{g.title}}" value="{{g.draft}}" onChange="{{g.setDraft}}">
+<button type="button" class="btn sec sm" style="min-height: 40px" onClick="{{g.add}}">Thêm</button>
+</div>
+<template data-if="g.hasGone"><button type="button" class="nl np" style="background: none; border: 0; cursor: pointer; font-size: 13px; padding: 8px 0 0; text-decoration: underline; text-underline-offset: 4px" onClick="{{g.restore}}">{{g.goneLabel}}</button></template>
+</div>
+</template>
+</div>
+</div>
+
+<div aria-hidden="true" style="display: flex; align-items: center; gap: 12px; height: 60px; padding-left: 40px; color: var(--green)">
+<svg width="20" height="52" viewBox="0 0 20 52" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 50V3M3 10l7-7 7 7"></path></svg>
+<span class="mono" style="font-size: 12px; letter-spacing: .14em; color: var(--ink2)">CON NGƯỜI VẬN HÀNH QUY TRÌNH</span>
+</div>
+
+<div class="g-tier" style="padding: 28px; border: 1px solid var(--rule2)">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<p class="mono" style="font-size: 12px; letter-spacing: .1em; color: var(--ink2)">TẦNG 1 · NỀN MÓNG</p>
+<h3 class="disp" style="margin: 0; font-size: 32px; line-height: 1; font-weight: 600">Con người</h3>
+<p class="muted" style="font-size: 13px">Buổi Z3, Z5</p>
+<p class="muted" style="font-size: 13px; margin-top: 10px">Chủ và kế toán cùng một tiếng nói: chủ đặt câu hỏi bằng khung chiến lược, kế toán trả lời bằng con số.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 28px; min-width: 0">
+<div>
+<p class="disp" style="font-size: 22px; font-weight: 600; margin-bottom: 10px">Đào tạo · Người làm được việc thì quy trình mới chạy</p>
+<div class="g-dmo">
+<template data-for="trainGroups" data-as="g">
+<div style="border-top: 1.5px solid var(--ink); padding-top: 12px; min-width: 0">
+<p class="mono" style="font-size: 11px; letter-spacing: .12em; font-weight: 700; color: var(--green)">{{g.title}}</p>
+<p class="muted" style="font-size: 13px; margin: 2px 0 6px">{{g.sub}}</p>
+<template data-for="g.items" data-as="it">
+<div class="li {{it.cls}}">
+<input type="checkbox" class="chk np" id="{{it.uid}}" checked="{{it.on}}" onChange="{{it.toggle}}">
+<label for="{{it.uid}}" style="cursor: pointer; min-width: 0"><span style="display: block; font-weight: 600; font-size: 15px; line-height: 1.35">{{it.title}}</span><span class="muted" style="display: block; font-size: 13px; line-height: 1.4">{{it.metric}}</span></label>
+<button type="button" class="ibtn np" style="width: 32px; height: 32px; border-color: transparent" aria-label="Xóa việc {{it.title}}" onClick="{{it.remove}}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</div>
+</template>
+<div class="np" style="display: flex; gap: 8px; margin-top: 10px">
+<input class="inp" style="min-height: 40px; font-size: 14px; padding: 8px 10px" placeholder="{{g.ph}}" aria-label="Thêm việc vào {{g.title}}" value="{{g.draft}}" onChange="{{g.setDraft}}">
+<button type="button" class="btn sec sm" style="min-height: 40px" onClick="{{g.add}}">Thêm</button>
+</div>
+<template data-if="g.hasGone"><button type="button" class="nl np" style="background: none; border: 0; cursor: pointer; font-size: 13px; padding: 8px 0 0; text-decoration: underline; text-underline-offset: 4px" onClick="{{g.restore}}">{{g.goneLabel}}</button></template>
+</div>
+</template>
+</div>
+</div>
+<div>
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 10px">
+<p class="disp" style="font-size: 22px; font-weight: 600">DMO · Là những việc hằng ngày phải hướng đến mục tiêu</p>
+<p class="muted" style="font-size: 13px">Tính theo {{days}} ngày bán mỗi tháng</p>
+</div>
+<div class="g-dmo">
+<template data-for="dmoGroups" data-as="g">
+<div style="border-top: 1.5px solid var(--ink); padding-top: 12px; min-width: 0">
+<p class="mono" style="font-size: 11px; letter-spacing: .12em; font-weight: 700; color: var(--green)">{{g.title}}</p>
+<p class="muted" style="font-size: 13px; margin: 2px 0 6px">{{g.sub}}</p>
+<template data-for="g.items" data-as="it">
+<div class="li {{it.cls}}">
+<input type="checkbox" class="chk np" id="{{it.uid}}" checked="{{it.on}}" onChange="{{it.toggle}}">
+<label for="{{it.uid}}" style="cursor: pointer; min-width: 0"><span style="display: block; font-weight: 600; font-size: 15px; line-height: 1.35">{{it.title}}</span><span class="muted" style="display: block; font-size: 13px; line-height: 1.4">{{it.metric}}</span></label>
+<button type="button" class="ibtn np" style="width: 32px; height: 32px; border-color: transparent" aria-label="Xóa việc {{it.title}}" onClick="{{it.remove}}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</div>
+</template>
+<div class="np" style="display: flex; gap: 8px; margin-top: 10px">
+<input class="inp" style="min-height: 40px; font-size: 14px; padding: 8px 10px" placeholder="{{g.ph}}" aria-label="Thêm việc vào {{g.title}}" value="{{g.draft}}" onChange="{{g.setDraft}}">
+<button type="button" class="btn sec sm" style="min-height: 40px" onClick="{{g.add}}">Thêm</button>
+</div>
+<template data-if="g.hasGone"><button type="button" class="nl np" style="background: none; border: 0; cursor: pointer; font-size: 13px; padding: 8px 0 0; text-decoration: underline; text-underline-offset: 4px" onClick="{{g.restore}}">{{g.goneLabel}}</button></template>
+</div>
+</template>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="np" style="margin-top: 40px; padding: 28px; border: 1px solid var(--rule2); background: var(--paper); display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<p class="kicker">Hướng dẫn</p>
+<h3 class="disp" style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 600">Cách đọc bản đồ chiến lược</h3>
+</div>
+<button type="button" class="btn sec sm" style="min-height: 36px; padding: 0 12px; font-size: 13px" aria-expanded="{{mapReadOpenS}}" aria-controls="map-read" onClick="{{toggleMapRead}}">{{mapReadBtn}}</button>
+</div>
+<template data-if="mapReadOpen"><div id="map-read" style="display: flex; flex-direction: column; gap: 22px">
+<p style="font-size: 16px; line-height: 1.6; max-width: 860px">Bốn tầng nối với nhau bằng quan hệ nhân quả: tầng dưới là nguyên nhân, tầng trên là kết quả. Đọc theo hai chiều: từ trên xuống để lập kế hoạch, từ dưới lên để làm và kiểm tra.</p>
+<div class="g-read">
+<div>
+<p class="mono" style="font-size: 12px; letter-spacing: .12em; font-weight: 700; color: var(--green)">↓ TỪ TRÊN XUỐNG · LẬP KẾ HOẠCH</p>
+<ol class="rsteps">
+<li><b>Tài chính</b><span>Chốt số tiền muốn có sau thuế. Bảng tính ra doanh thu cần đạt, chi phí được tiêu và thuế phải nộp.</span></li>
+<li><b>Khách hàng</b><span>Hỏi doanh thu đó đến từ đâu: bao nhiêu khách tiềm năng, chốt được bao nhiêu phần trăm, mỗi khách mua mấy lần, mỗi đơn mấy sản phẩm.</span></li>
+<li><b>Quy trình</b><span>Hỏi doanh nghiệp phải làm những việc gì để ra từng con số khách hàng đó, và để giữ chi phí trong ngân sách.</span></li>
+<li style="border-bottom: 1px solid var(--rule)"><b>Con người</b><span>Hỏi ai làm, cần đào tạo gì, và mỗi ngày mỗi người phải làm việc gì (DMO).</span></li>
+</ol>
+</div>
+<div>
+<p class="mono" style="font-size: 12px; letter-spacing: .12em; font-weight: 700; color: var(--green)">↑ TỪ DƯỚI LÊN · LÀM VÀ KIỂM TRA</p>
+<ol class="rsteps">
+<li><b>Con người</b><span>Mỗi người làm đủ việc DMO của mình mỗi ngày.</span></li>
+<li><b>Quy trình</b><span>Quy trình chạy đều thì ra đủ khách tiềm năng, đơn hàng, và chi phí nằm trong ngân sách.</span></li>
+<li><b>Khách hàng</b><span>Khách mua đủ số lần, đủ số sản phẩm mỗi đơn.</span></li>
+<li style="border-bottom: 1px solid var(--rule)"><b>Tài chính</b><span>Đạt doanh thu và lợi nhuận, có sẵn tiền nộp thuế đúng hạn. Số tầng trên không đạt thì tìm nguyên nhân ở tầng ngay bên dưới.</span></li>
+</ol>
+</div>
+</div>
+<div style="border-left: 3px solid var(--green); padding: 4px 0 4px 16px">
+<p class="mono" style="font-size: 11px; letter-spacing: .12em; color: var(--ink2); margin-bottom: 4px">VÍ DỤ VỚI SỐ ĐANG CÓ TRÊN TRANG</p>
+<p style="font-size: 15px; line-height: 1.6">Muốn có <span class="mono" style="font-weight: 700; color: var(--green)">{{mapEx.lnst}}</span> sau thuế cả năm → cần doanh thu <span class="mono" style="font-weight: 700">{{mapEx.dt}}</span> → bán <span class="mono" style="font-weight: 700">{{mapEx.qty}}</span> sản phẩm cho <span class="mono" style="font-weight: 700">{{mapEx.cust}}</span> khách → cần <span class="mono" style="font-weight: 700">{{mapEx.leads}}</span> khách tiềm năng nếu chốt được <span class="mono" style="font-weight: 700">{{mapEx.cr}}</span> → mỗi ngày người bán hàng tiếp cận <span class="mono" style="font-weight: 700">{{mapEx.leadsDay}}</span> khách tiềm năng mới.</p>
+</div>
+<div style="border-left: 3px solid var(--green); padding: 4px 0 4px 16px">
+<p class="mono" style="font-size: 11px; letter-spacing: .12em; color: var(--ink2); margin-bottom: 6px">CÁCH ĐỌC THỨ HAI</p>
+<p class="disp" style="font-size: 22px; line-height: 1.4; font-weight: 500">“Đào tạo con người để quản lý quy trình, tạo giá trị cho khách hàng, để khách hàng đồng ý trả tiền cho chúng ta.”</p>
+<p class="mono" style="font-size: 12px; letter-spacing: .08em; color: var(--green); font-weight: 600; margin-top: 8px">CON NGƯỜI → QUY TRÌNH → KHÁCH HÀNG → TÀI CHÍNH</p>
+</div>
+</div></template>
+</div>
+<div class="np" style="margin-top: 40px; padding: 22px 24px; border: 1.5px solid var(--green); background: var(--paper); display: flex; align-items: center; justify-content: space-between; gap: 16px 24px; flex-wrap: wrap">
+<div style="max-width: 780px">
+<p class="disp" style="font-size: 24px; font-weight: 600">In báo cáo kế hoạch 2027</p>
+<p class="muted" style="font-size: 14px; margin-top: 4px">Gồm kế hoạch kết quả kinh doanh và thuế, bản đồ chiến lược 4 tầng với các đòn bẩy doanh số, các quy trình, đào tạo và DMO đã tick. Trong hộp in, chọn “Lưu dưới dạng PDF” để lưu file. Họ tên và tên doanh nghiệp điền ở phần đăng ký sẽ in lên đầu báo cáo.</p>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px; max-width: 320px">
+<button type="button" class="btn pri" onClick="{{printReport}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2"></path><rect x="6" y="14" width="12" height="7"></rect></svg>In báo cáo / Lưu PDF</button>
+<p class="muted" style="font-size: 12.5px; line-height: 1.45; text-align: right">Dữ liệu chỉ lưu trên trình duyệt của bạn, tải lại trang dữ liệu sẽ về mặc định.</p>
+</div>
+</div>
+</div>
+</section>
+
+
+<section id="lo-trinh" class="sect np" style="padding-top: 80px; padding-bottom: 80px; border-top: 1px solid var(--rule2)">
+<div class="wrap">
+<div class="g-hero" style="margin-bottom: 36px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p class="kicker">§ 03 · Lộ trình</p>
+<h2 class="h2">Lộ trình 5 buổi zoom miễn phí</h2>
+</div>
+<p style="font-size: 17px; line-height: 1.6; max-width: 480px; padding-bottom: 4px">5 buổi Zoom miễn phí (8:00–10:00) và 2 ngày thực hành tại hội trường (thứ Bảy, Chủ nhật, 8:00–17:00).</p>
+</div>
+
+<div class="g-zoom">
+<article style="border: 1px solid var(--rule2); background: var(--paper); padding: 20px; display: flex; flex-direction: column; gap: 14px; min-height: 250px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px"><span class="mono" style="font-size: 30px; font-weight: 700; color: var(--green); line-height: 1">Z1</span><span class="mono" style="font-size: 11px; letter-spacing: .08em; color: var(--ink2)">ZOOM MIỄN PHÍ</span></div>
+<p class="disp" style="font-size: 20px; line-height: 1.3; font-weight: 500; flex: 1 1 auto">Bản đồ chiến lược là gì, giúp gì cho tôi?</p>
+<div style="border-top: 1px solid var(--rule); padding-top: 10px"><p class="mono" style="font-size: 10px; letter-spacing: .12em; color: var(--ink2)">TẦNG TRÊN BẢN ĐỒ</p><p style="font-size: 14px; font-weight: 600">Toàn cảnh 4 tầng của BĐCL</p></div>
+</article>
+<article style="border: 1px solid var(--rule2); background: var(--paper); padding: 20px; display: flex; flex-direction: column; gap: 14px; min-height: 250px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px"><span class="mono" style="font-size: 30px; font-weight: 700; color: var(--green); line-height: 1">Z2</span><span class="mono" style="font-size: 11px; letter-spacing: .08em; color: var(--ink2)">ZOOM MIỄN PHÍ</span></div>
+<p class="disp" style="font-size: 20px; line-height: 1.3; font-weight: 500; flex: 1 1 auto">Tôi muốn đạt gì, và tiền đến từ khách hàng nào?</p>
+<div style="border-top: 1px solid var(--rule); padding-top: 10px"><p class="mono" style="font-size: 10px; letter-spacing: .12em; color: var(--ink2)">TẦNG TRÊN BẢN ĐỒ</p><p style="font-size: 14px; font-weight: 600">Tài chính, Khách hàng</p></div>
+</article>
+<article style="border: 1px solid var(--rule2); background: var(--paper); padding: 20px; display: flex; flex-direction: column; gap: 14px; min-height: 250px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px"><span class="mono" style="font-size: 30px; font-weight: 700; color: var(--green); line-height: 1">Z3</span><span class="mono" style="font-size: 11px; letter-spacing: .08em; color: var(--ink2)">ZOOM MIỄN PHÍ</span></div>
+<p class="disp" style="font-size: 20px; line-height: 1.3; font-weight: 500; flex: 1 1 auto">Doanh nghiệp phải vận hành thế nào, ai làm?</p>
+<div style="border-top: 1px solid var(--rule); padding-top: 10px"><p class="mono" style="font-size: 10px; letter-spacing: .12em; color: var(--ink2)">TẦNG TRÊN BẢN ĐỒ</p><p style="font-size: 14px; font-weight: 600">Quy trình, Con người</p></div>
+</article>
+<article style="border: 1px solid var(--green); background: var(--gsoft); padding: 20px; display: flex; flex-direction: column; gap: 14px; min-height: 250px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px"><span class="mono" style="font-size: 30px; font-weight: 700; color: var(--green); line-height: 1">Z4</span><span class="mono" style="font-size: 11px; letter-spacing: .08em; color: var(--ink2)">ZOOM MIỄN PHÍ</span></div>
+<p class="disp" style="font-size: 20px; line-height: 1.3; font-weight: 500; flex: 1 1 auto">Module kế hoạch thuế phải nộp 2027</p>
+<a href="#bang-tinh" style="font-size: 13px; font-weight: 600">Chính là bảng tính trên trang này</a>
+<div style="border-top: 1px solid var(--rule2); padding-top: 10px"><p class="mono" style="font-size: 10px; letter-spacing: .12em; color: var(--ink2)">TẦNG TRÊN BẢN ĐỒ</p><p style="font-size: 14px; font-weight: 600">Tài chính (con số cụ thể)</p></div>
+</article>
+<article style="border: 1px solid var(--rule2); background: var(--paper); padding: 20px; display: flex; flex-direction: column; gap: 14px; min-height: 250px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px"><span class="mono" style="font-size: 30px; font-weight: 700; color: var(--green); line-height: 1">Z5</span><span class="mono" style="font-size: 11px; letter-spacing: .08em; color: var(--ink2)">ZOOM MIỄN PHÍ</span></div>
+<p class="disp" style="font-size: 20px; line-height: 1.3; font-weight: 500; flex: 1 1 auto">DMO Làm sao biến bản đồ thành việc mỗi ngày?</p>
+<div style="border-top: 1px solid var(--rule); padding-top: 10px"><p class="mono" style="font-size: 10px; letter-spacing: .12em; color: var(--ink2)">TẦNG TRÊN BẢN ĐỒ</p><p style="font-size: 14px; font-weight: 600">Chỉ số và hành động</p></div>
+</article>
+</div>
+
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; margin-top: 48px; margin-bottom: 16px; padding-top: 22px; border-top: 1px solid var(--rule2)">
+<h3 class="h2" style="margin: 0; line-height: 1.15">Lộ trình làm bài tập tại lớp offline</h3>
+<p class="mono" style="font-size: 12px; letter-spacing: .08em; color: var(--ink2)">2 NGÀY THỰC HÀNH · HỘI TRƯỜNG</p>
+</div>
+<div class="g-hall">
+<article style="border: 2.5px solid var(--ink); background: var(--paper); padding: 26px 28px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap"><span class="disp" style="font-size: 36px; font-weight: 600; line-height: 1">Ngày 1</span><span class="mono" style="font-size: 12px; letter-spacing: 0.08em; color: var(--ink2)">Offline</span></div>
+<ol style="list-style: none; margin: 0; padding: 0; font-size: 16px">
+<li style="display: flex; gap: 14px; padding: 9px 0; border-top: 1px solid var(--rule)"><span class="mono" style="font-size: 13px; padding-top: 2px; color: var(--green); font-weight: 700">01</span><span><span style="display: block; font-weight: 700">Mô hình kinh doanh (BMC) -&nbsp;<span class="muted" style="font-size: 14px; font-weight: 400">Gốc để tạo ra bản đồ chiến lược</span></span></span></li>
+<li style="display: flex; gap: 14px; padding: 9px 0; border-top: 1px solid var(--rule)"><span class="mono muted" style="font-size: 13px; padding-top: 2px">02</span>Kiểm tra số liệu thật</li>
+
+<li style="display: flex; gap: 14px; padding: 9px 0; border-top: 1px solid var(--rule)"><span class="mono muted" style="font-size: 13px; padding-top: 2px">03</span>Dòng tiền</li>
+<li style="display: flex; gap: 14px; padding: 9px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule)"><span class="mono muted" style="font-size: 13px; padding-top: 2px">04</span>Các đòn bẩy doanh số bằng số thật</li>
+</ol>
+</article>
+<article style="border: 2.5px solid var(--ink); background: var(--paper); padding: 26px 28px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap"><span class="disp" style="font-size: 36px; font-weight: 600; line-height: 1">Ngày 2</span><span class="mono" style="font-size: 12px; letter-spacing: 0.08em; color: var(--ink2)"><span style="letter-spacing: 0.96px">Offline</span>&nbsp;</span></div>
+<ol style="list-style: none; margin: 0; padding: 0; font-size: 16px">
+<li style="display: flex; gap: 14px; padding: 9px 0; border-top: 1px solid var(--rule)"><span class="mono muted" style="font-size: 13px; padding-top: 2px">01</span>Hoàn thiện bản đồ chiến lược</li>
+<li style="display: flex; gap: 14px; padding: 9px 0; border-top: 1px solid var(--rule)"><span class="mono muted" style="font-size: 13px; padding-top: 2px">02</span>Kế hoạch thuế 2027 trên số thật</li>
+<li style="display: flex; gap: 14px; padding: 9px 0; border-top: 1px solid var(--rule); font-weight: 700"><span class="mono muted" style="font-size: 13px; padding-top: 2px">03</span>DMO, việc cần làm hướng đến mục tiêu<br></li>
+<li style="display: flex; gap: 14px; padding: 9px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule)"><span class="mono muted" style="font-size: 13px; padding-top: 2px">04</span>Cam kết 30 ngày</li>
+</ol>
+</article>
+</div>
+</div>
+</section>
+</template>
+
+
+<template data-if="showReg">
+<section id="dang-ky" class="sect np" style="padding-top: 80px; padding-bottom: 80px; border-top: 1px solid var(--rule2)">
+<div class="wrap g-reg">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<p class="kicker">§ 04 · Đăng ký</p>
+<h2 class="h2">Vào nhóm Zalo học tập</h2>
+<p style="font-size: 18px; line-height: 1.6">Nên đăng ký cùng kế toán của doanh nghiệp.</p>
+<p class="muted" style="font-size: 15px">Chủ doanh nghiệp đặt câu hỏi bằng khung chiến lược, kế toán trả lời bằng con số. Hai người cùng học thì về làm được ngay.</p>
+<ol style="list-style: none; margin: 12px 0 0; padding: 0; font-size: 15px; max-width: 420px">
+<li style="display: flex; gap: 14px; padding: 10px 0; border-top: 1px solid var(--rule)"><span class="mono" style="color: var(--green); font-weight: 700">1</span>Điền họ tên, email, số điện thoại</li>
+<li style="display: flex; gap: 14px; padding: 10px 0; border-top: 1px solid var(--rule)"><span class="mono" style="color: var(--green); font-weight: 700">2</span>Bấm “Đăng ký vào nhóm”</li>
+<li style="display: flex; gap: 14px; padding: 10px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule)"><span class="mono" style="color: var(--green); font-weight: 700">3</span>Bấm mở nhóm Zalo hoặc quét mã QR</li>
+</ol>
+<p class="muted" style="font-size: 13px; max-width: 420px">Số liệu anh chị nhập trong bảng tính chỉ nằm trên máy của anh chị, không gửi đi và không lưu lại.</p>
+</div>
+
+<div>
+<template data-if="notReg">
+<form class="box" style="padding: 28px" onSubmit="{{submit}}" aria-label="Đăng ký vào nhóm Zalo" novalidate="novalidate">
+<div class="g-form">
+<div class="span2"><label class="flab" for="f-name">Họ và tên <span class="red">*</span></label><input id="f-name" class="inp" autocomplete="name" aria-invalid="{{fe.nameOn}}" aria-describedby="e-name" value="{{form.name}}" onChange="{{fs.name}}"><template data-if="fe.nameOn"><span id="e-name" class="ferr">{{fe.name}}</span></template></div>
+<div><label class="flab" for="f-email">Email <span class="red">*</span></label><input id="f-email" class="inp" type="email" inputmode="email" autocomplete="email" aria-invalid="{{fe.emailOn}}" aria-describedby="e-email" value="{{form.email}}" onChange="{{fs.email}}"><template data-if="fe.emailOn"><span id="e-email" class="ferr">{{fe.email}}</span></template></div>
+<div><label class="flab" for="f-phone">Số điện thoại Zalo <span class="red">*</span></label><input id="f-phone" class="inp num" style="text-align: left" type="tel" inputmode="tel" autocomplete="tel" aria-invalid="{{fe.phoneOn}}" aria-describedby="e-phone" value="{{form.phone}}" onChange="{{fs.phone}}"><template data-if="fe.phoneOn"><span id="e-phone" class="ferr">{{fe.phone}}</span></template></div>
+<fieldset class="fs span2">
+<legend class="flab">Vai trò <span class="red">*</span></legend>
+<div style="display: flex; flex-wrap: wrap; padding-left: 1px">
+<template data-for="roles" data-as="r"><button type="button" class="{{r.cls}}" aria-pressed="{{r.pressed}}" onClick="{{r.pick}}" style="flex: 1 1 120px">{{r.label}}</button></template>
+</div>
+<template data-if="fe.roleOn"><span class="ferr">{{fe.role}}</span></template>
+</fieldset>
+<div class="span2"><label class="flab" for="f-biz">Tên doanh nghiệp <span class="muted" style="font-weight: 400">(không bắt buộc)</span></label><input id="f-biz" class="inp" autocomplete="organization" value="{{form.biz}}" onChange="{{fs.biz}}"></div>
+<div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" tabindex="-1" autocomplete="off" value="{{form.website}}" onChange="{{fs.website}}"></div>
+<div class="span2">
+<label class="consent" for="f-ok"><input id="f-ok" type="checkbox" class="chk" checked="{{form.consent}}" onChange="{{toggleConsent}}" aria-invalid="{{fe.consentOn}}"><span>Tôi đồng ý để AMITA · Bài giảng dùng họ tên, email và số điện thoại này để liên hệ về khóa học và mời vào nhóm Zalo. Thông tin không chia sẻ cho bên khác.</span></label>
+<template data-if="fe.consentOn"><span class="ferr">{{fe.consent}}</span></template>
+</div>
+</div>
+<template data-if="hasErr"><p role="alert" style="margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--red)">{{err}}</p></template>
+<div style="display: flex; align-items: center; gap: 16px; margin-top: 22px; flex-wrap: wrap">
+<button type="submit" class="btn pri" disabled="{{sending}}">{{submitLabel}}</button>
+<span class="muted" style="font-size: 13px"><span class="red">*</span> Bắt buộc</span>
+</div>
+</form>
+</template>
+
+<template data-if="reg">
+<div class="box" style="padding: 28px; border: 2px solid var(--green)" role="status">
+<p class="kicker" style="color: var(--green)">Đăng ký thành công</p>
+<h3 class="disp" style="font-size: 38px; font-weight: 600; margin: 6px 0 22px; line-height: 1.1">Mời {{doneName}} vào nhóm Zalo</h3>
+<div class="g-qr">
+<div style="display: flex; flex-direction: column; gap: 14px; align-items: flex-start">
+<p style="font-weight: 600; font-size: 17px">Trên điện thoại: bấm nút để mở nhóm</p>
+<a href="{{zaloUrl}}" target="_blank" rel="noopener" class="btn pri">Mở nhóm Zalo
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg>
+</a>
+<p class="muted" style="font-size: 14px">Trên máy tính: mở Zalo trên điện thoại, chọn quét mã QR rồi quét mã bên cạnh.</p>
+<template data-if="demo"><p style="font-size: 13px; font-weight: 600; padding: 8px 12px; border: 1.5px dashed var(--ink)">Bản chạy thử: chưa nối Google Sheet nên thông tin chưa được lưu.</p></template>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 8px">
+<img src="{{qrSrc}}" alt="Mã QR vào nhóm Zalo" width="184" height="184" style="display: block; background: #FFFFFF; padding: 8px; border: 1px solid var(--rule2)">
+<figcaption class="mono" style="font-size: 11px; letter-spacing: .1em; color: var(--ink2)">QUÉT ĐỂ VÀO NHÓM</figcaption>
+</figure>
+</div>
+<div style="border-top: 1px solid var(--rule); padding-top: 18px; margin-top: 22px">
+<button type="button" class="nl" style="background: none; border: 0; cursor: pointer; font-size: 14px; text-decoration: underline; text-underline-offset: 4px" onClick="{{again}}">Đăng ký thêm người học cùng, ví dụ kế toán của doanh nghiệp</button>
+</div>
+</div>
+</template>
+</div>
+</div>
+</section>
+</template>
+
+
+<template data-if="showAll">
+<footer style="border-top: 1px solid var(--ink); padding-top: 40px; padding-bottom: 44px">
+<div class="wrap g-reg" style="gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p style="display: flex; align-items: baseline; gap: 10px"><span class="disp" style="font-size: 22px; font-weight: 700; letter-spacing: .06em; color: var(--green)">AMITA</span><span class="mono" style="font-size: 11px; letter-spacing: .16em; color: var(--ink2)">· BÀI GIẢNG</span></p>
+<p style="font-size: 14px">Giảng viên: Vũ Thạch Sơn, chuyên gia tư vấn kế toán tài chính.</p>
+<p class="muted" style="font-size: 12px; margin-top: 8px">© 2026 AMITA · Bài giảng</p>
+</div>
+<div>
+<p class="kicker" style="font-size: 11px; margin-bottom: 8px">Giả định của bảng tính</p>
+<ol style="margin: 0; padding-left: 18px; font-size: 12.5px; line-height: 1.6; color: var(--ink2); display: flex; flex-direction: column; gap: 3px">
+<li>Thuế TNDN giả định mọi chi phí đều được trừ.</li>
+<li>Thuế suất 15% và 17% căn cứ doanh thu năm liền trước (Luật 67/2025/QH15).</li>
+<li>Mức thuế GTGT 8% chỉ áp dụng đến hết 31/12/2026.</li>
+<li>% chi phí theo ngành là số tham khảo.</li>
+<li>Bảng tính dùng cho học tập, không thay cho tư vấn thuế.</li>
+</ol>
+</div>
+</div>
+</footer>
+</template>
+
+
+</div></template>
+<script src="config.js"></script>
+<!-- Thư viện dùng kèm: Preact (MIT, preactjs.com), qrcode-generator (MIT, Kazuhiko Arase) -->
+<script>!function(n){"function"==typeof define&&define.amd?define(n):n()}(function(){var n,t,e,i,r,o,f,u,c,a,s,h,l,p,y,d,v,_="http://www.w3.org/2000/svg",w="http://www.w3.org/1999/xhtml",m=null,g=void 0,b={},k=[],x=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i,C=Array.isArray;function M(n,t){for(var e in t)n[e]=t[e];return n}function S(n){n&&n.parentNode&&n.parentNode.removeChild(n)}function $(t,e,i){var r,o,f,u={};for(f in e)"key"==f?r=e[f]:"ref"==f?o=e[f]:u[f]=e[f];if(arguments.length>2&&(u.children=arguments.length>3?n.call(arguments,2):i),"function"==typeof t&&t.defaultProps!=m)for(f in t.defaultProps)u[f]===g&&(u[f]=t.defaultProps[f]);return A(t,u,r,o,m)}function A(n,i,r,o,f){var u={type:n,props:i,key:r,ref:o,__k:m,__:m,__b:0,__e:m,__c:m,constructor:g,__v:f==m?++e:f,__i:-1,__u:0};return f==m&&t.vnode!=m&&t.vnode(u),u}function I(n){return n.children}function P(n,t){this.props=n,this.context=t}function E(n,t){if(t==m)return n.__?E(n.__,n.__i+1):m;for(var e;t<n.__k.length;t++)if((e=n.__k[t])!=m&&e.__e!=m)return e.__e;return"function"==typeof n.type?E(n):m}function F(n){if(n.__P&&n.__d){var e=n.__v,i=e.__e,r=[],o=[],f=M({},e);f.__v=e.__v+1,t.vnode&&t.vnode(f),B(n.__P,f,e,n.__n,n.__P.namespaceURI,32&e.__u?[i]:m,r,i==m?E(e):i,!!(32&e.__u),o),f.__v=e.__v,f.__.__k[f.__i]=f,G(r,f,o),e.__e=e.__=null,f.__e!=i&&H(f)}}function H(n){if((n=n.__)!=m&&n.__c!=m)return n.__e=n.__c.base=m,n.__k.some(function(t){if(t!=m&&t.__e!=m)return n.__e=n.__c.base=t.__e}),H(n)}function L(n){(!n.__d&&(n.__d=!0)&&r.push(n)&&!T.__r++||o!=t.debounceRendering)&&((o=t.debounceRendering)||f)(T)}function T(){try{for(var n,t=1;r.length;)r.length>t&&r.sort(u),n=r.shift(),t=r.length,F(n)}finally{r.length=T.__r=0}}function j(n,t,e,i,r,o,f,u,c,a,s){var h,l,p,y,d,v,_=i&&i.__k||k,w=t.length;for(c=O(e,t,_,c,w),h=0;h<w;h++)(p=e.__k[h])!=m&&(l=-1!=p.__i&&_[p.__i]||b,p.__i=h,v=B(n,p,l,r,o,f,u,c,a,s),y=p.__e,p.ref&&l.ref!=p.ref&&(l.ref&&Q(l.ref,m,p),s.push(p.ref,p.__c||y,p)),d==m&&y!=m&&(d=y),4&p.__u?(c=V(p,c,n),l.__e&&(l.__e=m)):"function"==typeof p.type&&v!==g?c=v:y&&(c=y.nextSibling),p.__u&=-7);return e.__e=d,c}function O(n,t,e,i,r){var o,f,u,c,a,s=e.length,h=s,l=0;for(n.__k=new Array(r),o=0;o<r;o++)(f=t[o])!=m&&"boolean"!=typeof f&&"function"!=typeof f?("string"==typeof f||"number"==typeof f||"bigint"==typeof f||f.constructor==String?f=n.__k[o]=A(m,f,m,m,m):C(f)?f=n.__k[o]=A(I,{children:f},m,m,m):f.constructor===g&&f.__b>0?f=n.__k[o]=A(f.type,f.props,f.key,f.ref?f.ref:m,f.__v):n.__k[o]=f,c=o+l,f.__=n,f.__b=n.__b+1,a=f.__i=z(f,e,c,h),u=m,-1!=a&&(h--,(u=e[a])&&(u.__u|=2)),u==m||u.__v==m?(-1==a&&(r>s?l--:r<s&&l++),"function"!=typeof f.type&&(f.__u|=4)):a!=c&&(a==c-1?l--:a==c+1?l++:(a>c?l--:l++,f.__u|=4))):n.__k[o]=m;if(h)for(o=0;o<s;o++)(u=e[o])!=m&&0==(2&u.__u)&&(u.__e==i&&(i=E(u)),U(u,u));return i}function V(n,t,e){var i,r;if("function"==typeof n.type){for(i=n.__k,r=0;i&&r<i.length;r++)i[r]&&(i[r].__=n,t=V(i[r],t,e));return t}n.__e!=t&&(t&&n.type&&!t.parentNode&&(t=E(n)),t=e.insertBefore(n.__e,t||m));do{t=t&&t.nextSibling}while(t!=m&&8==t.nodeType);return t}function z(n,t,e,i){var r,o,f,u=n.key,c=n.type,a=t[e],s=a!=m&&0==(2&a.__u);if(a===m&&null==u||s&&u==a.key&&c==a.type)return e;if(i>(s?1:0))for(r=e-1,o=e+1;r>=0||o<t.length;)if((a=t[f=r>=0?r--:o++])!=m&&0==(2&a.__u)&&u==a.key&&c==a.type)return f;return-1}function N(n,t,e){"-"==t[0]?n.setProperty(t,e==m?"":e):n[t]=e==m?"":"number"!=typeof e||x.test(t)?e:e+"px"}function R(n,t,e,i,r){var o,f;n:if("style"==t)if("string"==typeof e)n.style.cssText=e;else{if("string"==typeof i&&(n.style.cssText=i=""),i)for(t in i)e&&t in e||N(n.style,t,"");if(e)for(t in e)i&&e[t]==i[t]||N(n.style,t,e[t])}else if("o"==t[0]&&"n"==t[1])o=t!=(t=t.replace(h,"$1")),f=t.toLowerCase(),t=f in n||"onFocusOut"==t||"onFocusIn"==t?f.slice(2):t.slice(2),n.l||(n.l={}),n.l[t+o]=e,e?i?e[s]=i[s]:(e[s]=l,n.addEventListener(t,o?y:p,o)):n.removeEventListener(t,o?y:p,o);else{if(r==_)t=t.replace(/xlink(H|:h)/,"h").replace(/sName$/,"s");else if("width"!=t&&"height"!=t&&"href"!=t&&"list"!=t&&"form"!=t&&"tabIndex"!=t&&"download"!=t&&"rowSpan"!=t&&"colSpan"!=t&&"role"!=t&&"popover"!=t&&t in n)try{n[t]=e==m?"":e;break n}catch(n){}"function"==typeof e||(e==m||!1===e&&"-"!=t[4]?n.removeAttribute(t):n.setAttribute(t,"popover"==t&&1==e?"":e))}}function q(n){return function(e){if(this.l){var i=this.l[e.type+n];if(e[a]==m)e[a]=l++;else if(e[a]<i[s])return;return i(t.event?t.event(e):e)}}}function B(n,e,i,r,o,f,u,c,a,s){var h,l,p,y,d,v,_,w,b,x,$,A,F,H,L,T,O=e.type;if(e.constructor!==g)return m;128&i.__u&&(a=!!(32&i.__u),f=[c=e.__e=i.__e]),(h=t.__b)&&h(e);n:if("function"==typeof O){l=u.length;try{if(b=e.props,x=O.prototype&&O.prototype.render,$=(h=O.contextType)&&r[h.__c],A=h?$?$.props.value:h.__:r,i.__c?w=(p=e.__c=i.__c).__=p.__E:(x?e.__c=p=new O(b,A):(e.__c=p=new P(b,A),p.constructor=O,p.render=W),$&&$.sub(p),p.state||(p.state={}),p.__n=r,y=p.__d=!0,p.__h=[],p._sb=[]),x&&p.__s==m&&(p.__s=p.state),x&&O.getDerivedStateFromProps!=m&&(p.__s==p.state&&(p.__s=M({},p.__s)),M(p.__s,O.getDerivedStateFromProps(b,p.__s))),d=p.props,v=p.state,p.__v=e,y)x&&O.getDerivedStateFromProps==m&&p.componentWillMount!=m&&p.componentWillMount(),x&&p.componentDidMount!=m&&p.__h.push(p.componentDidMount);else{if(x&&O.getDerivedStateFromProps==m&&b!==d&&p.componentWillReceiveProps!=m&&p.componentWillReceiveProps(b,A),e.__v==i.__v||!p.__e&&p.shouldComponentUpdate!=m&&!1===p.shouldComponentUpdate(b,p.__s,A)){e.__v!=i.__v&&(p.props=b,p.state=p.__s,p.__d=!1),e.__e=i.__e,e.__k=i.__k,e.__k.some(function(n){n&&(n.__=e)}),k.push.apply(p.__h,p._sb),p._sb=[],p.__h.length&&u.push(p),c=E(i);break n}p.componentWillUpdate!=m&&p.componentWillUpdate(b,p.__s,A),x&&p.componentDidUpdate!=m&&p.__h.push(function(){p.componentDidUpdate(d,v,_)})}if(p.context=A,p.props=b,p.__P=n,p.__e=!1,F=t.__r,H=0,x)p.state=p.__s,p.__d=!1,F&&F(e),h=p.render(p.props,p.state,p.context),k.push.apply(p.__h,p._sb),p._sb=[];else do{p.__d=!1,F&&F(e),h=p.render(p.props,p.state,p.context),p.state=p.__s}while(p.__d&&++H<25);p.state=p.__s,p.getChildContext!=m&&(r=M(M({},r),p.getChildContext())),x&&!y&&p.getSnapshotBeforeUpdate!=m&&(_=p.getSnapshotBeforeUpdate(d,v)),L=h!=m&&h.type===I&&h.key==m?J(h.props.children):h,c=j(n,C(L)?L:[L],e,i,r,o,f,u,c,a,s),p.base=e.__e,e.__u&=-161,p.__h.length&&u.push(p),w&&(p.__E=p.__=m)}catch(n){if(u.length=l,e.__v=m,a||f!=m){if(n.then){for(e.__u|=a?160:128;c&&8==c.nodeType&&c.nextSibling;)c=c.nextSibling;f!=m&&(f[f.indexOf(c)]=m),e.__e=c}else if(f!=m)for(T=f.length;T--;)S(f[T])}else e.__e=i.__e;e.__k==m&&(e.__k=i.__k||[]),n.then||D(e),t.__e(n,e,i)}}else f==m&&e.__v==i.__v?(e.__k=i.__k,e.__e=i.__e):c=e.__e=K(i.__e,e,i,r,o,f,u,a,s);return(h=t.diffed)&&h(e),128&e.__u?void 0:c}function D(n){n&&(n.__c&&(n.__c.__e=!0),n.__k&&n.__k.some(D))}function G(n,e,i){for(var r=0;r<i.length;r++)Q(i[r],i[++r],i[++r]);t.__c&&t.__c(e,n),n.some(function(e){try{n=e.__h,e.__h=[],n.some(function(n){n.call(e)})}catch(n){t.__e(n,e.__v)}})}function J(n){return"object"!=typeof n||n==m||n.__b>0?n:C(n)?n.map(J):n.constructor!==g?null:M({},n)}function K(e,i,r,o,f,u,c,a,s){var h,l,p,y,d,v,k,x=r.props||b,M=i.props,$=i.type;if("svg"==$?f=_:"math"==$?f="http://www.w3.org/1998/Math/MathML":f||(f=w),u!=m)for(h=0;h<u.length;h++)if((d=u[h])&&"setAttribute"in d==!!$&&($?d.localName==$:3==d.nodeType)){e=d,u[h]=m;break}if(e==m){if($==m)return document.createTextNode(M);e=document.createElementNS(f,$,M.is&&M),a&&(t.__m&&t.__m(i,u),a=!1),u=m}if($==m)x===M||a&&e.data==M||(e.data=M);else{if(u="textarea"==$&&M.defaultValue!=m?m:u&&n.call(e.childNodes),!a&&u!=m)for(x={},h=0;h<e.attributes.length;h++)x[(d=e.attributes[h]).name]=d.value;for(h in x)d=x[h],"dangerouslySetInnerHTML"==h?p=d:"children"==h||h in M||"value"==h&&"defaultValue"in M||"checked"==h&&"defaultChecked"in M||R(e,h,m,d,f);for(h in M)d=M[h],"children"==h?y=d:"dangerouslySetInnerHTML"==h?l=d:"value"==h?v=d:"checked"==h?k=d:a&&"function"!=typeof d||x[h]===d||R(e,h,d,x[h],f);if(l)a||p&&(l.__html==p.__html||l.__html==e.innerHTML)||(e.innerHTML=l.__html),i.__k=[];else if(p&&(e.innerHTML=""),j("template"==i.type?e.content:e,C(y)?y:[y],i,r,o,"foreignObject"==$?w:f,u,c,u?u[0]:r.__k&&E(r,0),a,s),u!=m)for(h=u.length;h--;)S(u[h]);a&&"textarea"!=$||(h="value","progress"==$&&v==m?e.removeAttribute("value"):v!=g&&(v!==e[h]||"progress"==$&&!v||"option"==$&&v!=x[h])&&R(e,h,v,x[h],f),h="checked",k!=g&&k!=e[h]&&R(e,h,k,x[h],f))}return e}function Q(n,e,i){try{if("function"==typeof n){var r="function"==typeof n.__u;r&&n.__u(),r&&e==m||(n.__u=n(e))}else n.current=e}catch(n){t.__e(n,i)}}function U(n,e,i){var r,o;if(t.unmount&&t.unmount(n),(r=n.ref)&&(r.current&&r.current!=n.__e||Q(r,m,e)),(r=n.__c)!=m){if(r.componentWillUnmount)try{r.componentWillUnmount()}catch(n){t.__e(n,e)}r.base=r.__P=r.__n=m}if(r=n.__k)for(o=0;o<r.length;o++)r[o]&&U(r[o],e,i||"function"!=typeof n.type);i||S(n.__e),n.__c=n.__=n.__e=g}function W(n,t,e){return this.constructor(n,e)}function X(e,i,r){var o,f,u,c;i==document&&(i=document.documentElement),t.__&&t.__(e,i),f=(o="function"==typeof r)?m:r&&r.__k||i.__k,u=[],c=[],B(i,e=(!o&&r||i).__k=$(I,m,[e]),f||b,b,i.namespaceURI,!o&&r?[r]:f?m:i.firstChild?n.call(i.childNodes):m,u,!o&&r?r:f?f.__e:i.firstChild,o,c),G(u,e,c),e.props.children=m}n=k.slice,t={__e:function(n,t,e,i){for(var r,o,f;t=t.__;)if((r=t.__c)&&!r.__)try{if((o=r.constructor)&&o.getDerivedStateFromError!=m&&(r.setState(o.getDerivedStateFromError(n)),f=r.__d),r.componentDidCatch!=m&&(r.componentDidCatch(n,i||{}),f=r.__d),f)return r.__E=r}catch(t){n=t}throw n}},e=0,i=function(n){return n!=m&&n.constructor===g},P.prototype.setState=function(n,t){var e;e=this.__s!=m&&this.__s!=this.state?this.__s:this.__s=M({},this.state),"function"==typeof n&&(n=n(M({},e),this.props)),n&&M(e,n),n!=m&&this.__v&&(t&&this._sb.push(t),L(this))},P.prototype.forceUpdate=function(n){this.__v&&(this.__e=!0,n&&this.__h.push(n),L(this))},P.prototype.render=I,r=[],f="function"==typeof Promise?Promise.prototype.then.bind(Promise.resolve()):setTimeout,u=function(n,t){return n.__v.__b-t.__v.__b},T.__r=0,c=Math.random().toString(8),a="__d"+c,s="__a"+c,h=/(PointerCapture)$|Capture$/i,l=0,p=q(!1),y=q(!0),d=0,v={__proto__:null,render:X,hydrate:function n(t,e){X(t,e,n)},createElement:$,h:$,Fragment:I,createRef:function(){return{current:m}},isValidElement:i,Component:P,cloneElement:function(t,e,i){var r,o,f,u,c=M({},t.props);for(f in t.type&&t.type.defaultProps&&(u=t.type.defaultProps),e)"key"==f?r=e[f]:"ref"==f?o=e[f]:c[f]=e[f]===g&&u!=g?u[f]:e[f];return arguments.length>2&&(c.children=arguments.length>3?n.call(arguments,2):i),A(t.type,c,r||t.key,o||t.ref,m)},createContext:function(n){function t(n){var e,i;return this.getChildContext||(e=new Set,(i={})[t.__c]=this,this.getChildContext=function(){return i},this.componentWillUnmount=function(){e=m},this.shouldComponentUpdate=function(n){this.props.value!=n.value&&e.forEach(function(n){n.__e=!0,L(n)})},this.sub=function(n){e.add(n);var t=n.componentWillUnmount;n.componentWillUnmount=function(){e&&e.delete(n),t&&t.call(n)}}),n.children}return t.__c="__cC"+d++,t.__=n,t.Provider=t.__l=(t.Consumer=function(n,t){return n.children(t)}).contextType=t,t},toChildArray:function n(t,e){return e=e||[],t==m||"boolean"==typeof t||(C(t)?t.some(function(t){n(t,e)}):e.push(t)),e},options:t},typeof module<"u"?module.exports=v:self.preact=v});
+</script>
+<script>//---------------------------------------------------------------------
+//
+// QR Code Generator for JavaScript
+//
+// Copyright (c) 2009 Kazuhiko Arase
+//
+// URL: http://www.d-project.com/
+//
+// Licensed under the MIT license:
+//  http://www.opensource.org/licenses/mit-license.php
+//
+// The word 'QR Code' is registered trademark of
+// DENSO WAVE INCORPORATED
+//  http://www.denso-wave.com/qrcode/faqpatent-e.html
+//
+//---------------------------------------------------------------------
+
+var qrcode = function() {
+
+  //---------------------------------------------------------------------
+  // qrcode
+  //---------------------------------------------------------------------
+
+  /**
+   * qrcode
+   * @param typeNumber 1 to 40
+   * @param errorCorrectionLevel 'L','M','Q','H'
+   */
+  var qrcode = function(typeNumber, errorCorrectionLevel) {
+
+    var PAD0 = 0xEC;
+    var PAD1 = 0x11;
+
+    var _typeNumber = typeNumber;
+    var _errorCorrectionLevel = QRErrorCorrectionLevel[errorCorrectionLevel];
+    var _modules = null;
+    var _moduleCount = 0;
+    var _dataCache = null;
+    var _dataList = [];
+
+    var _this = {};
+
+    var makeImpl = function(test, maskPattern) {
+
+      _moduleCount = _typeNumber * 4 + 17;
+      _modules = function(moduleCount) {
+        var modules = new Array(moduleCount);
+        for (var row = 0; row < moduleCount; row += 1) {
+          modules[row] = new Array(moduleCount);
+          for (var col = 0; col < moduleCount; col += 1) {
+            modules[row][col] = null;
+          }
+        }
+        return modules;
+      }(_moduleCount);
+
+      setupPositionProbePattern(0, 0);
+      setupPositionProbePattern(_moduleCount - 7, 0);
+      setupPositionProbePattern(0, _moduleCount - 7);
+      setupPositionAdjustPattern();
+      setupTimingPattern();
+      setupTypeInfo(test, maskPattern);
+
+      if (_typeNumber >= 7) {
+        setupTypeNumber(test);
+      }
+
+      if (_dataCache == null) {
+        _dataCache = createData(_typeNumber, _errorCorrectionLevel, _dataList);
+      }
+
+      mapData(_dataCache, maskPattern);
+    };
+
+    var setupPositionProbePattern = function(row, col) {
+
+      for (var r = -1; r <= 7; r += 1) {
+
+        if (row + r <= -1 || _moduleCount <= row + r) continue;
+
+        for (var c = -1; c <= 7; c += 1) {
+
+          if (col + c <= -1 || _moduleCount <= col + c) continue;
+
+          if ( (0 <= r && r <= 6 && (c == 0 || c == 6) )
+              || (0 <= c && c <= 6 && (r == 0 || r == 6) )
+              || (2 <= r && r <= 4 && 2 <= c && c <= 4) ) {
+            _modules[row + r][col + c] = true;
+          } else {
+            _modules[row + r][col + c] = false;
+          }
+        }
+      }
+    };
+
+    var getBestMaskPattern = function() {
+
+      var minLostPoint = 0;
+      var pattern = 0;
+
+      for (var i = 0; i < 8; i += 1) {
+
+        makeImpl(true, i);
+
+        var lostPoint = QRUtil.getLostPoint(_this);
+
+        if (i == 0 || minLostPoint > lostPoint) {
+          minLostPoint = lostPoint;
+          pattern = i;
+        }
+      }
+
+      return pattern;
+    };
+
+    var setupTimingPattern = function() {
+
+      for (var r = 8; r < _moduleCount - 8; r += 1) {
+        if (_modules[r][6] != null) {
+          continue;
+        }
+        _modules[r][6] = (r % 2 == 0);
+      }
+
+      for (var c = 8; c < _moduleCount - 8; c += 1) {
+        if (_modules[6][c] != null) {
+          continue;
+        }
+        _modules[6][c] = (c % 2 == 0);
+      }
+    };
+
+    var setupPositionAdjustPattern = function() {
+
+      var pos = QRUtil.getPatternPosition(_typeNumber);
+
+      for (var i = 0; i < pos.length; i += 1) {
+
+        for (var j = 0; j < pos.length; j += 1) {
+
+          var row = pos[i];
+          var col = pos[j];
+
+          if (_modules[row][col] != null) {
+            continue;
+          }
+
+          for (var r = -2; r <= 2; r += 1) {
+
+            for (var c = -2; c <= 2; c += 1) {
+
+              if (r == -2 || r == 2 || c == -2 || c == 2
+                  || (r == 0 && c == 0) ) {
+                _modules[row + r][col + c] = true;
+              } else {
+                _modules[row + r][col + c] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+
+    var setupTypeNumber = function(test) {
+
+      var bits = QRUtil.getBCHTypeNumber(_typeNumber);
+
+      for (var i = 0; i < 18; i += 1) {
+        var mod = (!test && ( (bits >> i) & 1) == 1);
+        _modules[Math.floor(i / 3)][i % 3 + _moduleCount - 8 - 3] = mod;
+      }
+
+      for (var i = 0; i < 18; i += 1) {
+        var mod = (!test && ( (bits >> i) & 1) == 1);
+        _modules[i % 3 + _moduleCount - 8 - 3][Math.floor(i / 3)] = mod;
+      }
+    };
+
+    var setupTypeInfo = function(test, maskPattern) {
+
+      var data = (_errorCorrectionLevel << 3) | maskPattern;
+      var bits = QRUtil.getBCHTypeInfo(data);
+
+      // vertical
+      for (var i = 0; i < 15; i += 1) {
+
+        var mod = (!test && ( (bits >> i) & 1) == 1);
+
+        if (i < 6) {
+          _modules[i][8] = mod;
+        } else if (i < 8) {
+          _modules[i + 1][8] = mod;
+        } else {
+          _modules[_moduleCount - 15 + i][8] = mod;
+        }
+      }
+
+      // horizontal
+      for (var i = 0; i < 15; i += 1) {
+
+        var mod = (!test && ( (bits >> i) & 1) == 1);
+
+        if (i < 8) {
+          _modules[8][_moduleCount - i - 1] = mod;
+        } else if (i < 9) {
+          _modules[8][15 - i - 1 + 1] = mod;
+        } else {
+          _modules[8][15 - i - 1] = mod;
+        }
+      }
+
+      // fixed module
+      _modules[_moduleCount - 8][8] = (!test);
+    };
+
+    var mapData = function(data, maskPattern) {
+
+      var inc = -1;
+      var row = _moduleCount - 1;
+      var bitIndex = 7;
+      var byteIndex = 0;
+      var maskFunc = QRUtil.getMaskFunction(maskPattern);
+
+      for (var col = _moduleCount - 1; col > 0; col -= 2) {
+
+        if (col == 6) col -= 1;
+
+        while (true) {
+
+          for (var c = 0; c < 2; c += 1) {
+
+            if (_modules[row][col - c] == null) {
+
+              var dark = false;
+
+              if (byteIndex < data.length) {
+                dark = ( ( (data[byteIndex] >>> bitIndex) & 1) == 1);
+              }
+
+              var mask = maskFunc(row, col - c);
+
+              if (mask) {
+                dark = !dark;
+              }
+
+              _modules[row][col - c] = dark;
+              bitIndex -= 1;
+
+              if (bitIndex == -1) {
+                byteIndex += 1;
+                bitIndex = 7;
+              }
+            }
+          }
+
+          row += inc;
+
+          if (row < 0 || _moduleCount <= row) {
+            row -= inc;
+            inc = -inc;
+            break;
+          }
+        }
+      }
+    };
+
+    var createBytes = function(buffer, rsBlocks) {
+
+      var offset = 0;
+
+      var maxDcCount = 0;
+      var maxEcCount = 0;
+
+      var dcdata = new Array(rsBlocks.length);
+      var ecdata = new Array(rsBlocks.length);
+
+      for (var r = 0; r < rsBlocks.length; r += 1) {
+
+        var dcCount = rsBlocks[r].dataCount;
+        var ecCount = rsBlocks[r].totalCount - dcCount;
+
+        maxDcCount = Math.max(maxDcCount, dcCount);
+        maxEcCount = Math.max(maxEcCount, ecCount);
+
+        dcdata[r] = new Array(dcCount);
+
+        for (var i = 0; i < dcdata[r].length; i += 1) {
+          dcdata[r][i] = 0xff & buffer.getBuffer()[i + offset];
+        }
+        offset += dcCount;
+
+        var rsPoly = QRUtil.getErrorCorrectPolynomial(ecCount);
+        var rawPoly = qrPolynomial(dcdata[r], rsPoly.getLength() - 1);
+
+        var modPoly = rawPoly.mod(rsPoly);
+        ecdata[r] = new Array(rsPoly.getLength() - 1);
+        for (var i = 0; i < ecdata[r].length; i += 1) {
+          var modIndex = i + modPoly.getLength() - ecdata[r].length;
+          ecdata[r][i] = (modIndex >= 0)? modPoly.getAt(modIndex) : 0;
+        }
+      }
+
+      var totalCodeCount = 0;
+      for (var i = 0; i < rsBlocks.length; i += 1) {
+        totalCodeCount += rsBlocks[i].totalCount;
+      }
+
+      var data = new Array(totalCodeCount);
+      var index = 0;
+
+      for (var i = 0; i < maxDcCount; i += 1) {
+        for (var r = 0; r < rsBlocks.length; r += 1) {
+          if (i < dcdata[r].length) {
+            data[index] = dcdata[r][i];
+            index += 1;
+          }
+        }
+      }
+
+      for (var i = 0; i < maxEcCount; i += 1) {
+        for (var r = 0; r < rsBlocks.length; r += 1) {
+          if (i < ecdata[r].length) {
+            data[index] = ecdata[r][i];
+            index += 1;
+          }
+        }
+      }
+
+      return data;
+    };
+
+    var createData = function(typeNumber, errorCorrectionLevel, dataList) {
+
+      var rsBlocks = QRRSBlock.getRSBlocks(typeNumber, errorCorrectionLevel);
+
+      var buffer = qrBitBuffer();
+
+      for (var i = 0; i < dataList.length; i += 1) {
+        var data = dataList[i];
+        buffer.put(data.getMode(), 4);
+        buffer.put(data.getLength(), QRUtil.getLengthInBits(data.getMode(), typeNumber) );
+        data.write(buffer);
+      }
+
+      // calc num max data.
+      var totalDataCount = 0;
+      for (var i = 0; i < rsBlocks.length; i += 1) {
+        totalDataCount += rsBlocks[i].dataCount;
+      }
+
+      if (buffer.getLengthInBits() > totalDataCount * 8) {
+        throw 'code length overflow. ('
+          + buffer.getLengthInBits()
+          + '>'
+          + totalDataCount * 8
+          + ')';
+      }
+
+      // end code
+      if (buffer.getLengthInBits() + 4 <= totalDataCount * 8) {
+        buffer.put(0, 4);
+      }
+
+      // padding
+      while (buffer.getLengthInBits() % 8 != 0) {
+        buffer.putBit(false);
+      }
+
+      // padding
+      while (true) {
+
+        if (buffer.getLengthInBits() >= totalDataCount * 8) {
+          break;
+        }
+        buffer.put(PAD0, 8);
+
+        if (buffer.getLengthInBits() >= totalDataCount * 8) {
+          break;
+        }
+        buffer.put(PAD1, 8);
+      }
+
+      return createBytes(buffer, rsBlocks);
+    };
+
+    _this.addData = function(data, mode) {
+
+      mode = mode || 'Byte';
+
+      var newData = null;
+
+      switch(mode) {
+      case 'Numeric' :
+        newData = qrNumber(data);
+        break;
+      case 'Alphanumeric' :
+        newData = qrAlphaNum(data);
+        break;
+      case 'Byte' :
+        newData = qr8BitByte(data);
+        break;
+      case 'Kanji' :
+        newData = qrKanji(data);
+        break;
+      default :
+        throw 'mode:' + mode;
+      }
+
+      _dataList.push(newData);
+      _dataCache = null;
+    };
+
+    _this.isDark = function(row, col) {
+      if (row < 0 || _moduleCount <= row || col < 0 || _moduleCount <= col) {
+        throw row + ',' + col;
+      }
+      return _modules[row][col];
+    };
+
+    _this.getModuleCount = function() {
+      return _moduleCount;
+    };
+
+    _this.make = function() {
+      if (_typeNumber < 1) {
+        var typeNumber = 1;
+
+        for (; typeNumber < 40; typeNumber++) {
+          var rsBlocks = QRRSBlock.getRSBlocks(typeNumber, _errorCorrectionLevel);
+          var buffer = qrBitBuffer();
+
+          for (var i = 0; i < _dataList.length; i++) {
+            var data = _dataList[i];
+            buffer.put(data.getMode(), 4);
+            buffer.put(data.getLength(), QRUtil.getLengthInBits(data.getMode(), typeNumber) );
+            data.write(buffer);
+          }
+
+          var totalDataCount = 0;
+          for (var i = 0; i < rsBlocks.length; i++) {
+            totalDataCount += rsBlocks[i].dataCount;
+          }
+
+          if (buffer.getLengthInBits() <= totalDataCount * 8) {
+            break;
+          }
+        }
+
+        _typeNumber = typeNumber;
+      }
+
+      makeImpl(false, getBestMaskPattern() );
+    };
+
+    _this.createTableTag = function(cellSize, margin) {
+
+      cellSize = cellSize || 2;
+      margin = (typeof margin == 'undefined')? cellSize * 4 : margin;
+
+      var qrHtml = '';
+
+      qrHtml += '<table style="';
+      qrHtml += ' border-width: 0px; border-style: none;';
+      qrHtml += ' border-collapse: collapse;';
+      qrHtml += ' padding: 0px; margin: ' + margin + 'px;';
+      qrHtml += '">';
+      qrHtml += '<tbody>';
+
+      for (var r = 0; r < _this.getModuleCount(); r += 1) {
+
+        qrHtml += '<tr>';
+
+        for (var c = 0; c < _this.getModuleCount(); c += 1) {
+          qrHtml += '<td style="';
+          qrHtml += ' border-width: 0px; border-style: none;';
+          qrHtml += ' border-collapse: collapse;';
+          qrHtml += ' padding: 0px; margin: 0px;';
+          qrHtml += ' width: ' + cellSize + 'px;';
+          qrHtml += ' height: ' + cellSize + 'px;';
+          qrHtml += ' background-color: ';
+          qrHtml += _this.isDark(r, c)? '#000000' : '#ffffff';
+          qrHtml += ';';
+          qrHtml += '"/>';
+        }
+
+        qrHtml += '</tr>';
+      }
+
+      qrHtml += '</tbody>';
+      qrHtml += '</table>';
+
+      return qrHtml;
+    };
+
+    _this.createSvgTag = function(cellSize, margin, alt, title) {
+
+      var opts = {};
+      if (typeof arguments[0] == 'object') {
+        // Called by options.
+        opts = arguments[0];
+        // overwrite cellSize and margin.
+        cellSize = opts.cellSize;
+        margin = opts.margin;
+        alt = opts.alt;
+        title = opts.title;
+      }
+
+      cellSize = cellSize || 2;
+      margin = (typeof margin == 'undefined')? cellSize * 4 : margin;
+
+      // Compose alt property surrogate
+      alt = (typeof alt === 'string') ? {text: alt} : alt || {};
+      alt.text = alt.text || null;
+      alt.id = (alt.text) ? alt.id || 'qrcode-description' : null;
+
+      // Compose title property surrogate
+      title = (typeof title === 'string') ? {text: title} : title || {};
+      title.text = title.text || null;
+      title.id = (title.text) ? title.id || 'qrcode-title' : null;
+
+      var size = _this.getModuleCount() * cellSize + margin * 2;
+      var c, mc, r, mr, qrSvg='', rect;
+
+      rect = 'l' + cellSize + ',0 0,' + cellSize +
+        ' -' + cellSize + ',0 0,-' + cellSize + 'z ';
+
+      qrSvg += '<svg version="1.1" xmlns="http://www.w3.org/2000/svg"';
+      qrSvg += !opts.scalable ? ' width="' + size + 'px" height="' + size + 'px"' : '';
+      qrSvg += ' viewBox="0 0 ' + size + ' ' + size + '" ';
+      qrSvg += ' preserveAspectRatio="xMinYMin meet"';
+      qrSvg += (title.text || alt.text) ? ' role="img" aria-labelledby="' +
+          escapeXml([title.id, alt.id].join(' ').trim() ) + '"' : '';
+      qrSvg += '>';
+      qrSvg += (title.text) ? '<title id="' + escapeXml(title.id) + '">' +
+          escapeXml(title.text) + '</title>' : '';
+      qrSvg += (alt.text) ? '<description id="' + escapeXml(alt.id) + '">' +
+          escapeXml(alt.text) + '</description>' : '';
+      qrSvg += '<rect width="100%" height="100%" fill="white" cx="0" cy="0"/>';
+      qrSvg += '<path d="';
+
+      for (r = 0; r < _this.getModuleCount(); r += 1) {
+        mr = r * cellSize + margin;
+        for (c = 0; c < _this.getModuleCount(); c += 1) {
+          if (_this.isDark(r, c) ) {
+            mc = c*cellSize+margin;
+            qrSvg += 'M' + mc + ',' + mr + rect;
+          }
+        }
+      }
+
+      qrSvg += '" stroke="transparent" fill="black"/>';
+      qrSvg += '</svg>';
+
+      return qrSvg;
+    };
+
+    _this.createDataURL = function(cellSize, margin) {
+
+      cellSize = cellSize || 2;
+      margin = (typeof margin == 'undefined')? cellSize * 4 : margin;
+
+      var size = _this.getModuleCount() * cellSize + margin * 2;
+      var min = margin;
+      var max = size - margin;
+
+      return createDataURL(size, size, function(x, y) {
+        if (min <= x && x < max && min <= y && y < max) {
+          var c = Math.floor( (x - min) / cellSize);
+          var r = Math.floor( (y - min) / cellSize);
+          return _this.isDark(r, c)? 0 : 1;
+        } else {
+          return 1;
+        }
+      } );
+    };
+
+    _this.createImgTag = function(cellSize, margin, alt) {
+
+      cellSize = cellSize || 2;
+      margin = (typeof margin == 'undefined')? cellSize * 4 : margin;
+
+      var size = _this.getModuleCount() * cellSize + margin * 2;
+
+      var img = '';
+      img += '<img';
+      img += '\u0020src="';
+      img += _this.createDataURL(cellSize, margin);
+      img += '"';
+      img += '\u0020width="';
+      img += size;
+      img += '"';
+      img += '\u0020height="';
+      img += size;
+      img += '"';
+      if (alt) {
+        img += '\u0020alt="';
+        img += escapeXml(alt);
+        img += '"';
+      }
+      img += '/>';
+
+      return img;
+    };
+
+    var escapeXml = function(s) {
+      var escaped = '';
+      for (var i = 0; i < s.length; i += 1) {
+        var c = s.charAt(i);
+        switch(c) {
+        case '<': escaped += '&lt;'; break;
+        case '>': escaped += '&gt;'; break;
+        case '&': escaped += '&amp;'; break;
+        case '"': escaped += '&quot;'; break;
+        default : escaped += c; break;
+        }
+      }
+      return escaped;
+    };
+
+    var _createHalfASCII = function(margin) {
+      var cellSize = 1;
+      margin = (typeof margin == 'undefined')? cellSize * 2 : margin;
+
+      var size = _this.getModuleCount() * cellSize + margin * 2;
+      var min = margin;
+      var max = size - margin;
+
+      var y, x, r1, r2, p;
+
+      var blocks = {
+        '██': '█',
+        '█ ': '▀',
+        ' █': '▄',
+        '  ': ' '
+      };
+
+      var blocksLastLineNoMargin = {
+        '██': '▀',
+        '█ ': '▀',
+        ' █': ' ',
+        '  ': ' '
+      };
+
+      var ascii = '';
+      for (y = 0; y < size; y += 2) {
+        r1 = Math.floor((y - min) / cellSize);
+        r2 = Math.floor((y + 1 - min) / cellSize);
+        for (x = 0; x < size; x += 1) {
+          p = '█';
+
+          if (min <= x && x < max && min <= y && y < max && _this.isDark(r1, Math.floor((x - min) / cellSize))) {
+            p = ' ';
+          }
+
+          if (min <= x && x < max && min <= y+1 && y+1 < max && _this.isDark(r2, Math.floor((x - min) / cellSize))) {
+            p += ' ';
+          }
+          else {
+            p += '█';
+          }
+
+          // Output 2 characters per pixel, to create full square. 1 character per pixels gives only half width of square.
+          ascii += (margin < 1 && y+1 >= max) ? blocksLastLineNoMargin[p] : blocks[p];
+        }
+
+        ascii += '\n';
+      }
+
+      if (size % 2 && margin > 0) {
+        return ascii.substring(0, ascii.length - size - 1) + Array(size+1).join('▀');
+      }
+
+      return ascii.substring(0, ascii.length-1);
+    };
+
+    _this.createASCII = function(cellSize, margin) {
+      cellSize = cellSize || 1;
+
+      if (cellSize < 2) {
+        return _createHalfASCII(margin);
+      }
+
+      cellSize -= 1;
+      margin = (typeof margin == 'undefined')? cellSize * 2 : margin;
+
+      var size = _this.getModuleCount() * cellSize + margin * 2;
+      var min = margin;
+      var max = size - margin;
+
+      var y, x, r, p;
+
+      var white = Array(cellSize+1).join('██');
+      var black = Array(cellSize+1).join('  ');
+
+      var ascii = '';
+      var line = '';
+      for (y = 0; y < size; y += 1) {
+        r = Math.floor( (y - min) / cellSize);
+        line = '';
+        for (x = 0; x < size; x += 1) {
+          p = 1;
+
+          if (min <= x && x < max && min <= y && y < max && _this.isDark(r, Math.floor((x - min) / cellSize))) {
+            p = 0;
+          }
+
+          // Output 2 characters per pixel, to create full square. 1 character per pixels gives only half width of square.
+          line += p ? white : black;
+        }
+
+        for (r = 0; r < cellSize; r += 1) {
+          ascii += line + '\n';
+        }
+      }
+
+      return ascii.substring(0, ascii.length-1);
+    };
+
+    _this.renderTo2dContext = function(context, cellSize) {
+      cellSize = cellSize || 2;
+      var length = _this.getModuleCount();
+      for (var row = 0; row < length; row++) {
+        for (var col = 0; col < length; col++) {
+          context.fillStyle = _this.isDark(row, col) ? 'black' : 'white';
+          context.fillRect(col * cellSize, row * cellSize, cellSize, cellSize);
+        }
+      }
+    }
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // qrcode.stringToBytes
+  //---------------------------------------------------------------------
+
+  qrcode.stringToBytesFuncs = {
+    'default' : function(s) {
+      var bytes = [];
+      for (var i = 0; i < s.length; i += 1) {
+        var c = s.charCodeAt(i);
+        bytes.push(c & 0xff);
+      }
+      return bytes;
+    }
+  };
+
+  qrcode.stringToBytes = qrcode.stringToBytesFuncs['default'];
+
+  //---------------------------------------------------------------------
+  // qrcode.createStringToBytes
+  //---------------------------------------------------------------------
+
+  /**
+   * @param unicodeData base64 string of byte array.
+   * [16bit Unicode],[16bit Bytes], ...
+   * @param numChars
+   */
+  qrcode.createStringToBytes = function(unicodeData, numChars) {
+
+    // create conversion map.
+
+    var unicodeMap = function() {
+
+      var bin = base64DecodeInputStream(unicodeData);
+      var read = function() {
+        var b = bin.read();
+        if (b == -1) throw 'eof';
+        return b;
+      };
+
+      var count = 0;
+      var unicodeMap = {};
+      while (true) {
+        var b0 = bin.read();
+        if (b0 == -1) break;
+        var b1 = read();
+        var b2 = read();
+        var b3 = read();
+        var k = String.fromCharCode( (b0 << 8) | b1);
+        var v = (b2 << 8) | b3;
+        unicodeMap[k] = v;
+        count += 1;
+      }
+      if (count != numChars) {
+        throw count + ' != ' + numChars;
+      }
+
+      return unicodeMap;
+    }();
+
+    var unknownChar = '?'.charCodeAt(0);
+
+    return function(s) {
+      var bytes = [];
+      for (var i = 0; i < s.length; i += 1) {
+        var c = s.charCodeAt(i);
+        if (c < 128) {
+          bytes.push(c);
+        } else {
+          var b = unicodeMap[s.charAt(i)];
+          if (typeof b == 'number') {
+            if ( (b & 0xff) == b) {
+              // 1byte
+              bytes.push(b);
+            } else {
+              // 2bytes
+              bytes.push(b >>> 8);
+              bytes.push(b & 0xff);
+            }
+          } else {
+            bytes.push(unknownChar);
+          }
+        }
+      }
+      return bytes;
+    };
+  };
+
+  //---------------------------------------------------------------------
+  // QRMode
+  //---------------------------------------------------------------------
+
+  var QRMode = {
+    MODE_NUMBER :    1 << 0,
+    MODE_ALPHA_NUM : 1 << 1,
+    MODE_8BIT_BYTE : 1 << 2,
+    MODE_KANJI :     1 << 3
+  };
+
+  //---------------------------------------------------------------------
+  // QRErrorCorrectionLevel
+  //---------------------------------------------------------------------
+
+  var QRErrorCorrectionLevel = {
+    L : 1,
+    M : 0,
+    Q : 3,
+    H : 2
+  };
+
+  //---------------------------------------------------------------------
+  // QRMaskPattern
+  //---------------------------------------------------------------------
+
+  var QRMaskPattern = {
+    PATTERN000 : 0,
+    PATTERN001 : 1,
+    PATTERN010 : 2,
+    PATTERN011 : 3,
+    PATTERN100 : 4,
+    PATTERN101 : 5,
+    PATTERN110 : 6,
+    PATTERN111 : 7
+  };
+
+  //---------------------------------------------------------------------
+  // QRUtil
+  //---------------------------------------------------------------------
+
+  var QRUtil = function() {
+
+    var PATTERN_POSITION_TABLE = [
+      [],
+      [6, 18],
+      [6, 22],
+      [6, 26],
+      [6, 30],
+      [6, 34],
+      [6, 22, 38],
+      [6, 24, 42],
+      [6, 26, 46],
+      [6, 28, 50],
+      [6, 30, 54],
+      [6, 32, 58],
+      [6, 34, 62],
+      [6, 26, 46, 66],
+      [6, 26, 48, 70],
+      [6, 26, 50, 74],
+      [6, 30, 54, 78],
+      [6, 30, 56, 82],
+      [6, 30, 58, 86],
+      [6, 34, 62, 90],
+      [6, 28, 50, 72, 94],
+      [6, 26, 50, 74, 98],
+      [6, 30, 54, 78, 102],
+      [6, 28, 54, 80, 106],
+      [6, 32, 58, 84, 110],
+      [6, 30, 58, 86, 114],
+      [6, 34, 62, 90, 118],
+      [6, 26, 50, 74, 98, 122],
+      [6, 30, 54, 78, 102, 126],
+      [6, 26, 52, 78, 104, 130],
+      [6, 30, 56, 82, 108, 134],
+      [6, 34, 60, 86, 112, 138],
+      [6, 30, 58, 86, 114, 142],
+      [6, 34, 62, 90, 118, 146],
+      [6, 30, 54, 78, 102, 126, 150],
+      [6, 24, 50, 76, 102, 128, 154],
+      [6, 28, 54, 80, 106, 132, 158],
+      [6, 32, 58, 84, 110, 136, 162],
+      [6, 26, 54, 82, 110, 138, 166],
+      [6, 30, 58, 86, 114, 142, 170]
+    ];
+    var G15 = (1 << 10) | (1 << 8) | (1 << 5) | (1 << 4) | (1 << 2) | (1 << 1) | (1 << 0);
+    var G18 = (1 << 12) | (1 << 11) | (1 << 10) | (1 << 9) | (1 << 8) | (1 << 5) | (1 << 2) | (1 << 0);
+    var G15_MASK = (1 << 14) | (1 << 12) | (1 << 10) | (1 << 4) | (1 << 1);
+
+    var _this = {};
+
+    var getBCHDigit = function(data) {
+      var digit = 0;
+      while (data != 0) {
+        digit += 1;
+        data >>>= 1;
+      }
+      return digit;
+    };
+
+    _this.getBCHTypeInfo = function(data) {
+      var d = data << 10;
+      while (getBCHDigit(d) - getBCHDigit(G15) >= 0) {
+        d ^= (G15 << (getBCHDigit(d) - getBCHDigit(G15) ) );
+      }
+      return ( (data << 10) | d) ^ G15_MASK;
+    };
+
+    _this.getBCHTypeNumber = function(data) {
+      var d = data << 12;
+      while (getBCHDigit(d) - getBCHDigit(G18) >= 0) {
+        d ^= (G18 << (getBCHDigit(d) - getBCHDigit(G18) ) );
+      }
+      return (data << 12) | d;
+    };
+
+    _this.getPatternPosition = function(typeNumber) {
+      return PATTERN_POSITION_TABLE[typeNumber - 1];
+    };
+
+    _this.getMaskFunction = function(maskPattern) {
+
+      switch (maskPattern) {
+
+      case QRMaskPattern.PATTERN000 :
+        return function(i, j) { return (i + j) % 2 == 0; };
+      case QRMaskPattern.PATTERN001 :
+        return function(i, j) { return i % 2 == 0; };
+      case QRMaskPattern.PATTERN010 :
+        return function(i, j) { return j % 3 == 0; };
+      case QRMaskPattern.PATTERN011 :
+        return function(i, j) { return (i + j) % 3 == 0; };
+      case QRMaskPattern.PATTERN100 :
+        return function(i, j) { return (Math.floor(i / 2) + Math.floor(j / 3) ) % 2 == 0; };
+      case QRMaskPattern.PATTERN101 :
+        return function(i, j) { return (i * j) % 2 + (i * j) % 3 == 0; };
+      case QRMaskPattern.PATTERN110 :
+        return function(i, j) { return ( (i * j) % 2 + (i * j) % 3) % 2 == 0; };
+      case QRMaskPattern.PATTERN111 :
+        return function(i, j) { return ( (i * j) % 3 + (i + j) % 2) % 2 == 0; };
+
+      default :
+        throw 'bad maskPattern:' + maskPattern;
+      }
+    };
+
+    _this.getErrorCorrectPolynomial = function(errorCorrectLength) {
+      var a = qrPolynomial([1], 0);
+      for (var i = 0; i < errorCorrectLength; i += 1) {
+        a = a.multiply(qrPolynomial([1, QRMath.gexp(i)], 0) );
+      }
+      return a;
+    };
+
+    _this.getLengthInBits = function(mode, type) {
+
+      if (1 <= type && type < 10) {
+
+        // 1 - 9
+
+        switch(mode) {
+        case QRMode.MODE_NUMBER    : return 10;
+        case QRMode.MODE_ALPHA_NUM : return 9;
+        case QRMode.MODE_8BIT_BYTE : return 8;
+        case QRMode.MODE_KANJI     : return 8;
+        default :
+          throw 'mode:' + mode;
+        }
+
+      } else if (type < 27) {
+
+        // 10 - 26
+
+        switch(mode) {
+        case QRMode.MODE_NUMBER    : return 12;
+        case QRMode.MODE_ALPHA_NUM : return 11;
+        case QRMode.MODE_8BIT_BYTE : return 16;
+        case QRMode.MODE_KANJI     : return 10;
+        default :
+          throw 'mode:' + mode;
+        }
+
+      } else if (type < 41) {
+
+        // 27 - 40
+
+        switch(mode) {
+        case QRMode.MODE_NUMBER    : return 14;
+        case QRMode.MODE_ALPHA_NUM : return 13;
+        case QRMode.MODE_8BIT_BYTE : return 16;
+        case QRMode.MODE_KANJI     : return 12;
+        default :
+          throw 'mode:' + mode;
+        }
+
+      } else {
+        throw 'type:' + type;
+      }
+    };
+
+    _this.getLostPoint = function(qrcode) {
+
+      var moduleCount = qrcode.getModuleCount();
+
+      var lostPoint = 0;
+
+      // LEVEL1
+
+      for (var row = 0; row < moduleCount; row += 1) {
+        for (var col = 0; col < moduleCount; col += 1) {
+
+          var sameCount = 0;
+          var dark = qrcode.isDark(row, col);
+
+          for (var r = -1; r <= 1; r += 1) {
+
+            if (row + r < 0 || moduleCount <= row + r) {
+              continue;
+            }
+
+            for (var c = -1; c <= 1; c += 1) {
+
+              if (col + c < 0 || moduleCount <= col + c) {
+                continue;
+              }
+
+              if (r == 0 && c == 0) {
+                continue;
+              }
+
+              if (dark == qrcode.isDark(row + r, col + c) ) {
+                sameCount += 1;
+              }
+            }
+          }
+
+          if (sameCount > 5) {
+            lostPoint += (3 + sameCount - 5);
+          }
+        }
+      };
+
+      // LEVEL2
+
+      for (var row = 0; row < moduleCount - 1; row += 1) {
+        for (var col = 0; col < moduleCount - 1; col += 1) {
+          var count = 0;
+          if (qrcode.isDark(row, col) ) count += 1;
+          if (qrcode.isDark(row + 1, col) ) count += 1;
+          if (qrcode.isDark(row, col + 1) ) count += 1;
+          if (qrcode.isDark(row + 1, col + 1) ) count += 1;
+          if (count == 0 || count == 4) {
+            lostPoint += 3;
+          }
+        }
+      }
+
+      // LEVEL3
+
+      for (var row = 0; row < moduleCount; row += 1) {
+        for (var col = 0; col < moduleCount - 6; col += 1) {
+          if (qrcode.isDark(row, col)
+              && !qrcode.isDark(row, col + 1)
+              &&  qrcode.isDark(row, col + 2)
+              &&  qrcode.isDark(row, col + 3)
+              &&  qrcode.isDark(row, col + 4)
+              && !qrcode.isDark(row, col + 5)
+              &&  qrcode.isDark(row, col + 6) ) {
+            lostPoint += 40;
+          }
+        }
+      }
+
+      for (var col = 0; col < moduleCount; col += 1) {
+        for (var row = 0; row < moduleCount - 6; row += 1) {
+          if (qrcode.isDark(row, col)
+              && !qrcode.isDark(row + 1, col)
+              &&  qrcode.isDark(row + 2, col)
+              &&  qrcode.isDark(row + 3, col)
+              &&  qrcode.isDark(row + 4, col)
+              && !qrcode.isDark(row + 5, col)
+              &&  qrcode.isDark(row + 6, col) ) {
+            lostPoint += 40;
+          }
+        }
+      }
+
+      // LEVEL4
+
+      var darkCount = 0;
+
+      for (var col = 0; col < moduleCount; col += 1) {
+        for (var row = 0; row < moduleCount; row += 1) {
+          if (qrcode.isDark(row, col) ) {
+            darkCount += 1;
+          }
+        }
+      }
+
+      var ratio = Math.abs(100 * darkCount / moduleCount / moduleCount - 50) / 5;
+      lostPoint += ratio * 10;
+
+      return lostPoint;
+    };
+
+    return _this;
+  }();
+
+  //---------------------------------------------------------------------
+  // QRMath
+  //---------------------------------------------------------------------
+
+  var QRMath = function() {
+
+    var EXP_TABLE = new Array(256);
+    var LOG_TABLE = new Array(256);
+
+    // initialize tables
+    for (var i = 0; i < 8; i += 1) {
+      EXP_TABLE[i] = 1 << i;
+    }
+    for (var i = 8; i < 256; i += 1) {
+      EXP_TABLE[i] = EXP_TABLE[i - 4]
+        ^ EXP_TABLE[i - 5]
+        ^ EXP_TABLE[i - 6]
+        ^ EXP_TABLE[i - 8];
+    }
+    for (var i = 0; i < 255; i += 1) {
+      LOG_TABLE[EXP_TABLE[i] ] = i;
+    }
+
+    var _this = {};
+
+    _this.glog = function(n) {
+
+      if (n < 1) {
+        throw 'glog(' + n + ')';
+      }
+
+      return LOG_TABLE[n];
+    };
+
+    _this.gexp = function(n) {
+
+      while (n < 0) {
+        n += 255;
+      }
+
+      while (n >= 256) {
+        n -= 255;
+      }
+
+      return EXP_TABLE[n];
+    };
+
+    return _this;
+  }();
+
+  //---------------------------------------------------------------------
+  // qrPolynomial
+  //---------------------------------------------------------------------
+
+  function qrPolynomial(num, shift) {
+
+    if (typeof num.length == 'undefined') {
+      throw num.length + '/' + shift;
+    }
+
+    var _num = function() {
+      var offset = 0;
+      while (offset < num.length && num[offset] == 0) {
+        offset += 1;
+      }
+      var _num = new Array(num.length - offset + shift);
+      for (var i = 0; i < num.length - offset; i += 1) {
+        _num[i] = num[i + offset];
+      }
+      return _num;
+    }();
+
+    var _this = {};
+
+    _this.getAt = function(index) {
+      return _num[index];
+    };
+
+    _this.getLength = function() {
+      return _num.length;
+    };
+
+    _this.multiply = function(e) {
+
+      var num = new Array(_this.getLength() + e.getLength() - 1);
+
+      for (var i = 0; i < _this.getLength(); i += 1) {
+        for (var j = 0; j < e.getLength(); j += 1) {
+          num[i + j] ^= QRMath.gexp(QRMath.glog(_this.getAt(i) ) + QRMath.glog(e.getAt(j) ) );
+        }
+      }
+
+      return qrPolynomial(num, 0);
+    };
+
+    _this.mod = function(e) {
+
+      if (_this.getLength() - e.getLength() < 0) {
+        return _this;
+      }
+
+      var ratio = QRMath.glog(_this.getAt(0) ) - QRMath.glog(e.getAt(0) );
+
+      var num = new Array(_this.getLength() );
+      for (var i = 0; i < _this.getLength(); i += 1) {
+        num[i] = _this.getAt(i);
+      }
+
+      for (var i = 0; i < e.getLength(); i += 1) {
+        num[i] ^= QRMath.gexp(QRMath.glog(e.getAt(i) ) + ratio);
+      }
+
+      // recursive call
+      return qrPolynomial(num, 0).mod(e);
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // QRRSBlock
+  //---------------------------------------------------------------------
+
+  var QRRSBlock = function() {
+
+    var RS_BLOCK_TABLE = [
+
+      // L
+      // M
+      // Q
+      // H
+
+      // 1
+      [1, 26, 19],
+      [1, 26, 16],
+      [1, 26, 13],
+      [1, 26, 9],
+
+      // 2
+      [1, 44, 34],
+      [1, 44, 28],
+      [1, 44, 22],
+      [1, 44, 16],
+
+      // 3
+      [1, 70, 55],
+      [1, 70, 44],
+      [2, 35, 17],
+      [2, 35, 13],
+
+      // 4
+      [1, 100, 80],
+      [2, 50, 32],
+      [2, 50, 24],
+      [4, 25, 9],
+
+      // 5
+      [1, 134, 108],
+      [2, 67, 43],
+      [2, 33, 15, 2, 34, 16],
+      [2, 33, 11, 2, 34, 12],
+
+      // 6
+      [2, 86, 68],
+      [4, 43, 27],
+      [4, 43, 19],
+      [4, 43, 15],
+
+      // 7
+      [2, 98, 78],
+      [4, 49, 31],
+      [2, 32, 14, 4, 33, 15],
+      [4, 39, 13, 1, 40, 14],
+
+      // 8
+      [2, 121, 97],
+      [2, 60, 38, 2, 61, 39],
+      [4, 40, 18, 2, 41, 19],
+      [4, 40, 14, 2, 41, 15],
+
+      // 9
+      [2, 146, 116],
+      [3, 58, 36, 2, 59, 37],
+      [4, 36, 16, 4, 37, 17],
+      [4, 36, 12, 4, 37, 13],
+
+      // 10
+      [2, 86, 68, 2, 87, 69],
+      [4, 69, 43, 1, 70, 44],
+      [6, 43, 19, 2, 44, 20],
+      [6, 43, 15, 2, 44, 16],
+
+      // 11
+      [4, 101, 81],
+      [1, 80, 50, 4, 81, 51],
+      [4, 50, 22, 4, 51, 23],
+      [3, 36, 12, 8, 37, 13],
+
+      // 12
+      [2, 116, 92, 2, 117, 93],
+      [6, 58, 36, 2, 59, 37],
+      [4, 46, 20, 6, 47, 21],
+      [7, 42, 14, 4, 43, 15],
+
+      // 13
+      [4, 133, 107],
+      [8, 59, 37, 1, 60, 38],
+      [8, 44, 20, 4, 45, 21],
+      [12, 33, 11, 4, 34, 12],
+
+      // 14
+      [3, 145, 115, 1, 146, 116],
+      [4, 64, 40, 5, 65, 41],
+      [11, 36, 16, 5, 37, 17],
+      [11, 36, 12, 5, 37, 13],
+
+      // 15
+      [5, 109, 87, 1, 110, 88],
+      [5, 65, 41, 5, 66, 42],
+      [5, 54, 24, 7, 55, 25],
+      [11, 36, 12, 7, 37, 13],
+
+      // 16
+      [5, 122, 98, 1, 123, 99],
+      [7, 73, 45, 3, 74, 46],
+      [15, 43, 19, 2, 44, 20],
+      [3, 45, 15, 13, 46, 16],
+
+      // 17
+      [1, 135, 107, 5, 136, 108],
+      [10, 74, 46, 1, 75, 47],
+      [1, 50, 22, 15, 51, 23],
+      [2, 42, 14, 17, 43, 15],
+
+      // 18
+      [5, 150, 120, 1, 151, 121],
+      [9, 69, 43, 4, 70, 44],
+      [17, 50, 22, 1, 51, 23],
+      [2, 42, 14, 19, 43, 15],
+
+      // 19
+      [3, 141, 113, 4, 142, 114],
+      [3, 70, 44, 11, 71, 45],
+      [17, 47, 21, 4, 48, 22],
+      [9, 39, 13, 16, 40, 14],
+
+      // 20
+      [3, 135, 107, 5, 136, 108],
+      [3, 67, 41, 13, 68, 42],
+      [15, 54, 24, 5, 55, 25],
+      [15, 43, 15, 10, 44, 16],
+
+      // 21
+      [4, 144, 116, 4, 145, 117],
+      [17, 68, 42],
+      [17, 50, 22, 6, 51, 23],
+      [19, 46, 16, 6, 47, 17],
+
+      // 22
+      [2, 139, 111, 7, 140, 112],
+      [17, 74, 46],
+      [7, 54, 24, 16, 55, 25],
+      [34, 37, 13],
+
+      // 23
+      [4, 151, 121, 5, 152, 122],
+      [4, 75, 47, 14, 76, 48],
+      [11, 54, 24, 14, 55, 25],
+      [16, 45, 15, 14, 46, 16],
+
+      // 24
+      [6, 147, 117, 4, 148, 118],
+      [6, 73, 45, 14, 74, 46],
+      [11, 54, 24, 16, 55, 25],
+      [30, 46, 16, 2, 47, 17],
+
+      // 25
+      [8, 132, 106, 4, 133, 107],
+      [8, 75, 47, 13, 76, 48],
+      [7, 54, 24, 22, 55, 25],
+      [22, 45, 15, 13, 46, 16],
+
+      // 26
+      [10, 142, 114, 2, 143, 115],
+      [19, 74, 46, 4, 75, 47],
+      [28, 50, 22, 6, 51, 23],
+      [33, 46, 16, 4, 47, 17],
+
+      // 27
+      [8, 152, 122, 4, 153, 123],
+      [22, 73, 45, 3, 74, 46],
+      [8, 53, 23, 26, 54, 24],
+      [12, 45, 15, 28, 46, 16],
+
+      // 28
+      [3, 147, 117, 10, 148, 118],
+      [3, 73, 45, 23, 74, 46],
+      [4, 54, 24, 31, 55, 25],
+      [11, 45, 15, 31, 46, 16],
+
+      // 29
+      [7, 146, 116, 7, 147, 117],
+      [21, 73, 45, 7, 74, 46],
+      [1, 53, 23, 37, 54, 24],
+      [19, 45, 15, 26, 46, 16],
+
+      // 30
+      [5, 145, 115, 10, 146, 116],
+      [19, 75, 47, 10, 76, 48],
+      [15, 54, 24, 25, 55, 25],
+      [23, 45, 15, 25, 46, 16],
+
+      // 31
+      [13, 145, 115, 3, 146, 116],
+      [2, 74, 46, 29, 75, 47],
+      [42, 54, 24, 1, 55, 25],
+      [23, 45, 15, 28, 46, 16],
+
+      // 32
+      [17, 145, 115],
+      [10, 74, 46, 23, 75, 47],
+      [10, 54, 24, 35, 55, 25],
+      [19, 45, 15, 35, 46, 16],
+
+      // 33
+      [17, 145, 115, 1, 146, 116],
+      [14, 74, 46, 21, 75, 47],
+      [29, 54, 24, 19, 55, 25],
+      [11, 45, 15, 46, 46, 16],
+
+      // 34
+      [13, 145, 115, 6, 146, 116],
+      [14, 74, 46, 23, 75, 47],
+      [44, 54, 24, 7, 55, 25],
+      [59, 46, 16, 1, 47, 17],
+
+      // 35
+      [12, 151, 121, 7, 152, 122],
+      [12, 75, 47, 26, 76, 48],
+      [39, 54, 24, 14, 55, 25],
+      [22, 45, 15, 41, 46, 16],
+
+      // 36
+      [6, 151, 121, 14, 152, 122],
+      [6, 75, 47, 34, 76, 48],
+      [46, 54, 24, 10, 55, 25],
+      [2, 45, 15, 64, 46, 16],
+
+      // 37
+      [17, 152, 122, 4, 153, 123],
+      [29, 74, 46, 14, 75, 47],
+      [49, 54, 24, 10, 55, 25],
+      [24, 45, 15, 46, 46, 16],
+
+      // 38
+      [4, 152, 122, 18, 153, 123],
+      [13, 74, 46, 32, 75, 47],
+      [48, 54, 24, 14, 55, 25],
+      [42, 45, 15, 32, 46, 16],
+
+      // 39
+      [20, 147, 117, 4, 148, 118],
+      [40, 75, 47, 7, 76, 48],
+      [43, 54, 24, 22, 55, 25],
+      [10, 45, 15, 67, 46, 16],
+
+      // 40
+      [19, 148, 118, 6, 149, 119],
+      [18, 75, 47, 31, 76, 48],
+      [34, 54, 24, 34, 55, 25],
+      [20, 45, 15, 61, 46, 16]
+    ];
+
+    var qrRSBlock = function(totalCount, dataCount) {
+      var _this = {};
+      _this.totalCount = totalCount;
+      _this.dataCount = dataCount;
+      return _this;
+    };
+
+    var _this = {};
+
+    var getRsBlockTable = function(typeNumber, errorCorrectionLevel) {
+
+      switch(errorCorrectionLevel) {
+      case QRErrorCorrectionLevel.L :
+        return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 0];
+      case QRErrorCorrectionLevel.M :
+        return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 1];
+      case QRErrorCorrectionLevel.Q :
+        return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 2];
+      case QRErrorCorrectionLevel.H :
+        return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 3];
+      default :
+        return undefined;
+      }
+    };
+
+    _this.getRSBlocks = function(typeNumber, errorCorrectionLevel) {
+
+      var rsBlock = getRsBlockTable(typeNumber, errorCorrectionLevel);
+
+      if (typeof rsBlock == 'undefined') {
+        throw 'bad rs block @ typeNumber:' + typeNumber +
+            '/errorCorrectionLevel:' + errorCorrectionLevel;
+      }
+
+      var length = rsBlock.length / 3;
+
+      var list = [];
+
+      for (var i = 0; i < length; i += 1) {
+
+        var count = rsBlock[i * 3 + 0];
+        var totalCount = rsBlock[i * 3 + 1];
+        var dataCount = rsBlock[i * 3 + 2];
+
+        for (var j = 0; j < count; j += 1) {
+          list.push(qrRSBlock(totalCount, dataCount) );
+        }
+      }
+
+      return list;
+    };
+
+    return _this;
+  }();
+
+  //---------------------------------------------------------------------
+  // qrBitBuffer
+  //---------------------------------------------------------------------
+
+  var qrBitBuffer = function() {
+
+    var _buffer = [];
+    var _length = 0;
+
+    var _this = {};
+
+    _this.getBuffer = function() {
+      return _buffer;
+    };
+
+    _this.getAt = function(index) {
+      var bufIndex = Math.floor(index / 8);
+      return ( (_buffer[bufIndex] >>> (7 - index % 8) ) & 1) == 1;
+    };
+
+    _this.put = function(num, length) {
+      for (var i = 0; i < length; i += 1) {
+        _this.putBit( ( (num >>> (length - i - 1) ) & 1) == 1);
+      }
+    };
+
+    _this.getLengthInBits = function() {
+      return _length;
+    };
+
+    _this.putBit = function(bit) {
+
+      var bufIndex = Math.floor(_length / 8);
+      if (_buffer.length <= bufIndex) {
+        _buffer.push(0);
+      }
+
+      if (bit) {
+        _buffer[bufIndex] |= (0x80 >>> (_length % 8) );
+      }
+
+      _length += 1;
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // qrNumber
+  //---------------------------------------------------------------------
+
+  var qrNumber = function(data) {
+
+    var _mode = QRMode.MODE_NUMBER;
+    var _data = data;
+
+    var _this = {};
+
+    _this.getMode = function() {
+      return _mode;
+    };
+
+    _this.getLength = function(buffer) {
+      return _data.length;
+    };
+
+    _this.write = function(buffer) {
+
+      var data = _data;
+
+      var i = 0;
+
+      while (i + 2 < data.length) {
+        buffer.put(strToNum(data.substring(i, i + 3) ), 10);
+        i += 3;
+      }
+
+      if (i < data.length) {
+        if (data.length - i == 1) {
+          buffer.put(strToNum(data.substring(i, i + 1) ), 4);
+        } else if (data.length - i == 2) {
+          buffer.put(strToNum(data.substring(i, i + 2) ), 7);
+        }
+      }
+    };
+
+    var strToNum = function(s) {
+      var num = 0;
+      for (var i = 0; i < s.length; i += 1) {
+        num = num * 10 + chatToNum(s.charAt(i) );
+      }
+      return num;
+    };
+
+    var chatToNum = function(c) {
+      if ('0' <= c && c <= '9') {
+        return c.charCodeAt(0) - '0'.charCodeAt(0);
+      }
+      throw 'illegal char :' + c;
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // qrAlphaNum
+  //---------------------------------------------------------------------
+
+  var qrAlphaNum = function(data) {
+
+    var _mode = QRMode.MODE_ALPHA_NUM;
+    var _data = data;
+
+    var _this = {};
+
+    _this.getMode = function() {
+      return _mode;
+    };
+
+    _this.getLength = function(buffer) {
+      return _data.length;
+    };
+
+    _this.write = function(buffer) {
+
+      var s = _data;
+
+      var i = 0;
+
+      while (i + 1 < s.length) {
+        buffer.put(
+          getCode(s.charAt(i) ) * 45 +
+          getCode(s.charAt(i + 1) ), 11);
+        i += 2;
+      }
+
+      if (i < s.length) {
+        buffer.put(getCode(s.charAt(i) ), 6);
+      }
+    };
+
+    var getCode = function(c) {
+
+      if ('0' <= c && c <= '9') {
+        return c.charCodeAt(0) - '0'.charCodeAt(0);
+      } else if ('A' <= c && c <= 'Z') {
+        return c.charCodeAt(0) - 'A'.charCodeAt(0) + 10;
+      } else {
+        switch (c) {
+        case ' ' : return 36;
+        case '$' : return 37;
+        case '%' : return 38;
+        case '*' : return 39;
+        case '+' : return 40;
+        case '-' : return 41;
+        case '.' : return 42;
+        case '/' : return 43;
+        case ':' : return 44;
+        default :
+          throw 'illegal char :' + c;
+        }
+      }
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // qr8BitByte
+  //---------------------------------------------------------------------
+
+  var qr8BitByte = function(data) {
+
+    var _mode = QRMode.MODE_8BIT_BYTE;
+    var _data = data;
+    var _bytes = qrcode.stringToBytes(data);
+
+    var _this = {};
+
+    _this.getMode = function() {
+      return _mode;
+    };
+
+    _this.getLength = function(buffer) {
+      return _bytes.length;
+    };
+
+    _this.write = function(buffer) {
+      for (var i = 0; i < _bytes.length; i += 1) {
+        buffer.put(_bytes[i], 8);
+      }
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // qrKanji
+  //---------------------------------------------------------------------
+
+  var qrKanji = function(data) {
+
+    var _mode = QRMode.MODE_KANJI;
+    var _data = data;
+
+    var stringToBytes = qrcode.stringToBytesFuncs['SJIS'];
+    if (!stringToBytes) {
+      throw 'sjis not supported.';
+    }
+    !function(c, code) {
+      // self test for sjis support.
+      var test = stringToBytes(c);
+      if (test.length != 2 || ( (test[0] << 8) | test[1]) != code) {
+        throw 'sjis not supported.';
+      }
+    }('\u53cb', 0x9746);
+
+    var _bytes = stringToBytes(data);
+
+    var _this = {};
+
+    _this.getMode = function() {
+      return _mode;
+    };
+
+    _this.getLength = function(buffer) {
+      return ~~(_bytes.length / 2);
+    };
+
+    _this.write = function(buffer) {
+
+      var data = _bytes;
+
+      var i = 0;
+
+      while (i + 1 < data.length) {
+
+        var c = ( (0xff & data[i]) << 8) | (0xff & data[i + 1]);
+
+        if (0x8140 <= c && c <= 0x9FFC) {
+          c -= 0x8140;
+        } else if (0xE040 <= c && c <= 0xEBBF) {
+          c -= 0xC140;
+        } else {
+          throw 'illegal char at ' + (i + 1) + '/' + c;
+        }
+
+        c = ( (c >>> 8) & 0xff) * 0xC0 + (c & 0xff);
+
+        buffer.put(c, 13);
+
+        i += 2;
+      }
+
+      if (i < data.length) {
+        throw 'illegal char at ' + (i + 1);
+      }
+    };
+
+    return _this;
+  };
+
+  //=====================================================================
+  // GIF Support etc.
+  //
+
+  //---------------------------------------------------------------------
+  // byteArrayOutputStream
+  //---------------------------------------------------------------------
+
+  var byteArrayOutputStream = function() {
+
+    var _bytes = [];
+
+    var _this = {};
+
+    _this.writeByte = function(b) {
+      _bytes.push(b & 0xff);
+    };
+
+    _this.writeShort = function(i) {
+      _this.writeByte(i);
+      _this.writeByte(i >>> 8);
+    };
+
+    _this.writeBytes = function(b, off, len) {
+      off = off || 0;
+      len = len || b.length;
+      for (var i = 0; i < len; i += 1) {
+        _this.writeByte(b[i + off]);
+      }
+    };
+
+    _this.writeString = function(s) {
+      for (var i = 0; i < s.length; i += 1) {
+        _this.writeByte(s.charCodeAt(i) );
+      }
+    };
+
+    _this.toByteArray = function() {
+      return _bytes;
+    };
+
+    _this.toString = function() {
+      var s = '';
+      s += '[';
+      for (var i = 0; i < _bytes.length; i += 1) {
+        if (i > 0) {
+          s += ',';
+        }
+        s += _bytes[i];
+      }
+      s += ']';
+      return s;
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // base64EncodeOutputStream
+  //---------------------------------------------------------------------
+
+  var base64EncodeOutputStream = function() {
+
+    var _buffer = 0;
+    var _buflen = 0;
+    var _length = 0;
+    var _base64 = '';
+
+    var _this = {};
+
+    var writeEncoded = function(b) {
+      _base64 += String.fromCharCode(encode(b & 0x3f) );
+    };
+
+    var encode = function(n) {
+      if (n < 0) {
+        // error.
+      } else if (n < 26) {
+        return 0x41 + n;
+      } else if (n < 52) {
+        return 0x61 + (n - 26);
+      } else if (n < 62) {
+        return 0x30 + (n - 52);
+      } else if (n == 62) {
+        return 0x2b;
+      } else if (n == 63) {
+        return 0x2f;
+      }
+      throw 'n:' + n;
+    };
+
+    _this.writeByte = function(n) {
+
+      _buffer = (_buffer << 8) | (n & 0xff);
+      _buflen += 8;
+      _length += 1;
+
+      while (_buflen >= 6) {
+        writeEncoded(_buffer >>> (_buflen - 6) );
+        _buflen -= 6;
+      }
+    };
+
+    _this.flush = function() {
+
+      if (_buflen > 0) {
+        writeEncoded(_buffer << (6 - _buflen) );
+        _buffer = 0;
+        _buflen = 0;
+      }
+
+      if (_length % 3 != 0) {
+        // padding
+        var padlen = 3 - _length % 3;
+        for (var i = 0; i < padlen; i += 1) {
+          _base64 += '=';
+        }
+      }
+    };
+
+    _this.toString = function() {
+      return _base64;
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // base64DecodeInputStream
+  //---------------------------------------------------------------------
+
+  var base64DecodeInputStream = function(str) {
+
+    var _str = str;
+    var _pos = 0;
+    var _buffer = 0;
+    var _buflen = 0;
+
+    var _this = {};
+
+    _this.read = function() {
+
+      while (_buflen < 8) {
+
+        if (_pos >= _str.length) {
+          if (_buflen == 0) {
+            return -1;
+          }
+          throw 'unexpected end of file./' + _buflen;
+        }
+
+        var c = _str.charAt(_pos);
+        _pos += 1;
+
+        if (c == '=') {
+          _buflen = 0;
+          return -1;
+        } else if (c.match(/^\s$/) ) {
+          // ignore if whitespace.
+          continue;
+        }
+
+        _buffer = (_buffer << 6) | decode(c.charCodeAt(0) );
+        _buflen += 6;
+      }
+
+      var n = (_buffer >>> (_buflen - 8) ) & 0xff;
+      _buflen -= 8;
+      return n;
+    };
+
+    var decode = function(c) {
+      if (0x41 <= c && c <= 0x5a) {
+        return c - 0x41;
+      } else if (0x61 <= c && c <= 0x7a) {
+        return c - 0x61 + 26;
+      } else if (0x30 <= c && c <= 0x39) {
+        return c - 0x30 + 52;
+      } else if (c == 0x2b) {
+        return 62;
+      } else if (c == 0x2f) {
+        return 63;
+      } else {
+        throw 'c:' + c;
+      }
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // gifImage (B/W)
+  //---------------------------------------------------------------------
+
+  var gifImage = function(width, height) {
+
+    var _width = width;
+    var _height = height;
+    var _data = new Array(width * height);
+
+    var _this = {};
+
+    _this.setPixel = function(x, y, pixel) {
+      _data[y * _width + x] = pixel;
+    };
+
+    _this.write = function(out) {
+
+      //---------------------------------
+      // GIF Signature
+
+      out.writeString('GIF87a');
+
+      //---------------------------------
+      // Screen Descriptor
+
+      out.writeShort(_width);
+      out.writeShort(_height);
+
+      out.writeByte(0x80); // 2bit
+      out.writeByte(0);
+      out.writeByte(0);
+
+      //---------------------------------
+      // Global Color Map
+
+      // black
+      out.writeByte(0x00);
+      out.writeByte(0x00);
+      out.writeByte(0x00);
+
+      // white
+      out.writeByte(0xff);
+      out.writeByte(0xff);
+      out.writeByte(0xff);
+
+      //---------------------------------
+      // Image Descriptor
+
+      out.writeString(',');
+      out.writeShort(0);
+      out.writeShort(0);
+      out.writeShort(_width);
+      out.writeShort(_height);
+      out.writeByte(0);
+
+      //---------------------------------
+      // Local Color Map
+
+      //---------------------------------
+      // Raster Data
+
+      var lzwMinCodeSize = 2;
+      var raster = getLZWRaster(lzwMinCodeSize);
+
+      out.writeByte(lzwMinCodeSize);
+
+      var offset = 0;
+
+      while (raster.length - offset > 255) {
+        out.writeByte(255);
+        out.writeBytes(raster, offset, 255);
+        offset += 255;
+      }
+
+      out.writeByte(raster.length - offset);
+      out.writeBytes(raster, offset, raster.length - offset);
+      out.writeByte(0x00);
+
+      //---------------------------------
+      // GIF Terminator
+      out.writeString(';');
+    };
+
+    var bitOutputStream = function(out) {
+
+      var _out = out;
+      var _bitLength = 0;
+      var _bitBuffer = 0;
+
+      var _this = {};
+
+      _this.write = function(data, length) {
+
+        if ( (data >>> length) != 0) {
+          throw 'length over';
+        }
+
+        while (_bitLength + length >= 8) {
+          _out.writeByte(0xff & ( (data << _bitLength) | _bitBuffer) );
+          length -= (8 - _bitLength);
+          data >>>= (8 - _bitLength);
+          _bitBuffer = 0;
+          _bitLength = 0;
+        }
+
+        _bitBuffer = (data << _bitLength) | _bitBuffer;
+        _bitLength = _bitLength + length;
+      };
+
+      _this.flush = function() {
+        if (_bitLength > 0) {
+          _out.writeByte(_bitBuffer);
+        }
+      };
+
+      return _this;
+    };
+
+    var getLZWRaster = function(lzwMinCodeSize) {
+
+      var clearCode = 1 << lzwMinCodeSize;
+      var endCode = (1 << lzwMinCodeSize) + 1;
+      var bitLength = lzwMinCodeSize + 1;
+
+      // Setup LZWTable
+      var table = lzwTable();
+
+      for (var i = 0; i < clearCode; i += 1) {
+        table.add(String.fromCharCode(i) );
+      }
+      table.add(String.fromCharCode(clearCode) );
+      table.add(String.fromCharCode(endCode) );
+
+      var byteOut = byteArrayOutputStream();
+      var bitOut = bitOutputStream(byteOut);
+
+      // clear code
+      bitOut.write(clearCode, bitLength);
+
+      var dataIndex = 0;
+
+      var s = String.fromCharCode(_data[dataIndex]);
+      dataIndex += 1;
+
+      while (dataIndex < _data.length) {
+
+        var c = String.fromCharCode(_data[dataIndex]);
+        dataIndex += 1;
+
+        if (table.contains(s + c) ) {
+
+          s = s + c;
+
+        } else {
+
+          bitOut.write(table.indexOf(s), bitLength);
+
+          if (table.size() < 0xfff) {
+
+            if (table.size() == (1 << bitLength) ) {
+              bitLength += 1;
+            }
+
+            table.add(s + c);
+          }
+
+          s = c;
+        }
+      }
+
+      bitOut.write(table.indexOf(s), bitLength);
+
+      // end code
+      bitOut.write(endCode, bitLength);
+
+      bitOut.flush();
+
+      return byteOut.toByteArray();
+    };
+
+    var lzwTable = function() {
+
+      var _map = {};
+      var _size = 0;
+
+      var _this = {};
+
+      _this.add = function(key) {
+        if (_this.contains(key) ) {
+          throw 'dup key:' + key;
+        }
+        _map[key] = _size;
+        _size += 1;
+      };
+
+      _this.size = function() {
+        return _size;
+      };
+
+      _this.indexOf = function(key) {
+        return _map[key];
+      };
+
+      _this.contains = function(key) {
+        return typeof _map[key] != 'undefined';
+      };
+
+      return _this;
+    };
+
+    return _this;
+  };
+
+  var createDataURL = function(width, height, getPixel) {
+    var gif = gifImage(width, height);
+    for (var y = 0; y < height; y += 1) {
+      for (var x = 0; x < width; x += 1) {
+        gif.setPixel(x, y, getPixel(x, y) );
+      }
+    }
+
+    var b = byteArrayOutputStream();
+    gif.write(b);
+
+    var base64 = base64EncodeOutputStream();
+    var bytes = b.toByteArray();
+    for (var i = 0; i < bytes.length; i += 1) {
+      base64.writeByte(bytes[i]);
+    }
+    base64.flush();
+
+    return 'data:image/gif;base64,' + base64;
+  };
+
+  //---------------------------------------------------------------------
+  // returns qrcode function.
+
+  return qrcode;
+}();
+
+// multibyte support
+!function() {
+
+  qrcode.stringToBytesFuncs['UTF-8'] = function(s) {
+    // http://stackoverflow.com/questions/18729405/how-to-convert-utf8-string-to-byte-array
+    function toUTF8Array(str) {
+      var utf8 = [];
+      for (var i=0; i < str.length; i++) {
+        var charcode = str.charCodeAt(i);
+        if (charcode < 0x80) utf8.push(charcode);
+        else if (charcode < 0x800) {
+          utf8.push(0xc0 | (charcode >> 6),
+              0x80 | (charcode & 0x3f));
+        }
+        else if (charcode < 0xd800 || charcode >= 0xe000) {
+          utf8.push(0xe0 | (charcode >> 12),
+              0x80 | ((charcode>>6) & 0x3f),
+              0x80 | (charcode & 0x3f));
+        }
+        // surrogate pair
+        else {
+          i++;
+          // UTF-16 encodes 0x10000-0x10FFFF by
+          // subtracting 0x10000 and splitting the
+          // 20 bits of 0x0-0xFFFFF into two halves
+          charcode = 0x10000 + (((charcode & 0x3ff)<<10)
+            | (str.charCodeAt(i) & 0x3ff));
+          utf8.push(0xf0 | (charcode >>18),
+              0x80 | ((charcode>>12) & 0x3f),
+              0x80 | ((charcode>>6) & 0x3f),
+              0x80 | (charcode & 0x3f));
+        }
+      }
+      return utf8;
+    }
+    return toUTF8Array(s);
+  };
+
+}();
+
+(function (factory) {
+  if (typeof define === 'function' && define.amd) {
+      define([], factory);
+  } else if (typeof exports === 'object') {
+      module.exports = factory();
+  }
+}(function () {
+    return qrcode;
+}));
+</script>
+<script>/* Bộ dựng giao diện nhỏ cho trang Bản đồ chiến lược.
+   Đọc khuôn mẫu trong <template id="tpl"> (các chỗ {{...}}, data-if, data-for)
+   rồi vẽ bằng Preact mỗi khi số liệu thay đổi. Không lưu gì vào trình duyệt. */
+(function () {
+  'use strict';
+  var h = preact.h, render = preact.render;
+  var HOLE = /\{\{\s*([^}]+?)\s*\}\}/g;
+  var ONE = /^\{\{\s*([^}]+?)\s*\}\}$/;
+
+  function DCLogic(props) { this.props = props || {}; this.state = {}; }
+  DCLogic.prototype.setState = function (p) {
+    var patch = typeof p === 'function' ? p(this.state, this.props) : p;
+    this.state = Object.assign({}, this.state, patch);
+    if (this.__sched) this.__sched();
+  };
+  DCLogic.prototype.forceUpdate = function () { if (this.__sched) this.__sched(); };
+  window.DCLogic = DCLogic;
+
+  function look(path, sc) {
+    if (path === 'true') return true;
+    if (path === 'false') return false;
+    if (path === 'null') return null;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return Number(path);
+    var ps = path.split('.'), v = sc[ps[0]];
+    for (var i = 1; i < ps.length && v != null; i++) v = v[ps[i]];
+    return v;
+  }
+  function txt(v) { return v == null || v === false || v === true ? '' : String(v); }
+
+  function compileStr(s) {
+    if (s.indexOf('{{') < 0) return function () { return s; };
+    var one = ONE.exec(s);
+    if (one) { var p = one[1]; return function (sc) { return look(p, sc); }; }
+    var parts = [], last = 0, m;
+    HOLE.lastIndex = 0;
+    while ((m = HOLE.exec(s))) { parts.push(s.slice(last, m.index)); parts.push({ p: m[1] }); last = HOLE.lastIndex; }
+    parts.push(s.slice(last));
+    return function (sc) {
+      var out = '';
+      for (var i = 0; i < parts.length; i++) out += typeof parts[i] === 'string' ? parts[i] : txt(look(parts[i].p, sc));
+      return out;
+    };
+  }
+
+  function evName(tag, type, n) {
+    var ev = n.slice(2);
+    if (ev === 'change' && (tag === 'textarea' || (tag === 'input' && type !== 'checkbox' && type !== 'radio'))) return 'onInput';
+    return 'on' + ev.charAt(0).toUpperCase() + ev.slice(1);
+  }
+
+  function compileChildren(parent) {
+    var fns = [];
+    for (var c = parent.firstChild; c; c = c.nextSibling) {
+      var f = compileNode(c);
+      if (f) fns.push(f);
+    }
+    return function (sc) { var out = new Array(fns.length); for (var i = 0; i < fns.length; i++) out[i] = fns[i](sc); return out; };
+  }
+
+  function compileNode(node) {
+    if (node.nodeType === 3) {
+      var tf = compileStr(node.nodeValue);
+      return function (sc) { return txt(tf(sc)); };
+    }
+    if (node.nodeType !== 1) return null;
+    var tag = node.localName;
+    if (tag === 'template' && node.hasAttribute('data-if')) {
+      var cond = node.getAttribute('data-if'), kids = compileChildren(node.content);
+      return function (sc) { return look(cond, sc) ? kids(sc) : null; };
+    }
+    if (tag === 'template' && node.hasAttribute('data-for')) {
+      var lp = node.getAttribute('data-for'), as = node.getAttribute('data-as') || 'item', body = compileChildren(node.content);
+      return function (sc) {
+        var list = look(lp, sc);
+        if (!list || !list.length) return null;
+        var out = [];
+        for (var i = 0; i < list.length; i++) {
+          var s2 = Object.create(sc); s2[as] = list[i]; s2.$index = i;
+          out.push(body(s2));
+        }
+        return out;
+      };
+    }
+    var type = (node.getAttribute('type') || '').toLowerCase();
+    var attrs = [];
+    for (var i = 0; i < node.attributes.length; i++) {
+      var a = node.attributes[i], n = a.name;
+      if (n.indexOf('hint-') === 0) continue;
+      var key = n;
+      if (n.length > 2 && n.slice(0, 2) === 'on') key = evName(tag, type, n);
+      attrs.push([key, compileStr(a.value)]);
+    }
+    var kidsFn = compileChildren(node);
+    return function (sc) {
+      var props = {};
+      for (var j = 0; j < attrs.length; j++) {
+        var v = attrs[j][1](sc), k = attrs[j][0];
+        if (k.slice(0, 2) === 'on') { if (typeof v === 'function') props[k] = v; continue; }
+        if (k.slice(0, 5) === 'aria-' && typeof v === 'boolean') v = String(v);
+        props[k] = v;
+      }
+      return h(tag, props, kidsFn(sc));
+    };
+  }
+
+  window.mountDC = function (Cls, tplEl, container, props) {
+    var root = compileChildren(tplEl.content);
+    var inst = new Cls(props);
+    inst.props = props;
+    var queued = false;
+    function draw() {
+      queued = false;
+      render(h('div', { style: 'display:contents' }, root(Object.assign({}, inst.renderVals()))), container);
+      var pg = container.querySelector('.pg');
+      document.documentElement.classList.toggle('dk', !!(pg && pg.classList.contains('dark')));
+    }
+    inst.__sched = function () { if (!queued) { queued = true; Promise.resolve().then(draw); } };
+    draw();
+    if (inst.componentDidMount) inst.componentDidMount();
+    return {
+      inst: inst,
+      setProps: function (p) { inst.props = Object.assign({}, inst.props, p); inst.__sched(); }
+    };
+  };
+})();
+</script>
+<script>class Component extends DCLogic {
+  constructor(...a) {
+    super(...a);
+    const p = this.props || a[0] || {};
+    this.state = {
+      dark: null, mode: null, reg: null,
+      dt2026: 0, vat: 10, inPct: 70, days: 26,
+      products: [{ id: 1, name: 'Sản phẩm 1', lnst: 50000000, ind: 'tu', pct: 65, price: 2800000, gv: 50, bh: 8 }],
+      nextId: 2,
+      season: [120, 60, 90, 95, 100, 100, 95, 100, 105, 105, 110, 120],
+      lock: new Array(12).fill(null),
+      guideOpen: true, mapReadOpen: true, gone: {},
+      form: { name: '', email: '', phone: '', role: '', biz: '', website: '', consent: false },
+      tried: false, sending: false, demo: false, doneName: p.registered ? 'Nguyễn Minh Anh' : '',
+      err: '', copied: '', period: 'year',
+      fw: { mode: 'leads', ind: 'tu', leads: '2000', cr: '20', n: '2', items: '1' },
+      off: {}, custom: {}, drafts: {}, cid: 1
+    };
+  }
+  f(n) {
+    if (!isFinite(n)) return '–';
+    const r = Math.round(n);
+    const s = String(Math.abs(r)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    return (r < 0 ? '−' : '') + s;
+  }
+  fz(n) { return Math.round(n) === 0 ? '–' : this.f(n); }
+  s(n) {
+    if (!isFinite(n)) return '–';
+    const a = Math.abs(n);
+    if (a >= 1e9) return (n / 1e9).toFixed(2).replace(/\.?0+$/, '').replace('.', ',') + ' tỷ';
+    if (a >= 1e6) return (n / 1e6).toFixed(1).replace(/\.0$/, '').replace('.', ',') + ' triệu';
+    return this.f(n);
+  }
+  pc(x) { return isFinite(x) ? Math.round(x * 100) + '%' : '–'; }
+  d1(x) { return isFinite(x) ? (Math.round(x * 10) / 10).toFixed(1).replace('.', ',') : '–'; }
+  dig(v) { const d = String(v).replace(/[^\d]/g, ''); return d ? Number(d) : 0; }
+  setP(id, patch) {
+    this.setState({ products: this.state.products.map(x => x.id === id ? Object.assign({}, x, patch) : x) });
+  }
+  renderVals() {
+    const P = this.props || {}, st = this.state;
+    const dark = st.dark != null ? st.dark : !!P.dark;
+    const mode = st.mode || P.mode || 'basic';
+    const reg = st.reg != null ? st.reg : !!P.registered;
+    const phone = !!P.phone;
+    const section = P.section || 'all';
+    const v = st.vat / 100, ip = Math.min(st.inPct, 100) / 100;
+    // Thuế suất TNDN tự động: theo doanh thu 2026 nếu có, nếu không theo doanh thu kế hoạch 2027
+    const dtAt = r => st.products.reduce((a, p) => a + p.lnst / (1 - r) / (1 - Math.min(Math.max(p.pct, 0), 95) / 100), 0) * 12;
+    let rate;
+    if (st.dt2026 > 0) rate = st.dt2026 <= 3e9 ? 15 : (st.dt2026 <= 50e9 ? 17 : 20);
+    else rate = dtAt(0.15) <= 3e9 ? 15 : (dtAt(0.17) <= 50e9 ? 17 : 20);
+    const t = rate / 100;
+    const days = st.days > 0 ? st.days : 26;
+
+    const IND = [
+      { id: 'tu', label: 'Tự điền', pct: null },
+      { id: 'tm', label: 'Thương mại, bán lẻ', pct: 85 },
+      { id: 'sx', label: 'Sản xuất', pct: 75 },
+      { id: 'dv', label: 'Dịch vụ', pct: 60 },
+      { id: 'an', label: 'Nhà hàng, ăn uống', pct: 70 },
+      { id: 'xd', label: 'Xây dựng', pct: 80 }
+    ];
+    const indPct = {};
+    IND.forEach(o => { indPct[o.id] = o.pct; });
+    const inds = IND.map(o => ({ id: o.id, optLabel: o.pct == null ? o.label : o.label + ' · ' + o.pct + '%' }));
+
+    const S = { lnst: 0, thue: 0, lntt: 0, cp: 0, dt: 0, qm: 0, qx: 0, gv: 0, bh: 0, ql: 0 };
+    const many = st.products.length > 1;
+    const prows = st.products.map((p, i) => {
+      const c = Math.min(Math.max(p.pct, 0), 95) / 100;
+      const lntt = p.lnst / (1 - t), thue = lntt - p.lnst, dt = lntt / (1 - c), cp = dt - lntt;
+      const qm = p.price > 0 ? Math.ceil(dt / p.price - 1e-9) : 0;
+      // Giá vốn, bán hàng, quản lý là % trên doanh thu, cộng lại bằng % chi phí đã đặt ở Khối 2; vượt thì quản lý về 0 và chi phí thực tế vượt kế hoạch
+      const gvp = p.gv, bhp = p.bh, qlRaw = p.pct - gvp - bhp, qlp = Math.max(0, qlRaw), totp = gvp + bhp + qlp, overCp = qlRaw < 0, ltp = 100 - totp;
+      const gv = dt * gvp / 100, bh = dt * bhp / 100, ql = dt * qlp / 100;
+      S.lnst += p.lnst; S.thue += thue; S.lntt += lntt; S.cp += cp; S.dt += dt; S.qm += qm; S.qx += p.price > 0 ? dt / p.price : 0; S.gv += gv; S.bh += bh; S.ql += ql;
+      return {
+        id: p.id, idx: i + 1, name: p.name, ind: p.ind,
+        lnstF: this.f(p.lnst), pctF: String(p.pct), priceF: this.f(p.price),
+        thueF: this.f(thue), lnttF: this.f(lntt), cpF: this.f(cp), dtF: this.f(dt),
+        qmF: this.f(qm), qdF: this.d1(qm / days),
+        lnttPct: this.pc(1 - c), lnstPct: dt > 0 ? this.pc(p.lnst / dt) : '–',
+        gvF: String(gvp), bhF: String(bhp), qlF: qlp + '%', totF: totp + '%', totCls: overCp ? 'num over' : 'num', overCp: overCp, capF: 'đặt ' + p.pct + '%',
+        ltF: (ltp < 0 ? '−' + Math.abs(ltp) : ltp) + '%', dtPctF: (totp + ltp) + '%', ltCls: ltp < 0 ? 'num over' : (overCp ? 'num red' : 'num'),
+        canRemove: many,
+        setName: e => this.setP(p.id, { name: e.target.value }),
+        setLnst: e => this.setP(p.id, { lnst: this.dig(e.target.value) }),
+        setInd: e => { const id = e.target.value; const sp = indPct[id]; this.setP(p.id, sp != null ? { ind: id, pct: sp } : { ind: id }); },
+        setPct: e => this.setP(p.id, { pct: Math.min(this.dig(e.target.value), 95), ind: 'tu' }),
+        setPrice: e => this.setP(p.id, { price: this.dig(e.target.value) }),
+        setGv: e => this.setP(p.id, { gv: Math.min(this.dig(e.target.value), 100) }),
+        setBh: e => this.setP(p.id, { bh: Math.min(this.dig(e.target.value), 100) }),
+        remove: () => this.setState({ products: this.state.products.filter(x => x.id !== p.id) })
+      };
+    });
+
+    const vatOut = S.dt * v, vatIn = S.cp * ip * v, vatM = Math.max(0, vatOut - vatIn);
+    const thueY = S.thue * 12, vatY = vatM * 12, taxY = thueY + vatY;
+    const k = {
+      lnstMF: this.f(S.lnst), thueMF: this.f(S.thue), lnttMF: this.f(S.lntt), cpMF: this.f(S.cp), dtMF: this.f(S.dt),
+      qmF: this.f(S.qm), qdT: this.d1(S.qm / days), qYearF: this.f(Math.ceil(S.qx * 12 - 1e-9)),
+      cpPct: S.dt > 0 ? this.pc(S.cp / S.dt) : '–', lnttPct: S.dt > 0 ? this.pc(S.lntt / S.dt) : '–', lnstPct: S.dt > 0 ? this.pc(S.lnst / S.dt) : '–',
+      lnstYS: this.s(S.lnst * 12), dtYS: this.s(S.dt * 12), dtMS: this.s(S.dt), cpMS: this.s(S.cp), dtDayS: this.s(S.dt / days),
+      cpYS: this.s(S.cp * 12), thueYS: this.s(thueY), vatYS: this.s(vatY),
+      taxYF: this.f(taxY), taxYS: this.s(taxY), taxMF: this.f(taxY / 12), thueYF: this.f(thueY), vatYF: this.f(vatY),
+      vatOutF: this.f(vatOut), vatInF: this.f(vatIn), vatMF: this.f(vatM)
+    };
+
+    const isY = st.period !== 'month', mul = isY ? 12 : 1;
+    const per = {
+      label: isY ? 'cả năm 2027' : 'mỗi tháng',
+      labelUp: isY ? 'CẢ NĂM 2027' : 'MỖI THÁNG NĂM 2027', qLead: isY ? 'Năm 2027' : 'Mỗi tháng năm 2027',
+      yCls: isY ? 'seg on' : 'seg', mCls: isY ? 'seg' : 'seg on',
+      yPressed: isY ? 'true' : 'false', mPressed: isY ? 'false' : 'true',
+      setY: () => this.setState({ period: 'year' }), setM: () => this.setState({ period: 'month' }),
+      lnstS: this.s(S.lnst * mul), dtS: this.s(S.dt * mul), cpS: this.s(S.cp * mul), lnttS: this.s(S.lntt * mul),
+      lnstF: this.f(S.lnst * mul), lnttF: this.f(S.lntt * mul), thueF: this.f(S.thue * mul), thueS: this.s(S.thue * mul),
+      vatOutF: this.f(vatOut * mul), vatInF: this.f(vatIn * mul), vatF: this.f(vatM * mul), vatS: this.s(vatM * mul),
+      taxF: this.f((S.thue + vatM) * mul), qtyF: this.f(Math.ceil(S.qx * mul - 1e-9))
+    };
+    const b02 = [
+      { code: '01', label: 'Doanh thu', m: this.f(S.dt), y: this.f(S.dt * 12), cls: '' },
+      { code: '11+25+26', label: 'Chi phí', m: this.f(S.cp), y: this.f(S.cp * 12), cls: '' },
+      { code: '50', label: 'Lợi nhuận trước thuế', m: this.f(S.lntt), y: this.f(S.lntt * 12), cls: 'b' },
+      { code: '51', label: 'Thuế TNDN', m: this.f(S.thue), y: this.f(thueY), cls: 'red' },
+      { code: '60', label: 'Lợi nhuận sau thuế', m: this.f(S.lnst), y: this.f(S.lnst * 12), cls: 'b dbl' }
+    ];
+
+    // Gợi ý thuế suất
+    const has26 = st.dt2026 > 0;
+    const base = has26 ? st.dt2026 : S.dt * 12;
+    const band = rate === 15 ? 'không quá 3 tỷ' : (rate === 17 ? 'trên 3 tỷ đến 50 tỷ' : 'trên 50 tỷ');
+    const hint = {
+      text: (has26 ? 'Doanh thu năm 2026 là ' : 'Doanh thu kế hoạch cả năm 2027 là ') + this.s(base) + ', ' + band + ', nên bảng tự áp dụng thuế suất ' + rate + '%.' + (has26 ? '' : ' Khi có doanh thu năm 2026, điền vào ô bên cạnh để tính đúng theo năm liền trước.')
+    };
+
+    const tndnOpts = [[15, 'doanh thu ≤ 3 tỷ'], [17, 'trên 3 đến 50 tỷ'], [20, 'trên 50 tỷ']].map(o => ({
+      label: o[0] + '%', sub: o[1], cls: rate === o[0] ? 'seg on' : 'seg', bg: rate === o[0] ? 'var(--green)' : 'var(--paper)'
+    }));
+    const vatOpts = [0, 5, 8, 10].map(x => ({
+      label: x + '%', cls: st.vat === x ? 'seg on' : 'seg', pressed: st.vat === x ? 'true' : 'false',
+      pick: () => this.setState({ vat: x })
+    }));
+
+    // B02-DN theo tháng
+    // Tháng đã khóa giữ nguyên số lúc khóa; phần còn lại của cả năm chia cho các tháng chưa khóa theo % hoàn thành kế hoạch
+    const lockArr = st.lock || new Array(12).fill(null);
+    const BASE = { L01: S.dt * 12, L11: S.gv * 12, L25: S.bh * 12, L26: S.ql * 12 };
+    const lockedSum = { L01: 0, L11: 0, L25: 0, L26: 0 };
+    let nLocked = 0, nOpen = 0, wOpen = 0;
+    st.season.forEach((w, i) => {
+      const sn = lockArr[i];
+      if (sn) { nLocked++; Object.keys(lockedSum).forEach(k => { lockedSum[k] += sn[k]; }); }
+      else { nOpen++; wOpen += Number(w) || 0; }
+    });
+    const over = nLocked > 0 && lockedSum.L01 > BASE.L01 + 0.5;
+    const calc = (L01, L11, L25, L26) => {
+      const L20 = L01 - L11, L30 = L20 - L25 - L26, L50 = L30, L51 = L50 * t, L60 = L50 - L51;
+      const vat = Math.max(0, L01 * v - (L11 + L25 + L26) * ip * v);
+      return { L01, L02: 0, L10: L01, L11, L20, L22: 0, L23: 0, L25, L26, L30, L40: 0, L50, L51, L60, vat };
+    };
+    const months = st.season.map((w, i) => {
+      if (lockArr[i]) return lockArr[i];
+      const sh = wOpen > 0 ? (Number(w) || 0) / wOpen : (nOpen > 0 ? 1 / nOpen : 0);
+      const pick = k => { const r = BASE[k] - lockedSum[k]; return (over || (BASE[k] >= 0 && r < 0) ? 0 : r) * sh; };
+      return calc(pick('L01'), pick('L11'), pick('L25'), pick('L26'));
+    });
+    this._months = months;
+    const lockWarn = over
+      ? 'Các tháng đã khóa đã vượt doanh thu mục tiêu cả năm, nên các tháng chưa khóa được tính bằng 0. Mở khóa bớt một tháng hoặc tăng mục tiêu.'
+      : (nLocked === 12 ? 'Đã khóa cả 12 tháng nên sửa % hoàn thành không còn đổi số liệu. Mở khóa một tháng để tính lại.' : '');
+    const defs = [
+      ['01', 'Doanh thu bán hàng và cung cấp dịch vụ', 'L01', ''],
+      ['02', 'Các khoản giảm trừ doanh thu', 'L02', 'mu'],
+      ['10', 'Doanh thu thuần', 'L10', 'b'],
+      ['11', 'Giá vốn hàng bán', 'L11', ''],
+      ['20', 'Lợi nhuận gộp', 'L20', 'b'],
+      ['22', 'Chi phí tài chính', 'L22', 'mu'],
+      ['23', 'Trong đó: Chi phí lãi vay', 'L23', 'mu it'],
+      ['25', 'Chi phí bán hàng', 'L25', ''],
+      ['26', 'Chi phí quản lý doanh nghiệp', 'L26', ''],
+      ['30', 'Lợi nhuận thuần từ hoạt động kinh doanh', 'L30', 'b'],
+      ['40', 'Lợi nhuận khác', 'L40', 'mu'],
+      ['50', 'Tổng lợi nhuận kế toán trước thuế', 'L50', 'b'],
+      ['51', 'Chi phí thuế TNDN hiện hành', 'L51', 'red'],
+      ['60', 'Lợi nhuận sau thuế TNDN', 'L60', 'b dbl']
+    ];
+    const b02m = defs.map(d => {
+      let sum = 0;
+      const cells = months.map((m, i) => { sum += m[d[2]]; return { v: this.fz(m[d[2]]), cls: lockArr[i] ? 'lkd' : '' }; });
+      return { code: d[0], label: d[1], cls: d[3], cells: cells, y: this.fz(sum) };
+    });
+    const vatCells = months.map((m, i) => ({ v: this.f(m.vat), cls: lockArr[i] ? 'lkd' : '' }));
+    const monthHeads = months.map((m, i) => ({ l: 'T' + (i + 1), cls: lockArr[i] ? 'lkd' : '' }));
+    const seasonCells = st.season.map((w, i) => ({
+      l: 'T' + (i + 1), v: String(w), locked: !!lockArr[i], cls: lockArr[i] ? 'lkd' : '',
+      set: e => { const s = this.state.season.slice(); s[i] = Math.min(this.dig(e.target.value), 999); this.setState({ season: s }); },
+      lkCls: lockArr[i] ? 'lk on' : 'lk', lkLabel: lockArr[i] ? 'Đã khóa' : 'Khóa', lkPressed: lockArr[i] ? 'true' : 'false',
+      lkAria: (lockArr[i] ? 'Mở khóa tháng ' : 'Khóa tháng ') + (i + 1),
+      toggle: () => { const lk = this.state.lock.slice(); lk[i] = lk[i] ? null : Object.assign({}, this._months[i]); this.setState({ lock: lk }); }
+    }));
+    const q = [0, 1, 2, 3].map(qi => {
+      let va = 0, tn = 0;
+      for (let j = qi * 3; j < qi * 3 + 3; j++) { va += months[j].vat; tn += months[j].L51; }
+      return { va, tn };
+    });
+    const qy = q.reduce((a, b) => ({ va: a.va + b.va, tn: a.tn + b.tn }), { va: 0, tn: 0 });
+    const qrows = [
+      { label: 'Thuế GTGT phải nộp', cls: '', cells: q.map(x => ({ v: this.f(x.va) })), y: this.f(qy.va) },
+      { label: 'Thuế TNDN tạm nộp', cls: '', cells: q.map(x => ({ v: this.f(x.tn) })), y: this.f(qy.tn) },
+      { label: 'Tổng thuế phải nộp', cls: 'b dbl', cells: q.map(x => ({ v: this.f(x.va + x.tn) })), y: this.f(qy.va + qy.tn) }
+    ];
+
+    // ===== Tầng Khách hàng: các đòn bẩy doanh số tính ngược từ tầng Tài chính (cả năm) =====
+    const fwS = st.fw;
+    const pn = x => { const v = parseFloat(String(x).replace(/\s/g, '').replace(',', '.')); return isFinite(v) ? v : 0; };
+    const Ry = S.dt * 12, Qy = S.qx * 12, avgP = Qy > 0 ? Ry / Qy : 0, margin = Ry > 0 ? (S.lnst * 12) / Ry : 0;
+    const iL = this.dig(fwS.leads), iC = pn(fwS.cr) / 100, iN = pn(fwS.n), iI = pn(fwS.items);
+    const fm = fwS.mode;
+    let L = iL, C = iC, N = iN, I = iI, cust, orders;
+    if (fm === 'leads') { orders = I > 0 ? Qy / I : 0; cust = N > 0 ? orders / N : 0; L = C > 0 ? cust / C : 0; }
+    else if (fm === 'cr') { orders = I > 0 ? Qy / I : 0; cust = N > 0 ? orders / N : 0; C = L > 0 ? cust / L : 0; }
+    else if (fm === 'n') { cust = L * C; orders = I > 0 ? Qy / I : 0; N = cust > 0 ? orders / cust : 0; }
+    else { cust = L * C; orders = cust * N; I = orders > 0 ? Qy / orders : 0; }
+    const up = x => Math.ceil(x - 1e-9);
+    const asv = avgP * I;
+    const wd = days * 12;
+    const setFw = key => e => this.setState({ fw: Object.assign({}, this.state.fw, { [key]: e.target.value }) });
+    const lever = (key, op, label, sub, out) => {
+      const solved = fm === key;
+      return { op, label, sub, isIn: !solved, isOut: solved, solved, raw: fwS[key], set: setFw(key), val: out, cls: solved ? 'solved key' : '' };
+    };
+    const auto = (op, label, sub, val, cls) => ({ op, label, sub, isIn: false, isOut: true, solved: false, raw: '', set: null, val, cls: cls || '' });
+    const fwRows = [
+      lever('leads', '', 'Khách tiềm năng', 'Người quan tâm, có thể tiếp cận', this.f(up(L)) + ' người'),
+      lever('cr', '×', 'Tỷ lệ chốt đơn', 'Phần trăm khách tiềm năng mua hàng', this.d1(C * 100) + '%'),
+      auto('=', 'Số khách mua', 'Khách tiềm năng × tỷ lệ chốt', this.f(up(cust)) + ' khách', 'key'),
+      lever('n', '×', 'Số lần mua của 1 khách / năm', 'Chăm sóc sau bán, khách quay lại', this.d1(N) + ' lần'),
+      auto('=', 'Số đơn hàng', 'Số khách × số lần mua', this.f(up(orders)) + ' đơn', 'key'),
+      lever('items', '×', 'Số sản phẩm / đơn', 'Bán thêm, bán kèm', this.d1(I) + ' sản phẩm'),
+      auto('=', 'Số sản phẩm cần bán', 'Khớp với bảng sản phẩm phía trên', this.f(up(Qy)) + ' sản phẩm', 'key'),
+      auto('×', 'Đơn giá trung bình 1 sản phẩm', 'Doanh thu ÷ số sản phẩm · giá trị 1 đơn ' + this.s(asv), this.f(avgP)),
+      auto('=', 'Doanh thu', 'Khớp doanh thu cần đạt ở tầng Tài chính', this.f(Ry), 'key ok'),
+      auto('×', 'Biên lợi nhuận (LNST / doanh thu)', 'Lấy từ bảng tính', Ry > 0 ? (margin * 100).toFixed(2).replace('.', ',') + '%' : '–'),
+      auto('=', 'Lợi nhuận sau thuế', 'Khớp tiền muốn có ở tầng Tài chính', this.f(Ry * margin), 'key ok tot last')
+    ];
+    // Ví dụ: đổi một ô đang điền, xem ô tính ngược thay đổi thế nào (theo đúng số trên bảng)
+    const solveFw = (mode, l, c, n, it) => {
+      let o, cu;
+      if (mode === 'leads') { o = it > 0 ? Qy / it : 0; cu = n > 0 ? o / n : 0; return c > 0 ? cu / c : 0; }
+      if (mode === 'cr') { o = it > 0 ? Qy / it : 0; cu = n > 0 ? o / n : 0; return l > 0 ? cu / l : 0; }
+      if (mode === 'n') { cu = l * c; o = it > 0 ? Qy / it : 0; return cu > 0 ? o / cu : 0; }
+      cu = l * c; o = cu * n; return o > 0 ? Qy / o : 0;
+    };
+    const FWLBL = { leads: 'khách tiềm năng', cr: 'tỷ lệ chốt', n: 'số lần mua mỗi năm', items: 'số sản phẩm mỗi đơn' };
+    const fwFmt = (k, x) => k === 'leads' ? this.f(up(x)) + ' người' : k === 'cr' ? this.d1(x * 100) + '%' : k === 'n' ? this.d1(x) + ' lần' : this.d1(x) + ' sản phẩm';
+    const cur = { leads: L, cr: C, n: N, items: I };
+    const bump = { leads: x => Math.round(x * 1.2), cr: x => x + 0.05, n: x => x + 1, items: x => x + 1 };
+    const examples = [];
+    ['leads', 'cr', 'n', 'items'].forEach(k => {
+      if (k === fm || !(cur[k] > 0) || !(Qy > 0)) return;
+      const nx = Object.assign({}, cur, { [k]: bump[k](cur[k]) });
+      const a = solveFw(fm, cur.leads, cur.cr, cur.n, cur.items), b = solveFw(fm, nx.leads, nx.cr, nx.n, nx.items);
+      if (!(a > 0) || !(b > 0)) return;
+      const up1 = k === 'leads' ? 'thêm 20%, ' : '';
+      examples.push({ t: 'Tăng ' + FWLBL[k] + ' ' + up1 + 'từ ' + fwFmt(k, cur[k]) + ' lên ' + fwFmt(k, nx[k]) + ': ' + FWLBL[fm] + ' cần ' + (b < a ? 'giảm' : 'tăng') + ' từ ' + fwFmt(fm, a) + (b < a ? ' xuống ' : ' lên ') + fwFmt(fm, b) + '.' });
+    });
+    examples.push({ t: 'Tăng lợi nhuận muốn có ở bảng sản phẩm phía trên: số sản phẩm cần bán, doanh thu và ' + FWLBL[fm] + ' đều tăng theo.' });
+    const warns = [];
+    if (C > 1) warns.push('Tỷ lệ chốt cần đạt vượt 100%: phải có thêm khách tiềm năng hoặc tăng số lần mua, số sản phẩm mỗi đơn.');
+    if (fm !== 'leads' && fm !== 'cr' && N > 0 && N < 1) warns.push('Số lần mua dưới 1 lần: số khách đang nhiều hơn số đơn cần bán.');
+    if (fm === 'items' && I > 0 && I < 1) warns.push('Số sản phẩm mỗi đơn dưới 1: số đơn đang nhiều hơn số sản phẩm cần bán.');
+    if (Qy <= 0) warns.push('Chưa có giá bán ở bảng sản phẩm nên chưa tính được đơn giá trung bình.');
+    const FWIND = [
+      ['tu', 'Tự điền', null, null], ['bl', 'Bán lẻ, thương mại', 30, 6], ['sx', 'Sản xuất, phân phối', 15, 4],
+      ['dv', 'Dịch vụ', 25, 3], ['an', 'Nhà hàng, ăn uống', 60, 12], ['xd', 'Xây dựng, dự án', 10, 1]
+    ];
+    const fw = {
+      ind: fwS.ind, rows: fwRows, hasWarn: warns.length > 0, warn: warns.join(' '), examples: examples, solvedLabel: FWLBL[fm],
+      inds: FWIND.map(o => ({ id: o[0], label: o[2] == null ? o[1] : o[1] + ' · chốt ' + o[2] + '%, mua ' + o[3] + ' lần/năm' })),
+      setInd: e => { const id = e.target.value; const o = FWIND.find(x => x[0] === id); const patch = { ind: id }; if (o && o[2] != null) { patch.cr = String(o[2]); patch.n = String(o[3]); } this.setState({ fw: Object.assign({}, this.state.fw, patch) }); },
+      modes: [['leads', 'Khách tiềm năng'], ['cr', 'Tỷ lệ chốt'], ['n', 'Số lần mua'], ['items', 'Sản phẩm/đơn']].map(m => ({
+        label: m[1], cls: fm === m[0] ? 'seg on' : 'seg', pressed: fm === m[0] ? 'true' : 'false',
+        pick: () => this.setState({ fw: Object.assign({}, this.state.fw, { mode: m[0] }) })
+      })),
+      note: 'Quy ra mỗi tháng: ' + this.f(up(L / 12)) + ' khách tiềm năng, ' + this.f(up(orders / 12)) + ' đơn. Số người, số đơn làm tròn lên; mỗi tháng đều làm tròn lên nên 12 tháng cộng lại có thể nhỉnh hơn số cả năm.'
+    };
+    // Ví dụ đọc bản đồ theo số đang có
+    const mapEx = { lnst: this.s(S.lnst * 12), dt: this.s(Ry), qty: this.f(up(Qy)), cust: this.f(up(cust)), leads: this.f(up(L)), cr: this.d1(C * 100) + '%', leadsDay: this.d1(L / wd) };
+    // ===== Tầng Quy trình và Con người: danh sách tick chọn =====
+    const gvPct = S.dt > 0 ? this.pc(S.gv / S.dt) : '–', bhPct = S.dt > 0 ? this.pc(S.bh / S.dt) : '–', qlPct = S.dt > 0 ? this.pc(S.ql / S.dt) : '–';
+    const GDEF = {
+      sales: ['Quy trình tạo doanh số', 'Mỗi đòn bẩy doanh số cần một quy trình', [
+        ['s1', 'Marketing tạo khách tiềm năng', this.f(up(L)) + ' người/năm, khoảng ' + this.f(up(L / 12)) + ' người/tháng'],
+        ['s2', 'Tư vấn và chốt đơn', 'Đạt tỷ lệ chốt ' + this.d1(C * 100) + '%'],
+        ['s3', 'Bán thêm, bán kèm', this.d1(I) + ' sản phẩm/đơn, giá trị đơn ' + this.s(asv)],
+        ['s4', 'Chăm sóc sau bán, giữ khách', 'Mỗi khách mua ' + this.d1(N) + ' lần/năm'],
+        ['s5', 'Báo cáo doanh số hằng tuần', 'So với mục tiêu ' + this.s(S.dt) + '/tháng']
+      ]],
+      cost: ['Quy trình quản trị chi phí', 'Vận hành và quản trị chi phí đúng tỷ lệ đã đặt', [
+        ['c1', 'Lập ngân sách chi phí tháng', 'Tối đa ' + this.s(S.cp) + '/tháng, bằng ' + k.cpPct + ' doanh thu'],
+        ['c2', 'Kiểm soát giá vốn khi mua hàng', 'Giá vốn không quá ' + gvPct + ' doanh thu'],
+        ['c3', 'Duyệt chi bán hàng và quản lý theo ngân sách', 'Bán hàng ' + bhPct + ', quản lý ' + qlPct + ' doanh thu'],
+        ['c4', 'Thu đủ hóa đơn đầu vào', st.inPct + '% chi phí có hóa đơn GTGT'],
+        ['c5', 'Lập lịch tiền nộp thuế', 'GTGT ' + this.s(vatM) + '/tháng, TNDN ' + this.s(S.thue * 3) + '/quý'],
+        ['c6', 'Theo dõi dòng tiền, công nợ hằng tuần', 'Lãi chưa chắc có tiền']
+      ]],
+      trainOwner: ['Chủ doanh nghiệp', 'Ra quyết định bằng con số', [
+        ['t4', 'Chủ doanh nghiệp đọc số cùng kế toán', 'Họp số liệu mỗi tuần']
+      ]],
+      trainSales: ['Người bán hàng', 'Kỹ năng để đạt các đòn bẩy doanh số', [
+        ['t1', 'Kỹ năng tư vấn, chốt đơn cho người bán hàng', 'Để đạt tỷ lệ chốt ' + this.d1(C * 100) + '%'],
+        ['t2', 'Chăm sóc khách hàng, bán thêm, bán kèm', 'Để khách mua ' + this.d1(N) + ' lần/năm, ' + this.d1(I) + ' sản phẩm/đơn']
+      ]],
+      trainAcc: ['Kế toán', 'Làm được báo cáo và kế hoạch thuế', [
+        ['t3', 'Kế toán đọc báo cáo và lập kế hoạch thuế', 'B02-DN, thuế TNDN, thuế GTGT theo quý']
+      ]],
+      dmoOwner: ['Chủ doanh nghiệp', 'Mỗi sáng', [
+        ['o1', 'Xem doanh thu hôm qua so với mục tiêu', this.s(S.dt / days) + '/ngày'],
+        ['o2', 'Xem số đơn đã chốt', this.d1(orders / wd) + ' đơn/ngày'],
+        ['o3', 'Duyệt chi trong ngân sách', 'Bình quân ' + this.s(S.cp / days) + '/ngày']
+      ]],
+      dmoSales: ['Người bán hàng', 'Mỗi ngày', [
+        ['b1', 'Tiếp cận khách tiềm năng mới', this.d1(L / wd) + ' người/ngày'],
+        ['b2', 'Chốt đơn', this.d1(orders / wd) + ' đơn/ngày, ' + this.d1(Qy / wd) + ' sản phẩm/ngày'],
+        ['b3', 'Gọi lại khách cũ để bán lại, bán thêm', 'Theo danh sách chăm sóc'],
+        ['b4', 'Ghi khách tiềm năng và kết quả vào sổ', 'Cuối ngày']
+      ]],
+      dmoAcc: ['Kế toán', 'Mỗi ngày', [
+        ['a1', 'Ghi nhận doanh thu, chi phí trong ngày', 'Cuối ngày'],
+        ['a2', 'Đối chiếu hóa đơn đầu vào', 'Giữ đủ ' + st.inPct + '% chi phí có hóa đơn'],
+        ['a3', 'Cập nhật chi phí so với ngân sách', 'Ngân sách ' + this.s(S.cp) + '/tháng'],
+        ['a4', 'Báo số liệu ngày cho chủ', 'Doanh thu, số đơn, tiền mặt']
+      ]]
+    };
+    const mkGroup = key => {
+      const d = GDEF[key], off = st.off, cus = st.custom[key] || [], gone = st.gone || {};
+      const goneIds = d[2].filter(it => gone[it[0]]).map(it => it[0]);
+      const row = (id, title, metric, custom) => ({
+        uid: 'ck-' + (phone ? 'm-' : '') + id, title, metric, custom, on: !off[id], cls: off[id] ? 'unchk' : '',
+        toggle: () => this.setState({ off: Object.assign({}, this.state.off, { [id]: !this.state.off[id] }) }),
+        remove: () => custom
+          ? this.setState({ custom: Object.assign({}, this.state.custom, { [key]: (this.state.custom[key] || []).filter(c => c.id !== id) }) })
+          : this.setState({ gone: Object.assign({}, this.state.gone, { [id]: true }) })
+      });
+      return {
+        title: d[0].toUpperCase(), sub: d[1],
+        items: d[2].filter(it => !gone[it[0]]).map(it => row(it[0], it[1], it[2], false)).concat(cus.map(c => row(c.id, c.text, 'Việc tự thêm', true))),
+        hasGone: goneIds.length > 0, goneLabel: 'Khôi phục ' + goneIds.length + ' việc đã xóa',
+        restore: () => { const g2 = Object.assign({}, this.state.gone); goneIds.forEach(x => { delete g2[x]; }); this.setState({ gone: g2 }); },
+        ph: 'Thêm việc khác…', draft: st.drafts[key] || '',
+        setDraft: e => this.setState({ drafts: Object.assign({}, this.state.drafts, { [key]: e.target.value }) }),
+        add: () => {
+          const t = String(this.state.drafts[key] || '').trim(); if (!t) return;
+          const id = 'u' + this.state.cid;
+          this.setState({ cid: this.state.cid + 1, drafts: Object.assign({}, this.state.drafts, { [key]: '' }),
+            custom: Object.assign({}, this.state.custom, { [key]: (this.state.custom[key] || []).concat([{ id, text: t }]) }) });
+        }
+      };
+    };
+    const procGroups = ['sales', 'cost'].map(mkGroup), trainGroups = ['trainOwner', 'trainSales', 'trainAcc'].map(mkGroup), dmoGroups = ['dmoOwner', 'dmoSales', 'dmoAcc'].map(mkGroup);
+    const now = new Date();
+    const rep = {
+      biz: st.form.biz || '……………………', name: st.form.name || '……………………',
+      date: String(now.getDate()).padStart(2, '0') + '/' + String(now.getMonth() + 1).padStart(2, '0') + '/' + now.getFullYear()
+    };
+
+    // Đăng ký
+    const form = st.form;
+    const fs = {};
+    ['name', 'email', 'phone', 'biz', 'website'].forEach(key => {
+      fs[key] = e => this.setState({ form: Object.assign({}, this.state.form, { [key]: e.target.value }), err: '' });
+    });
+    const roles = ['Chủ doanh nghiệp', 'Kế toán', 'Khác'].map(r => ({
+      label: r, cls: form.role === r ? 'seg on' : 'seg', pressed: form.role === r ? 'true' : 'false',
+      pick: () => this.setState({ form: Object.assign({}, this.state.form, { role: r }), err: '' })
+    }));
+    const normPhone = v => {
+      let d = String(v || '').replace(/[^\d+]/g, '');
+      if (d.indexOf('+84') === 0) d = '0' + d.slice(3);
+      else if (d.indexOf('84') === 0 && d.length === 11) d = '0' + d.slice(2);
+      return d.replace(/\D/g, '');
+    };
+    const chk = f => {
+      const e = { name: '', email: '', phone: '', role: '', consent: '' };
+      if (!String(f.name).trim()) e.name = 'Cần điền họ và tên.';
+      const em = String(f.email).trim();
+      if (!em) e.email = 'Cần điền email.';
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)) e.email = 'Email chưa đúng, ví dụ: ten@congty.vn';
+      const ph = normPhone(f.phone);
+      if (!ph) e.phone = 'Cần điền số điện thoại Zalo.';
+      else if (!/^0[35789]\d{8}$/.test(ph)) e.phone = 'Số điện thoại chưa đúng, cần 10 số, ví dụ: 0912 345 678';
+      if (!f.role) e.role = 'Chọn một vai trò.';
+      if (!f.consent) e.consent = 'Cần tích đồng ý để AMITA liên hệ và mời vào nhóm.';
+      return e;
+    };
+    const errs = chk(form), show = st.tried;
+    const fe = {};
+    ['name', 'email', 'phone', 'role', 'consent'].forEach(k => { fe[k] = show ? errs[k] : ''; fe[k + 'On'] = !!(show && errs[k]); });
+    const zaloUrl = P.zaloUrl || 'https://zalo.me/g/MA-NHOM';
+    if (this._qrFor !== zaloUrl) {
+      this._qrFor = zaloUrl;
+      try { const q = window.qrcode(0, 'M'); q.addData(zaloUrl); q.make(); this._qr = q.createDataURL(6, 2); } catch (err) { this._qr = ''; }
+    }
+    const submit = e => {
+      if (e && e.preventDefault) e.preventDefault();
+      const f = this.state.form, er = chk(f);
+      const first = ['name', 'email', 'phone', 'role', 'consent'].find(k => er[k]);
+      if (first) {
+        this.setState({ tried: true });
+        const el = document.getElementById({ name: 'f-name', email: 'f-email', phone: 'f-phone', role: 'f-biz', consent: 'f-ok' }[first]);
+        if (el && first !== 'role') try { el.focus(); } catch (x) {}
+        return;
+      }
+      if (this.state.sending) return;
+      const done = demo => this.setState({ sending: false, reg: true, demo: demo, tried: false, doneName: String(f.name).trim() });
+      if (f.website) { done(false); return; }
+      const q = new URLSearchParams(location.search);
+      const payload = {
+        name: String(f.name).trim(), email: String(f.email).trim().toLowerCase(), phone: normPhone(f.phone),
+        role: f.role, biz: String(f.biz || '').trim(), consent: 'Đồng ý',
+        utm_source: q.get('utm_source') || '', utm_medium: q.get('utm_medium') || '', utm_campaign: q.get('utm_campaign') || '',
+        page: location.origin + location.pathname, website: f.website || ''
+      };
+      const url = P.sheetUrl;
+      this.setState({ sending: true, err: '' });
+      if (!url) { setTimeout(() => done(true), 600); return; }
+      fetch(url, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) })
+        .then(() => done(false))
+        .catch(() => this.setState({ sending: false, err: 'Chưa gửi được đăng ký. Anh chị kiểm tra kết nối mạng rồi bấm đăng ký lại.' }));
+    };
+    return {
+      dark: dark, light: !dark, themeCls: dark ? 'dark' : 'light', phoneCls: phone ? 'is-phone' : '',
+      themeLabel: dark ? 'Chuyển sang giao diện sáng' : 'Chuyển sang giao diện tối',
+      toggleDark: () => this.setState({ dark: !dark }),
+      phone: phone, desk: !phone,
+      showAll: section === 'all', showCalc: section === 'all' || section === 'calc', showReg: section === 'all' || section === 'register',
+      isBasic: mode !== 'pro', isPro: mode === 'pro',
+      modeBasicCls: mode !== 'pro' ? 'seg on' : 'seg', modeProCls: mode === 'pro' ? 'seg on' : 'seg',
+      modeBasicPressed: mode !== 'pro' ? 'true' : 'false', modeProPressed: mode === 'pro' ? 'true' : 'false',
+      setBasic: () => this.setState({ mode: 'basic' }), setPro: () => this.setState({ mode: 'pro' }),
+      tndnOpts: tndnOpts, vatOpts: vatOpts, vatLabel: st.vat + '%',
+      dt2026: st.dt2026 > 0 ? this.f(st.dt2026) : '',
+      setDt2026: e => this.setState({ dt2026: this.dig(e.target.value) }),
+      inPct: String(st.inPct), setInPct: e => this.setState({ inPct: Math.min(this.dig(e.target.value), 100) }),
+      days: String(st.days), setDays: e => this.setState({ days: Math.min(this.dig(e.target.value), 31) }),
+      fw: fw, mapEx: mapEx, procGroups: procGroups, trainGroups: trainGroups, dmoGroups: dmoGroups, rep: rep,
+      printReport: () => { try { window.print(); } catch (err) {} },
+      hint: hint, inds: inds, prows: prows, k: k, b02: b02, per: per, tndnLabel: rate + '%', rateAria: 'Thuế suất TNDN tự động: ' + rate + '%',
+      addDisabled: st.products.length >= 5,
+      addProduct: () => {
+        const ps = this.state.products;
+        if (ps.length >= 5) return;
+        this.setState({ products: ps.concat([{ id: this.state.nextId, name: 'Sản phẩm ' + (ps.length + 1), lnst: 0, ind: 'tu', pct: 65, price: 0, gv: 50, bh: 8 }]), nextId: this.state.nextId + 1 });
+      },
+      prodCount: st.products.length + ' / 5 sản phẩm',
+      guideOpen: !!st.guideOpen, guideOpenS: st.guideOpen ? 'true' : 'false', guideBtn: st.guideOpen ? 'Ẩn hướng dẫn' : 'Xem hướng dẫn',
+      toggleGuide: () => this.setState({ guideOpen: !this.state.guideOpen }),
+      mapReadOpen: !!st.mapReadOpen, mapReadOpenS: st.mapReadOpen ? 'true' : 'false', mapReadBtn: st.mapReadOpen ? 'Ẩn hướng dẫn' : 'Xem hướng dẫn',
+      toggleMapRead: () => this.setState({ mapReadOpen: !this.state.mapReadOpen }),
+      hasCpOver: prows.some(r => r.overCp),
+      cpOverText: prows.filter(r => r.overCp).map(r => r.name).join(', ') + ': giá vốn cộng chi phí bán hàng đã vượt mức chi phí đã đặt ở bảng sản phẩm. Chi phí thực tế cao hơn kế hoạch nên lợi nhuận trước thuế thấp hơn, lợi nhuận trong bảng B02-DN bên dưới giảm; tổng chi phí vượt 100% doanh thu là lỗ.',
+      b02m: b02m, vatCells: vatCells, monthHeads: monthHeads, seasonCells: seasonCells, lockNote: 'Khóa ' + nLocked + '/12', lockWarn: lockWarn, hasLockWarn: !!lockWarn, qrows: qrows,
+      form: form, fs: fs, roles: roles, fe: fe,
+      toggleConsent: () => this.setState({ form: Object.assign({}, this.state.form, { consent: !this.state.form.consent }), err: '' }),
+      submit: submit, err: st.err, hasErr: !!st.err, sending: !!st.sending,
+      submitLabel: st.sending ? 'Đang gửi…' : 'Đăng ký vào nhóm',
+      reg: reg, notReg: !reg, demo: !!st.demo, doneName: st.doneName || 'anh chị', qrSrc: this._qr || '',
+      again: () => this.setState({ reg: false, demo: false, tried: false, err: '',
+        form: { name: '', email: '', phone: '', role: '', biz: this.state.form.biz, website: '', consent: false } }),
+      zaloUrl: zaloUrl
+    };
+  }
+}
+</script>
+<script>
+(function () {
+  var C = window.BDCL_CONFIG || {};
+  var mq = window.matchMedia('(max-width: 760px)');
+  var app = mountDC(Component, document.getElementById('tpl'), document.getElementById('app'), {
+    zaloUrl: C.zaloUrl, sheetUrl: C.sheetUrl, phone: mq.matches, section: 'all'
+  });
+  var onMq = function () { app.setProps({ phone: mq.matches }); };
+  if (mq.addEventListener) mq.addEventListener('change', onMq); else mq.addListener(onMq);
+  window.__bdcl = app;
+})();
+</script>
+</body>
+</html>
