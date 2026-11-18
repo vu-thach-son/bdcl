@@ -121,6 +121,15 @@ fieldset.fs legend{padding:0}
 .g-dmo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .li{display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:8px;align-items:start;padding:9px 0;border-bottom:1px solid var(--rule)}
 .chk{width:20px;height:20px;margin:2px 0 0;accent-color:var(--green);cursor:pointer}
+.relck{display:grid;grid-template-columns:20px minmax(0,1fr);gap:8px;align-items:start;font-size:12.5px;line-height:1.4;margin-top:10px;color:var(--ink2);cursor:pointer}
+.relck input{width:18px;height:18px;margin:1px 0 0;accent-color:var(--green);cursor:pointer}
+.code-s{display:none}
+.topbar{position:sticky;top:0;z-index:50}
+.pg [id]{scroll-margin-top:96px}
+@media (max-width:760px){.pg [id]{scroll-margin-top:136px}}
+.is-phone [id]{scroll-margin-top:136px}
+.is-phone .b02s .c-code{display:none}.is-phone .b02s .code-s{display:block;margin-bottom:3px}
+@media (max-width:760px){.b02s .c-code{display:none}.b02s .code-s{display:block;margin-bottom:3px}}
 .li.unchk label{opacity:.5}
 .po{display:none}
 .is-phone .wrap{padding:0 18px}
@@ -163,6 +172,10 @@ select.tin,select.inp{appearance:none;-webkit-appearance:none}
 .li{grid-template-columns:minmax(0,1fr) auto}
 .stampnum{font-size:34px !important}
 .g-fin p.mono{font-size:22px !important}
+.prt-h{font-size:11px;letter-spacing:.08em;color:var(--ink2);margin:10px 0 4px}
+.prt{margin-bottom:6px}
+.prt-w{break-inside:avoid}
+.prt td.stk,.prt th.stk{position:static;width:auto;min-width:0;white-space:normal}
 *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
@@ -174,7 +187,7 @@ select.tin,select.inp{appearance:none;-webkit-appearance:none}
 
 
 <template data-if="showAll">
-<header class="np" style="border-bottom: 1px solid var(--rule); background: var(--bg)">
+<header class="np topbar" style="border-bottom: 1px solid var(--rule); background: var(--bg)">
 <div class="wrap" style="display: flex; align-items: center; gap: 4px 32px; min-height: 76px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px">
 <a href="#top" aria-label="AMITA · Bài giảng, về đầu trang" style="display: flex; align-items: baseline; gap: 10px; text-decoration: none">
 <span class="disp" style="font-size: 26px; font-weight: 700; letter-spacing: .06em; color: var(--green)">AMITA</span>
@@ -217,7 +230,19 @@ select.tin,select.inp{appearance:none;-webkit-appearance:none}
 <p style="font-size: 14px; color: var(--ink2); border-top: 1px solid var(--rule); padding-top: 14px; margin-top: 8px; max-width: 640px">Giảng viên <strong style="color: var(--ink)">Vũ Thạch Sơn</strong> · Chuyên gia tư vấn kế toán tài chính</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 12px">
-<aside aria-label="Ví dụ: chủ doanh nghiệp hỏi, kế toán trả lời" class="box" style="padding: 0">
+<aside aria-label="Nhập lãi sau thuế muốn có, kế toán trả lời bằng con số" class="box" style="padding: 0">
+<div class="np" style="padding: 20px 24px; border-bottom: 1px solid var(--rule); background: var(--gsoft)">
+<label class="kicker" for="target" style="display: block; margin-bottom: 8px">Bắt đầu từ đây</label>
+<p class="disp" style="font-size: 22px; line-height: 1.3; font-weight: 500; margin-bottom: 12px">Anh chị muốn lãi sau thuế bao nhiêu?</p>
+<div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: stretch">
+<input id="target" class="inp num" inputmode="numeric" aria-label="Lãi sau thuế muốn có, {{per.label}}, đơn vị đồng" value="{{per.lnstF}}" onChange="{{setTarget}}" style="flex: 1 1 190px; font-size: 20px; font-weight: 600">
+<div role="group" aria-label="Tính theo năm hoặc theo tháng" style="display: flex; flex: 1 1 200px; padding-left: 1px">
+<button type="button" class="{{per.yCls}}" aria-pressed="{{per.yPressed}}" onClick="{{per.setY}}">Theo năm</button>
+<button type="button" class="{{per.mCls}}" aria-pressed="{{per.mPressed}}" onClick="{{per.setM}}">Theo tháng</button>
+</div>
+</div>
+<span class="fhint">Đơn vị: đồng, {{per.label}}. Mọi số trên trang, kể cả bản đồ chiến lược, chạy theo số này.</span>
+</div>
 <div style="padding: 20px 24px; border-bottom: 1px solid var(--rule)">
 <p class="kicker" style="margin-bottom: 8px">Chủ doanh nghiệp hỏi</p>
 <p class="disp" style="font-size: 22px; line-height: 1.3; font-weight: 500">“{{per.qLead}} tôi muốn có <span class="mono" style="font-size: 20px; font-weight: 600; color: var(--green)">{{per.lnstS}}</span> sau thuế. Phải làm gì?”</p>
@@ -230,17 +255,11 @@ select.tin,select.inp{appearance:none;-webkit-appearance:none}
 <div style="display: flex; align-items: baseline"><span>Chi phí được phép tiêu</span><span class="leader"></span><span class="num" style="font-weight: 600">{{per.cpS}}</span></div>
 <div style="display: flex; align-items: baseline; padding-top: 10px; border-top: 1px solid var(--rule)"><span><span class="red" style="font-weight: 600">Thuế TNDN</span> <span class="muted" style="font-size: 13px">chi phí thật</span></span><span class="leader"></span><span class="num red" style="font-weight: 700">{{per.thueS}}</span></div>
 <div style="display: flex; align-items: baseline"><span><span class="red" style="font-weight: 600">Thuế GTGT</span> <span class="muted" style="font-size: 13px">thu hộ của khách</span></span><span class="leader"></span><span class="num red" style="font-weight: 700">{{per.vatS}}</span></div>
+<template data-if="hasBad"><p role="alert" style="font-size: 13px; font-weight: 600; line-height: 1.45; color: var(--red); padding: 8px 10px; border: 1.5px solid var(--red); background: var(--redsoft)">{{badText}}</p></template>
 <p class="muted" style="font-size: 13px; padding-top: 10px; border-top: 1px solid var(--rule)">Quy ra mỗi ngày bán: <span class="mono" style="color: var(--ink); font-weight: 600">{{k.qdT}}</span> sản phẩm, <span class="mono" style="color: var(--ink); font-weight: 600">{{k.dtDayS}}</span> doanh thu.</p>
 </div>
 </div>
 </aside>
-<div role="group" aria-label="Xem số theo năm hoặc theo tháng" style="display: flex; align-items: center; gap: 12px">
-<span class="muted" style="font-size: 14px; white-space: nowrap">Xem số</span>
-<div style="display: flex; flex: 1 1 auto; padding-left: 1px">
-<button type="button" class="{{per.yCls}}" aria-pressed="{{per.yPressed}}" onClick="{{per.setY}}">Theo năm</button>
-<button type="button" class="{{per.mCls}}" aria-pressed="{{per.mPressed}}" onClick="{{per.setM}}">Theo tháng</button>
-</div>
-</div>
 </div>
 </div>
 </section>
@@ -295,6 +314,7 @@ select.tin,select.inp{appearance:none;-webkit-appearance:none}
 </template>
 </div>
 <span class="fhint">Bảng tự chọn theo doanh thu, không cần bấm</span>
+<label class="relck" for="rel"><input id="rel" type="checkbox" checked="{{rel}}" onChange="{{toggleRel}}"><span>Là công ty con, hoặc có quan hệ liên kết với doanh nghiệp không thuộc diện 15%, 17%: áp dụng 20%</span></label>
 </fieldset>
 <div>
 <label class="flab" for="dt2026">Doanh thu cả năm 2026</label>
@@ -308,7 +328,7 @@ select.tin,select.inp{appearance:none;-webkit-appearance:none}
 <button type="button" class="{{o.cls}}" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}">{{o.label}}</button>
 </template>
 </div>
-<span class="fhint">Mức 8% chỉ áp dụng đến hết 31/12/2026</span>
+<template data-if="notVat8"><span class="fhint">Mức 8% chỉ áp dụng đến hết 31/12/2026</span></template><template data-if="vat8"><span class="fhint" role="status" style="color: var(--red); font-weight: 600">Mức 8% hiện chỉ áp dụng đến hết 31/12/2026. Chỉ chọn khi có văn bản gia hạn sang 2027.</span></template>
 </fieldset>
 <div>
 <label class="flab" for="inpct">% chi phí có hóa đơn GTGT đầu vào</label>
@@ -316,7 +336,8 @@ select.tin,select.inp{appearance:none;-webkit-appearance:none}
 </div>
 <div>
 <label class="flab" for="days">Số ngày bán hàng mỗi tháng</label>
-<input id="days" class="inp num" inputmode="numeric" value="{{days}}" onChange="{{setDays}}">
+<input id="days" class="inp num" inputmode="numeric" placeholder="26" value="{{days}}" onChange="{{setDays}}">
+<span class="fhint">Để trống thì tính 26 ngày</span>
 </div>
 </div>
 <div style="margin: 0 -24px; padding: 14px 24px; background: var(--gsoft); border-top: 1px dashed var(--rule2); display: flex; align-items: center; gap: 14px 20px; flex-wrap: wrap">
@@ -374,7 +395,7 @@ select.tin,select.inp{appearance:none;-webkit-appearance:none}
 <template data-for="inds" data-as="o"><option value="{{o.id}}">{{o.optLabel}}</option></template>
 </select>
 </td>
-<td class="ci"><input class="tin num" inputmode="numeric" aria-label="Phần trăm chi phí trên doanh thu, sản phẩm {{p.idx}}" value="{{p.pctF}}" onChange="{{p.setPct}}" style="text-align: right"></td>
+<td class="ci"><input class="tin num" inputmode="numeric" aria-label="Phần trăm chi phí trên doanh thu, sản phẩm {{p.idx}}" value="{{p.pctF}}" onChange="{{p.setPct}}" onBlur="{{p.fitPct}}" style="text-align: right"></td>
 <td class="ci"><input class="tin num" inputmode="numeric" aria-label="Giá bán một sản phẩm, sản phẩm {{p.idx}}" value="{{p.priceF}}" onChange="{{p.setPrice}}" style="text-align: right"></td>
 <td class="num red">{{p.thueF}}</td>
 <td class="num">{{p.lnttF}}</td>
@@ -428,7 +449,7 @@ select.tin,select.inp{appearance:none;-webkit-appearance:none}
 <div class="span2"><label class="flab" for="m-lnst-{{p.idx}}">Lợi nhuận sau thuế muốn có / tháng</label><input id="m-lnst-{{p.idx}}" class="inp num" inputmode="numeric" value="{{p.lnstF}}" onChange="{{p.setLnst}}"></div>
 <div class="span2"><label class="flab" for="m-ind-{{p.idx}}">Ngành (gợi ý % chi phí)</label>
 <select id="m-ind-{{p.idx}}" class="inp" value="{{p.ind}}" onChange="{{p.setInd}}"><template data-for="inds" data-as="o"><option value="{{o.id}}">{{o.optLabel}}</option></template></select></div>
-<div><label class="flab" for="m-pct-{{p.idx}}">% chi phí / DT</label><input id="m-pct-{{p.idx}}" class="inp num" inputmode="numeric" value="{{p.pctF}}" onChange="{{p.setPct}}"></div>
+<div><label class="flab" for="m-pct-{{p.idx}}">% chi phí / DT</label><input id="m-pct-{{p.idx}}" class="inp num" inputmode="numeric" value="{{p.pctF}}" onChange="{{p.setPct}}" onBlur="{{p.fitPct}}"></div>
 <div><label class="flab" for="m-pr-{{p.idx}}">Giá bán 1 sản phẩm</label><input id="m-pr-{{p.idx}}" class="inp num" inputmode="numeric" value="{{p.priceF}}" onChange="{{p.setPrice}}"></div>
 </div>
 <dl style="margin: 0; padding: 6px 12px 12px; font-size: 14px">
@@ -444,6 +465,8 @@ select.tin,select.inp{appearance:none;-webkit-appearance:none}
 </div>
 </template>
 
+<template data-if="hasAuto"><p role="status" style="margin-top: 14px; font-size: 13px; font-weight: 600; padding: 8px 12px; border: 1.5px solid var(--green); background: var(--gsoft)">{{autoText}}</p></template>
+<template data-if="hasBad"><p role="alert" style="margin-top: 14px; font-size: 13px; font-weight: 600; color: var(--red); padding: 8px 12px; border: 1.5px solid var(--red); background: var(--redsoft)">{{badText}}</p></template>
 <div class="np" style="display: flex; align-items: center; gap: 16px; margin-top: 16px; flex-wrap: wrap">
 <button type="button" class="btn sec sm" onClick="{{addProduct}}" disabled="{{addDisabled}}">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
@@ -485,14 +508,14 @@ Thêm sản phẩm</button>
 <span class="mono muted" style="font-size: 12px">Theo mẫu B02-DN · ĐVT: đồng</span>
 </div>
 <div class="scroll">
-<table class="lg">
+<table class="lg b02s">
 <caption class="sr">Kế hoạch kết quả kinh doanh năm 2027 theo mẫu B02-DN</caption>
-<thead><tr><th style="width: 88px">Mã số</th><th>Chỉ tiêu</th><th class="r">Mỗi tháng</th><th class="r">Cả năm 2027</th></tr></thead>
+<thead><tr><th class="c-code" style="width: 88px">Mã số</th><th>Chỉ tiêu</th><th class="r">Mỗi tháng</th><th class="r">Cả năm 2027</th></tr></thead>
 <tbody>
 <template data-for="b02" data-as="r">
 <tr class="{{r.cls}}">
-<td class="code">{{r.code}}</td>
-<td style="font-size: 15px">{{r.label}}</td>
+<td class="code c-code">{{r.code}}</td>
+<td style="font-size: 15px"><span class="code code-s">{{r.code}}</span>{{r.label}}</td>
 <td class="num n">{{r.m}}</td>
 <td class="num n">{{r.y}}</td>
 </tr>
@@ -527,7 +550,7 @@ Thêm sản phẩm</button>
 </div>
 </div>
 <div class="box" style="padding: 14px 18px">
-<p class="mono" style="font-size: 11px; letter-spacing: .12em; color: var(--ink2); margin-bottom: 8px">QUY RA MỖI NGÀY BÁN · {{days}} NGÀY/THÁNG</p>
+<p class="mono" style="font-size: 11px; letter-spacing: .12em; color: var(--ink2); margin-bottom: 8px">QUY RA MỖI NGÀY BÁN · {{daysN}} NGÀY/THÁNG</p>
 <div style="display: flex; flex-direction: column; gap: 6px; font-size: 15px">
 <div style="display: flex; align-items: baseline"><span>Doanh thu cần đạt mỗi ngày</span><span class="leader"></span><span class="num" style="font-weight: 600">{{k.dtDayS}}</span></div>
 <div style="display: flex; align-items: baseline"><span>Sản phẩm phải bán mỗi ngày</span><span class="leader"></span><span class="num" style="font-weight: 600">{{k.qdT}}</span></div>
@@ -591,7 +614,7 @@ Thêm sản phẩm</button>
 <span class="mono" style="font-size: 12px; color: var(--ink2)">KHỐI 3</span>
 <h3 class="h3">Tách % chi phí</h3>
 </div>
-<p class="muted" style="font-size: 13px; margin-bottom: 14px">Tất cả tính theo % doanh thu. Mức chi phí đã đặt ở bảng sản phẩm (ví dụ 65%) được chia thành giá vốn, chi phí bán hàng, phần còn lại là chi phí quản lý; ba khoản cộng lại đúng bằng mức đó. Phần còn lại của doanh thu là lợi nhuận trước thuế. Tổng chi phí vượt mức đã đặt thì tô đỏ.</p>
+<p class="muted" style="font-size: 13px; margin-bottom: 14px">Tất cả tính theo % doanh thu. Tổng chi phí luôn bằng giá vốn + bán hàng + quản lý; quản lý là phần còn lại của mức chi phí đặt ở bảng sản phẩm (ví dụ 65%). Giá vốn + bán hàng vượt mức đó thì quản lý về 0 và tổng chi phí tự tăng; doanh thu cần đạt ở cả trang tăng theo để giữ đúng lãi mục tiêu. Tổng chi phí tối đa 95%.</p>
 <div class="scroll">
 <table class="lg" style="min-width: 540px">
 <caption class="sr">Tách phần trăm chi phí theo sản phẩm, tính trên doanh thu</caption>
@@ -611,7 +634,8 @@ Thêm sản phẩm</button>
 </tbody>
 </table>
 </div>
-<template data-if="hasCpOver"><p role="status" style="margin-top: 14px; font-size: 13px; font-weight: 600; color: var(--red); padding: 8px 12px; border: 1.5px solid var(--red); background: var(--redsoft)">{{cpOverText}}</p></template>
+<template data-if="hasAuto"><p role="status" style="margin-top: 14px; font-size: 13px; font-weight: 600; padding: 8px 12px; border: 1.5px solid var(--green); background: var(--gsoft)">{{autoText}}</p></template>
+<template data-if="hasBad"><p role="alert" style="margin-top: 14px; font-size: 13px; font-weight: 600; color: var(--red); padding: 8px 12px; border: 1.5px solid var(--red); background: var(--redsoft)">{{badText}}</p></template>
 </div>
 <div class="box" style="padding: 24px">
 <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px">
@@ -634,6 +658,7 @@ Thêm sản phẩm</button>
 </tbody>
 </table>
 </div>
+<template data-for="qNotes" data-as="qn"><p class="muted" style="font-size: 12.5px; line-height: 1.45; margin-top: 10px">{{qn}}</p></template>
 </div>
 </div>
 
@@ -647,7 +672,7 @@ Thêm sản phẩm</button>
 </div>
 <p class="muted" style="font-size: 13px; margin-bottom: 14px; padding-right: 24px">Hàng đầu là % hoàn thành kế hoạch của từng tháng: 100 là đạt đúng mức trung bình (cả năm chia 12), tháng bán chạy điền lớn hơn 100, tháng thấp điểm điền nhỏ hơn. Tháng nào đã xong thì bấm Khóa để giữ nguyên số liệu. Khi sửa % các tháng còn lại, chỉ tháng chưa khóa đổi số, tổng cả năm vẫn đúng mục tiêu.</p>
 <template data-if="hasLockWarn"><p role="status" style="font-size: 13px; font-weight: 600; padding: 8px 12px; margin: 0 24px 14px 0; border: 1.5px dashed var(--ink)">{{lockWarn}}</p></template>
-<div class="scroll" style="padding-right: 24px">
+<div class="scroll np" style="padding-right: 24px">
 <table class="lg" style="min-width: 1640px">
 <caption class="sr">Báo cáo kết quả kinh doanh kế hoạch 12 tháng năm 2027</caption>
 <thead>
@@ -676,12 +701,27 @@ Thêm sản phẩm</button>
 </tr>
 </template>
 <tr>
-<td class="stk red" style="font-weight: 600; box-shadow: inset -1px 0 0 var(--rule); border-top: 1px solid var(--ink)">Thuế GTGT phải nộp</td>
+<td class="stk red" style="font-weight: 600; box-shadow: inset -1px 0 0 var(--rule); border-top: 1px solid var(--ink)">Thuế GTGT phát sinh <span style="font-weight: 400; font-size: 12px">(đầu ra − đầu vào)</span></td>
 <template data-for="vatCells" data-as="c"><td class="num red {{c.cls}}" style="border-top: 1px solid var(--ink)">{{c.v}}</td></template>
-<td class="num red" style="border-left: 1px solid var(--rule); border-top: 1px solid var(--ink); font-weight: 700">{{k.vatYF}}</td>
+<td class="num red" style="border-left: 1px solid var(--rule); border-top: 1px solid var(--ink); font-weight: 700">{{vatYearF}}</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="po" style="padding-right: 24px">
+<template data-for="b02h" data-as="hf">
+<div class="prt-w">
+<p class="mono prt-h">{{hf.title}}</p>
+<table class="lg prt">
+<thead><tr><th class="stk">Mã số · Chỉ tiêu</th><template data-for="hf.heads" data-as="mh"><th class="r {{mh.cls}}">{{mh.l}}</th></template><template data-if="hf.last"><th class="r" style="border-left: 1px solid var(--rule)">Cả năm</th></template></tr></thead>
+<tbody>
+<tr><td class="stk" style="font-weight: 600">% hoàn thành kế hoạch</td><template data-for="hf.season" data-as="s"><td class="num {{s.cls}}">{{s.v}}</td></template><template data-if="hf.last"><td class="num" style="border-left: 1px solid var(--rule)">{{lockNote}}</td></template></tr>
+<template data-for="hf.rows" data-as="r"><tr class="{{r.cls}}"><td class="stk"><span class="code" style="display: inline-block; width: 26px">{{r.code}}</span>{{r.label}}</td><template data-for="r.cells" data-as="c"><td class="num n {{c.cls}}">{{c.v}}</td></template><template data-if="hf.last"><td class="num n" style="border-left: 1px solid var(--rule)">{{r.y}}</td></template></tr></template>
+<tr><td class="stk red" style="font-weight: 600; border-top: 1px solid var(--ink)">Thuế GTGT phát sinh (đầu ra − đầu vào)</td><template data-for="hf.vat" data-as="c"><td class="num red {{c.cls}}" style="border-top: 1px solid var(--ink)">{{c.v}}</td></template><template data-if="hf.last"><td class="num red" style="border-left: 1px solid var(--rule); border-top: 1px solid var(--ink); font-weight: 700">{{vatYearF}}</td></template></tr>
+</tbody>
+</table>
+</div>
+</template>
 </div>
 </div>
 </template>
@@ -874,7 +914,7 @@ Thêm sản phẩm</button>
 <div>
 <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 10px">
 <p class="disp" style="font-size: 22px; font-weight: 600">DMO · Là những việc hằng ngày phải hướng đến mục tiêu</p>
-<p class="muted" style="font-size: 13px">Tính theo {{days}} ngày bán mỗi tháng</p>
+<p class="muted" style="font-size: 13px">Tính theo {{daysN}} ngày bán mỗi tháng</p>
 </div>
 <div class="g-dmo">
 <template data-for="dmoGroups" data-as="g">
@@ -949,7 +989,7 @@ Thêm sản phẩm</button>
 </div>
 <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px; max-width: 320px">
 <button type="button" class="btn pri" onClick="{{printReport}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2"></path><rect x="6" y="14" width="12" height="7"></rect></svg>In báo cáo / Lưu PDF</button>
-<p class="muted" style="font-size: 12.5px; line-height: 1.45; text-align: right">Dữ liệu chỉ lưu trên trình duyệt của bạn, tải lại trang dữ liệu sẽ về mặc định.</p>
+<p class="muted" style="font-size: 12.5px; line-height: 1.45; text-align: right">Số liệu chỉ nằm trên máy của anh chị, không gửi đi đâu. Tải lại trang thì số về mặc định.</p>
 </div>
 </div>
 </div>
@@ -961,7 +1001,7 @@ Thêm sản phẩm</button>
 <div class="g-hero" style="margin-bottom: 36px">
 <div style="display: flex; flex-direction: column; gap: 10px">
 <p class="kicker">§ 03 · Lộ trình</p>
-<h2 class="h2">Lộ trình 5 buổi zoom miễn phí</h2>
+<h2 class="h2">Lộ trình 5 buổi Zoom miễn phí</h2>
 </div>
 <p style="font-size: 17px; line-height: 1.6; max-width: 480px; padding-bottom: 4px">5 buổi Zoom miễn phí (8:00–10:00) và 2 ngày thực hành tại hội trường (thứ Bảy, Chủ nhật, 8:00–17:00).</p>
 </div>
@@ -990,7 +1030,7 @@ Thêm sản phẩm</button>
 </article>
 <article style="border: 1px solid var(--rule2); background: var(--paper); padding: 20px; display: flex; flex-direction: column; gap: 14px; min-height: 250px">
 <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px"><span class="mono" style="font-size: 30px; font-weight: 700; color: var(--green); line-height: 1">Z5</span><span class="mono" style="font-size: 11px; letter-spacing: .08em; color: var(--ink2)">ZOOM MIỄN PHÍ</span></div>
-<p class="disp" style="font-size: 20px; line-height: 1.3; font-weight: 500; flex: 1 1 auto">DMO Làm sao biến bản đồ thành việc mỗi ngày?</p>
+<p class="disp" style="font-size: 20px; line-height: 1.3; font-weight: 500; flex: 1 1 auto">DMO: Làm sao biến bản đồ thành việc mỗi ngày?</p>
 <div style="border-top: 1px solid var(--rule); padding-top: 10px"><p class="mono" style="font-size: 10px; letter-spacing: .12em; color: var(--ink2)">TẦNG TRÊN BẢN ĐỒ</p><p style="font-size: 14px; font-weight: 600">Chỉ số và hành động</p></div>
 </article>
 </div>
@@ -1003,7 +1043,7 @@ Thêm sản phẩm</button>
 <article style="border: 2.5px solid var(--ink); background: var(--paper); padding: 26px 28px; display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap"><span class="disp" style="font-size: 36px; font-weight: 600; line-height: 1">Ngày 1</span><span class="mono" style="font-size: 12px; letter-spacing: 0.08em; color: var(--ink2)">Offline</span></div>
 <ol style="list-style: none; margin: 0; padding: 0; font-size: 16px">
-<li style="display: flex; gap: 14px; padding: 9px 0; border-top: 1px solid var(--rule)"><span class="mono" style="font-size: 13px; padding-top: 2px; color: var(--green); font-weight: 700">01</span><span><span style="display: block; font-weight: 700">Mô hình kinh doanh (BMC) -&nbsp;<span class="muted" style="font-size: 14px; font-weight: 400">Gốc để tạo ra bản đồ chiến lược</span></span></span></li>
+<li style="display: flex; gap: 14px; padding: 9px 0; border-top: 1px solid var(--rule)"><span class="mono" style="font-size: 13px; padding-top: 2px; color: var(--green); font-weight: 700">01</span><span><span style="display: block; font-weight: 700">Mô hình kinh doanh (BMC) ·&nbsp;<span class="muted" style="font-size: 14px; font-weight: 400">Gốc để tạo ra bản đồ chiến lược</span></span></span></li>
 <li style="display: flex; gap: 14px; padding: 9px 0; border-top: 1px solid var(--rule)"><span class="mono muted" style="font-size: 13px; padding-top: 2px">02</span>Kiểm tra số liệu thật</li>
 
 <li style="display: flex; gap: 14px; padding: 9px 0; border-top: 1px solid var(--rule)"><span class="mono muted" style="font-size: 13px; padding-top: 2px">03</span>Dòng tiền</li>
@@ -1111,7 +1151,10 @@ Thêm sản phẩm</button>
 <p class="kicker" style="font-size: 11px; margin-bottom: 8px">Giả định của bảng tính</p>
 <ol style="margin: 0; padding-left: 18px; font-size: 12.5px; line-height: 1.6; color: var(--ink2); display: flex; flex-direction: column; gap: 3px">
 <li>Thuế TNDN giả định mọi chi phí đều được trừ.</li>
-<li>Thuế suất 15% và 17% căn cứ doanh thu năm liền trước (Luật 67/2025/QH15).</li>
+<li>Tổng chi phí = giá vốn + bán hàng + quản lý, tối đa 95% doanh thu. Chi phí tăng thì doanh thu cần đạt tăng để giữ lãi mục tiêu.</li>
+<li>Thuế TNDN tính lũy kế trong năm 2027: tháng, quý lỗ không phải nộp, lỗ được trừ vào lãi các kỳ sau trong năm. Chưa tính lỗ các năm trước chuyển sang.</li>
+<li>Thuế suất 15% và 17% căn cứ doanh thu năm liền trước (Luật 67/2025/QH15), không áp dụng cho công ty con hoặc công ty có quan hệ liên kết với doanh nghiệp không đủ điều kiện (Điều 11 Nghị định 320/2025/NĐ-CP).</li>
+<li>Doanh thu năm trước trên 50 tỷ khai thuế GTGT theo tháng, từ 50 tỷ trở xuống khai theo quý (Thông tư 89/2026/TT-BTC).</li>
 <li>Mức thuế GTGT 8% chỉ áp dụng đến hết 31/12/2026.</li>
 <li>% chi phí theo ngành là số tham khảo.</li>
 <li>Bảng tính dùng cho học tập, không thay cho tư vấn thuế.</li>
@@ -3567,7 +3610,7 @@ var qrcode = function() {
       tried: false, sending: false, demo: false, doneName: p.registered ? 'Nguyễn Minh Anh' : '',
       err: '', copied: '', period: 'year',
       fw: { mode: 'leads', ind: 'tu', leads: '2000', cr: '20', n: '2', items: '1' },
-      off: {}, custom: {}, drafts: {}, cid: 1
+      off: {}, custom: {}, drafts: {}, cid: 1, rel: false
     };
   }
   f(n) {
@@ -3587,6 +3630,13 @@ var qrcode = function() {
   pc(x) { return isFinite(x) ? Math.round(x * 100) + '%' : '–'; }
   d1(x) { return isFinite(x) ? (Math.round(x * 10) / 10).toFixed(1).replace('.', ',') : '–'; }
   dig(v) { const d = String(v).replace(/[^\d]/g, ''); return d ? Number(d) : 0; }
+  fitPct(id, x) {
+    const q = this.state.products.find(y => y.id === id);
+    const gb = q ? q.gv + q.bh : 0;
+    if (!q || x >= gb || gb <= 0) return { pct: x };
+    const g = Math.round(q.gv * x / gb);
+    return { pct: x, gv: g, bh: x - g };
+  }
   setP(id, patch) {
     this.setState({ products: this.state.products.map(x => x.id === id ? Object.assign({}, x, patch) : x) });
   }
@@ -3599,10 +3649,16 @@ var qrcode = function() {
     const section = P.section || 'all';
     const v = st.vat / 100, ip = Math.min(st.inPct, 100) / 100;
     // Thuế suất TNDN tự động: theo doanh thu 2026 nếu có, nếu không theo doanh thu kế hoạch 2027
-    const dtAt = r => st.products.reduce((a, p) => a + p.lnst / (1 - r) / (1 - Math.min(Math.max(p.pct, 0), 95) / 100), 0) * 12;
+    // % chi phí thực dùng = mức đã đặt, nhưng không thấp hơn giá vốn + bán hàng (khi đó quản lý về 0 và tổng chi phí tự tăng)
+    const pctE = p => Math.max(p.pct, p.gv + p.bh);
+    const dtAt = r => st.products.reduce((a, p) => a + p.lnst / (1 - r) / (1 - Math.min(Math.max(pctE(p), 0), 95) / 100), 0) * 12;
     let rate;
     if (st.dt2026 > 0) rate = st.dt2026 <= 3e9 ? 15 : (st.dt2026 <= 50e9 ? 17 : 20);
     else rate = dtAt(0.15) <= 3e9 ? 15 : (dtAt(0.17) <= 50e9 ? 17 : 20);
+    // Công ty con hoặc có quan hệ liên kết với doanh nghiệp không đủ điều kiện: không áp dụng 15%, 17% (Điều 11 NĐ 320/2025)
+    if (st.rel) rate = 20;
+    // Có sản phẩm tổng chi phí trên 95% và chưa có doanh thu 2026: chưa biết doanh thu nên chưa xác định được thuế suất
+    const rateKnown = st.dt2026 > 0 || !!st.rel || !st.products.some(p => pctE(p) > 95);
     const t = rate / 100;
     const days = st.days > 0 ? st.days : 26;
 
@@ -3621,11 +3677,12 @@ var qrcode = function() {
     const S = { lnst: 0, thue: 0, lntt: 0, cp: 0, dt: 0, qm: 0, qx: 0, gv: 0, bh: 0, ql: 0 };
     const many = st.products.length > 1;
     const prows = st.products.map((p, i) => {
-      const c = Math.min(Math.max(p.pct, 0), 95) / 100;
-      const lntt = p.lnst / (1 - t), thue = lntt - p.lnst, dt = lntt / (1 - c), cp = dt - lntt;
+      // Tổng chi phí trên 95% doanh thu thì không tính được doanh thu để đạt lãi mục tiêu: các số phụ thuộc doanh thu hiện "–"
+      const pe = pctE(p), bad = pe > 95, c = Math.max(pe, 0) / 100;
+      const lntt = bad ? NaN : p.lnst / (1 - t), thue = lntt - p.lnst, dt = bad ? NaN : lntt / (1 - c), cp = dt - lntt;
       const qm = p.price > 0 ? Math.ceil(dt / p.price - 1e-9) : 0;
-      // Giá vốn, bán hàng, quản lý là % trên doanh thu, cộng lại bằng % chi phí đã đặt ở Khối 2; vượt thì quản lý về 0 và chi phí thực tế vượt kế hoạch
-      const gvp = p.gv, bhp = p.bh, qlRaw = p.pct - gvp - bhp, qlp = Math.max(0, qlRaw), totp = gvp + bhp + qlp, overCp = qlRaw < 0, ltp = 100 - totp;
+      // Giá vốn, bán hàng, quản lý là % trên doanh thu và luôn cộng lại bằng tổng chi phí; giá vốn + bán hàng vượt mức đã đặt thì quản lý về 0, tổng tự tăng
+      const gvp = p.gv, bhp = p.bh, qlp = Math.max(0, pe - gvp - bhp), totp = pe, auto = gvp + bhp > p.pct, overCp = bad, ltp = 100 - totp;
       const gv = dt * gvp / 100, bh = dt * bhp / 100, ql = dt * qlp / 100;
       S.lnst += p.lnst; S.thue += thue; S.lntt += lntt; S.cp += cp; S.dt += dt; S.qm += qm; S.qx += p.price > 0 ? dt / p.price : 0; S.gv += gv; S.bh += bh; S.ql += ql;
       return {
@@ -3634,20 +3691,25 @@ var qrcode = function() {
         thueF: this.f(thue), lnttF: this.f(lntt), cpF: this.f(cp), dtF: this.f(dt),
         qmF: this.f(qm), qdF: this.d1(qm / days),
         lnttPct: this.pc(1 - c), lnstPct: dt > 0 ? this.pc(p.lnst / dt) : '–',
-        gvF: String(gvp), bhF: String(bhp), qlF: qlp + '%', totF: totp + '%', totCls: overCp ? 'num over' : 'num', overCp: overCp, capF: 'đặt ' + p.pct + '%',
+        gvF: String(gvp), bhF: String(bhp), qlF: qlp + '%', totF: totp + '%', tot: totp, totCls: overCp ? 'num over' : 'num', overCp: overCp, auto: auto, base: p.pct, capF: auto ? 'tự tăng từ ' + p.pct + '%' : '',
         ltF: (ltp < 0 ? '−' + Math.abs(ltp) : ltp) + '%', dtPctF: (totp + ltp) + '%', ltCls: ltp < 0 ? 'num over' : (overCp ? 'num red' : 'num'),
         canRemove: many,
         setName: e => this.setP(p.id, { name: e.target.value }),
         setLnst: e => this.setP(p.id, { lnst: this.dig(e.target.value) }),
-        setInd: e => { const id = e.target.value; const sp = indPct[id]; this.setP(p.id, sp != null ? { ind: id, pct: sp } : { ind: id }); },
+        setInd: e => { const id = e.target.value; const sp = indPct[id]; this.setP(p.id, sp != null ? Object.assign({ ind: id }, this.fitPct(p.id, sp)) : { ind: id }); },
         setPct: e => this.setP(p.id, { pct: Math.min(this.dig(e.target.value), 95), ind: 'tu' }),
+        fitPct: () => { const q = this.state.products.find(y => y.id === p.id); if (q) this.setP(p.id, this.fitPct(p.id, q.pct)); },
         setPrice: e => this.setP(p.id, { price: this.dig(e.target.value) }),
-        setGv: e => this.setP(p.id, { gv: Math.min(this.dig(e.target.value), 100) }),
-        setBh: e => this.setP(p.id, { bh: Math.min(this.dig(e.target.value), 100) }),
+        setGv: e => { const g = Math.min(this.dig(e.target.value), 100), q = this.state.products.find(y => y.id === p.id); this.setP(p.id, q && g + q.bh > q.pct ? { gv: g, ind: 'tu' } : { gv: g }); },
+        setBh: e => { const b = Math.min(this.dig(e.target.value), 100), q = this.state.products.find(y => y.id === p.id); this.setP(p.id, q && q.gv + b > q.pct ? { bh: b, ind: 'tu' } : { bh: b }); },
         remove: () => this.setState({ products: this.state.products.filter(x => x.id !== p.id) })
       };
     });
 
+    const badRows = prows.filter(r => r.overCp), badAny = badRows.length > 0;
+    const autoRows = prows.filter(r => r.auto && !r.overCp);
+    const autoText = autoRows.map(r => r.name + ': giá vốn ' + r.gvF + '% + bán hàng ' + r.bhF + '% đã cao hơn mức ' + r.base + '% đặt ở bảng sản phẩm, nên chi phí quản lý về 0 và tổng chi phí tự tăng lên ' + r.totF + '.').join(' ') +
+      (autoRows.length ? ' Doanh thu cần đạt tăng theo để vẫn giữ đúng lãi mục tiêu.' : '');
     const vatOut = S.dt * v, vatIn = S.cp * ip * v, vatM = Math.max(0, vatOut - vatIn);
     const thueY = S.thue * 12, vatY = vatM * 12, taxY = thueY + vatY;
     const k = {
@@ -3685,11 +3747,14 @@ var qrcode = function() {
     const base = has26 ? st.dt2026 : S.dt * 12;
     const band = rate === 15 ? 'không quá 3 tỷ' : (rate === 17 ? 'trên 3 tỷ đến 50 tỷ' : 'trên 50 tỷ');
     const hint = {
-      text: (has26 ? 'Doanh thu năm 2026 là ' : 'Doanh thu kế hoạch cả năm 2027 là ') + this.s(base) + ', ' + band + ', nên bảng tự áp dụng thuế suất ' + rate + '%.' + (has26 ? '' : ' Khi có doanh thu năm 2026, điền vào ô bên cạnh để tính đúng theo năm liền trước.')
+      text: !rateKnown ? 'Tổng chi phí đang vượt 95% doanh thu nên chưa tính được doanh thu và chưa xác định được thuế suất. Có doanh thu năm 2026 thì điền vào ô bên cạnh để xác định thuế suất.'
+        : st.rel
+        ? 'Doanh nghiệp là công ty con hoặc có quan hệ liên kết với doanh nghiệp không thuộc diện 15%, 17%, nên bảng áp dụng thuế suất 20% (Điều 11 Nghị định 320/2025/NĐ-CP), dù ' + (has26 ? 'doanh thu năm 2026 là ' : 'doanh thu kế hoạch cả năm 2027 là ') + this.s(base) + '.'
+        : (has26 ? 'Doanh thu năm 2026 là ' : 'Doanh thu kế hoạch cả năm 2027 là ') + this.s(base) + ', ' + band + ', nên bảng tự áp dụng thuế suất ' + rate + '%.' + (has26 ? '' : ' Khi có doanh thu năm 2026, điền vào ô bên cạnh để tính đúng theo năm liền trước.')
     };
 
     const tndnOpts = [[15, 'doanh thu ≤ 3 tỷ'], [17, 'trên 3 đến 50 tỷ'], [20, 'trên 50 tỷ']].map(o => ({
-      label: o[0] + '%', sub: o[1], cls: rate === o[0] ? 'seg on' : 'seg', bg: rate === o[0] ? 'var(--green)' : 'var(--paper)'
+      label: o[0] + '%', sub: o[1], cls: rateKnown && rate === o[0] ? 'seg on' : 'seg', bg: rateKnown && rate === o[0] ? 'var(--green)' : 'var(--paper)'
     }));
     const vatOpts = [0, 5, 8, 10].map(x => ({
       label: x + '%', cls: st.vat === x ? 'seg on' : 'seg', pressed: st.vat === x ? 'true' : 'false',
@@ -3697,32 +3762,47 @@ var qrcode = function() {
     }));
 
     // B02-DN theo tháng
-    // Tháng đã khóa giữ nguyên số lúc khóa; phần còn lại của cả năm chia cho các tháng chưa khóa theo % hoàn thành kế hoạch
+    // Khóa tháng chỉ giữ 4 dòng doanh nghiệp làm ra: doanh thu, giá vốn, bán hàng, quản lý.
+    // Lợi nhuận và thuế luôn tính lại theo thuế suất, tỷ lệ hóa đơn đang chọn (thuế suất là của cả năm).
     const lockArr = st.lock || new Array(12).fill(null);
+    const KEYS = ['L01', 'L11', 'L25', 'L26'];
     const BASE = { L01: S.dt * 12, L11: S.gv * 12, L25: S.bh * 12, L26: S.ql * 12 };
     const lockedSum = { L01: 0, L11: 0, L25: 0, L26: 0 };
     let nLocked = 0, nOpen = 0, wOpen = 0;
     st.season.forEach((w, i) => {
       const sn = lockArr[i];
-      if (sn) { nLocked++; Object.keys(lockedSum).forEach(k => { lockedSum[k] += sn[k]; }); }
+      if (sn) { nLocked++; KEYS.forEach(k => { lockedSum[k] += sn[k]; }); }
       else { nOpen++; wOpen += Number(w) || 0; }
     });
     const over = nLocked > 0 && lockedSum.L01 > BASE.L01 + 0.5;
-    const calc = (L01, L11, L25, L26) => {
-      const L20 = L01 - L11, L30 = L20 - L25 - L26, L50 = L30, L51 = L50 * t, L60 = L50 - L51;
-      const vat = Math.max(0, L01 * v - (L11 + L25 + L26) * ip * v);
-      return { L01, L02: 0, L10: L01, L11, L20, L22: 0, L23: 0, L25, L26, L30, L40: 0, L50, L51, L60, vat };
-    };
-    const months = st.season.map((w, i) => {
-      if (lockArr[i]) return lockArr[i];
+    const COSTLBL = { L11: 'giá vốn', L25: 'chi phí bán hàng', L26: 'chi phí quản lý' };
+    const costOver = (over || nOpen === 0) ? [] : ['L11', 'L25', 'L26'].filter(k => lockedSum[k] > BASE[k] + 0.5);
+    const baseM = st.season.map((w, i) => {
+      const sn = lockArr[i];
+      if (sn) return { L01: sn.L01, L11: sn.L11, L25: sn.L25, L26: sn.L26 };
       const sh = wOpen > 0 ? (Number(w) || 0) / wOpen : (nOpen > 0 ? 1 / nOpen : 0);
       const pick = k => { const r = BASE[k] - lockedSum[k]; return (over || (BASE[k] >= 0 && r < 0) ? 0 : r) * sh; };
-      return calc(pick('L01'), pick('L11'), pick('L25'), pick('L26'));
+      return { L01: pick('L01'), L11: pick('L11'), L25: pick('L25'), L26: pick('L26') };
     });
-    this._months = months;
+    this._months = baseM;
+    // TNDN tính lũy kế từ đầu năm và không âm: tháng lỗ được trừ vào lãi các tháng khác trong năm.
+    // Dòng 51 tháng = thuế trên lợi nhuận lũy kế đến tháng này − thuế lũy kế đến tháng trước.
+    let cumP = 0, cumTax = 0;
+    const months = baseM.map(b => {
+      const L01 = b.L01, L11 = b.L11, L25 = b.L25, L26 = b.L26;
+      const L20 = L01 - L11, L30 = L20 - L25 - L26, L50 = L30;
+      cumP += L50;
+      const tx = Math.max(0, cumP) * t, L51 = tx - cumTax;
+      cumTax = tx;
+      const L60 = L50 - L51;
+      // GTGT phát sinh trong tháng = đầu ra − đầu vào, có thể âm
+      const vat = L01 * v - (L11 + L25 + L26) * ip * v;
+      return { L01, L02: 0, L10: L01, L11, L20, L22: 0, L23: 0, L25, L26, L30, L40: 0, L50, L51, L60, vat };
+    });
     const lockWarn = over
       ? 'Các tháng đã khóa đã vượt doanh thu mục tiêu cả năm, nên các tháng chưa khóa được tính bằng 0. Mở khóa bớt một tháng hoặc tăng mục tiêu.'
-      : (nLocked === 12 ? 'Đã khóa cả 12 tháng nên sửa % hoàn thành không còn đổi số liệu. Mở khóa một tháng để tính lại.' : '');
+      : (nLocked === 12 ? 'Đã khóa cả 12 tháng nên sửa % hoàn thành không còn đổi số liệu. Mở khóa một tháng để tính lại.'
+        : (costOver.length ? 'Các tháng đã khóa đã tiêu ' + costOver.map(k => COSTLBL[k]).join(', ') + ' vượt ngân sách cả năm, nên các tháng chưa khóa được tính khoản này bằng 0 và lợi nhuận các tháng đó cao bất thường. Mở khóa bớt một tháng hoặc tăng mức chi phí ở bảng sản phẩm, Khối 3.' : ''));
     const defs = [
       ['01', 'Doanh thu bán hàng và cung cấp dịch vụ', 'L01', ''],
       ['02', 'Các khoản giảm trừ doanh thu', 'L02', 'mu'],
@@ -3745,25 +3825,53 @@ var qrcode = function() {
       return { code: d[0], label: d[1], cls: d[3], cells: cells, y: this.fz(sum) };
     });
     const vatCells = months.map((m, i) => ({ v: this.f(m.vat), cls: lockArr[i] ? 'lkd' : '' }));
+    const vatYm = months.reduce((a, m) => a + m.vat, 0);
     const monthHeads = months.map((m, i) => ({ l: 'T' + (i + 1), cls: lockArr[i] ? 'lkd' : '' }));
     const seasonCells = st.season.map((w, i) => ({
       l: 'T' + (i + 1), v: String(w), locked: !!lockArr[i], cls: lockArr[i] ? 'lkd' : '',
       set: e => { const s = this.state.season.slice(); s[i] = Math.min(this.dig(e.target.value), 999); this.setState({ season: s }); },
       lkCls: lockArr[i] ? 'lk on' : 'lk', lkLabel: lockArr[i] ? 'Đã khóa' : 'Khóa', lkPressed: lockArr[i] ? 'true' : 'false',
       lkAria: (lockArr[i] ? 'Mở khóa tháng ' : 'Khóa tháng ') + (i + 1),
-      toggle: () => { const lk = this.state.lock.slice(); lk[i] = lk[i] ? null : Object.assign({}, this._months[i]); this.setState({ lock: lk }); }
+      toggle: () => { if (badAny) return; const lk = this.state.lock.slice(); lk[i] = lk[i] ? null : Object.assign({}, this._months[i]); this.setState({ lock: lk }); }
     }));
+    // Bản in: tách bảng 12 tháng thành 2 nửa năm cho vừa khổ A4 ngang
+    const b02h = [[0, 6], [6, 12]].map((h, hi) => ({
+      title: hi === 0 ? 'Tháng 1 – tháng 6' : 'Tháng 7 – tháng 12 và cả năm',
+      heads: monthHeads.slice(h[0], h[1]), season: seasonCells.slice(h[0], h[1]), vat: vatCells.slice(h[0], h[1]), last: hi === 1,
+      rows: b02m.map(r => ({ code: r.code, label: r.label, cls: r.cls, cells: r.cells.slice(h[0], h[1]), y: r.y }))
+    }));
+    // Kỳ kê khai GTGT: doanh thu năm trước liền kề trên 50 tỷ thì khai theo tháng, còn lại theo quý (Điều 19 TT 89/2026/TT-BTC)
+    const vatMonthly = (has26 ? st.dt2026 : S.dt * 12) > 50e9;
+    // GTGT phải nộp theo từng kỳ kê khai: kỳ nào đầu vào lớn hơn đầu ra thì phần dư được khấu trừ chuyển kỳ sau
+    let credit = 0;
+    const payVat = net => { const x = net - credit; if (x >= 0) { credit = 0; return x; } credit = -x; return 0; };
+    // TNDN tạm nộp quý = thuế trên lợi nhuận lũy kế đến cuối quý − số đã tạm nộp các quý trước, không âm
+    let paid = 0, cumQ = 0;
     const q = [0, 1, 2, 3].map(qi => {
-      let va = 0, tn = 0;
-      for (let j = qi * 3; j < qi * 3 + 3; j++) { va += months[j].vat; tn += months[j].L51; }
+      const ms = months.slice(qi * 3, qi * 3 + 3);
+      let va = 0;
+      if (vatMonthly) ms.forEach(m => { va += payVat(m.vat); });
+      else va = payVat(ms.reduce((a, m) => a + m.vat, 0));
+      ms.forEach(m => { cumQ += m.L50; });
+      const tn = Math.max(0, Math.max(0, cumQ) * t - paid);
+      paid += tn;
       return { va, tn };
     });
     const qy = q.reduce((a, b) => ({ va: a.va + b.va, tn: a.tn + b.tn }), { va: 0, tn: 0 });
     const qrows = [
-      { label: 'Thuế GTGT phải nộp', cls: '', cells: q.map(x => ({ v: this.f(x.va) })), y: this.f(qy.va) },
+      { label: vatMonthly ? 'Thuế GTGT phải nộp (khai theo tháng, cộng 3 tháng)' : 'Thuế GTGT phải nộp', cls: '', cells: q.map(x => ({ v: this.f(x.va) })), y: this.f(qy.va) },
       { label: 'Thuế TNDN tạm nộp', cls: '', cells: q.map(x => ({ v: this.f(x.tn) })), y: this.f(qy.tn) },
       { label: 'Tổng thuế phải nộp', cls: 'b dbl', cells: q.map(x => ({ v: this.f(x.va + x.tn) })), y: this.f(qy.va + qy.tn) }
     ];
+    const qNotes = [
+      (vatMonthly ? 'Doanh thu năm trước liền kề trên 50 tỷ nên khai thuế GTGT theo tháng; dòng GTGT là tổng 3 tháng của quý.' : 'Doanh thu năm trước liền kề từ 50 tỷ trở xuống nên khai thuế GTGT theo quý.') + (has26 ? '' : ' Chưa có doanh thu 2026 nên tạm xác định theo doanh thu kế hoạch 2027.'),
+      'Quý lỗ không phải tạm nộp thuế TNDN; lỗ được trừ vào lãi các quý sau trong năm. Kỳ nào thuế GTGT đầu vào lớn hơn đầu ra thì phần dư được khấu trừ sang kỳ sau.'
+    ];
+    if (credit > 0.5) qNotes.push('Cuối năm còn ' + this.f(credit) + ' đồng thuế GTGT đầu vào chưa khấu trừ hết, được chuyển sang năm 2028.');
+    if (paid > cumTax + 0.5) qNotes.push('Tạm nộp 4 quý cao hơn thuế TNDN cả năm ' + this.f(paid - cumTax) + ' đồng; phần nộp thừa được bù trừ khi quyết toán.');
+    const badText = !badAny ? '' : 'Tổng chi phí của ' + badRows.map(r => r.name + ' là ' + r.totF).join(', ') + ' doanh thu, vượt mức tối đa 95% của bảng tính' +
+      (badRows.some(r => r.tot >= 100) ? ': bán bao nhiêu cũng lỗ' : '') + ', nên không tính được doanh thu để đạt lãi ' + per.lnstS + ' ' + per.label +
+      '. Giảm giá vốn hoặc chi phí bán hàng ở Khối 3 (Chi tiết theo BCTC), hoặc giảm % chi phí ở bảng sản phẩm.';
 
     // ===== Tầng Khách hàng: các đòn bẩy doanh số tính ngược từ tầng Tài chính (cả năm) =====
     const fwS = st.fw;
@@ -3785,15 +3893,16 @@ var qrcode = function() {
       return { op, label, sub, isIn: !solved, isOut: solved, solved, raw: fwS[key], set: setFw(key), val: out, cls: solved ? 'solved key' : '' };
     };
     const auto = (op, label, sub, val, cls) => ({ op, label, sub, isIn: false, isOut: true, solved: false, raw: '', set: null, val, cls: cls || '' });
+    const noQ = !(Qy > 0), dq = x => noQ ? '–' : x;
     const fwRows = [
-      lever('leads', '', 'Khách tiềm năng', 'Người quan tâm, có thể tiếp cận', this.f(up(L)) + ' người'),
-      lever('cr', '×', 'Tỷ lệ chốt đơn', 'Phần trăm khách tiềm năng mua hàng', this.d1(C * 100) + '%'),
-      auto('=', 'Số khách mua', 'Khách tiềm năng × tỷ lệ chốt', this.f(up(cust)) + ' khách', 'key'),
-      lever('n', '×', 'Số lần mua của 1 khách / năm', 'Chăm sóc sau bán, khách quay lại', this.d1(N) + ' lần'),
-      auto('=', 'Số đơn hàng', 'Số khách × số lần mua', this.f(up(orders)) + ' đơn', 'key'),
-      lever('items', '×', 'Số sản phẩm / đơn', 'Bán thêm, bán kèm', this.d1(I) + ' sản phẩm'),
-      auto('=', 'Số sản phẩm cần bán', 'Khớp với bảng sản phẩm phía trên', this.f(up(Qy)) + ' sản phẩm', 'key'),
-      auto('×', 'Đơn giá trung bình 1 sản phẩm', 'Doanh thu ÷ số sản phẩm · giá trị 1 đơn ' + this.s(asv), this.f(avgP)),
+      lever('leads', '', 'Khách tiềm năng', 'Người quan tâm, có thể tiếp cận', dq(this.f(up(L)) + ' người')),
+      lever('cr', '×', 'Tỷ lệ chốt đơn', 'Phần trăm khách tiềm năng mua hàng', dq(this.d1(C * 100) + '%')),
+      auto('=', 'Số khách mua', 'Khách tiềm năng × tỷ lệ chốt', dq(this.f(up(cust)) + ' khách'), 'key'),
+      lever('n', '×', 'Số lần mua của 1 khách / năm', 'Chăm sóc sau bán, khách quay lại', dq(this.d1(N) + ' lần')),
+      auto('=', 'Số đơn hàng', 'Số khách × số lần mua', dq(this.f(up(orders)) + ' đơn'), 'key'),
+      lever('items', '×', 'Số sản phẩm / đơn', 'Bán thêm, bán kèm', dq(this.d1(I) + ' sản phẩm')),
+      auto('=', 'Số sản phẩm cần bán', 'Khớp với bảng sản phẩm phía trên', dq(this.f(up(Qy)) + ' sản phẩm'), 'key'),
+      auto('×', 'Đơn giá trung bình 1 sản phẩm', 'Doanh thu ÷ số sản phẩm · giá trị 1 đơn ' + dq(this.s(asv)), dq(this.f(avgP))),
       auto('=', 'Doanh thu', 'Khớp doanh thu cần đạt ở tầng Tài chính', this.f(Ry), 'key ok'),
       auto('×', 'Biên lợi nhuận (LNST / doanh thu)', 'Lấy từ bảng tính', Ry > 0 ? (margin * 100).toFixed(2).replace('.', ',') + '%' : '–'),
       auto('=', 'Lợi nhuận sau thuế', 'Khớp tiền muốn có ở tầng Tài chính', this.f(Ry * margin), 'key ok tot last')
@@ -3837,7 +3946,7 @@ var qrcode = function() {
         label: m[1], cls: fm === m[0] ? 'seg on' : 'seg', pressed: fm === m[0] ? 'true' : 'false',
         pick: () => this.setState({ fw: Object.assign({}, this.state.fw, { mode: m[0] }) })
       })),
-      note: 'Quy ra mỗi tháng: ' + this.f(up(L / 12)) + ' khách tiềm năng, ' + this.f(up(orders / 12)) + ' đơn. Số người, số đơn làm tròn lên; mỗi tháng đều làm tròn lên nên 12 tháng cộng lại có thể nhỉnh hơn số cả năm.'
+      note: badAny ? 'Tổng chi phí vượt 95% doanh thu nên chưa tính được số khách, số đơn.' : noQ ? 'Chưa có giá bán ở bảng sản phẩm nên chưa quy ra được số khách, số đơn mỗi tháng.' : 'Quy ra mỗi tháng: ' + this.f(up(L / 12)) + ' khách tiềm năng, ' + this.f(up(orders / 12)) + ' đơn. Số người, số đơn làm tròn lên; mỗi tháng đều làm tròn lên nên 12 tháng cộng lại có thể nhỉnh hơn số cả năm.'
     };
     // Ví dụ đọc bản đồ theo số đang có
     const mapEx = { lnst: this.s(S.lnst * 12), dt: this.s(Ry), qty: this.f(up(Qy)), cust: this.f(up(cust)), leads: this.f(up(L)), cr: this.d1(C * 100) + '%', leadsDay: this.d1(L / wd) };
@@ -3856,7 +3965,7 @@ var qrcode = function() {
         ['c2', 'Kiểm soát giá vốn khi mua hàng', 'Giá vốn không quá ' + gvPct + ' doanh thu'],
         ['c3', 'Duyệt chi bán hàng và quản lý theo ngân sách', 'Bán hàng ' + bhPct + ', quản lý ' + qlPct + ' doanh thu'],
         ['c4', 'Thu đủ hóa đơn đầu vào', st.inPct + '% chi phí có hóa đơn GTGT'],
-        ['c5', 'Lập lịch tiền nộp thuế', 'GTGT ' + this.s(vatM) + '/tháng, TNDN ' + this.s(S.thue * 3) + '/quý'],
+        ['c5', 'Lập lịch tiền nộp thuế', 'GTGT bình quân ' + this.s(vatM) + '/tháng, TNDN bình quân ' + this.s(S.thue * 3) + '/quý, từng quý xem Khối 5'],
         ['c6', 'Theo dõi dòng tiền, công nợ hằng tuần', 'Lãi chưa chắc có tiền']
       ]],
       trainOwner: ['Chủ doanh nghiệp', 'Ra quyết định bằng con số', [
@@ -3997,10 +4106,10 @@ var qrcode = function() {
       dt2026: st.dt2026 > 0 ? this.f(st.dt2026) : '',
       setDt2026: e => this.setState({ dt2026: this.dig(e.target.value) }),
       inPct: String(st.inPct), setInPct: e => this.setState({ inPct: Math.min(this.dig(e.target.value), 100) }),
-      days: String(st.days), setDays: e => this.setState({ days: Math.min(this.dig(e.target.value), 31) }),
+      days: st.days > 0 ? String(st.days) : '', daysN: String(days), setDays: e => this.setState({ days: Math.min(this.dig(e.target.value), 31) }),
       fw: fw, mapEx: mapEx, procGroups: procGroups, trainGroups: trainGroups, dmoGroups: dmoGroups, rep: rep,
       printReport: () => { try { window.print(); } catch (err) {} },
-      hint: hint, inds: inds, prows: prows, k: k, b02: b02, per: per, tndnLabel: rate + '%', rateAria: 'Thuế suất TNDN tự động: ' + rate + '%',
+      hint: hint, inds: inds, prows: prows, k: k, b02: b02, per: per, tndnLabel: rateKnown ? rate + '%' : '–', rateAria: rateKnown ? 'Thuế suất TNDN tự động: ' + rate + '%' : 'Thuế suất TNDN chưa xác định được',
       addDisabled: st.products.length >= 5,
       addProduct: () => {
         const ps = this.state.products;
@@ -4012,9 +4121,20 @@ var qrcode = function() {
       toggleGuide: () => this.setState({ guideOpen: !this.state.guideOpen }),
       mapReadOpen: !!st.mapReadOpen, mapReadOpenS: st.mapReadOpen ? 'true' : 'false', mapReadBtn: st.mapReadOpen ? 'Ẩn hướng dẫn' : 'Xem hướng dẫn',
       toggleMapRead: () => this.setState({ mapReadOpen: !this.state.mapReadOpen }),
-      hasCpOver: prows.some(r => r.overCp),
-      cpOverText: prows.filter(r => r.overCp).map(r => r.name).join(', ') + ': giá vốn cộng chi phí bán hàng đã vượt mức chi phí đã đặt ở bảng sản phẩm. Chi phí thực tế cao hơn kế hoạch nên lợi nhuận trước thuế thấp hơn, lợi nhuận trong bảng B02-DN bên dưới giảm; tổng chi phí vượt 100% doanh thu là lỗ.',
-      b02m: b02m, vatCells: vatCells, monthHeads: monthHeads, seasonCells: seasonCells, lockNote: 'Khóa ' + nLocked + '/12', lockWarn: lockWarn, hasLockWarn: !!lockWarn, qrows: qrows,
+      hasAuto: !!autoText, autoText: autoText, hasBad: badAny, badText: badText,
+      setTarget: e => {
+        // Ô lãi sau thuế ở đầu trang = tổng lãi các sản phẩm; sửa thì chia cho từng sản phẩm theo tỷ trọng đang có
+        const x = this.dig(e.target.value), M = this.state.period !== 'month' ? x / 12 : x;
+        const ps = this.state.products, S0 = ps.reduce((a, q) => a + q.lnst, 0), ids = ps.map(q => q.id).join();
+        let w;
+        if (S0 > 0) { w = ps.map(q => q.lnst / S0); this._mix = { ids, w }; }
+        else if (this._mix && this._mix.ids === ids) w = this._mix.w;
+        else w = ps.map(() => 1 / ps.length);
+        this.setState({ products: ps.map((q, i) => Object.assign({}, q, { lnst: M * w[i] })) });
+      },
+      b02m: b02m, b02h: b02h, vatYearF: this.f(vatYm), qNotes: qNotes,
+      rel: !!st.rel, toggleRel: () => this.setState({ rel: !this.state.rel }), vat8: st.vat === 8, notVat8: st.vat !== 8,
+      vatCells: vatCells, monthHeads: monthHeads, seasonCells: seasonCells, lockNote: 'Khóa ' + nLocked + '/12', lockWarn: lockWarn, hasLockWarn: !!lockWarn, qrows: qrows,
       form: form, fs: fs, roles: roles, fe: fe,
       toggleConsent: () => this.setState({ form: Object.assign({}, this.state.form, { consent: !this.state.form.consent }), err: '' }),
       submit: submit, err: st.err, hasErr: !!st.err, sending: !!st.sending,
