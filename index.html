@@ -22,7 +22,7 @@
 <link rel="canonical" href="https://bdcl.amita.vn/">
 <link rel="image_src" href="https://bdcl.amita.vn/og-image.jpg?v=1">
 <meta name="theme-color" content="#1C5A3F">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231C5A3F'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='40' font-weight='700' fill='%23FFFFFF' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='-2%20-2%20363%20365'%3E%3Cpath%20fill='%23CF2F3B'%20fill-rule='evenodd'%20d='M0%20361%20L100.5%2061%20L175.5%2061%20L276%20361%20L217.5%20361%20L196.2%20297.5%20L79.8%20297.5%20L58.5%20361%20Z%20M138%20123.7%20L181%20252%20L95%20252%20Z'/%3E%3Ccircle%20fill='%23F2B249'%20cx='298'%20cy='61'%20r='61'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap">
@@ -201,6 +201,219 @@ select.tin,select.inp{appearance:none;-webkit-appearance:none}
 .prt td.stk,.prt th.stk{position:static;width:auto;min-width:0;white-space:normal}
 *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
+.nl-sl{background:none;border:0;cursor:pointer;font-family:var(--fb);display:inline-flex;align-items:center;gap:7px}
+.nl-sl svg{color:var(--green)}
+html.deck-on,html.deck-on body{overflow:hidden}
+.deck{position:fixed;inset:0;z-index:1000;background:var(--bg);color:var(--ink);display:flex;flex-direction:column;outline:0}
+.deck-top{display:flex;align-items:center;gap:14px;padding:8px 24px;min-height:62px;border-bottom:1px solid var(--rule);background:var(--bg)}
+.deck-brand{display:flex;align-items:baseline;gap:8px;white-space:nowrap}
+.deck-brand .disp{font-size:20px;font-weight:700;letter-spacing:.06em;color:var(--green)}
+.deck-brand .mono{font-size:11px;letter-spacing:.16em;color:var(--ink2)}
+.deck-tt{font-size:15px;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;padding-left:14px;border-left:1px solid var(--rule)}
+.deck-tt .mono{color:var(--green);margin-right:6px}
+.deck-sp{flex:1 1 auto}
+.deck-demo{font:600 12px/1.3 var(--fb);color:var(--red);background:var(--redsoft);padding:6px 10px;border-radius:2px}
+.deck-stage{flex:1 1 auto;position:relative;min-height:0}
+.deck-body{position:absolute;inset:0;overflow:auto;padding:30px 48px 40px;-webkit-overflow-scrolling:touch}
+.deck-sl{max-width:1280px;margin:0 auto;min-height:100%;transition:opacity .2s}
+.deck-sl.locked{opacity:.42;filter:saturate(.6);pointer-events:none;user-select:none}
+.deck-bot{display:flex;align-items:center;gap:14px;padding:10px 24px;border-top:1px solid var(--rule);background:var(--bg)}
+.dots{flex:1 1 auto;display:flex;justify-content:center;gap:6px;flex-wrap:wrap}
+.dot{width:30px;height:30px;border:1px solid var(--cellb);background:var(--paper);color:var(--ink2);font:600 12px/1 var(--fm);border-radius:2px;cursor:pointer;padding:0}
+.dot:hover{border-color:var(--green);color:var(--ink)}
+.dot.lk{border-style:dashed}
+.dot.on{background:var(--green);border-color:var(--green);color:var(--gink)}
+.dot:focus-visible,.lnk:focus-visible,.gate-pill:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.deck-num{font-size:14px;color:var(--ink2);min-width:58px;text-align:center}
+.sl{display:flex;flex-direction:column;gap:22px}
+.sl-head{display:flex;flex-direction:column;gap:8px}
+.sl-hrow{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.sl-k{font:600 12.5px/1.3 var(--fb);letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.sl-k2{font:600 12.5px/1.3 var(--fb);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-top:6px !important}
+.deck .inp::placeholder,.deck .tin::placeholder{font-family:var(--fb);font-weight:400}
+.sl-h{font-family:var(--fd);font-weight:600;font-size:40px;line-height:1.1;letter-spacing:-.01em;margin:0;max-width:1100px}
+.sl-lead{font-size:18px;line-height:1.5;color:var(--ink2);max-width:900px}
+.sl-foot{font-size:16px;line-height:1.5;border-top:1px solid var(--rule);padding-top:14px}
+.sl-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.sl-cover{justify-content:center;min-height:calc(100vh - 220px);gap:20px}
+.sl-title{font-family:var(--fd);font-weight:600;font-size:72px;line-height:1;letter-spacing:-.02em;color:var(--green);margin:0;max-width:1000px}
+.sl-sub{font-family:var(--fd);font-style:italic;font-size:28px;line-height:1.25}
+.sl-agenda{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--ink);margin-top:12px}
+.sl-agenda div{display:flex;gap:12px;align-items:baseline;padding:14px 16px 14px 0;border-bottom:1px solid var(--rule);font-size:17px}
+.sl-agenda b{font:600 13px/1 var(--fm);color:var(--green)}
+.sl-by{font-size:16px;color:var(--ink2)}
+.sl-by strong{color:var(--ink)}
+.sl-note{font-size:14px;color:var(--ink2);border-left:3px solid var(--green);padding-left:12px;max-width:820px}
+.q-box{background:var(--gsoft);border:1px solid var(--rule2);padding:22px 24px;max-width:760px}
+.q-big{font-size:40px !important;font-weight:700 !important;min-height:72px;padding:10px 16px}
+.tiles4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule2);background:var(--paper)}
+.tiles2{display:grid;grid-template-columns:minmax(0,1fr);border:1px solid var(--rule2);background:var(--paper);align-self:start}
+.tile{padding:20px 22px;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:4px;min-width:0}
+.tiles2 .tile{border-right:0;border-bottom:1px solid var(--rule)}
+.tile:last-child{border-right:0;border-bottom:0}
+.tl{display:block;font-size:14px;font-weight:600;color:var(--ink2);line-height:1.3}
+.tv{font:700 34px/1.1 var(--fm);color:var(--ink);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.tiles-big .tv{font-size:40px}
+.ts{font-size:14px;color:var(--ink2)}
+.tile.tred .tv{color:var(--red)}
+.tile.tkey{background:var(--gsoft)}
+.tile.tkey .tv{color:var(--green)}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:start}
+.g2s{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.pnl{background:var(--paper);border:1px solid var(--rule2);padding:22px 24px;display:flex;flex-direction:column;gap:14px}
+.pnl-h{font-family:var(--fd);font-weight:600;font-size:22px;line-height:1.2;display:flex;align-items:center;gap:10px}
+.tag{font:600 11px/1 var(--fm);letter-spacing:.1em;text-transform:uppercase;color:var(--green);border:1px solid var(--green);padding:4px 6px}
+.segrow{display:flex;padding-left:1px}
+.seg.ro{cursor:default}
+.per-tg{min-width:260px}
+.note-g{font-size:15px;line-height:1.5;color:var(--ink);background:var(--gsoft);border-left:3px solid var(--green);padding:10px 14px}
+.note-r{font-size:15px;line-height:1.5;color:var(--red);background:var(--redsoft);border-left:3px solid var(--red);padding:10px 14px}
+.six-tabs{max-width:900px}
+.six{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
+.six>.six-c{grid-column:span 4}
+.six>.six-s23,.six>.six-c5{grid-column:span 8}
+.six-n2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.s1-split{margin-top:auto !important;padding-top:10px;border-top:1px solid var(--rule);display:flex;flex-direction:column;gap:4px;font-size:14px}
+.s1-split p{display:flex;justify-content:space-between;gap:10px}
+.s1-split b{font-family:var(--fm)}
+.s23 td{padding:4px 6px}
+.s23 .tin{font-size:15px}
+.s23ta{min-height:44px;resize:vertical;line-height:1.35;font-family:var(--fb)}
+.s23nm{font-weight:700 !important}
+.tabrow{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.tabrow .six-tabs{flex:1 1 420px}
+.formula{border:2px solid var(--green);background:var(--gsoft);padding:16px 22px;display:flex;flex-direction:column;gap:6px}
+.fx-k{font:600 12px/1.2 var(--fb);letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.formula p{font-size:21px;line-height:1.4}
+.formula p span{border-bottom:2px solid var(--green)}
+.formula .fx-goal{font-size:15px;color:var(--ink2)}
+.formula .fx-goal span,.formula .fx-goal b{border:0}
+.s6 td.b{font-weight:700}
+.s6 .tin.b{font-weight:700;font-size:17px}
+.b5{display:flex;flex-direction:column}
+.sl-six{gap:14px}
+.sl-six .sl-h{font-size:32px}
+.sl-six .six{gap:12px}
+.sl-six .six-c{padding:14px 16px;gap:4px}
+.sl-six .six-n{grid-template-columns:30px minmax(0,1fr);font-size:17px;margin-bottom:4px !important}
+.sl-six .six-n b{width:30px;height:30px;font-size:15px}
+.sl-six .six-big{font-size:20px !important;min-height:44px}
+.sl-six .six-ta{min-height:48px}
+.sl-six .flab{margin-bottom:4px}
+.six-dt{margin-top:auto !important;padding-top:10px;border-top:1px solid var(--rule);display:flex;flex-direction:column;gap:2px;font-size:13px;color:var(--ink2)}
+.six-dt b{font:700 24px/1.15 var(--fm);color:var(--green)}
+.six-dt span{font-size:12.5px}
+.b5r{display:grid;grid-template-columns:minmax(0,1fr) 44px 150px 56px;gap:10px;align-items:center;padding:2px 0;border-bottom:1px solid var(--rule);font-size:14.5px;line-height:1.25;min-height:35px}
+.b5r small{display:block;font-size:11.5px;color:var(--ink2)}
+.b5r label{font-weight:500}
+.b5r b{text-align:right;font-size:16px;padding-right:12px}
+.b5r .inp{font-size:16px;min-height:31px;padding:4px 12px}
+.b5r .code{text-align:center}
+.b5r .pc{text-align:right;font:500 13px/1 var(--fm);color:var(--ink2)}
+.b5r.b5h{min-height:0;padding:0 0 6px;font:600 11px/1.3 var(--fb);letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);border-bottom:1px solid var(--ink)}
+.b5r.b5h .r{text-align:right}
+.b5r.sub{font-weight:700}
+.b5r.sub label,.b5r.tot label{font-weight:700}
+.b5r.red,.b5r.red b{color:var(--red)}
+.b5r.tot{border-bottom:3px double var(--ink);font-weight:700}
+.six-c{background:var(--paper);border:1px solid var(--rule2);padding:18px 20px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.six-c.six-key{background:var(--gsoft);border-color:var(--green)}
+.six-n{display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;align-items:start;font-family:var(--fd);font-weight:600;font-size:19px;line-height:1.25;margin-bottom:6px !important}
+.six-n b{display:flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--green);color:var(--gink);font:700 18px/1 var(--fm);border-radius:50%}
+.six-big{font-size:24px !important;font-weight:700 !important}
+.six-ta{resize:vertical;min-height:64px;font-size:15px}
+.six-row{display:grid;grid-template-columns:minmax(0,1fr) 170px;gap:10px;align-items:center;padding:6px 0;border-bottom:1px solid var(--rule);font-size:15px}
+.six-row label,.six-row>span{font-weight:600;line-height:1.3}
+.six-row small{display:block;font-weight:400;font-size:12px;color:var(--ink2)}
+.six-row b{text-align:right;font-size:17px;padding-right:12px}
+.six-row.red span,.six-row.red b{color:var(--red)}
+.six-row.tot{border-bottom:3px double var(--ink)}
+.six-row .inp{font-size:17px}
+.inp[disabled]{opacity:.5;cursor:not-allowed}
+.sl-tb td{font-size:16px;padding:10px 10px}
+.sl-tb th{font-size:12px}
+.sl-tb .tin{font-size:16px}
+.sl-tb td.b{font-weight:700}
+.sl-tb tr.tot td{font-weight:700;border-top:1px solid var(--ink);border-bottom:3px double var(--ink)}
+.sl-b02 td{font-size:19px;padding:14px 12px}
+.sl-del{width:36px;height:36px;font-size:20px}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;font-size:18px;padding:18px 20px;border:1px dashed var(--rule2);background:var(--paper)}
+.chain b{font-family:var(--fm)}
+.chain i{font-style:normal;font-weight:700;color:var(--ink2)}
+.chain .ck b{color:var(--green)}
+.calc{background:var(--paper);border:1px solid var(--rule2);padding:12px 24px 18px}
+.cr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--rule);font-size:19px}
+.cr small{display:block;font-size:13px;color:var(--ink2)}
+.cr b{font:700 26px/1.1 var(--fm);font-variant-numeric:tabular-nums}
+.cr.ctot{border-bottom:3px double var(--ink)}
+.cr.ctot b{font-size:32px}
+.cr.cfin b{color:var(--green)}
+.calc .fhint,.calc .note-g{margin-top:12px}
+.callout{background:var(--gsoft);border-left:4px solid var(--green);padding:20px 24px;font-size:17px;line-height:1.55;display:flex;flex-direction:column;gap:10px}
+.cash{background:var(--paper);border:1px solid var(--rule2);padding:24px 28px;display:flex;flex-direction:column;gap:16px}
+.cash-v{font:700 56px/1 var(--fm);letter-spacing:-.02em}
+.cash-v small{font:500 18px/1 var(--fb);color:var(--ink2)}
+.cash-bar{display:flex;height:22px;background:var(--cell)}
+.cb-t{background:var(--red)}
+.cb-v{background:repeating-linear-gradient(45deg,var(--red) 0 6px,var(--redsoft) 6px 12px)}
+.leg{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;font-size:16px;line-height:1.45}
+.leg i{display:block;width:18px;height:18px;margin-top:2px}
+.leg p{color:var(--ink2)}
+.stack{display:flex;height:20px;background:var(--cell);min-width:160px}
+.s-gv{background:var(--ink2)}
+.s-bh{background:var(--rule2)}
+.s-ql{background:var(--cellb)}
+.s-lt{background:var(--green)}
+.legrow{display:flex;gap:20px;flex-wrap:wrap;font-size:14px;color:var(--ink2)}
+.legrow span{display:inline-flex;align-items:center;gap:6px}
+.legrow i{display:inline-block;width:14px;height:14px}
+.sl-notes{margin:0;padding-left:20px;font-size:15px;line-height:1.55;color:var(--ink2);display:flex;flex-direction:column;gap:6px}
+.sl-mo td{font-size:14px;padding:8px 6px}
+.sl-mo .tin{font-size:14px;padding:6px 4px;min-height:34px}
+.sl-mo td.stk,.sl-mo th.stk{min-width:210px;background:var(--paper)}
+.sl-mo tr.sea td{background:var(--cell)}
+.sl-mo tr.sea td.stk{font-weight:600}
+.mapx{display:flex;flex-direction:column;border:1px solid var(--rule2);background:var(--paper)}
+.mt-row{display:grid;grid-template-columns:200px minmax(0,1fr);border-bottom:1px solid var(--rule)}
+.mt-row:last-child{border-bottom:0}
+.mt-l{font-family:var(--fd);font-weight:600;font-size:22px;padding:14px 18px;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:2px}
+.mt-l span{font:600 11px/1.2 var(--fb);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+.mt-fin{background:var(--gsoft)}
+.mt-b{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;padding:14px 18px;align-items:center}
+.mt-b small{display:block;font-size:12px;color:var(--ink2)}
+.mt-b>div>b{font:700 22px/1.2 var(--fm)}
+.mt-txt{display:flex !important}
+.mt-txt{display:flex;flex-direction:column;align-items:flex-start;gap:4px;font-size:15px;line-height:1.45}
+.next-z{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--ink);padding-top:14px}
+.next-z .disp{font-size:26px;font-weight:600}
+.gate{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;pointer-events:none;z-index:5}
+.gate-box{pointer-events:auto;width:min(520px,100%);background:var(--paper);border:1px solid var(--rule2);border-top:4px solid var(--green);box-shadow:0 18px 50px rgba(0,0,0,.22);padding:26px 28px;display:flex;flex-direction:column;gap:10px}
+.gate-ic{color:var(--green)}
+.gate-h{font-family:var(--fd);font-weight:600;font-size:24px;line-height:1.2}
+.gate-p{font-size:14.5px;line-height:1.5;color:var(--ink2)}
+.gate-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
+.gate-row .inp{font-size:20px;text-align:left}
+.gate-msg{font-size:14px;line-height:1.4}
+.gate-msg:empty{display:none}
+.gate-msg.err{color:var(--red);font-weight:600}
+.gate-msg.ok{color:var(--green);font-weight:600}
+.gate-links{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.lnk{background:none;border:0;padding:6px 0;color:var(--green);font:600 14px/1.3 var(--fb);text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.gate-pill{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:5;display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 20px;background:var(--green);color:var(--gink);border:0;border-radius:999px;font:600 15px/1 var(--fb);cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.mkh{border:1px solid var(--rule2);background:var(--paper);padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.mkh-r{display:grid;grid-template-columns:150px minmax(0,1fr) minmax(0,1.3fr);gap:10px;align-items:center}
+.mkh-r b{font-size:14px}
+@media (max-width:1100px){.six{grid-template-columns:repeat(2,minmax(0,1fr))}.six>.six-c,.six>.six-s23,.six>.six-c5{grid-column:1 / -1}.tiles4{grid-template-columns:repeat(2,minmax(0,1fr))}.tile:nth-child(2){border-right:0}.tile:nth-child(-n+2){border-bottom:1px solid var(--rule)}.sl-h{font-size:34px}.sl-title{font-size:56px}.mt-b{grid-template-columns:repeat(2,minmax(0,1fr))}.dots{display:none}.deck-num{flex:1 1 auto}}
+@media (max-width:760px){.deck-top{padding:8px 14px;gap:10px}.deck-brand,.deck-xt{display:none}.deck-tt{border-left:0;padding-left:0}.deck-body{padding:18px 16px 32px}.deck-bot{padding:8px 14px}.deck-bt{display:none}.sl{gap:16px}.sl-h{font-size:27px}.sl-lead{font-size:16px}.sl-title{font-size:42px}.sl-sub{font-size:21px}.sl-agenda,.six,.g2,.g2s,.tiles4{grid-template-columns:minmax(0,1fr)}.six-n2{grid-template-columns:minmax(0,1fr)}.formula p{font-size:17px}.b5r{grid-template-columns:minmax(0,1fr) 30px 118px 44px;gap:6px;font-size:13.5px}.b5r .inp{font-size:15px;padding:6px 8px}.tile{border-right:0;border-bottom:1px solid var(--rule)}.tv{font-size:28px}.tiles-big .tv{font-size:30px}.q-big{font-size:28px !important}.mt-row{grid-template-columns:minmax(0,1fr)}.mt-l{border-right:0;border-bottom:1px solid var(--rule);flex-direction:row;align-items:baseline;gap:10px}.cash-v{font-size:38px}.cr{font-size:16px}.cr b{font-size:20px}.cr.ctot b{font-size:24px}.gate-box{padding:20px}.gate-h{font-size:20px}.gate-row{grid-template-columns:minmax(0,1fr)}.mkh-r{grid-template-columns:minmax(0,1fr)}.sl-cover{min-height:0}}
+@media only print{.deck{display:none !important}}
+.logo{display:block;flex:none;overflow:visible}
+.lg-a{fill:#CF2F3B}
+.pg.dark .lg-a{fill:#E8414D}
+.lg-m{fill:var(--green)}
+.lg-d{fill:#F2B249}
+.sl-logo{margin-bottom:6px}
+@media (max-width:760px){.sl-logo{height:34px !important;width:185.4px !important}}
+.navrow .nl{white-space:nowrap;flex:none}
 </style>
 </head>
 <body>
@@ -213,13 +426,14 @@ select.tin,select.inp{appearance:none;-webkit-appearance:none}
 <header class="np topbar" style="border-bottom: 1px solid var(--rule); background: var(--bg)">
 <div class="wrap" style="display: flex; align-items: center; gap: 4px 32px; min-height: 76px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px">
 <a href="#top" aria-label="AMITA · Bài giảng, về đầu trang" style="display: flex; align-items: baseline; gap: 10px; text-decoration: none">
-<span class="disp" style="font-size: 26px; font-weight: 700; letter-spacing: .06em; color: var(--green)">AMITA</span>
+<svg class="logo" viewBox="0 0 1968.4 361" aria-hidden="true" focusable="false" style="height: 24px; width: 130.9px"><path class="lg-a" fill-rule="evenodd" d="M0 361 L100.5 61 L175.5 61 L276 361 L217.5 361 L196.2 297.5 L79.8 297.5 L58.5 361 Z M138 123.7 L181 252 L95 252 Z"></path><path class="lg-m" fill-rule="evenodd" d="M432.6 361 L432.6 61 L505.4 61 L580.5 222.5 L655.6 61 L728.3 61 L728.3 361 L673.3 361 L673.3 148.6 L607.1 291 L553.8 291 L487.6 148.6 L487.6 361 Z M894.9 61 L949.9 61 L949.9 361 L894.9 361 Z M1106.4 61 L1348.4 61 L1348.4 106.5 L1254.9 106.5 L1254.9 361 L1199.9 361 L1199.9 106.5 L1106.4 106.5 Z M1449.4 361 L1549.9 61 L1624.9 61 L1725.4 361 L1666.9 361 L1645.6 297.5 L1529.2 297.5 L1507.9 361 Z M1587.4 123.7 L1630.4 252 L1544.4 252 Z"></path><circle class="lg-d" cx="1907.4" cy="61" r="61"></circle></svg>
 <span class="mono" style="font-size: 12px; letter-spacing: .16em; color: var(--ink2)">· BÀI GIẢNG</span>
 </a>
 <nav aria-label="Điều hướng chính" class="navrow" style="display: flex; align-items: center; gap: 32px; margin-left: auto">
 <a href="#bang-tinh" class="nl">Bảng tính</a>
 <a href="#ban-do" class="nl">Bản đồ chiến lược</a>
 <a href="#lo-trinh" class="nl">Lộ trình</a>
+<button type="button" class="nl nl-sl" onClick="{{openDeck}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="1"></rect><path d="M8 21h8M12 17v4"></path></svg>Slide bài giảng</button>
 </nav>
 <div class="ctl" style="display: flex; align-items: center; gap: 10px">
 <a href="tel:0392237688" class="tel" aria-label="Gọi 0392 237 688"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span class="tel-t">0392 237 688</span></a>
@@ -294,7 +508,7 @@ select.tin,select.inp{appearance:none;-webkit-appearance:none}
 <div class="po wrap" style="padding-top: 4px">
 <div style="border-bottom: 2px solid var(--ink); padding-bottom: 10px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end; gap: 20px">
 <div>
-<p class="mono" style="font-size: 10px; letter-spacing: .16em; color: var(--ink2)">AMITA · BÀI GIẢNG · BẢN ĐỒ CHIẾN LƯỢC</p>
+<p style="display: flex; align-items: baseline; gap: 8px"><svg class="logo" viewBox="0 0 1968.4 361" role="img" aria-label="AMITA" style="height: 14px; width: 76.3px"><path class="lg-a" fill-rule="evenodd" d="M0 361 L100.5 61 L175.5 61 L276 361 L217.5 361 L196.2 297.5 L79.8 297.5 L58.5 361 Z M138 123.7 L181 252 L95 252 Z"></path><path class="lg-m" fill-rule="evenodd" d="M432.6 361 L432.6 61 L505.4 61 L580.5 222.5 L655.6 61 L728.3 61 L728.3 361 L673.3 361 L673.3 148.6 L607.1 291 L553.8 291 L487.6 148.6 L487.6 361 Z M894.9 61 L949.9 61 L949.9 361 L894.9 361 Z M1106.4 61 L1348.4 61 L1348.4 106.5 L1254.9 106.5 L1254.9 361 L1199.9 361 L1199.9 106.5 L1106.4 106.5 Z M1449.4 361 L1549.9 61 L1624.9 61 L1725.4 361 L1666.9 361 L1645.6 297.5 L1529.2 297.5 L1507.9 361 Z M1587.4 123.7 L1630.4 252 L1544.4 252 Z"></path><circle class="lg-d" cx="1907.4" cy="61" r="61"></circle></svg><span class="mono" style="font-size: 10px; letter-spacing: .16em; color: var(--ink2)">· BÀI GIẢNG · BẢN ĐỒ CHIẾN LƯỢC</span></p>
 <p class="disp" style="font-size: 26px; font-weight: 600; line-height: 1.15">Kế hoạch kinh doanh và thuế phải nộp 2027</p>
 </div>
 <div style="font-size: 11px; text-align: right; line-height: 1.6">
@@ -427,7 +641,7 @@ select.tin,select.inp{appearance:none;-webkit-appearance:none}
 <template data-for="inds" data-as="o"><option value="{{o.id}}">{{o.optLabel}}</option></template>
 </select>
 </td>
-<td class="ci"><input class="tin num" inputmode="numeric" aria-label="Phần trăm chi phí trên doanh thu, sản phẩm {{p.idx}}" value="{{p.pctF}}" onChange="{{p.setPct}}" onBlur="{{p.fitPct}}" style="text-align: right"><template data-if="p.auto"><span class="pct-eff">đang tính {{p.totF}}</span></template></td>
+<td class="ci"><input class="tin num" inputmode="decimal" aria-label="Phần trăm chi phí trên doanh thu, sản phẩm {{p.idx}}" value="{{p.pctV}}" onChange="{{p.setPct}}" onBlur="{{p.fitPct}}" style="text-align: right"><template data-if="p.auto"><span class="pct-eff">đang tính {{p.totF}}</span></template></td>
 <td class="ci"><input class="tin num" inputmode="numeric" aria-label="Giá bán một sản phẩm, sản phẩm {{p.idx}}" value="{{p.priceF}}" onChange="{{p.setPrice}}" style="text-align: right"></td>
 <td class="num red">{{p.thueF}}</td>
 <td class="num">{{p.lnttF}}</td>
@@ -481,7 +695,7 @@ select.tin,select.inp{appearance:none;-webkit-appearance:none}
 <div class="span2"><label class="flab" for="m-lnst-{{p.idx}}">Lợi nhuận sau thuế muốn có / tháng</label><input id="m-lnst-{{p.idx}}" class="inp num" inputmode="numeric" value="{{p.lnstF}}" onChange="{{p.setLnst}}"></div>
 <div class="span2"><label class="flab" for="m-ind-{{p.idx}}">Ngành (gợi ý % chi phí)</label>
 <select id="m-ind-{{p.idx}}" class="inp" value="{{p.ind}}" onChange="{{p.setInd}}"><template data-for="inds" data-as="o"><option value="{{o.id}}">{{o.optLabel}}</option></template></select></div>
-<div><label class="flab" for="m-pct-{{p.idx}}">% chi phí / DT</label><input id="m-pct-{{p.idx}}" class="inp num" inputmode="numeric" value="{{p.pctF}}" onChange="{{p.setPct}}" onBlur="{{p.fitPct}}"><template data-if="p.auto"><span class="pct-eff" style="text-align: left; padding: 4px 0 0">đang tính {{p.totF}}</span></template></div>
+<div><label class="flab" for="m-pct-{{p.idx}}">% chi phí / DT</label><input id="m-pct-{{p.idx}}" class="inp num" inputmode="numeric" value="{{p.pctV}}" onChange="{{p.setPct}}" onBlur="{{p.fitPct}}"><template data-if="p.auto"><span class="pct-eff" style="text-align: left; padding: 4px 0 0">đang tính {{p.totF}}</span></template></div>
 <div><label class="flab" for="m-pr-{{p.idx}}">Giá bán 1 sản phẩm</label><input id="m-pr-{{p.idx}}" class="inp num" inputmode="numeric" value="{{p.priceF}}" onChange="{{p.setPrice}}"></div>
 </div>
 <dl style="margin: 0; padding: 6px 12px 12px; font-size: 14px">
@@ -657,8 +871,8 @@ Thêm sản phẩm</button>
 <template data-for="prows" data-as="p">
 <tr>
 <td style="font-weight: 600">{{p.name}}</td>
-<td class="ci"><input class="tin num" inputmode="numeric" aria-label="Giá vốn phần trăm, {{p.name}}" value="{{p.gvF}}" onChange="{{p.setGv}}" style="text-align: right"></td>
-<td class="ci"><input class="tin num" inputmode="numeric" aria-label="Chi phí bán hàng phần trăm, {{p.name}}" value="{{p.bhF}}" onChange="{{p.setBh}}" style="text-align: right"></td>
+<td class="ci"><input class="tin num" inputmode="numeric" aria-label="Giá vốn phần trăm, {{p.name}}" value="{{p.gvV}}" onChange="{{p.setGv}}" onBlur="{{edOff}}" style="text-align: right"></td>
+<td class="ci"><input class="tin num" inputmode="numeric" aria-label="Chi phí bán hàng phần trăm, {{p.name}}" value="{{p.bhV}}" onChange="{{p.setBh}}" onBlur="{{edOff}}" style="text-align: right"></td>
 <td class="num" style="font-weight: 600">{{p.qlF}}</td>
 <td class="{{p.totCls}}" style="font-weight: 700">{{p.totF}}<span class="muted" style="display: block; font-size: 11px; font-weight: 400">{{p.capF}}</span></td>
 <td class="{{p.ltCls}}" style="font-weight: 700">{{p.ltF}}</td>
@@ -821,6 +1035,12 @@ Thêm sản phẩm</button>
 <p class="muted" style="font-size: 13px; margin-top: 10px">Tính ngược từ doanh thu và lợi nhuận ở tầng Tài chính. Số tính cho cả năm 2027.</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 18px; min-width: 0">
+<div class="mkh">
+<p class="mono" style="font-size: 12px; letter-spacing: .1em; color: var(--ink2)">KHÁCH HÀNG MỤC TIÊU · AI MUA, HỌ CÓ NỖI ĐAU GÌ</p>
+<template data-for="custRows" data-as="c">
+<div class="mkh-r"><b>{{c.name}}</b><input class="inp" aria-label="Khách hàng là ai, {{c.name}}" placeholder="Khách hàng là ai" value="{{c.whoRaw}}" onChange="{{c.setWho}}"><input class="inp" aria-label="Vấn đề, nỗi đau của khách hàng, {{c.name}}" placeholder="Vấn đề, nỗi đau của họ" value="{{c.painRaw}}" onChange="{{c.setPain}}"></div>
+</template>
+</div>
 <div class="g-fwctl np">
 <div>
 <label class="flab" for="fw-ind">Ngành (gợi ý tỷ lệ chốt và số lần mua lại)</label>
@@ -1178,7 +1398,7 @@ Thêm sản phẩm</button>
 <footer style="border-top: 1px solid var(--ink); padding-top: 40px; padding-bottom: 44px">
 <div class="wrap g-reg" style="gap: 40px">
 <div style="display: flex; flex-direction: column; gap: 10px">
-<p style="display: flex; align-items: baseline; gap: 10px"><span class="disp" style="font-size: 22px; font-weight: 700; letter-spacing: .06em; color: var(--green)">AMITA</span><span class="mono" style="font-size: 11px; letter-spacing: .16em; color: var(--ink2)">· BÀI GIẢNG</span></p>
+<p style="display: flex; align-items: baseline; gap: 10px"><svg class="logo" viewBox="0 0 1968.4 361" role="img" aria-label="AMITA" style="height: 20px; width: 109.1px"><path class="lg-a" fill-rule="evenodd" d="M0 361 L100.5 61 L175.5 61 L276 361 L217.5 361 L196.2 297.5 L79.8 297.5 L58.5 361 Z M138 123.7 L181 252 L95 252 Z"></path><path class="lg-m" fill-rule="evenodd" d="M432.6 361 L432.6 61 L505.4 61 L580.5 222.5 L655.6 61 L728.3 61 L728.3 361 L673.3 361 L673.3 148.6 L607.1 291 L553.8 291 L487.6 148.6 L487.6 361 Z M894.9 61 L949.9 61 L949.9 361 L894.9 361 Z M1106.4 61 L1348.4 61 L1348.4 106.5 L1254.9 106.5 L1254.9 361 L1199.9 361 L1199.9 106.5 L1106.4 106.5 Z M1449.4 361 L1549.9 61 L1624.9 61 L1725.4 361 L1666.9 361 L1645.6 297.5 L1529.2 297.5 L1507.9 361 Z M1587.4 123.7 L1630.4 252 L1544.4 252 Z"></path><circle class="lg-d" cx="1907.4" cy="61" r="61"></circle></svg><span class="mono" style="font-size: 11px; letter-spacing: .16em; color: var(--ink2)">· BÀI GIẢNG</span></p>
 <p style="font-size: 14px">Giảng viên: Vũ Thạch Sơn, chuyên gia tư vấn kế toán tài chính.</p>
 <p class="muted" style="font-size: 12px; margin-top: 8px">© 2026 AMITA · Bài giảng</p>
 </div>
@@ -1201,6 +1421,487 @@ Thêm sản phẩm</button>
 </template>
 
 
+
+
+<template data-if="deckOpen">
+<div class="deck np" role="dialog" aria-modal="true" aria-label="Slide bài giảng buổi Z4" tabindex="-1" id="deck">
+<div class="deck-top">
+<span class="deck-brand"><svg class="logo" viewBox="0 0 1968.4 361" role="img" aria-label="AMITA" style="height: 18px; width: 98.1px"><path class="lg-a" fill-rule="evenodd" d="M0 361 L100.5 61 L175.5 61 L276 361 L217.5 361 L196.2 297.5 L79.8 297.5 L58.5 361 Z M138 123.7 L181 252 L95 252 Z"></path><path class="lg-m" fill-rule="evenodd" d="M432.6 361 L432.6 61 L505.4 61 L580.5 222.5 L655.6 61 L728.3 61 L728.3 361 L673.3 361 L673.3 148.6 L607.1 291 L553.8 291 L487.6 148.6 L487.6 361 Z M894.9 61 L949.9 61 L949.9 361 L894.9 361 Z M1106.4 61 L1348.4 61 L1348.4 106.5 L1254.9 106.5 L1254.9 361 L1199.9 361 L1199.9 106.5 L1106.4 106.5 Z M1449.4 361 L1549.9 61 L1624.9 61 L1725.4 361 L1666.9 361 L1645.6 297.5 L1529.2 297.5 L1507.9 361 Z M1587.4 123.7 L1630.4 252 L1544.4 252 Z"></path><circle class="lg-d" cx="1907.4" cy="61" r="61"></circle></svg><span class="mono">· BÀI GIẢNG</span></span>
+<span class="deck-tt"><span class="mono">Z4</span> {{deckTitle}}</span>
+<span class="deck-sp"></span>
+<template data-if="deckDemo"><span class="deck-demo">Bản chạy thử: chưa nối Google Sheet</span></template>
+<button type="button" class="ibtn" aria-label="{{themeLabel}}" onClick="{{toggleDark}}">
+<template data-if="dark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></template>
+<template data-if="light"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg></template>
+</button>
+<button type="button" class="btn sec sm deck-x" onClick="{{closeDeck}}" aria-label="Đóng slide, về trang"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg><span class="deck-xt">Đóng</span></button>
+</div>
+
+<div class="deck-stage">
+<div class="deck-body" id="deck-body">
+<div class="{{deckSlCls}}" inert="{{deckInert}}" aria-hidden="{{deckInert}}">
+
+
+<template data-if="s1">
+<div class="sl sl-cover">
+<svg class="logo sl-logo" viewBox="0 0 1968.4 361" role="img" aria-label="AMITA" style="height: 46px; width: 250.8px"><path class="lg-a" fill-rule="evenodd" d="M0 361 L100.5 61 L175.5 61 L276 361 L217.5 361 L196.2 297.5 L79.8 297.5 L58.5 361 Z M138 123.7 L181 252 L95 252 Z"></path><path class="lg-m" fill-rule="evenodd" d="M432.6 361 L432.6 61 L505.4 61 L580.5 222.5 L655.6 61 L728.3 61 L728.3 361 L673.3 361 L673.3 148.6 L607.1 291 L553.8 291 L487.6 148.6 L487.6 361 Z M894.9 61 L949.9 61 L949.9 361 L894.9 361 Z M1106.4 61 L1348.4 61 L1348.4 106.5 L1254.9 106.5 L1254.9 361 L1199.9 361 L1199.9 106.5 L1106.4 106.5 Z M1449.4 361 L1549.9 61 L1624.9 61 L1725.4 361 L1666.9 361 L1645.6 297.5 L1529.2 297.5 L1507.9 361 Z M1587.4 123.7 L1630.4 252 L1544.4 252 Z"></path><circle class="lg-d" cx="1907.4" cy="61" r="61"></circle></svg>
+<p class="sl-k">Bài giảng · Buổi Z4 · Zoom miễn phí</p>
+<h2 class="sl-title">Module kế hoạch thuế phải nộp 2027</h2>
+<p class="sl-sub">Tầng Tài chính của bản đồ chiến lược, bằng con số cụ thể</p>
+<div class="sl-agenda">
+<div><b>01</b><span>Câu hỏi của chủ doanh nghiệp và thuế suất</span></div>
+<div><b>02</b><span>6 bước xác định việc cần làm để đạt mục tiêu</span></div>
+<div><b>03</b><span>Bảng sản phẩm và kết quả kế hoạch</span></div>
+<div><b>04</b><span>Thuế TNDN, thuế GTGT và tiền nộp thuế</span></div>
+<div><b>05</b><span>Kế hoạch theo quý, theo tháng</span></div>
+<div><b>06</b><span>Về lại bản đồ chiến lược</span></div>
+</div>
+<p class="sl-by">Giảng viên <strong>Vũ Thạch Sơn</strong> · Chuyên gia tư vấn kế toán tài chính</p>
+<p class="sl-note">Số liệu trên slide và trên trang là một bộ: sửa ở đâu, chỗ kia cũng chạy theo. Chuyển slide bằng phím ← →, nút bên dưới, hoặc vuốt trên điện thoại.</p>
+</div>
+</template>
+
+
+<template data-if="s2">
+<div class="sl">
+<div class="sl-head"><p class="sl-k">Z4 · 02 / 17 · Câu hỏi của chủ doanh nghiệp</p><h2 class="sl-h">Năm 2027, anh chị muốn có bao nhiêu tiền sau thuế?</h2><p class="sl-lead">Chủ doanh nghiệp đặt câu hỏi, kế toán trả lời bằng con số. Chỉ cần một con số, mọi số còn lại chạy theo.</p></div>
+<div class="q-box">
+<label class="flab" for="sl-tg">Lợi nhuận sau thuế muốn có, cả năm 2027 (đồng)</label>
+<input id="sl-tg" class="inp num q-big" inputmode="numeric" value="{{tgYV}}" onChange="{{setTargetY}}" onBlur="{{edOff}}">
+<span class="fhint">Bình quân {{k.lnstMF}} đồng mỗi tháng.<template data-if="manyProd"> Có nhiều sản phẩm thì chia theo tỷ trọng đang có.</template></span>
+</div>
+<p class="sl-k2">Kế toán trả lời · cả năm 2027</p>
+<div class="tiles4">
+<div class="tile"><p class="tl">Doanh thu cần đạt</p><p class="tv">{{k.dtYS}}</p><p class="ts">bán {{k.qYearF}} sản phẩm</p></div>
+<div class="tile"><p class="tl">Chi phí được phép tiêu</p><p class="tv">{{k.cpYS}}</p><p class="ts">{{k.cpPct}} doanh thu</p></div>
+<div class="tile tred"><p class="tl">Thuế TNDN phải nộp</p><p class="tv">{{k.thueYS}}</p><p class="ts">chi phí thật</p></div>
+<div class="tile tred"><p class="tl">Thuế GTGT phải nộp</p><p class="tv">{{k.vatYS}}</p><p class="ts">tiền thu hộ khách hàng</p></div>
+</div>
+</div>
+</template>
+
+
+<template data-if="s3">
+<div class="sl">
+<div class="sl-head"><p class="sl-k">Z4 · 03 / 17 · Khối 1</p><h2 class="sl-h">Thuế suất của doanh nghiệp</h2><p class="sl-lead">Thuế TNDN bảng tự chọn theo doanh thu. Thuế GTGT anh chị chọn theo mặt hàng.</p></div>
+<div class="g2">
+<div class="pnl">
+<p class="pnl-h">Thuế suất thuế TNDN <span class="tag">Tự động</span></p>
+<div class="segrow">
+<template data-for="tndnOpts" data-as="o"><span class="{{o.cls}} ro">{{o.label}}<small>{{o.sub}}</small></span></template>
+</div>
+<div><label class="flab" for="sl-dt26">Doanh thu cả năm 2026</label><input id="sl-dt26" class="inp num" inputmode="numeric" placeholder="Để trống nếu chưa có" value="{{dt2026}}" onChange="{{setDt2026}}"><span class="fhint">Có số này, thuế suất tính theo năm 2026 (năm liền trước).</span></div>
+<label class="relck" for="sl-rel"><input id="sl-rel" type="checkbox" checked="{{rel}}" onChange="{{toggleRel}}"><span>Là công ty con, hoặc có quan hệ liên kết với doanh nghiệp không thuộc diện 15%, 17%: áp dụng 20%</span></label>
+<p class="note-g">{{hint.text}}</p>
+</div>
+<div class="pnl">
+<p class="pnl-h">Thuế suất thuế GTGT</p>
+<p class="vlab">Bán ra</p>
+<div class="segrow" role="group" aria-label="Thuế suất GTGT bán ra">
+<template data-for="vatOpts" data-as="o"><button type="button" class="{{o.cls}}" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}">{{o.label}}</button></template>
+</div>
+<p class="vlab">Mua vào</p>
+<div class="segrow" role="group" aria-label="Thuế suất GTGT mua vào">
+<template data-for="vatInOpts" data-as="o"><button type="button" class="{{o.cls}}" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}">{{o.label}}</button></template>
+</div>
+<template data-if="vat8"><p class="note-r">Mức 8% hiện chỉ áp dụng đến hết 31/12/2026. Chỉ chọn khi có văn bản gia hạn sang 2027.</p></template>
+<div class="g2s">
+<div><label class="flab" for="sl-inpct">% chi phí có hóa đơn GTGT đầu vào</label><input id="sl-inpct" class="inp num" inputmode="numeric" value="{{inPct}}" onChange="{{setInPct}}"></div>
+<div><label class="flab" for="sl-days">Số ngày bán hàng mỗi tháng</label><input id="sl-days" class="inp num" inputmode="numeric" placeholder="26" value="{{days}}" onChange="{{setDays}}"><span class="fhint">Để trống thì tính 26 ngày</span></div>
+</div>
+</div>
+</div>
+</div>
+</template>
+
+
+<template data-if="s4">
+<div class="sl sl-six">
+<div class="sl-head"><p class="sl-k">Z4 · 04 / 17 · 6 bước · Bước 1–3</p><h2 class="sl-h">6 bước xác định các việc cần làm để đạt mục tiêu doanh nghiệp</h2></div>
+<div class="six">
+<div class="six-c six-s1">
+<p class="six-n"><b>1</b>Mục tiêu tài chính: lợi nhuận sau thuế là bao nhiêu tiền?</p>
+<label class="flab" for="sl-y1">Lợi nhuận sau thuế muốn có, cả năm 2027, cả doanh nghiệp</label>
+<input id="sl-y1" class="inp num six-big" inputmode="numeric" value="{{tgYV}}" onChange="{{setTargetY}}" onBlur="{{edOff}}">
+<span class="fhint">= {{k.lnstMF}} mỗi tháng.<template data-if="manyProd"> Chia cho {{prodN}} sản phẩm theo tỷ trọng ở bước 6.</template></span>
+<div class="s1-split"><template data-for="s6Rows" data-as="r"><p><span>{{r.name}}</span><b>{{r.shareV}}%</b></p></template></div>
+</div>
+<div class="six-c six-s23">
+<div class="six-n2"><p class="six-n"><b>2</b>Khách hàng là ai, họ có vấn đề, nỗi đau gì?</p><p class="six-n"><b>3</b>Sản phẩm nào giải quyết được vấn đề, nỗi đau đó?</p></div>
+<div class="scroll">
+<table class="lg s23" style="min-width: 640px">
+<thead><tr><th style="width: 30%">Khách hàng là ai</th><th style="width: 38%">Vấn đề, nỗi đau của họ</th><th>Sản phẩm giải quyết</th><th style="width: 44px"><span class="sr">Xóa</span></th></tr></thead>
+<tbody>
+<template data-for="s23Rows" data-as="c">
+<tr>
+<td class="ci"><input class="tin" aria-label="Khách hàng là ai, dòng {{c.idx}}" placeholder="Ví dụ: chủ quán cà phê 1–3 chi nhánh" value="{{c.whoRaw}}" onChange="{{c.setWho}}"></td>
+<td class="ci"><textarea class="tin s23ta" rows="2" aria-label="Vấn đề, nỗi đau của khách hàng, dòng {{c.idx}}" placeholder="Ví dụ: cuối tháng không biết lãi thật bao nhiêu" value="{{c.painRaw}}" onChange="{{c.setPain}}"></textarea></td>
+<td class="ci"><input class="tin s23nm" aria-label="Tên sản phẩm, dòng {{c.idx}}" value="{{c.name}}" onChange="{{c.setName}}"></td>
+<td><template data-if="c.canRemove"><button type="button" class="ibtn sl-del" aria-label="Xóa {{c.name}}" onClick="{{c.remove}}">×</button></template></td>
+</tr>
+</template>
+</tbody>
+</table>
+</div>
+<div class="sl-row"><button type="button" class="btn sec sm" onClick="{{addProduct}}" disabled="{{addDisabled}}">+ Thêm sản phẩm</button><span class="muted" style="font-size: 13.5px">{{prodCount}} · Thêm hoặc bớt sản phẩm thì mục tiêu ở bước 1 giữ nguyên, chia đều lại cho các sản phẩm; sửa tỷ trọng ở bước 6.</span></div>
+</div>
+</div>
+</div>
+</template>
+
+
+<template data-if="s5">
+<div class="sl sl-six">
+<div class="sl-head"><p class="sl-k">Z4 · 05 / 17 · 6 bước · Bước 4–5</p><h2 class="sl-h">Giá bán, giá vốn và tiền lãi của từng sản phẩm</h2></div>
+<template data-if="six.many">
+<div class="tabrow"><span class="vlab">Chọn sản phẩm để xem bảng tính chi tiết</span>
+<div class="segrow six-tabs" role="group" aria-label="Chọn sản phẩm">
+<template data-for="six.tabs" data-as="o"><button type="button" class="{{o.cls}}" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}">{{o.label}}</button></template>
+</div></div>
+</template>
+<div class="six">
+<div class="six-c six-c4">
+<p class="six-n"><b>4</b>Giá bán mỗi sản phẩm bao nhiêu tiền? Tỷ lệ lợi nhuận / giá vốn bao nhiêu %?</p>
+<label class="flab" for="sl-pr">Giá bán 1 sản phẩm</label>
+<input id="sl-pr" class="inp num" inputmode="numeric" value="{{six.priceV}}" onChange="{{six.setPrice}}" onBlur="{{edOff}}">
+<label class="flab" for="sl-rt" style="margin-top: 10px">Tỷ lệ lợi nhuận / giá vốn hàng bán (%)</label>
+<input id="sl-rt" class="inp num" inputmode="decimal" value="{{six.ratioV}}" onChange="{{six.setRatio}}" onBlur="{{edOff}}">
+<span class="fhint">= Lợi nhuận trước thuế ÷ Giá vốn hàng bán = {{six.ltUF}} ÷ {{six.gvUF}}. Sửa tỷ lệ thì giá vốn đổi, bán hàng và quản lý giữ nguyên.</span>
+</div>
+<div class="six-c six-c5">
+<p class="six-n"><b>5</b>Mỗi sản phẩm lãi bao nhiêu tiền?</p>
+<div class="b5" role="table" aria-label="Kết quả kinh doanh của 1 sản phẩm theo mẫu B02-DN">
+<div class="b5r b5h" role="row"><span role="columnheader">Chỉ tiêu, tính cho 1 sản phẩm</span><span role="columnheader">Mã số</span><span role="columnheader" class="r">Số tiền</span><span role="columnheader" class="r">% DT</span></div>
+<div class="b5r" role="row"><span role="cell">Doanh thu bán hàng và cung cấp dịch vụ<small>giá bán 1 sản phẩm</small></span><span role="cell" class="code">01</span><b role="cell" class="mono">{{six.priceF}}</b><span role="cell" class="pc">100%</span></div>
+<div class="b5r" role="row"><label role="cell" for="sl-gv">− Giá vốn hàng bán</label><span role="cell" class="code">11</span><input id="sl-gv" class="inp num" inputmode="numeric" disabled="{{six.noPrice}}" value="{{six.gvUV}}" onChange="{{six.setGvU}}" onBlur="{{edOff}}"><span role="cell" class="pc">{{six.gvP}}</span></div>
+<div class="b5r sub" role="row"><span role="cell">= Lợi nhuận gộp về bán hàng và cung cấp dịch vụ</span><span role="cell" class="code">20</span><b role="cell" class="mono">{{six.grUF}}</b><span role="cell" class="pc">{{six.grP}}</span></div>
+<div class="b5r" role="row"><label role="cell" for="sl-bh">− Chi phí bán hàng</label><span role="cell" class="code">25</span><input id="sl-bh" class="inp num" inputmode="numeric" disabled="{{six.noPrice}}" value="{{six.bhUV}}" onChange="{{six.setBhU}}" onBlur="{{edOff}}"><span role="cell" class="pc">{{six.bhP}}</span></div>
+<div class="b5r" role="row"><span role="cell">− Chi phí quản lý doanh nghiệp<small>phần còn lại của mức chi phí đã đặt</small></span><span role="cell" class="code">26</span><b role="cell" class="mono">{{six.qlUF}}</b><span role="cell" class="pc">{{six.qlP}}</span></div>
+<div class="b5r sub" role="row"><label role="cell" for="sl-lt">= Tổng lợi nhuận kế toán trước thuế</label><span role="cell" class="code">50</span><input id="sl-lt" class="inp num" inputmode="numeric" disabled="{{six.noPrice}}" value="{{six.ltUV}}" onChange="{{six.setLtU}}" onBlur="{{edOff}}"><span role="cell" class="pc">{{six.ltP}}</span></div>
+<div class="b5r red" role="row"><span role="cell">− Chi phí thuế TNDN hiện hành ({{tndnLabel}})</span><span role="cell" class="code">51</span><b role="cell" class="mono">{{six.thUF}}</b><span role="cell" class="pc"></span></div>
+<div class="b5r tot" role="row"><label role="cell" for="sl-ls">= Lợi nhuận sau thuế thu nhập doanh nghiệp</label><span role="cell" class="code">60</span><input id="sl-ls" class="inp num" inputmode="numeric" disabled="{{six.noPrice}}" value="{{six.lsUV}}" onChange="{{six.setLsU}}" onBlur="{{edOff}}"><span role="cell" class="pc">{{six.lsP}}</span></div>
+</div>
+</div>
+</div>
+<template data-if="six.hasMsg"><p class="note-r">{{six.msg}}</p></template>
+<p class="sl-foot">{{six.name}}: mỗi sản phẩm lãi sau thuế <b class="mono">{{six.lsUF}}</b>. Bước 6 dùng số này để tính số sản phẩm phải bán.</p>
+</div>
+</template>
+
+
+<template data-if="s6">
+<div class="sl sl-six">
+<div class="sl-head"><p class="sl-k">Z4 · 06 / 17 · 6 bước · Bước 6</p><h2 class="sl-h">Bán bao nhiêu sản phẩm để đạt mục tiêu tài chính?</h2></div>
+<div class="formula">
+<span class="fx-k">Công thức</span>
+<p><b>Số sản phẩm phải bán</b> = <span>Lợi nhuận sau thuế phân bổ cho sản phẩm</span> ÷ <span>Lãi sau thuế 1 sản phẩm</span></p>
+<p class="fx-goal">Mục tiêu ở bước 1: <b class="mono">{{s6Goal}}</b> lợi nhuận sau thuế cả năm 2027</p>
+</div>
+<div class="scroll">
+<table class="lg sl-tb s6" style="min-width: 1080px">
+<thead><tr><th>Sản phẩm</th><th class="r" style="width: 120px">Tỷ trọng mục tiêu (%)</th><th class="r">Lợi nhuận sau thuế phân bổ, cả năm</th><th class="r">÷ Lãi sau thuế 1 sản phẩm</th><th class="r" style="width: 150px">= Số sản phẩm cả năm</th><th class="r">Mỗi tháng</th><th class="r">Mỗi ngày</th><th class="r">Doanh thu cả năm</th></tr></thead>
+<tbody>
+<template data-for="s6Rows" data-as="r">
+<tr>
+<td class="b">{{r.name}}</td>
+<td class="ci"><input class="tin num" inputmode="decimal" aria-label="Tỷ trọng mục tiêu phần trăm, {{r.name}}" disabled="{{r.single}}" value="{{r.shareV}}" onChange="{{r.setShare}}" onBlur="{{edOff}}" style="text-align: right"></td>
+<td class="num">{{r.lnstYF}}</td>
+<td class="num">{{r.lsUF}}</td>
+<td class="ci"><input class="tin num b" inputmode="numeric" aria-label="Số sản phẩm phải bán cả năm, {{r.name}}" disabled="{{r.noQ}}" value="{{r.qV}}" onChange="{{r.setQ}}" onBlur="{{edOff}}" style="text-align: right"></td>
+<td class="num">{{r.qmF}}</td>
+<td class="num">{{r.qdF}}</td>
+<td class="num">{{r.dtYS}}</td>
+</tr>
+</template>
+<tr class="tot"><td>Cộng</td><td class="num">100%</td><td class="num">{{s6GoalF}}</td><td></td><td class="num">{{k.qYearF}}</td><td class="num">{{k.qmF}}</td><td class="num">{{k.qdT}}</td><td class="num">{{k.dtYS}}</td></tr>
+</tbody>
+</table>
+</div>
+<template data-for="s6Notes" data-as="n"><p class="note-r">{{n}}</p></template>
+<p class="note-g">Sửa tỷ trọng một sản phẩm: các sản phẩm còn lại chia phần còn lại theo tỷ lệ đang có. Sửa số sản phẩm bán được: mục tiêu giữ nguyên, số lượng các sản phẩm khác tự tăng hoặc giảm cho đủ mục tiêu.<template data-if="six.single"> Đang có 1 sản phẩm nên sửa số lượng thì mục tiêu ở bước 1 đổi theo.</template></p>
+</div>
+</template>
+
+
+<template data-if="s7">
+<div class="sl">
+<div class="sl-head"><p class="sl-k">Z4 · 07 / 17 · Khối 2</p><h2 class="sl-h">Bảng sản phẩm: mỗi sản phẩm phải bán bao nhiêu?</h2><p class="sl-lead">Ô xám anh chị điền, các cột còn lại bảng tự tính. Đơn vị: đồng, mỗi tháng.</p></div>
+<div class="scroll">
+<table class="lg sl-tb" style="min-width: 1080px">
+<thead><tr><th>Sản phẩm</th><th class="r">Lãi sau thuế muốn có</th><th>Ngành</th><th class="r">% chi phí / DT</th><th class="r">Giá bán</th><th class="r">Doanh thu cần đạt</th><th class="r">Chi phí</th><th class="r">Thuế TNDN</th><th class="r">Số lượng / tháng</th><th class="r">/ ngày</th><th><span class="sr">Xóa</span></th></tr></thead>
+<tbody>
+<template data-for="prows" data-as="p">
+<tr>
+<td class="ci"><input class="tin" aria-label="Tên sản phẩm {{p.idx}}" value="{{p.name}}" onChange="{{p.setName}}"></td>
+<td class="ci"><input class="tin num" inputmode="numeric" aria-label="Lãi sau thuế muốn có mỗi tháng, sản phẩm {{p.idx}}" value="{{p.lnstF}}" onChange="{{p.setLnst}}" style="text-align: right"></td>
+<td class="ci"><select class="tin" aria-label="Ngành, sản phẩm {{p.idx}}" value="{{p.ind}}" onChange="{{p.setInd}}"><template data-for="inds" data-as="o"><option value="{{o.id}}">{{o.optLabel}}</option></template></select></td>
+<td class="ci"><input class="tin num" inputmode="decimal" aria-label="Phần trăm chi phí trên doanh thu, sản phẩm {{p.idx}}" value="{{p.pctV}}" onChange="{{p.setPct}}" onBlur="{{p.fitPct}}" style="text-align: right"><template data-if="p.auto"><span class="pct-eff">đang tính {{p.totF}}</span></template></td>
+<td class="ci"><input class="tin num" inputmode="numeric" aria-label="Giá bán một sản phẩm, sản phẩm {{p.idx}}" value="{{p.priceF}}" onChange="{{p.setPrice}}" style="text-align: right"></td>
+<td class="num b">{{p.dtF}}</td>
+<td class="num">{{p.cpF}}</td>
+<td class="num red">{{p.thueF}}</td>
+<td class="num b">{{p.qmF}}</td>
+<td class="num">{{p.qdF}}</td>
+<td><template data-if="p.canRemove"><button type="button" class="ibtn sl-del" aria-label="Xóa {{p.name}}" onClick="{{p.remove}}">×</button></template></td>
+</tr>
+</template>
+<tr class="tot"><td>Cộng</td><td class="num">{{k.lnstMF}}</td><td></td><td class="num">{{k.cpPct}}</td><td></td><td class="num">{{k.dtMF}}</td><td class="num">{{k.cpMF}}</td><td class="num red">{{k.thueMF}}</td><td class="num">{{k.qmF}}</td><td class="num">{{k.qdT}}</td><td></td></tr>
+</tbody>
+</table>
+</div>
+<div class="sl-row">
+<button type="button" class="btn sec sm" onClick="{{addProduct}}" disabled="{{addDisabled}}">+ Thêm sản phẩm</button>
+<span class="muted" style="font-size: 14px">{{prodCount}}</span>
+</div>
+<template data-if="hasNoPrice"><p class="note-r">{{noPriceText}}</p></template>
+<template data-if="hasBad"><p class="note-r">{{badText}}</p></template>
+</div>
+</template>
+
+
+<template data-if="s8">
+<div class="sl">
+<div class="sl-head sl-hrow"><div><p class="sl-k">Z4 · 08 / 17 · Kết quả</p><h2 class="sl-h">Kế hoạch {{per.label}}</h2></div>
+<div class="segrow per-tg" role="group" aria-label="Xem số"><button type="button" class="{{per.yCls}}" aria-pressed="{{per.yPressed}}" onClick="{{per.setY}}">Theo năm</button><button type="button" class="{{per.mCls}}" aria-pressed="{{per.mPressed}}" onClick="{{per.setM}}">Theo tháng</button></div></div>
+<div class="tiles4 tiles-big">
+<div class="tile tkey"><p class="tl">Lợi nhuận sau thuế muốn có</p><p class="tv">{{per.lnstS}}</p><p class="ts">{{per.label}}</p></div>
+<div class="tile"><p class="tl">Doanh thu cần đạt</p><p class="tv">{{per.dtS}}</p><p class="ts">bán {{per.qtyF}} sản phẩm</p></div>
+<div class="tile"><p class="tl">Chi phí được phép tiêu</p><p class="tv">{{per.cpS}}</p><p class="ts">{{k.cpPct}} doanh thu</p></div>
+<div class="tile"><p class="tl">Lợi nhuận trước thuế</p><p class="tv">{{per.lnttS}}</p><p class="ts red">thuế TNDN {{per.thueS}}</p></div>
+</div>
+<div class="chain">
+<span>Doanh thu <b>{{per.dtS}}</b></span><i>−</i><span>Chi phí <b>{{per.cpS}}</b></span><i>=</i><span>Lợi nhuận trước thuế <b>{{per.lnttS}}</b></span><i>−</i><span class="red">Thuế TNDN <b>{{per.thueS}}</b></span><i>=</i><span class="ck">Lợi nhuận sau thuế <b>{{per.lnstS}}</b></span>
+</div>
+</div>
+</template>
+
+
+<template data-if="s9">
+<div class="sl">
+<div class="sl-head"><p class="sl-k">Z4 · 09 / 17 · Quy ra mỗi ngày bán</p><h2 class="sl-h">Mỗi ngày phải bán được bao nhiêu?</h2><p class="sl-lead">Con số giao cho người bán hàng mỗi sáng. Tính theo {{daysN}} ngày bán mỗi tháng.</p></div>
+<div class="g2">
+<div class="tiles2">
+<div class="tile tkey"><p class="tl">Doanh thu cần đạt mỗi ngày</p><p class="tv">{{k.dtDayS}}</p></div>
+<div class="tile tkey"><p class="tl">Sản phẩm phải bán mỗi ngày</p><p class="tv">{{k.qdT}}</p></div>
+<div class="tile"><label class="tl" for="sl-days2">Số ngày bán mỗi tháng</label><input id="sl-days2" class="inp num" inputmode="numeric" placeholder="26" value="{{days}}" onChange="{{setDays}}" style="margin-top: 8px; font-size: 22px"></div>
+</div>
+<table class="lg sl-tb">
+<thead><tr><th>Sản phẩm</th><th class="r">Giá bán</th><th class="r">Mỗi tháng</th><th class="r">Mỗi ngày</th></tr></thead>
+<tbody>
+<template data-for="prows" data-as="p"><tr><td>{{p.name}}</td><td class="num">{{p.priceF}}</td><td class="num">{{p.qmF}}</td><td class="num b">{{p.qdF}}</td></tr></template>
+<tr class="tot"><td>Cộng</td><td></td><td class="num">{{k.qmF}}</td><td class="num">{{k.qdT}}</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</template>
+
+
+<template data-if="s10">
+<div class="sl">
+<div class="sl-head"><p class="sl-k">Z4 · 10 / 17 · Kết quả</p><h2 class="sl-h">Kế hoạch kết quả kinh doanh năm 2027</h2><p class="sl-lead">Theo mẫu B02-DN, đơn vị: đồng.</p></div>
+<table class="lg sl-tb sl-b02">
+<thead><tr><th>Mã số</th><th>Chỉ tiêu</th><th class="r">Mỗi tháng</th><th class="r">Cả năm 2027</th></tr></thead>
+<tbody>
+<template data-for="b02" data-as="r"><tr class="{{r.cls}}"><td class="code">{{r.code}}</td><td>{{r.label}}</td><td class="num n">{{r.m}}</td><td class="num n">{{r.y}}</td></tr></template>
+</tbody>
+</table>
+<p class="note-g">Thuế GTGT không có trong báo cáo này vì đó là tiền thu hộ của khách, không phải chi phí của doanh nghiệp.</p>
+</div>
+</template>
+
+
+<template data-if="s11">
+<div class="sl">
+<div class="sl-head sl-hrow"><div><p class="sl-k">Z4 · 11 / 17 · Thuế phải nộp · 1</p><h2 class="sl-h">Thuế TNDN: chi phí thật, trừ thẳng vào lợi nhuận</h2></div>
+<div class="segrow per-tg" role="group" aria-label="Xem số"><button type="button" class="{{per.yCls}}" aria-pressed="{{per.yPressed}}" onClick="{{per.setY}}">Theo năm</button><button type="button" class="{{per.mCls}}" aria-pressed="{{per.mPressed}}" onClick="{{per.setM}}">Theo tháng</button></div></div>
+<div class="g2">
+<div class="calc">
+<div class="cr"><span>Lợi nhuận trước thuế</span><b>{{per.lnttF}}</b></div>
+<div class="cr"><span>× Thuế suất TNDN</span><b>{{tndnLabel}}</b></div>
+<div class="cr ctot red"><span>= Thuế TNDN phải nộp</span><b>{{per.thueF}}</b></div>
+<div class="cr cfin"><span>Lợi nhuận sau thuế còn lại</span><b>{{per.lnstF}}</b></div>
+<p class="fhint">Đơn vị: đồng, {{per.label}}.</p>
+</div>
+<div class="callout">
+<p class="pnl-h">Vì sao thuế suất {{tndnLabel}}?</p>
+<p>{{hint.text}}</p>
+<p class="mt">Thuế TNDN làm giảm lợi nhuận: muốn còn {{per.lnstS}} sau thuế thì phải làm ra {{per.lnttS}} trước thuế.</p>
+</div>
+</div>
+</div>
+</template>
+
+
+<template data-if="s12">
+<div class="sl">
+<div class="sl-head sl-hrow"><div><p class="sl-k">Z4 · 12 / 17 · Thuế phải nộp · 2</p><h2 class="sl-h">Thuế GTGT: tiền thu hộ khách hàng, không trừ vào lợi nhuận</h2></div>
+<div class="segrow per-tg" role="group" aria-label="Xem số"><button type="button" class="{{per.yCls}}" aria-pressed="{{per.yPressed}}" onClick="{{per.setY}}">Theo năm</button><button type="button" class="{{per.mCls}}" aria-pressed="{{per.mPressed}}" onClick="{{per.setM}}">Theo tháng</button></div></div>
+<div class="g2">
+<div class="calc">
+<div class="cr"><span>Khách trả thêm khi mua hàng<small>đầu ra, {{vatLabel}} doanh thu</small></span><b>{{per.vatOutF}}</b></div>
+<div class="cr"><span>− Đã trả khi mua vào<small>đầu vào, {{vatInLabel}} × {{inPct}}% chi phí</small></span><b>{{per.vatInF}}</b></div>
+<div class="cr ctot red"><span>= Thuế GTGT phải nộp</span><b>{{per.vatF}}</b></div>
+<template data-if="hasVatCredit"><p class="note-g">{{vatCreditText}}</p></template>
+<p class="fhint">Đơn vị: đồng, {{per.label}}. Lợi nhuận sau thuế {{per.lnstS}} không bị trừ đi số này.</p>
+</div>
+<div class="pnl">
+<p class="vlab">Bán ra</p>
+<div class="segrow" role="group" aria-label="Thuế suất GTGT bán ra"><template data-for="vatOpts" data-as="o"><button type="button" class="{{o.cls}}" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}">{{o.label}}</button></template></div>
+<p class="vlab">Mua vào</p>
+<div class="segrow" role="group" aria-label="Thuế suất GTGT mua vào"><template data-for="vatInOpts" data-as="o"><button type="button" class="{{o.cls}}" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}">{{o.label}}</button></template></div>
+<div><label class="flab" for="sl-inpct2">% chi phí có hóa đơn GTGT đầu vào</label><input id="sl-inpct2" class="inp num" inputmode="numeric" value="{{inPct}}" onChange="{{setInPct}}"><span class="fhint">Thu đủ hóa đơn đầu vào thì thuế GTGT phải nộp giảm.</span></div>
+</div>
+</div>
+</div>
+</template>
+
+
+<template data-if="s13">
+<div class="sl">
+<div class="sl-head sl-hrow"><div><p class="sl-k">Z4 · 13 / 17 · Dòng tiền</p><h2 class="sl-h">Tiền mặt cần chuẩn bị để nộp thuế</h2></div>
+<div class="segrow per-tg" role="group" aria-label="Xem số"><button type="button" class="{{per.yCls}}" aria-pressed="{{per.yPressed}}" onClick="{{per.setY}}">Theo năm</button><button type="button" class="{{per.mCls}}" aria-pressed="{{per.mPressed}}" onClick="{{per.setM}}">Theo tháng</button></div></div>
+<div class="cash">
+<p class="tl">Cả hai loại thuế, {{per.label}}</p>
+<p class="cash-v red">{{per.taxF}} <small>đồng</small></p>
+<div class="cash-bar" aria-hidden="true"><span class="cb-t" style="width: {{taxShareT}}%"></span><span class="cb-v" style="width: {{taxShareV}}%"></span></div>
+<div class="g2">
+<div class="leg"><i class="cb-t"></i><div><b>Thuế TNDN {{per.thueS}}</b><p>Chi phí thật, làm giảm lợi nhuận.</p></div></div>
+<div class="leg"><i class="cb-v"></i><div><b>Thuế GTGT {{per.vatS}}</b><p>Tiền khách trả thêm, doanh nghiệp thu hộ rồi nộp lại. Không làm giảm lợi nhuận.</p></div></div>
+</div>
+</div>
+<p class="note-g">Đừng so số tổng này với lợi nhuận: chỉ thuế TNDN làm giảm lợi nhuận. Lãi chưa chắc có tiền, nên cần lập lịch tiền nộp thuế từng quý (slide 15).</p>
+</div>
+</template>
+
+
+<template data-if="s14">
+<div class="sl">
+<div class="sl-head"><p class="sl-k">Z4 · 14 / 17 · Khối 3</p><h2 class="sl-h">Tách % chi phí: giá vốn, bán hàng, quản lý</h2><p class="sl-lead">Tất cả tính theo % doanh thu. Quản lý là phần còn lại của mức chi phí đã đặt ở bảng sản phẩm.</p></div>
+<div class="scroll">
+<table class="lg sl-tb" style="min-width: 820px">
+<thead><tr><th style="min-width: 190px">Sản phẩm</th><th class="r" style="width: 120px">Giá vốn %</th><th class="r" style="width: 120px">Bán hàng %</th><th class="r">Quản lý</th><th class="r">Tổng chi phí</th><th class="r">Lợi nhuận trước thuế</th><th style="width: 34%">Trên 100 đồng doanh thu</th></tr></thead>
+<tbody>
+<template data-for="cpRows" data-as="p">
+<tr>
+<td>{{p.name}}</td>
+<td class="ci"><input class="tin num" inputmode="decimal" aria-label="Giá vốn phần trăm, {{p.name}}" value="{{p.gvV}}" onChange="{{p.setGv}}" onBlur="{{edOff}}" style="text-align: right"></td>
+<td class="ci"><input class="tin num" inputmode="decimal" aria-label="Chi phí bán hàng phần trăm, {{p.name}}" value="{{p.bhV}}" onChange="{{p.setBh}}" onBlur="{{edOff}}" style="text-align: right"></td>
+<td class="num">{{p.qlF}}</td>
+<td class="{{p.totCls}}">{{p.totF}}<template data-if="p.auto"><span class="pct-eff">{{p.capF}}</span></template></td>
+<td class="{{p.ltCls}}">{{p.ltF}}</td>
+<td><div class="stack" aria-hidden="true"><span class="s-gv" style="width: {{p.wGv}}%"></span><span class="s-bh" style="width: {{p.wBh}}%"></span><span class="s-ql" style="width: {{p.wQl}}%"></span><span class="s-lt" style="width: {{p.wLt}}%"></span></div></td>
+</tr>
+</template>
+</tbody>
+</table>
+</div>
+<div class="legrow" aria-hidden="true"><span><i class="s-gv"></i>Giá vốn</span><span><i class="s-bh"></i>Bán hàng</span><span><i class="s-ql"></i>Quản lý</span><span><i class="s-lt"></i>Lợi nhuận trước thuế</span></div>
+<template data-if="hasAuto"><p class="note-g">{{autoText}}</p></template>
+<template data-if="hasBad"><p class="note-r">{{badText}}</p></template>
+</div>
+</template>
+
+
+<template data-if="s15">
+<div class="sl">
+<div class="sl-head"><p class="sl-k">Z4 · 15 / 17 · Khối 5</p><h2 class="sl-h">Thuế phải nộp theo quý năm 2027</h2><p class="sl-lead">Cộng từ kết quả kinh doanh 12 tháng (slide 16), đã tính % hoàn thành kế hoạch từng tháng. Đơn vị: đồng.</p></div>
+<div class="scroll">
+<table class="lg sl-tb" style="min-width: 760px">
+<thead><tr><th>Loại thuế</th><th class="r">Quý I</th><th class="r">Quý II</th><th class="r">Quý III</th><th class="r">Quý IV</th><th class="r">Cả năm</th></tr></thead>
+<tbody>
+<template data-for="qrows" data-as="r"><tr class="{{r.cls}}"><td>{{r.label}}</td><template data-for="r.cells" data-as="c"><td class="num n">{{c.v}}</td></template><td class="num n">{{r.y}}</td></tr></template>
+</tbody>
+</table>
+</div>
+<ul class="sl-notes"><template data-for="qNotes" data-as="qn"><li>{{qn}}</li></template></ul>
+</div>
+</template>
+
+
+<template data-if="s16">
+<div class="sl">
+<div class="sl-head"><p class="sl-k">Z4 · 16 / 17 · Khối 4</p><h2 class="sl-h">Kết quả kinh doanh 2027 theo tháng</h2><p class="sl-lead">Hàng đầu là % hoàn thành kế hoạch từng tháng: 100 là đúng mức trung bình, tháng bán chạy điền lớn hơn 100. Đơn vị: triệu đồng.</p></div>
+<div class="scroll">
+<table class="lg sl-tb sl-mo" style="min-width: 1100px">
+<thead><tr><th class="stk">Chỉ tiêu</th><template data-for="monthHeads" data-as="mh"><th class="r {{mh.cls}}">{{mh.l}}</th></template><th class="r">Cả năm</th></tr></thead>
+<tbody>
+<tr class="sea"><td class="stk">% hoàn thành kế hoạch</td><template data-for="seasonCells" data-as="s"><td class="ci {{s.cls}}"><input class="tin num" inputmode="numeric" aria-label="Phần trăm hoàn thành kế hoạch tháng {{s.l}}" value="{{s.v}}" onChange="{{s.set}}" disabled="{{s.locked}}" style="text-align: right"></td></template><td class="num muted">{{lockNote}}</td></tr>
+<template data-for="slM" data-as="r"><tr class="{{r.cls}}"><td class="stk"><span class="code">{{r.code}}</span> {{r.label}}</td><template data-for="r.cells" data-as="c"><td class="num n {{c.cls}}">{{c.v}}</td></template><td class="num n">{{r.y}}</td></tr></template>
+</tbody>
+</table>
+</div>
+<template data-if="hasSeasonNote"><p class="note-g">{{seasonNote}}</p></template>
+<template data-if="hasLockWarn"><p class="note-r">{{lockWarn}}</p></template>
+</div>
+</template>
+
+
+<template data-if="s17">
+<div class="sl">
+<div class="sl-head"><p class="sl-k">Z4 · 17 / 17 · Về lại bản đồ</p><h2 class="sl-h">Con số này nằm ở tầng Tài chính của bản đồ chiến lược</h2><p class="sl-lead">Đọc từ dưới lên: con người vận hành quy trình, quy trình phục vụ khách hàng, khách hàng tạo ra tài chính.</p></div>
+<div class="mapx">
+<div class="mt-row mt-fin"><p class="mt-l"><span>Tầng 4</span>Tài chính</p><div class="mt-b">
+<div><small>Tiền muốn có sau thuế</small><b>{{k.lnstYS}}</b></div>
+<div><small>Doanh thu cần đạt</small><b>{{k.dtYS}}</b></div>
+<div><small>Chi phí giữ ở mức</small><b>{{k.cpPct}}</b></div>
+<div><small>Thuế TNDN phải nộp</small><b class="red">{{k.thueYS}}</b></div>
+<div><small>Thuế GTGT phải nộp</small><b class="red">{{k.vatYS}}</b></div>
+</div></div>
+<div class="mt-row"><p class="mt-l"><span>Tầng 3</span>Khách hàng</p><div class="mt-b mt-txt">
+<template data-for="custRows" data-as="c"><p><b>{{c.name}}:</b> {{c.who}}<template data-if="c.hasPain"> · nỗi đau: {{c.pain}}</template></p></template>
+<p class="muted">Cả năm bán {{k.qYearF}} sản phẩm, cần {{mapEx.cust}} khách mua từ {{mapEx.leads}} khách tiềm năng (tỷ lệ chốt {{mapEx.cr}}).</p>
+</div></div>
+<div class="mt-row"><p class="mt-l"><span>Tầng 2</span>Quy trình</p><div class="mt-b mt-txt"><p>Quy trình tạo doanh số và quản trị chi phí giữ đúng tỷ lệ {{k.cpPct}} doanh thu, nộp thuế đúng lịch từng quý.</p></div></div>
+<div class="mt-row"><p class="mt-l"><span>Tầng 1</span>Con người</p><div class="mt-b mt-txt"><p>Chủ và kế toán cùng một tiếng nói: chủ đặt câu hỏi bằng khung chiến lược, kế toán trả lời bằng con số.</p></div></div>
+</div>
+<div class="next-z">
+<p class="sl-k">Buổi tiếp theo · Z5</p>
+<p class="disp">DMO: làm sao biến bản đồ thành việc mỗi ngày?</p>
+<p class="muted">Mỗi ngày bán {{k.qdT}} sản phẩm, doanh thu {{k.dtDayS}}. Biến con số thành việc của từng người.</p>
+</div>
+</div>
+</template>
+
+</div>
+</div>
+
+<template data-if="deckLocked">
+<template data-if="gate.full">
+<div class="gate" role="region" aria-label="Nhập số điện thoại để mở khóa slide">
+<form class="gate-box" onSubmit="{{gate.submit}}" novalidate="">
+<p class="gate-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="1"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></p>
+<p class="gate-h">Nhập số điện thoại đã đăng ký để thao tác từ slide 4</p>
+<p class="gate-p">Anh chị vẫn xem được nội dung. Mở khóa xong là điền và sửa số liệu ngay trên slide. Máy này sẽ nhớ, lần sau không phải nhập lại.</p>
+<label class="flab" for="gate-ph">Số điện thoại đã đăng ký</label>
+<div class="gate-row">
+<input id="gate-ph" class="inp num" type="tel" inputmode="tel" autocomplete="tel" placeholder="0912 345 678" value="{{gate.ph}}" onChange="{{gate.setPh}}" aria-invalid="{{gate.bad}}" aria-describedby="gate-msg">
+<button type="submit" class="btn pri" disabled="{{gate.checking}}">{{gate.btn}}</button>
+</div>
+<p id="gate-msg" class="{{gate.msgCls}}" role="status" aria-live="polite">{{gate.msg}}</p>
+<div class="gate-links">
+<button type="button" class="lnk" onClick="{{gate.toReg}}">Chưa đăng ký? Đăng ký ngay</button>
+<button type="button" class="lnk" onClick="{{gate.toggleMini}}">Thu nhỏ để xem nội dung</button>
+</div>
+</form>
+</div>
+</template>
+<template data-if="gate.mini">
+<button type="button" class="gate-pill" onClick="{{gate.toggleMini}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="1"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>Nhập số điện thoại để thao tác</button>
+</template>
+</template>
+</div>
+
+<div class="deck-bot">
+<button type="button" class="btn sec sm" onClick="{{prevDeck}}" disabled="{{prevDis}}" aria-label="Slide trước"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg><span class="deck-bt">Trước</span></button>
+<div class="dots" role="group" aria-label="Chọn slide">
+<template data-for="dots" data-as="d"><button type="button" class="{{d.cls}}" aria-label="{{d.aria}}" aria-current="{{d.cur}}" onClick="{{d.go}}">{{d.n}}</button></template>
+</div>
+<span class="deck-num mono" aria-live="polite">{{deckNum}}</span>
+<button type="button" class="btn pri sm" onClick="{{nextDeck}}" disabled="{{nextDis}}" aria-label="Slide sau"><span class="deck-bt">Sau</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+</template>
 </div></template>
 <script src="config.js"></script>
 <!-- Thư viện dùng kèm: Preact (MIT, preactjs.com), qrcode-generator (MIT, Kazuhiko Arase) -->
@@ -3506,7 +4207,8 @@ var qrcode = function() {
 </script>
 <script>/* Bộ dựng giao diện nhỏ cho trang Bản đồ chiến lược.
    Đọc khuôn mẫu trong <template id="tpl"> (các chỗ {{...}}, data-if, data-for)
-   rồi vẽ bằng Preact mỗi khi số liệu thay đổi. Không lưu gì vào trình duyệt. */
+   rồi vẽ bằng Preact mỗi khi số liệu thay đổi. Không lưu số liệu vào trình duyệt;
+   chỉ ghi một dấu "đã mở khóa slide" (localStorage bdcl.slide.mo) để lần sau không phải nhập lại số điện thoại. */
 (function () {
   'use strict';
   var h = preact.h, render = preact.render;
@@ -3637,7 +4339,7 @@ var qrcode = function() {
     this.state = {
       dark: null, mode: null, reg: null,
       dt2026: 0, vat: 10, vatIn: 10, inPct: 70, days: 26,
-      products: [{ id: 1, name: 'Sản phẩm 1', lnst: 50000000, ind: 'tu', pct: 65, price: 2800000, gv: 50, bh: 8 }],
+      products: [{ id: 1, name: 'Sản phẩm 1', lnst: 50000000, ind: 'tu', pct: 65, price: 2800000, gv: 50, bh: 8, who: '', pain: '' }],
       nextId: 2,
       season: [120, 60, 90, 95, 100, 100, 95, 100, 105, 105, 110, 120],
       lock: new Array(12).fill(null),
@@ -3646,7 +4348,12 @@ var qrcode = function() {
       tried: false, sending: false, demo: false, doneName: p.registered ? 'Nguyễn Minh Anh' : '',
       err: '', copied: '', period: 'year',
       fw: { mode: 'leads', ind: 'tu', leads: '2000', cr: '20', n: '2', items: '1' },
-      off: {}, custom: {}, drafts: {}, cid: 1, rel: false
+      off: {}, custom: {}, drafts: {}, cid: 1, rel: false,
+      // Slide bài giảng: đang mở, slide thứ mấy, đã mở khóa (máy nhớ), ô số điện thoại, sản phẩm đang xem ở slide 6 bước
+      deck: false, di: 0, unlocked: (() => { try { return window.localStorage.getItem('bdcl.slide.mo') === '1'; } catch (e) { return false; } })(),
+      demoUnlock: false, gate: { ph: '', st: '', mini: false }, sixId: null,
+      // ed: ô đang gõ dở (giữ nguyên chữ người dùng gõ, ví dụ "64," cho đến khi rời ô)
+      ed: null
     };
   }
   f(n) {
@@ -3679,8 +4386,343 @@ var qrcode = function() {
   setP(id, patch) {
     this.setState({ products: this.state.products.map(x => x.id === id ? Object.assign({}, x, patch) : x) });
   }
+  // Phần trăm: tối đa 1 chữ số lẻ, dấu phẩy (64,3)
+  pf(x) {
+    if (!isFinite(x)) return '–';
+    const r = Math.round(x * 10) / 10, a = Math.abs(r);
+    return (r < 0 ? '−' : '') + (Math.abs(a - Math.round(a)) < 1e-9 ? String(Math.round(a)) : a.toFixed(1).replace('.', ','));
+  }
+  // Đọc số có thể có phần lẻ: "64,3" hoặc "64.3"
+  pn(v) {
+    const t = String(v == null ? '' : v).replace(/\s/g, '').replace(',', '.').replace(/[^\d.]/g, '');
+    const x = parseFloat(t);
+    return isFinite(x) ? x : 0;
+  }
+  // Thuế suất TNDN tự động: theo doanh thu 2026 nếu có, nếu không theo doanh thu kế hoạch 2027
+  rateOf(ps, st) {
+    st = st || this.state;
+    const pctE = p => Math.max(p.pct, p.gv + p.bh);
+    const dtAt = r => ps.reduce((a, p) => a + p.lnst / (1 - r) / (1 - Math.min(Math.max(pctE(p), 0), 95) / 100), 0) * 12;
+    let rate;
+    if (st.dt2026 > 0) rate = st.dt2026 <= 3e9 ? 15 : (st.dt2026 <= 50e9 ? 17 : 20);
+    else rate = dtAt(0.15) <= 3e9 ? 15 : (dtAt(0.17) <= 50e9 ? 17 : 20);
+    // Công ty con hoặc có quan hệ liên kết với doanh nghiệp không đủ điều kiện: không áp dụng 15%, 17% (Điều 11 NĐ 320/2025)
+    if (st.rel) rate = 20;
+    return rate;
+  }
+  // Ghi số của một sản phẩm và nhớ chữ đang gõ trong ô
+  edP(key, e, id, patch) {
+    const ps = this.state.products.map(x => x.id === id ? Object.assign({}, x, patch) : x);
+    this.setState({ ed: { k: key, t: e && e.target ? e.target.value : '' }, products: ps });
+  }
+  // Tính ngược theo lãi sau thuế: thuế suất có thể đổi bậc khi doanh thu đổi, nên tính lại tới khi thuế suất đứng yên
+  solveT(id, mk) {
+    let t = this.rateOf(this.state.products) / 100, patch = mk(t);
+    for (let i = 0; i < 3; i++) {
+      const ps = this.state.products.map(x => x.id === id ? Object.assign({}, x, patch) : x);
+      const t2 = this.rateOf(ps) / 100;
+      if (t2 === t) break;
+      t = t2; patch = mk(t);
+    }
+    return patch;
+  }
+  // Tổng lãi sau thuế mỗi tháng chia cho từng sản phẩm theo tỷ trọng đang có
+  splitTarget(M) {
+    const ps = this.state.products, S0 = ps.reduce((a, q) => a + q.lnst, 0), ids = ps.map(q => q.id).join();
+    let w;
+    if (S0 > 0) { w = ps.map(q => q.lnst / S0); this._mix = { ids, w }; }
+    else if (this._mix && this._mix.ids === ids) w = this._mix.w;
+    else w = ps.map(() => 1 / ps.length);
+    return ps.map((q, i) => Object.assign({}, q, { lnst: M * w[i] }));
+  }
+  // Đặt lãi sau thuế mỗi tháng của sản phẩm id là v (không quá tổng T); các sản phẩm còn lại chia phần còn lại theo tỷ lệ đang có
+  mixFor(id, v, T) {
+    const ps = this.state.products;
+    if (T == null) T = ps.reduce((a, q) => a + q.lnst, 0);
+    v = Math.min(Math.max(v, 0), T);
+    const others = ps.filter(q => q.id !== id), O = others.reduce((a, q) => a + q.lnst, 0), R = T - v;
+    return ps.map(q => q.id === id ? Object.assign({}, q, { lnst: v }) : Object.assign({}, q, { lnst: O > 0 ? q.lnst * R / O : R / others.length }));
+  }
+  // Bước 6: sửa tỷ trọng mục tiêu của một sản phẩm
+  setShare(id, e) {
+    const ps = this.state.products, T = ps.reduce((a, q) => a + q.lnst, 0), ed = { k: 'sh' + id, t: e.target.value };
+    if (ps.length < 2 || !(T > 0)) { this.setState({ ed: ed }); return; }
+    this.setState({ ed: ed, products: this.mixFor(id, T * Math.min(Math.max(this.pn(e.target.value), 0), 100) / 100, T) });
+  }
+  // Bước 6: sửa số sản phẩm bán được cả năm. Nhiều sản phẩm: giữ tổng mục tiêu, các sản phẩm khác chia phần còn lại.
+  // Một sản phẩm: mục tiêu đổi theo số lượng. Thuế suất tính lại tới khi đứng yên.
+  setQty(id, e) {
+    const ps = this.state.products, q = ps.find(x => x.id === id), ed = { k: 'qy' + id, t: e.target.value };
+    const pe = q ? Math.max(q.pct, q.gv + q.bh) : 0;
+    if (!q || !(q.price > 0) || pe > 95) { this.setState({ ed: ed }); return; }
+    const Q = this.dig(e.target.value), T = ps.reduce((a, x) => a + x.lnst, 0), cc = pe / 100;
+    let t = this.rateOf(ps) / 100, arr = ps;
+    for (let i = 0; i < 4; i++) {
+      const v = Q * q.price * (1 - cc) * (1 - t) / 12;
+      arr = ps.length < 2 ? ps.map(x => x.id === id ? Object.assign({}, x, { lnst: v }) : x) : this.mixFor(id, v, T);
+      const t2 = this.rateOf(arr) / 100;
+      if (t2 === t) break;
+      t = t2;
+    }
+    this.setState({ ed: ed, products: arr });
+  }
+  normSdt(v) {
+    let d = String(v || '').replace(/\D/g, '');
+    if (d.indexOf('84') === 0 && d.length === 11) d = '0' + d.slice(2);
+    else if (d.length === 9 && d.charAt(0) !== '0') d = '0' + d;
+    return d;
+  }
+  openDeck(i) {
+    const di = Math.min(Math.max(i != null ? i : (this.state.di || 0), 0), 16);
+    this.setState({ deck: true, di: di });
+    try { document.documentElement.classList.add('deck-on'); history.replaceState(null, '', '#slide-' + (di + 1)); } catch (e) {}
+    setTimeout(() => { const d = document.getElementById('deck'); if (d) try { d.focus({ preventScroll: true }); } catch (e) {} }, 40);
+  }
+  closeDeck() {
+    this.setState({ deck: false, ed: null });
+    try { document.documentElement.classList.remove('deck-on'); history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+    setTimeout(() => { const b = document.querySelector('.nl-sl'); if (b) try { b.focus({ preventScroll: true }); } catch (e) {} }, 40);
+  }
+  goDeck(i) {
+    const di = Math.min(Math.max(i, 0), 16);
+    if (di === this.state.di) return;
+    this.setState({ di: di, ed: null });
+    try { history.replaceState(null, '', '#slide-' + (di + 1)); } catch (e) {}
+    setTimeout(() => { const b = document.getElementById('deck-body'); if (b) b.scrollTop = 0; }, 0);
+  }
+  unlockDeck(save) {
+    this.setState({ unlocked: true, gate: Object.assign({}, this.state.gate, { st: '' }) });
+    if (save) try { window.localStorage.setItem('bdcl.slide.mo', '1'); } catch (e) {}
+  }
+  // Gọi Apps Script dạng JSONP: .../exec?sdt=...&callback=... → {ok, co}
+  jsonp(u, ms) {
+    return new Promise((res, rej) => {
+      const cb = '__bdclSdt' + Date.now() + Math.floor(Math.random() * 1e4);
+      const sc = document.createElement('script');
+      let done = false, tm = 0;
+      const fin = () => { done = true; clearTimeout(tm); try { delete window[cb]; } catch (e) { window[cb] = undefined; } if (sc.parentNode) sc.parentNode.removeChild(sc); };
+      tm = setTimeout(() => { if (!done) { fin(); rej(new Error('timeout')); } }, ms || 15000);
+      window[cb] = d => { if (!done) { fin(); res(d); } };
+      sc.onerror = () => { if (!done) { fin(); rej(new Error('net')); } };
+      sc.src = u + (u.indexOf('?') < 0 ? '?' : '&') + 'callback=' + cb;
+      document.head.appendChild(sc);
+    });
+  }
+  checkPhone() {
+    const g = this.state.gate || {};
+    if (g.st === 'checking') return;
+    const setG = x => this.setState({ gate: Object.assign({}, this.state.gate, x) });
+    const d = this.normSdt(g.ph);
+    if (!/^0\d{9,10}$/.test(d)) { setG({ st: 'bad' }); return; }
+    const url = String((this.props || {}).sheetUrl || '').trim();
+    // Chưa nối Google Sheet: bản chạy thử, mở khóa luôn nhưng không ghi nhớ
+    if (!url) { this.setState({ unlocked: true, demoUnlock: true, gate: Object.assign({}, this.state.gate, { st: '' }) }); return; }
+    setG({ st: 'checking' });
+    this.jsonp(url + (url.indexOf('?') < 0 ? '?' : '&') + 'sdt=' + d)
+      .then(r => { if (r && r.co) this.unlockDeck(true); else setG({ st: r && r.ok === false ? 'err' : 'no' }); })
+      .catch(() => setG({ st: 'err' }));
+  }
+  componentDidMount() {
+    document.addEventListener('keydown', e => {
+      if (!this.state.deck) return;
+      const tg = e.target, tag = tg && tg.tagName;
+      const typing = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || !!(tg && tg.isContentEditable);
+      if (e.key === 'Escape') { if (typing) { try { tg.blur(); } catch (x) {} } else this.closeDeck(); return; }
+      if (typing || e.altKey || e.ctrlKey || e.metaKey) return;
+      const k = e.key, di = this.state.di || 0;
+      if (k === 'ArrowRight' || k === 'PageDown' || (k === ' ' && tag !== 'BUTTON')) { e.preventDefault(); this.goDeck(di + 1); }
+      else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); this.goDeck(di - 1); }
+      else if (k === 'Home') { e.preventDefault(); this.goDeck(0); }
+      else if (k === 'End') { e.preventDefault(); this.goDeck(16); }
+    });
+    // Vuốt ngang trên điện thoại để chuyển slide (không tính khi vuốt trong ô nhập hoặc bảng cuộn ngang)
+    let tx = null, ty = 0;
+    document.addEventListener('touchstart', e => {
+      tx = null;
+      if (!this.state.deck || !e.touches || e.touches.length !== 1) return;
+      const tg = e.target;
+      if (!tg || !tg.closest || !tg.closest('.deck-body') || tg.closest('input,textarea,select,button,.scroll,.gate-box')) return;
+      tx = e.touches[0].clientX; ty = e.touches[0].clientY;
+    }, { passive: true });
+    document.addEventListener('touchend', e => {
+      if (tx == null || !this.state.deck) return;
+      const t1 = e.changedTouches && e.changedTouches[0];
+      if (!t1) return;
+      const dx = t1.clientX - tx, dy = t1.clientY - ty;
+      tx = null;
+      if (Math.abs(dx) > 70 && Math.abs(dy) < 50) this.goDeck((this.state.di || 0) + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+    // Link chia sẻ dạng bdcl.amita.vn/#slide hoặc #slide-4 mở thẳng slide
+    const fromHash = () => { const m = /^#slide(?:-(\d+))?$/.exec(location.hash || ''); if (m) this.openDeck(m[1] ? Number(m[1]) - 1 : 0); };
+    window.addEventListener('hashchange', fromHash);
+    fromHash();
+  }
   renderVals() {
     const P = this.props || {}, st = this.state;
+    const ev = (key, val) => st.ed && st.ed.k === key ? st.ed.t : val;
+    const dark = st.dark != null ? st.dark : !!P.dark;
+    const mode = st.mode || P.mode || 'basic';
+    const reg = st.reg != null ? st.reg : !!P.registered;
+    const phone = !!P.phone;
+    const section = P.section || 'all';
+    // v: thuế suất GTGT bán ra; vi: thuế suất GTGT mua vào (đầu vào), mặc định 10%
+    const v = st.vat / 100, vi = (st.vatIn != null ? st.vatIn : st.vat) / 100, ip = Math.min(st.inPct, 100) / 100;
+    // Thuế suất TNDN tự động: theo doanh thu 2026 nếu có, nếu không theo doanh thu kế hoạch 2027
+    // % chi phí thực dùng = mức đã đặt, nhưng không thấp hơn giá vốn + bán hàng (khi đó quản lý về 0 và tổng chi phí tự tăng)
+    const pctE = p => Math.max(p.pct, p.gv + p.bh);
+    const rate = this.rateOf(st.products, st);
+    return rate;
+  }
+  // Ghi số của một sản phẩm và nhớ chữ đang gõ trong ô
+  edP(key, e, id, patch) {
+    const ps = this.state.products.map(x => x.id === id ? Object.assign({}, x, patch) : x);
+    this.setState({ ed: { k: key, t: e && e.target ? e.target.value : '' }, products: ps });
+  }
+  // Tính ngược theo lãi sau thuế: thuế suất có thể đổi bậc khi doanh thu đổi, nên tính lại tới khi thuế suất đứng yên
+  solveT(id, mk) {
+    let t = this.rateOf(this.state.products) / 100, patch = mk(t);
+    for (let i = 0; i < 3; i++) {
+      const ps = this.state.products.map(x => x.id === id ? Object.assign({}, x, patch) : x);
+      const t2 = this.rateOf(ps) / 100;
+      if (t2 === t) break;
+      t = t2; patch = mk(t);
+    }
+    return patch;
+  }
+  // Tổng lãi sau thuế mỗi tháng chia cho từng sản phẩm theo tỷ trọng đang có
+  splitTarget(M) {
+    const ps = this.state.products, S0 = ps.reduce((a, q) => a + q.lnst, 0), ids = ps.map(q => q.id).join();
+    let w;
+    if (S0 > 0) { w = ps.map(q => q.lnst / S0); this._mix = { ids, w }; }
+    else if (this._mix && this._mix.ids === ids) w = this._mix.w;
+    else w = ps.map(() => 1 / ps.length);
+    return ps.map((q, i) => Object.assign({}, q, { lnst: M * w[i] }));
+  }
+  // Đặt lãi sau thuế mỗi tháng của sản phẩm id là v (không quá tổng T); các sản phẩm còn lại chia phần còn lại theo tỷ lệ đang có
+  mixFor(id, v, T) {
+    const ps = this.state.products;
+    if (T == null) T = ps.reduce((a, q) => a + q.lnst, 0);
+    v = Math.min(Math.max(v, 0), T);
+    const others = ps.filter(q => q.id !== id), O = others.reduce((a, q) => a + q.lnst, 0), R = T - v;
+    return ps.map(q => q.id === id ? Object.assign({}, q, { lnst: v }) : Object.assign({}, q, { lnst: O > 0 ? q.lnst * R / O : R / others.length }));
+  }
+  // Bước 6: sửa tỷ trọng mục tiêu của một sản phẩm
+  setShare(id, e) {
+    const ps = this.state.products, T = ps.reduce((a, q) => a + q.lnst, 0), ed = { k: 'sh' + id, t: e.target.value };
+    if (ps.length < 2 || !(T > 0)) { this.setState({ ed: ed }); return; }
+    this.setState({ ed: ed, products: this.mixFor(id, T * Math.min(Math.max(this.pn(e.target.value), 0), 100) / 100, T) });
+  }
+  // Bước 6: sửa số sản phẩm bán được cả năm. Nhiều sản phẩm: giữ tổng mục tiêu, các sản phẩm khác chia phần còn lại.
+  // Một sản phẩm: mục tiêu đổi theo số lượng. Thuế suất tính lại tới khi đứng yên.
+  setQty(id, e) {
+    const ps = this.state.products, q = ps.find(x => x.id === id), ed = { k: 'qy' + id, t: e.target.value };
+    const pe = q ? Math.max(q.pct, q.gv + q.bh) : 0;
+    if (!q || !(q.price > 0) || pe > 95) { this.setState({ ed: ed }); return; }
+    const Q = this.dig(e.target.value), T = ps.reduce((a, x) => a + x.lnst, 0), cc = pe / 100;
+    let t = this.rateOf(ps) / 100, arr = ps;
+    for (let i = 0; i < 4; i++) {
+      const v = Q * q.price * (1 - cc) * (1 - t) / 12;
+      arr = ps.length < 2 ? ps.map(x => x.id === id ? Object.assign({}, x, { lnst: v }) : x) : this.mixFor(id, v, T);
+      const t2 = this.rateOf(arr) / 100;
+      if (t2 === t) break;
+      t = t2;
+    }
+    this.setState({ ed: ed, products: arr });
+  }
+  normSdt(v) {
+    let d = String(v || '').replace(/\D/g, '');
+    if (d.indexOf('84') === 0 && d.length === 11) d = '0' + d.slice(2);
+    else if (d.length === 9 && d.charAt(0) !== '0') d = '0' + d;
+    return d;
+  }
+  openDeck(i) {
+    const di = Math.min(Math.max(i != null ? i : (this.state.di || 0), 0), 16);
+    this.setState({ deck: true, di: di });
+    try { document.documentElement.classList.add('deck-on'); history.replaceState(null, '', '#slide-' + (di + 1)); } catch (e) {}
+    setTimeout(() => { const d = document.getElementById('deck'); if (d) try { d.focus({ preventScroll: true }); } catch (e) {} }, 40);
+  }
+  closeDeck() {
+    this.setState({ deck: false, ed: null });
+    try { document.documentElement.classList.remove('deck-on'); history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+    setTimeout(() => { const b = document.querySelector('.nl-sl'); if (b) try { b.focus({ preventScroll: true }); } catch (e) {} }, 40);
+  }
+  goDeck(i) {
+    const di = Math.min(Math.max(i, 0), 16);
+    if (di === this.state.di) return;
+    this.setState({ di: di, ed: null });
+    try { history.replaceState(null, '', '#slide-' + (di + 1)); } catch (e) {}
+    setTimeout(() => { const b = document.getElementById('deck-body'); if (b) b.scrollTop = 0; }, 0);
+  }
+  unlockDeck(save) {
+    this.setState({ unlocked: true, gate: Object.assign({}, this.state.gate, { st: '' }) });
+    if (save) try { window.localStorage.setItem('bdcl.slide.mo', '1'); } catch (e) {}
+  }
+  // Gọi Apps Script dạng JSONP: .../exec?sdt=...&callback=... → {ok, co}
+  jsonp(u, ms) {
+    return new Promise((res, rej) => {
+      const cb = '__bdclSdt' + Date.now() + Math.floor(Math.random() * 1e4);
+      const sc = document.createElement('script');
+      let done = false, tm = 0;
+      const fin = () => { done = true; clearTimeout(tm); try { delete window[cb]; } catch (e) { window[cb] = undefined; } if (sc.parentNode) sc.parentNode.removeChild(sc); };
+      tm = setTimeout(() => { if (!done) { fin(); rej(new Error('timeout')); } }, ms || 15000);
+      window[cb] = d => { if (!done) { fin(); res(d); } };
+      sc.onerror = () => { if (!done) { fin(); rej(new Error('net')); } };
+      sc.src = u + (u.indexOf('?') < 0 ? '?' : '&') + 'callback=' + cb;
+      document.head.appendChild(sc);
+    });
+  }
+  checkPhone() {
+    const g = this.state.gate || {};
+    if (g.st === 'checking') return;
+    const setG = x => this.setState({ gate: Object.assign({}, this.state.gate, x) });
+    const d = this.normSdt(g.ph);
+    if (!/^0\d{9,10}$/.test(d)) { setG({ st: 'bad' }); return; }
+    const url = String((this.props || {}).sheetUrl || '').trim();
+    // Chưa nối Google Sheet: bản chạy thử, mở khóa luôn nhưng không ghi nhớ
+    if (!url) { this.setState({ unlocked: true, demoUnlock: true, gate: Object.assign({}, this.state.gate, { st: '' }) }); return; }
+    setG({ st: 'checking' });
+    this.jsonp(url + (url.indexOf('?') < 0 ? '?' : '&') + 'sdt=' + d)
+      .then(r => { if (r && r.co) this.unlockDeck(true); else setG({ st: r && r.ok === false ? 'err' : 'no' }); })
+      .catch(() => setG({ st: 'err' }));
+  }
+  componentDidMount() {
+    document.addEventListener('keydown', e => {
+      if (!this.state.deck) return;
+      const tg = e.target, tag = tg && tg.tagName;
+      const typing = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || !!(tg && tg.isContentEditable);
+      if (e.key === 'Escape') { if (typing) { try { tg.blur(); } catch (x) {} } else this.closeDeck(); return; }
+      if (typing || e.altKey || e.ctrlKey || e.metaKey) return;
+      const k = e.key, di = this.state.di || 0;
+      if (k === 'ArrowRight' || k === 'PageDown' || (k === ' ' && tag !== 'BUTTON')) { e.preventDefault(); this.goDeck(di + 1); }
+      else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); this.goDeck(di - 1); }
+      else if (k === 'Home') { e.preventDefault(); this.goDeck(0); }
+      else if (k === 'End') { e.preventDefault(); this.goDeck(16); }
+    });
+    // Vuốt ngang trên điện thoại để chuyển slide (không tính khi vuốt trong ô nhập hoặc bảng cuộn ngang)
+    let tx = null, ty = 0;
+    document.addEventListener('touchstart', e => {
+      tx = null;
+      if (!this.state.deck || !e.touches || e.touches.length !== 1) return;
+      const tg = e.target;
+      if (!tg || !tg.closest || !tg.closest('.deck-body') || tg.closest('input,textarea,select,button,.scroll,.gate-box')) return;
+      tx = e.touches[0].clientX; ty = e.touches[0].clientY;
+    }, { passive: true });
+    document.addEventListener('touchend', e => {
+      if (tx == null || !this.state.deck) return;
+      const t1 = e.changedTouches && e.changedTouches[0];
+      if (!t1) return;
+      const dx = t1.clientX - tx, dy = t1.clientY - ty;
+      tx = null;
+      if (Math.abs(dx) > 70 && Math.abs(dy) < 50) this.goDeck((this.state.di || 0) + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+    // Link chia sẻ dạng bdcl.amita.vn/#slide hoặc #slide-4 mở thẳng slide
+    const fromHash = () => { const m = /^#slide(?:-(\d+))?$/.exec(location.hash || ''); if (m) this.openDeck(m[1] ? Number(m[1]) - 1 : 0); };
+    window.addEventListener('hashchange', fromHash);
+    fromHash();
+  }
+  renderVals() {
+    const P = this.props || {}, st = this.state;
+    const ev = (key, val) => st.ed && st.ed.k === key ? st.ed.t : val;
     const dark = st.dark != null ? st.dark : !!P.dark;
     const mode = st.mode || P.mode || 'basic';
     const reg = st.reg != null ? st.reg : !!P.registered;
@@ -3727,22 +4769,22 @@ var qrcode = function() {
       S.lnst += p.lnst; S.thue += thue; S.lntt += lntt; S.cp += cp; S.dt += dt; S.qm += qm; S.qx += p.price > 0 ? dt / p.price : 0; S.gv += gv; S.bh += bh; S.ql += ql; if (p.price > 0) { S.dtq += dt; S.lnstq += p.lnst; }
       return {
         id: p.id, idx: i + 1, name: p.name, ind: p.ind,
-        lnstF: this.f(p.lnst), pctF: String(p.pct), priceF: this.f(p.price),
+        lnstF: this.f(p.lnst), pctF: this.pf(p.pct), pctV: ev('pct' + p.id, this.pf(p.pct)), priceF: this.f(p.price),
         thueF: this.f(thue), lnttF: this.f(lntt), cpF: this.f(cp), dtF: this.f(dt),
         qmF: this.f(qm), qdF: this.d1(qm / days),
         lnttPct: this.pc(1 - c), lnstPct: dt > 0 ? this.pc(p.lnst / dt) : '–',
-        gvF: String(gvp), bhF: String(bhp), qlF: qlp + '%', totF: totp + '%', tot: totp, totCls: overCp ? 'num over' : 'num', overCp: overCp, auto: auto, base: p.pct, capF: auto ? 'tự tăng từ ' + p.pct + '%' : '',
-        ltF: (ltp < 0 ? '−' + Math.abs(ltp) : ltp) + '%', dtPctF: (totp + ltp) + '%', ltCls: ltp < 0 ? 'num over' : (overCp ? 'num red' : 'num'),
+        gvF: this.pf(gvp), bhF: this.pf(bhp), gvV: ev('gv' + p.id, this.pf(gvp)), bhV: ev('bh' + p.id, this.pf(bhp)), qlF: this.pf(qlp) + '%', totF: this.pf(totp) + '%', tot: totp, totCls: overCp ? 'num over' : 'num', overCp: overCp, auto: auto, base: this.pf(p.pct), capF: auto ? 'tự tăng từ ' + this.pf(p.pct) + '%' : '',
+        ltF: this.pf(ltp) + '%', dtPctF: this.pf(totp + ltp) + '%', ltCls: ltp < 0 ? 'num over' : (overCp ? 'num red' : 'num'),
         canRemove: many,
         setName: e => this.setP(p.id, { name: e.target.value }),
         setLnst: e => this.setP(p.id, { lnst: this.dig(e.target.value) }),
         setInd: e => { const id = e.target.value; const sp = indPct[id]; this.setP(p.id, sp != null ? Object.assign({ ind: id }, this.fitPct(p.id, sp)) : { ind: id }); },
-        setPct: e => this.setP(p.id, { pct: Math.min(this.dig(e.target.value), 95), ind: 'tu' }),
-        fitPct: () => { const q = this.state.products.find(y => y.id === p.id); if (q) this.setP(p.id, this.fitPct(p.id, q.pct)); },
+        setPct: e => this.edP('pct' + p.id, e, p.id, { pct: Math.min(this.pn(e.target.value), 95), ind: 'tu' }),
+        fitPct: () => { this.setState({ ed: null }); const q = this.state.products.find(y => y.id === p.id); if (q) this.setP(p.id, this.fitPct(p.id, q.pct)); },
         setPrice: e => this.setP(p.id, { price: this.dig(e.target.value) }),
-        setGv: e => { const g = Math.min(this.dig(e.target.value), 100), q = this.state.products.find(y => y.id === p.id); this.setP(p.id, q && g + q.bh > q.pct ? { gv: g, ind: 'tu' } : { gv: g }); },
-        setBh: e => { const b = Math.min(this.dig(e.target.value), 100), q = this.state.products.find(y => y.id === p.id); this.setP(p.id, q && q.gv + b > q.pct ? { bh: b, ind: 'tu' } : { bh: b }); },
-        remove: () => this.setState({ products: this.state.products.filter(x => x.id !== p.id) })
+        setGv: e => { const g = Math.min(this.pn(e.target.value), 100), q = this.state.products.find(y => y.id === p.id); this.edP('gv' + p.id, e, p.id, q && g + q.bh > q.pct ? { gv: g, ind: 'tu' } : { gv: g }); },
+        setBh: e => { const b = Math.min(this.pn(e.target.value), 100), q = this.state.products.find(y => y.id === p.id); this.edP('bh' + p.id, e, p.id, q && q.gv + b > q.pct ? { bh: b, ind: 'tu' } : { bh: b }); },
+        remove: () => { const ps = this.state.products, T = ps.reduce((a, q) => a + q.lnst, 0), rest = ps.filter(x => x.id !== p.id), O = rest.reduce((a, q) => a + q.lnst, 0); this.setState({ products: rest.map(x => Object.assign({}, x, { lnst: O > 0 ? x.lnst * T / O : T / rest.length })), ed: null }); }
       };
     });
 
@@ -4082,6 +5124,150 @@ var qrcode = function() {
       date: String(now.getDate()).padStart(2, '0') + '/' + String(now.getMonth() + 1).padStart(2, '0') + '/' + now.getFullYear()
     };
 
+    // ===== Slide bài giảng buổi Z4: 17 slide, từ slide 4 cần số điện thoại đã đăng ký =====
+    const N_SL = 17, LOCK_AT = 3;
+    const di = Math.min(Math.max(st.di || 0, 0), N_SL - 1);
+    const unlocked = !!st.unlocked;
+    const deckLocked = di >= LOCK_AT && !unlocked;
+    const SLT = ['Module kế hoạch thuế phải nộp 2027', 'Câu hỏi của chủ doanh nghiệp', 'Thuế suất của doanh nghiệp', '6 bước · Bước 1–3: mục tiêu, khách hàng, sản phẩm', '6 bước · Bước 4–5: giá bán, giá vốn, tiền lãi', '6 bước · Bước 6: số sản phẩm phải bán', 'Bảng sản phẩm', 'Kết quả kế hoạch', 'Quy ra mỗi ngày bán', 'Kết quả kinh doanh B02-DN', 'Thuế TNDN', 'Thuế GTGT', 'Tiền nộp thuế', 'Tách % chi phí', 'Thuế phải nộp theo quý', 'Kết quả kinh doanh theo tháng', 'Về lại bản đồ chiến lược'];
+    const slFlags = {};
+    for (let i = 0; i < N_SL; i++) slFlags['s' + (i + 1)] = di === i;
+    const dots = SLT.map((tl, i) => ({
+      n: String(i + 1), cls: 'dot' + (i === di ? ' on' : '') + (i >= LOCK_AT && !unlocked ? ' lk' : ''),
+      aria: 'Slide ' + (i + 1) + ': ' + tl + (i >= LOCK_AT && !unlocked ? ', cần nhập số điện thoại để thao tác' : ''),
+      cur: i === di ? 'step' : 'false', go: () => this.goDeck(i)
+    }));
+    // Slide 4: 6 bước, cho từng sản phẩm
+    const sixP = st.products.find(q => q.id === st.sixId) || st.products[0];
+    const sixRow = prows.find(r => r.id === sixP.id) || prows[0];
+    const id6 = sixP.id, pe6 = pctE(sixP), bad6 = pe6 > 95, c6 = Math.min(Math.max(pe6, 0), 100) / 100, pr6 = sixP.price;
+    // Bước 5 theo mẫu B02-DN: giá vốn (11), bán hàng (25), quản lý (26, phần còn lại của mức chi phí đã đặt) tính trên 1 sản phẩm
+    const gv6 = sixP.gv, bh6 = sixP.bh, ql6 = Math.max(0, pe6 - gv6 - bh6);
+    const ltU = pr6 * (1 - c6), thU = ltU * t, lsU = ltU - thU;
+    const gvU = pr6 * gv6 / 100, bhU = pr6 * bh6 / 100, qlU = pr6 * ql6 / 100, grU = pr6 - gvU;
+    // Bước 4: tỷ lệ lợi nhuận / giá vốn hàng bán = lợi nhuận trước thuế ÷ giá vốn hàng bán
+    const ratio6 = gv6 > 0 && !bad6 ? (100 - pe6) / gv6 * 100 : NaN;
+    const dtY6 = bad6 ? NaN : sixP.lnst / (1 - t) / (1 - c6) * 12;
+    const qY6 = pr6 > 0 && isFinite(dtY6) ? Math.ceil(dtY6 / pr6 - 1e-9) : NaN;
+    const noQ6 = !(pr6 > 0) || bad6;
+    // Đặt % chi phí từ slide: giữ trong 1–95%, chia lại giá vốn, bán hàng cho khớp (như khi chọn ngành)
+    const patchPct = (id, x) => Object.assign({ ind: 'tu' }, this.fitPct(id, Math.round(Math.min(Math.max(x, 1), 95) * 1e9) / 1e9));
+    const cur6 = () => this.state.products.find(x => x.id === id6);
+    const six = {
+      many: st.products.length > 1,
+      tabs: st.products.map(q => ({ label: q.name || 'Sản phẩm', cls: q.id === id6 ? 'seg on' : 'seg', pressed: q.id === id6 ? 'true' : 'false', pick: () => this.setState({ sixId: q.id, ed: null }) })),
+      name: sixP.name, single: st.products.length < 2,
+      priceV: ev('pr6', this.f(pr6)), priceF: this.f(pr6),
+      setPrice: e => this.edP('pr6', e, id6, { price: this.dig(e.target.value) }),
+      ratioV: ev('rt', isFinite(ratio6) ? this.pf(ratio6) : ''),
+      // Sửa tỷ lệ: giá vốn đổi, chi phí bán hàng và quản lý giữ nguyên, tổng % chi phí đổi theo
+      setRatio: e => {
+        const r = this.pn(e.target.value), q = cur6();
+        if (!q || !(r > 0)) { this.edP('rt', e, id6, {}); return; }
+        const pe = Math.max(q.pct, q.gv + q.bh), ql = Math.max(0, pe - q.gv - q.bh);
+        const g = Math.round(Math.max(0, 100 - q.bh - ql) / (1 + r / 100) * 1e9) / 1e9;
+        this.edP('rt', e, id6, { gv: g, pct: Math.min(g + q.bh + ql, 95), ind: 'tu' });
+      },
+      // Sửa giá vốn, bán hàng bằng số tiền 1 sản phẩm: đổi ra % doanh thu, quản lý là phần còn lại (giống Khối 3 trên trang)
+      gvUF: pr6 > 0 ? this.f(gvU) : '–', gvUV: ev('gvu', pr6 > 0 ? this.f(gvU) : ''), gvP: this.pf(gv6) + '%',
+      setGvU: e => { const q = cur6(); if (!q || !(q.price > 0)) { this.edP('gvu', e, id6, {}); return; } const g = Math.min(this.dig(e.target.value) / q.price * 100, 100); this.edP('gvu', e, id6, g + q.bh > q.pct ? { gv: g, ind: 'tu' } : { gv: g }); },
+      bhUV: ev('bhu', pr6 > 0 ? this.f(bhU) : ''), bhP: this.pf(bh6) + '%',
+      setBhU: e => { const q = cur6(); if (!q || !(q.price > 0)) { this.edP('bhu', e, id6, {}); return; } const b = Math.min(this.dig(e.target.value) / q.price * 100, 100); this.edP('bhu', e, id6, q.gv + b > q.pct ? { bh: b, ind: 'tu' } : { bh: b }); },
+      qlUF: pr6 > 0 ? this.f(qlU) : '–', qlP: this.pf(ql6) + '%', grUF: pr6 > 0 ? this.f(grU) : '–', grP: this.pf(100 - gv6) + '%',
+      ltUF: pr6 > 0 ? this.f(ltU) : '–', ltP: this.pf(100 - pe6) + '%', lsP: this.pf((100 - pe6) * (1 - t)) + '%',
+      ltUV: ev('lt', pr6 > 0 ? this.f(ltU) : ''),
+      setLtU: e => { const u = this.dig(e.target.value), q = cur6(); this.edP('lt', e, id6, q && q.price > 0 ? patchPct(id6, (1 - u / q.price) * 100) : {}); },
+      thUF: pr6 > 0 ? this.f(thU) : '–',
+      lsUV: ev('ls', pr6 > 0 ? this.f(lsU) : ''), lsUF: pr6 > 0 ? this.f(lsU) : '–',
+      setLsU: e => { const u = this.dig(e.target.value), q = cur6(); this.edP('ls', e, id6, q && q.price > 0 ? this.solveT(id6, tt => patchPct(id6, (1 - u / (1 - tt) / q.price) * 100)) : {}); },
+      noPrice: !(pr6 > 0),
+      hasMsg: noQ6,
+      msg: !(pr6 > 0) ? 'Chưa có giá bán: điền giá bán ở bước 4 để tính lãi mỗi sản phẩm và số sản phẩm phải bán ở bước 6.' : 'Tổng chi phí đang vượt 95% giá bán nên chưa tính được. Tăng tỷ lệ lợi nhuận ở bước 4, hoặc giảm giá vốn hàng bán, chi phí bán hàng ở bước 5.'
+    };
+    // Slide 4: bước 2–3, mỗi dòng một cặp khách hàng – sản phẩm
+    const s23Rows = st.products.map((q, i) => ({
+      idx: String(i + 1), name: q.name, whoRaw: q.who || '', painRaw: q.pain || '', canRemove: st.products.length > 1,
+      setWho: e => this.setP(q.id, { who: e.target.value }), setPain: e => this.setP(q.id, { pain: e.target.value }),
+      setName: e => this.setP(q.id, { name: e.target.value }), remove: prows[i].remove
+    }));
+    // Slide 6: bước 6, mục tiêu chia theo tỷ trọng; số sản phẩm = lãi sau thuế phân bổ ÷ lãi sau thuế 1 sản phẩm
+    const nP = st.products.length, Ttot = S.lnst;
+    const s6Rows = st.products.map((q, i) => {
+      const pe = pctE(q), bad = pe > 95, cc = Math.min(Math.max(pe, 0), 100) / 100, has = q.price > 0 && !bad;
+      const share = Ttot > 0 ? q.lnst / Ttot * 100 : 100 / nP;
+      const lsu = q.price * (1 - cc) * (1 - t), dtY = bad ? NaN : q.lnst / (1 - t) / (1 - cc) * 12;
+      const qy = has ? Math.ceil(dtY / q.price - 1e-9) : NaN;
+      return {
+        name: q.name || 'Sản phẩm ' + (i + 1), shareV: ev('sh' + q.id, this.pf(share)), single: nP < 2,
+        setShare: e => this.setShare(q.id, e), lnstYF: this.f(q.lnst * 12), lsUF: has ? this.f(lsu) : '–',
+        qV: ev('qy' + q.id, isFinite(qy) ? this.f(qy) : ''), noQ: !has, setQ: e => this.setQty(q.id, e),
+        qmF: has ? prows[i].qmF : '–', qdF: has ? prows[i].qdF : '–', dtYS: this.s(dtY), share: share, has: has, bad: bad
+      };
+    });
+    const s6Notes = [];
+    const s6np = s6Rows.filter(r => !r.has && !r.bad).map(r => r.name), s6bad = s6Rows.filter(r => r.bad).map(r => r.name);
+    if (s6np.length) s6Notes.push(s6np.join(', ') + ' chưa có giá bán nên chưa tính được số lượng. Điền giá bán ở bước 4 (slide 5).');
+    if (s6bad.length) s6Notes.push(s6bad.join(', ') + ': tổng chi phí vượt 95% giá bán nên chưa tính được. Sửa ở bước 4–5 (slide 5).');
+    const full6 = nP > 1 ? s6Rows.find(r => r.share > 99.9999) : null;
+    if (full6) s6Notes.push(full6.name + ' đã gánh đủ toàn bộ mục tiêu, các sản phẩm khác không cần bán thêm.');
+    const custRows = st.products.map(q => ({
+      name: q.name || 'Sản phẩm', who: q.who ? q.who : 'chưa điền khách hàng (bước 2, slide 4)', pain: q.pain || '', hasPain: !!q.pain,
+      whoRaw: q.who || '', painRaw: q.pain || '',
+      setWho: e => this.setP(q.id, { who: e.target.value }), setPain: e => this.setP(q.id, { pain: e.target.value })
+    }));
+    // Slide 12: thanh chia 100 đồng doanh thu
+    const cpRows = prows.map(r => {
+      const q = st.products.find(x => x.id === r.id), pe = pctE(q), ql = Math.max(0, pe - q.gv - q.bh), lt = Math.max(0, 100 - pe);
+      const sum = Math.max(100, q.gv + q.bh + ql + lt), w = x => (x / sum * 100).toFixed(2);
+      return Object.assign({}, r, { wGv: w(q.gv), wBh: w(q.bh), wQl: w(ql), wLt: w(lt) });
+    });
+    // Slide 14: 12 tháng, triệu đồng
+    const mil = x => {
+      if (!isFinite(x)) return '–';
+      const r = Math.round(x / 1e5) / 10;
+      if (r === 0) return '–';
+      return (r < 0 ? '−' : '') + Math.abs(r).toFixed(1).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    };
+    const slM = [['01', 'Doanh thu', 'L01', ''], ['11', 'Giá vốn hàng bán', 'L11', ''], ['25', 'Chi phí bán hàng', 'L25', ''], ['26', 'Chi phí quản lý', 'L26', ''],
+      ['50', 'Lợi nhuận trước thuế', 'L50', 'b'], ['51', 'Thuế TNDN', 'L51', 'red'], ['60', 'Lợi nhuận sau thuế', 'L60', 'b dbl']].map(d => {
+      let sum = 0;
+      const cells = months.map((m, i) => { sum += m[d[2]]; return { v: mil(m[d[2]]), cls: lockArr[i] ? 'lkd' : '' }; });
+      return { code: d[0], label: d[1], cls: d[3], cells: cells, y: mil(sum) };
+    });
+    slM.push({ code: '', label: 'Thuế GTGT phát sinh', cls: 'mu', cells: months.map((m, i) => ({ v: mil(m.vat), cls: lockArr[i] ? 'lkd' : '' })), y: mil(vatYm) });
+    // Slide 11: tỷ lệ TNDN / GTGT trong tiền nộp thuế
+    const tsum = S.thue + vatM, shT = tsum > 0 ? S.thue / tsum * 100 : 50;
+    // Hộp nhập số điện thoại
+    const gs = st.gate || {};
+    const GMSG = {
+      bad: 'Số điện thoại chưa đúng, ví dụ: 0912 345 678.',
+      no: 'Số này chưa có trong danh sách đăng ký. Kiểm tra lại số đã điền khi đăng ký, hoặc đăng ký ngay.',
+      err: 'Chưa kiểm tra được số. Anh chị kiểm tra kết nối mạng rồi thử lại.',
+      checking: 'Đang kiểm tra số điện thoại…'
+    };
+    const gate = {
+      ph: gs.ph || '', full: !gs.mini, mini: !!gs.mini, checking: gs.st === 'checking', bad: gs.st === 'bad' || gs.st === 'no',
+      btn: gs.st === 'checking' ? 'Đang kiểm tra…' : 'Mở khóa', msg: GMSG[gs.st] || '',
+      msgCls: 'gate-msg' + (gs.st === 'bad' || gs.st === 'no' || gs.st === 'err' ? ' err' : ''),
+      setPh: e => this.setState({ gate: Object.assign({}, this.state.gate, { ph: e.target.value, st: this.state.gate.st === 'checking' ? 'checking' : '' }) }),
+      submit: e => { if (e && e.preventDefault) e.preventDefault(); this.checkPhone(); },
+      toggleMini: () => this.setState({ gate: Object.assign({}, this.state.gate, { mini: !this.state.gate.mini }) }),
+      toReg: () => { this.closeDeck(); setTimeout(() => { const el = document.getElementById('dang-ky'); if (el) try { el.scrollIntoView({ behavior: 'smooth' }); } catch (x) { el.scrollIntoView(); } }, 60); }
+    };
+    const deckVals = Object.assign({
+      openDeck: () => this.openDeck(), closeDeck: () => this.closeDeck(),
+      prevDeck: () => this.goDeck(di - 1), nextDeck: () => this.goDeck(di + 1),
+      deckOpen: !!st.deck, deckTitle: SLT[di], deckNum: (di + 1) + ' / ' + N_SL, prevDis: di === 0, nextDis: di === N_SL - 1,
+      dots: dots, deckLocked: deckLocked, deckInert: deckLocked, deckSlCls: 'deck-sl' + (deckLocked ? ' locked' : ''), deckDemo: !!st.demoUnlock,
+      six: six, gate: gate, custRows: custRows, cpRows: cpRows, slM: slM, s23Rows: s23Rows, s6Rows: s6Rows, s6Notes: s6Notes,
+      s6Goal: this.s(S.lnst * 12), s6GoalF: this.f(S.lnst * 12),
+      taxShareT: shT.toFixed(2), taxShareV: (100 - shT).toFixed(2),
+      tgYV: ev('tgY', this.f(S.lnst * 12)),
+      setTargetY: e => this.setState({ ed: { k: 'tgY', t: e.target.value }, products: this.splitTarget(this.dig(e.target.value) / 12) }),
+      edOff: () => { if (this.state.ed) this.setState({ ed: null }); },
+      manyProd: st.products.length > 1, prodN: String(st.products.length)
+    }, slFlags);
+
     // Đăng ký
     const form = st.form;
     const fs = {};
@@ -4130,7 +5316,7 @@ var qrcode = function() {
         return;
       }
       if (this.state.sending) return;
-      const done = demo => this.setState({ sending: false, reg: true, demo: demo, tried: false, doneName: String(f.name).trim() });
+      const done = demo => { this.setState({ sending: false, reg: true, demo: demo, tried: false, doneName: String(f.name).trim() }); if (!demo) this.unlockDeck(true); };
       if (f.website) { done(false); return; }
       const q = new URLSearchParams(location.search);
       const payload = {
@@ -4147,6 +5333,7 @@ var qrcode = function() {
         .catch(() => this.setState({ sending: false, err: 'Chưa gửi được đăng ký. Anh chị kiểm tra kết nối mạng rồi bấm đăng ký lại.' }));
     };
     return {
+      ...deckVals,
       dark: dark, light: !dark, themeCls: dark ? 'dark' : 'light', phoneCls: phone ? 'is-phone' : '',
       themeLabel: dark ? 'Chuyển sang giao diện sáng' : 'Chuyển sang giao diện tối',
       toggleDark: () => this.setState({ dark: !dark }),
@@ -4168,7 +5355,9 @@ var qrcode = function() {
       addProduct: () => {
         const ps = this.state.products;
         if (ps.length >= 5) return;
-        this.setState({ products: ps.concat([{ id: this.state.nextId, name: 'Sản phẩm ' + (ps.length + 1), lnst: 0, ind: 'tu', pct: 65, price: 0, gv: 50, bh: 8 }]), nextId: this.state.nextId + 1 });
+        // Thêm sản phẩm: tổng lãi sau thuế muốn có giữ nguyên, chia đều lại cho các sản phẩm (sửa tỷ trọng ở slide bước 6)
+        const T = ps.reduce((a, q) => a + q.lnst, 0), n = ps.length + 1;
+        this.setState({ products: ps.map(q => Object.assign({}, q, { lnst: T / n })).concat([{ id: this.state.nextId, name: 'Sản phẩm ' + n, lnst: T / n, ind: 'tu', pct: 65, price: 0, gv: 50, bh: 8, who: '', pain: '' }]), nextId: this.state.nextId + 1 });
       },
       prodCount: st.products.length + ' / 5 sản phẩm',
       guideOpen: !!st.guideOpen, guideOpenS: st.guideOpen ? 'true' : 'false', guideBtn: st.guideOpen ? 'Ẩn hướng dẫn' : 'Xem hướng dẫn',
